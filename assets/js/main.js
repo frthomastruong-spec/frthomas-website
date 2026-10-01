@@ -1,5 +1,4 @@
-// frthomas.com — menu mobile, năm footer, và tự giải mã ảnh
-// (Ảnh trên server đang lưu dạng base64-text; JS tải về rồi dựng lại thành ảnh.)
+// frthomas.com — menu mobile, năm footer
 (function () {
   document.documentElement.classList.add('js');
 
@@ -24,17 +23,6 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  function load(img) {
-    var url = img.getAttribute('data-b64src');
-    if (!url) return;
-    fetch(url).then(function (r) { return r.text(); }).then(function (t) {
-      img.src = 'data:image/jpeg;base64,' + t.trim();
-      img.removeAttribute('data-b64src');
-    }).catch(function () { /* giữ ảnh chờ */ });
-  }
-  var imgs = document.querySelectorAll('img[data-b64src]');
-  for (var i = 0; i < imgs.length; i++) { load(imgs[i]); }
 
   // Hiệu ứng hiện dần khi cuộn tới (scroll reveal)
   var revealEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .reveal-scale');
