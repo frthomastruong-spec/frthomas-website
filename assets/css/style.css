@@ -63,10 +63,21 @@ a { color: var(--gold-deep); }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: radial-gradient(1200px 500px at 50% -10%, #2a3358 0%, var(--navy-deep) 60%, #10152c 100%);
-  color: #f3ecdb; text-align: center; padding: 72px 20px 64px; position: relative; overflow: hidden;
+  position: relative;
+  background: var(--navy-deep);
+  color: #f3ecdb; text-align: center; padding: 96px 20px 88px; overflow: hidden;
 }
-.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-line), transparent); }
+.hero-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  animation: heroBg 3.2s ease-out both;
+}
+@keyframes heroBg { from { transform: scale(1.14); } to { transform: scale(1); } }
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(16,21,44,.80) 0%, rgba(20,26,54,.60) 45%, rgba(16,21,44,.90) 100%);
+}
+.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-line), transparent); z-index: 1; }
+.hero-inner { position: relative; z-index: 1; }
 .kicker {
   display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
   color: var(--gold-line); border: 1px solid rgba(217, 199, 154, .45); border-radius: 999px; padding: 6px 16px; margin-bottom: 18px;
@@ -182,6 +193,7 @@ a { color: var(--gold-deep); }
   .js .reveal, .js .reveal-l, .js .reveal-r, .js .reveal-scale { opacity: 1 !important; transform: none !important; transition: none !important; }
   .hero .kicker, .hero h1, .hero .lead, .hero .gold-rule,
   .page-hero .kicker, .page-hero h1 { animation: none !important; }
+  .hero-bg { animation: none !important; }
 }
 
 /* ---------- Mobile ---------- */
@@ -199,5 +211,5 @@ a { color: var(--gold-deep); }
   .card-grid { grid-template-columns: 1fr; }
   .card.featured { grid-template-columns: 1fr; }
   .card.featured .thumb { min-height: 200px; }
-  .hero { padding: 56px 20px 48px; }
+  .hero { padding: 72px 20px 64px; }
 }
