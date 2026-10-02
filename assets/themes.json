@@ -88,5 +88,20 @@
   "slug": "dem-sang",
   "name": "Đêm Sáng",
   "desc": "Màn đêm phủ trang lúc mở — chạm dây công tắc đèn bàn để bừng sáng."
+ },
+ {
+  "slug": "thanh-the",
+  "name": "Thánh Thể",
+  "desc": "Cinematic Công giáo — xanh navy sâu, vàng thánh, ảnh lớn và chuyển động tiết chế."
+ },
+ {
+  "slug": "hanh-trinh",
+  "name": "Hành Trình",
+  "desc": "Editorial hành trình — bố cục tạp chí hiện đại, ảnh lớn, chữ rõ và chuyển động nhẹ."
+ },
+ {
+  "slug": "an-binh",
+  "name": "An Bình",
+  "desc": "Tối giản và sáng — nhiều khoảng thở, typography thanh lịch, ảnh mềm và chuyển động rất nhẹ."
  }
 ]
