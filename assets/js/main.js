@@ -20,7 +20,7 @@ function buildFloatingMenu(base) {
   }).join('');
   ov.innerHTML = '<div class="fm-panel" role="dialog" aria-label="Menu điều hướng">' +
     '<button class="fm-x" aria-label="Đóng menu">×</button>' +
-    '<div class="fm-brand"><div class="x">✝</div><b>Fr. Thomas</b><small>Catholic Priest</small></div>' +
+    '<div class="fm-brand"><b>Fr. Thomas</b></div>' +
     '<div class="fm-links">' + links + '</div></div>';
   document.body.appendChild(btn);
   document.body.appendChild(ov);
