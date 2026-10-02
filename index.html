@@ -1,131 +1,211 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fr. Thomas — Nơi lưu giữ các mục vụ</title>
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Fr. Thomas">
-  <meta property="og:title" content="Fr. Thomas — Nơi lưu giữ các mục vụ">
-  <meta property="og:description" content="Trang web của Fr. Thomas, linh mục giáo xứ St. Francis Xavier, Vancouver: hành hương, bài giảng, học hỏi Kinh Thánh, sách.">
-  <meta property="og:url" content="https://frthomas.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:image" content="https://frthomas.com/assets/images/cover-ha-long.jpg">
-  <meta property="og:image:width" content="960">
-  <meta property="og:image:height" content="432">
-  <meta property="og:image:alt" content="Vịnh Hạ Long, Việt Nam">
-  <meta name="theme-color" content="#1d2444">
-  <meta name="description" content="Trang web của Fr. Thomas, linh mục giáo xứ St. Francis Xavier, Vancouver: hành hương, bài giảng, học hỏi Kinh Thánh, sách.">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=2">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=6">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fr. Thomas · Linh mục Công giáo</title>
+<meta name="description" content="Fr. Thomas — linh mục phụ tá Giáo xứ St. Francis Xavier, Vancouver. Nơi lưu giữ các mục vụ: hành hương, bài giảng, học hỏi Kinh Thánh và sách.">
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fr. Thomas">
+<meta property="og:title" content="Fr. Thomas · Linh mục Công giáo">
+<meta property="og:description" content="Cùng nhau bước đi trong đức tin, tôn vinh Chúa và phục vụ tha nhân.">
+<meta property="og:url" content="https://frthomas.com/">
+<meta property="og:image" content="https://frthomas.com/assets/images/home-hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,600&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #f8f5ec; color: #3c4f66; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body::before { display: none; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; color: inherit; }
+
+  /* ---- Nav ---- */
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(251,249,242,.96); backdrop-filter: blur(8px); border-bottom: 1px solid #ece4d0; }
+  .nav-in { max-width: 1200px; margin: 0 auto; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand .x { font-size: 30px; color: #1e3a5f; line-height: 1; }
+  .brand b { font-family: 'Playfair Display', serif; font-size: 22px; color: #1e3a5f; display: block; line-height: 1.15; }
+  .brand small { font-size: 10.5px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
+  .links { display: flex; gap: 28px; font-size: 14.5px; align-items: center; }
+  .links a { padding-bottom: 4px; border-bottom: 2px solid transparent; }
+  .links a.act { color: #1e3a5f; font-weight: 600; border-bottom-color: #b08d3e; }
+  .links a:hover { color: #1e3a5f; }
+  .burger { display: none; background: none; border: 0; font-size: 26px; color: #1e3a5f; cursor: pointer; padding: 8px; }
+
+  /* ---- Hero ---- */
+  .hero { position: relative; min-height: 560px; display: flex; align-items: center; overflow: hidden; }
+  .hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero .in { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 80px 28px; }
+  .eyebrow { display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: 5px; color: #a5812f; font-weight: 600; margin-bottom: 20px; }
+  .eyebrow::after { content: ""; width: 70px; height: 1px; background: #b08d3e; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(58px, 9vw, 96px); color: #1e3a5f; margin: 0; font-weight: 800; line-height: 1.02; }
+  .hero .role { margin-top: 18px; font-size: 13px; letter-spacing: 3.5px; color: #1e3a5f; text-transform: uppercase; line-height: 2.1; }
+  .hero .qt { margin: 24px 0 32px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: #1e3a5f; line-height: 1.65; max-width: 480px; }
+  .btn { display: inline-block; border: 1.5px solid #b08d3e; color: #8a6d2a; border-radius: 8px; padding: 15px 32px; font-size: 14.5px; font-weight: 600; background: rgba(255,255,255,.35); transition: background .25s, color .25s; }
+  .btn:hover { background: #b08d3e; color: #fff; }
+
+  /* ---- About ---- */
+  .about { max-width: 1200px; margin: 0 auto; padding: 90px 28px; display: grid; grid-template-columns: 1fr 1.25fr; gap: 60px; align-items: center; }
+  .about img { width: 100%; height: 520px; object-fit: cover; border-radius: 14px; box-shadow: 0 24px 60px rgba(30,58,95,.14); }
+  .about h2 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4.5vw, 48px); color: #1e3a5f; margin: 0 0 22px; font-weight: 700; line-height: 1.25; }
+  .about p { margin: 0 0 18px; }
+  .about .bless { font-style: italic; }
+  .about .sig { font-family: 'Great Vibes', cursive; font-size: 48px; color: #1e3a5f; margin-top: 8px; }
+
+  /* ---- Ministries ---- */
+  .min { max-width: 1200px; margin: 0 auto; padding: 10px 28px 90px; }
+  .min h2 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4.5vw, 48px); color: #1e3a5f; margin: 0 0 44px; font-weight: 700; }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 36px rgba(30,58,95,.08); transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column; }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(30,58,95,.15); }
+  .card img { width: 100%; height: 180px; object-fit: cover; }
+  .card .cb { padding: 24px 22px 26px; display: flex; flex-direction: column; flex: 1; }
+  .card h4 { font-family: 'Playfair Display', serif; font-size: 21px; color: #1e3a5f; margin: 0 0 10px; line-height: 1.4; }
+  .card p { font-size: 14px; color: #6b7d94; margin: 0 0 20px; flex: 1; }
+  .card .more { font-size: 14px; color: #1e3a5f; font-weight: 500; }
+  .card .more b { color: #b08d3e; font-weight: 400; }
+
+  /* ---- Verse ---- */
+  .verse { position: relative; min-height: 400px; display: flex; align-items: center; overflow: hidden; }
+  .verse img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .verse .in { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 70px 28px; }
+  .verse blockquote { margin: 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(28px, 4vw, 40px); color: #1e3a5f; line-height: 1.5; max-width: 560px; text-shadow: 0 1px 12px rgba(255,255,255,.6); }
+  .verse .ref { margin-top: 20px; font-size: 14.5px; color: #1e3a5f; display: flex; align-items: center; gap: 12px; }
+  .verse .ref::after { content: ""; width: 46px; height: 2px; background: #b08d3e; }
+
+  /* ---- Footer ---- */
+  footer { background: #fbf9f2; }
+  .f-in { max-width: 1200px; margin: 0 auto; padding: 38px 28px 22px; }
+  .f-top { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; padding-bottom: 26px; border-bottom: 1px solid #e5ddc8; }
+  .f-brand { display: flex; align-items: center; gap: 10px; }
+  .f-brand .x { font-size: 26px; color: #1e3a5f; }
+  .f-brand b { font-family: 'Playfair Display', serif; font-size: 18px; color: #1e3a5f; display: block; line-height: 1.15; }
+  .f-brand small { font-size: 10px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
+  .f-links { display: flex; gap: 20px; font-size: 13.5px; color: #6b7d94; flex-wrap: wrap; }
+  .f-links a:hover { color: #1e3a5f; }
+  .soc { display: flex; gap: 10px; }
+  .soc span { width: 34px; height: 34px; border-radius: 50%; background: #1e3a5f; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
+  .f-bot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 20px; font-size: 12.5px; color: #8a97a8; }
+
+  /* ---- Reveal ---- */
+  .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .rv.on { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  @media (max-width: 980px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .about { grid-template-columns: 1fr; gap: 40px; }
+    .about img { height: 420px; }
+  }
+  @media (max-width: 760px) {
+    .links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fbf9f2; flex-direction: column; align-items: flex-start; padding: 10px 28px 22px; gap: 14px; border-bottom: 1px solid #ece4d0; box-shadow: 0 18px 30px rgba(30,58,95,.10); }
+    .links.open { display: flex; }
+    .burger { display: block; }
+    .nav { position: sticky; }
+    .hero { min-height: 500px; }
+    .cards { grid-template-columns: 1fr; }
+    .f-top { flex-direction: column; align-items: flex-start; }
+  }
+</style>
 </head>
 <body>
 
-<nav class="site-nav" aria-label="Điều hướng chính">
-  <div class="nav-row">
-    <a class="brand" href="./">
-      <span class="cross">✝</span>
-      <span class="name">Fr. Thomas<small>ST. FRANCIS XAVIER · VANCOUVER</small></span>
-    </a>
-    <button class="nav-toggle" aria-label="Mở menu">☰</button>
-    <ul class="nav-links">
-      <li><a href="./" class="active">Trang chủ</a></li>
-      <li><a href="hanh-huong/">Hành hương</a></li>
-      <li><a href="bai-giang/">Bài giảng</a></li>
-      <li><a href="hoc-kinh-thanh/">Học Kinh Thánh</a></li>
-      <li><a href="sach/">Sách</a></li>
-    </ul>
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="./"><span class="x">✝</span><span><b>Fr. Thomas</b><small>Catholic Priest</small></span></a>
+    <div class="links" id="navLinks">
+      <a class="act" href="./">Trang chủ</a>
+      <a href="hanh-huong/">Hành hương</a>
+      <a href="bai-giang/">Bài giảng</a>
+      <a href="hoc-kinh-thanh/">Học Kinh Thánh</a>
+      <a href="sach/">Sách</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Mở menu">☰</button>
   </div>
 </nav>
 
 <header class="hero">
-  <img class="hero-bg" src="assets/images/cover-ha-long.jpg?v=2" alt="" aria-hidden="true" fetchpriority="high">
-  <div class="hero-inner">
-  <div class="kicker">Nơi lưu giữ các mục vụ</div>
-  <h1>Fr. Thomas</h1>
-  <div class="gold-rule"></div>
+  <img class="bg" src="assets/images/home-hero.jpg" alt="Nhà thờ lúc bình minh" fetchpriority="high">
+  <div class="in">
+    <div class="eyebrow">XIN CHÀO!</div>
+    <h1>Fr. Thomas</h1>
+    <div class="role">Linh mục phụ tá · St. Francis Xavier Parish<br>Vancouver</div>
+    <p class="qt">Cùng nhau bước đi trong đức tin,<br>tôn vinh Chúa và phục vụ tha nhân.</p>
+    <a class="btn" href="#muc-vu">Khám phá các mục vụ &nbsp;→</a>
   </div>
 </header>
 
-<main class="sections">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>Các mục vụ</h2>
-      <p>Những việc đang làm — mỗi mục sẽ đầy lên theo thời gian.</p>
-    </div>
-    <div class="card-grid">
-
-      <a class="card featured reveal-scale" href="hanh-huong/">
-        <div class="thumb">
-          <span class="badge">Nổi bật</span>
-          <img src="assets/images/cover-ha-long.jpg?v=2" alt="Vịnh Hạ Long nhìn từ trên cao" fetchpriority="high">
-        </div>
-        <div class="body">
-          <h3>Hành Hương Việt Nam 2028</h3>
-          <p>14 ngày tạ ơn hồng ân linh mục, từ Bắc chí Nam: Hà Nội, Phát Diệm, La Vang, Huế, Hội An, Sài Gòn. Lịch trình từng ngày, chi phí và những điều cần chuẩn bị.</p>
-          <span class="more">Xem chương trình →</span>
-        </div>
-      </a>
-
-      <a class="card reveal" href="bai-giang/">
-        <div class="thumb">
-          <span class="badge soon">Sắp có</span>
-          <img src="assets/images/nha-tho-lon-ha-noi.jpg?v=2" alt="Nhà thờ Lớn Hà Nội" loading="lazy">
-        </div>
-        <div class="body">
-          <h3>Bài giảng</h3>
-          <p>Các bài giảng và suy niệm Lời Chúa của Fr. Thomas, lưu lại để nghe và đọc lại.</p>
-          <span class="more">Xem mục này →</span>
-        </div>
-      </a>
-
-      <a class="card reveal" href="hoc-kinh-thanh/">
-        <div class="thumb">
-          <span class="badge soon">Sắp có</span>
-          <img src="assets/images/phat-diem.jpg?v=2" alt="Nhà thờ chính tòa Phát Diệm" loading="lazy">
-        </div>
-        <div class="body">
-          <h3>Học hỏi Kinh Thánh</h3>
-          <p>Câu hỏi và tài liệu học hỏi Lời Chúa hằng tuần cho các nhóm trong giáo xứ.</p>
-          <span class="more">Xem mục này →</span>
-        </div>
-      </a>
-
-      <a class="card reveal" href="sach/">
-        <div class="thumb">
-          <span class="badge soon">Sắp có</span>
-          <img src="assets/images/hoi-an.jpg?v=2" alt="Phố cổ Hội An" loading="lazy">
-        </div>
-        <div class="body">
-          <h3>Sách</h3>
-          <p>Các đầu sách của Fr. Thomas — giới thiệu và nơi mua.</p>
-          <span class="more">Xem mục này →</span>
-        </div>
-      </a>
-
-    </div>
+<section class="about rv">
+  <img src="assets/images/home-portrait.jpg" alt="Linh mục Thomas" loading="lazy">
+  <div>
+    <div class="eyebrow">VỀ TÔI</div>
+    <h2>Xin chào, tôi là<br>Linh mục Thomas</h2>
+    <p>Tôi là linh mục phụ tá tại Giáo xứ Thánh Phanxicô Xaviê, Vancouver. Trang web này là nơi tôi chia sẻ những suy tư, bài giảng, hành trình đức tin và các tài liệu hữu ích cho đời sống Kitô hữu.</p>
+    <p class="bless"><i>Cầu chúc anh chị em luôn được Chúa đồng hành trong mọi nẻo đường!</i></p>
+    <div class="sig">Fr. Thomas</div>
   </div>
+</section>
 
-  <section class="verse reveal">
-    <div class="wrap">
-      <blockquote>“Anh em hãy đi khắp tứ phương thiên hạ, loan báo Tin Mừng cho mọi loài thụ tạo.”</blockquote>
-      <cite>Mc 16,15</cite>
+<section class="min" id="muc-vu">
+  <div class="eyebrow rv">CÁC MỤC VỤ</div>
+  <h2 class="rv">Nơi lưu giữ các mục vụ</h2>
+  <div class="cards">
+    <a class="card rv" href="hanh-huong/">
+      <img src="assets/images/home-card-hanhhuong.jpg" alt="Hành hương Việt Nam 2028" loading="lazy">
+      <div class="cb"><h4>Hành hương<br>Việt Nam 2028</h4><p>Cùng nhau khám phá những dấu chân đức tin.</p><span class="more">Tìm hiểu thêm &nbsp;<b>→</b></span></div>
+    </a>
+    <a class="card rv" href="bai-giang/">
+      <img src="assets/images/home-card-baigiang.jpg" alt="Bài giảng" loading="lazy">
+      <div class="cb"><h4>Bài giảng</h4><p>Những chia sẻ Lời Chúa trong đời sống hằng ngày.</p><span class="more">Xem thêm &nbsp;<b>→</b></span></div>
+    </a>
+    <a class="card rv" href="hoc-kinh-thanh/">
+      <img src="assets/images/home-card-kinhthanh.jpg" alt="Học hỏi Kinh Thánh" loading="lazy">
+      <div class="cb"><h4>Học hỏi<br>Kinh Thánh</h4><p>Cùng nhau tìm hiểu và sống Lời Chúa.</p><span class="more">Xem thêm &nbsp;<b>→</b></span></div>
+    </a>
+    <a class="card rv" href="sach/">
+      <img src="assets/images/home-card-sach.jpg" alt="Sách" loading="lazy">
+      <div class="cb"><h4>Sách</h4><p>Những cuốn sách hữu ích cho đời sống thiêng liêng.</p><span class="more">Khám phá &nbsp;<b>→</b></span></div>
+    </a>
+  </div>
+</section>
+
+<section class="verse rv">
+  <img class="bg" src="assets/images/home-verse.jpg" alt="" aria-hidden="true" loading="lazy">
+  <div class="in">
+    <blockquote>“Thầy là đường, là sự thật<br>và là sự sống.”</blockquote>
+    <div class="ref">Ga 14,6</div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-in">
+    <div class="f-top">
+      <div class="f-brand"><span class="x">✝</span><span><b>Fr. Thomas</b><small>Catholic Priest</small></span></div>
+      <div class="f-links">
+        <a href="./">Trang chủ</a><a href="hanh-huong/">Hành hương</a><a href="bai-giang/">Bài giảng</a><a href="hoc-kinh-thanh/">Học Kinh Thánh</a><a href="sach/">Sách</a>
+      </div>
+      <div class="soc"><span>f</span><span>▶</span><span>◎</span></div>
     </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="gold-line"></div>
-  <div class="wrap">
-    <div class="fbrand"><span>✝</span> Fr. Thomas</div>
-    <div>© <span id="year">2026</span> Fr. Thomas · Giáo xứ St. Francis Xavier, Vancouver</div>
-    <div>Trang đang được xây dựng dần — mỗi mục sẽ đầy lên theo thời gian.</div>
+    <div class="f-bot">
+      <span>© 2025 Fr. Thomas. All rights reserved.</span>
+      <span>St. Francis Xavier Parish &nbsp;·&nbsp; Vancouver</span>
+    </div>
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2"></script>
+<script>
+(function(){
+  var b = document.getElementById('burger'), l = document.getElementById('navLinks');
+  if (b && l) b.addEventListener('click', function(){ l.classList.toggle('open'); });
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
