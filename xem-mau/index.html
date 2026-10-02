@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,600&family=Be+Vietnam+Pro:wght@400;500;600;700&family=UnifrakturMaguntia&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
   body { margin: 0; font-family: 'Be Vietnam Pro', sans-serif; background: #efe9db; color: #2b2620; }
@@ -492,13 +492,67 @@
   .m16-f { text-align: center; padding: 26px; color: #b3a488; font-size: 13px; border-top: 1px solid #efe3cb; }
   @media (max-width: 640px) { .m16-cards { grid-template-columns: 1fr; } }
   @media (prefers-reduced-motion: reduce) { .m14 *, .m15 *, .m16 * { animation: none !important; transition: none !important; } }
+
+  /* ============ MẪU 17: CHÂN DUNG — priest portfolio ============ */
+  .m17 { background: #f8f5ec; color: #3c4f66; font-family: 'Be Vietnam Pro', sans-serif; }
+  .m17 .mn { display: flex; justify-content: space-between; align-items: center; padding: 20px 34px; background: #fbf9f2; }
+  .m17 .mn .brand { display: flex; align-items: center; gap: 12px; }
+  .m17 .mn .brand .x { font-size: 30px; color: #1e3a5f; line-height: 1; }
+  .m17 .mn .brand b { font-family: 'Playfair Display', serif; font-size: 22px; color: #1e3a5f; display: block; line-height: 1.1; }
+  .m17 .mn .brand small { font-size: 11px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
+  .m17 .mn .links { display: flex; gap: 26px; font-size: 14px; color: #3c4f66; }
+  .m17 .mn .links .act { color: #1e3a5f; font-weight: 600; border-bottom: 2px solid #b08d3e; padding-bottom: 4px; }
+  .m17-hero { position: relative; height: 540px; overflow: hidden; }
+  .m17-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .m17-hero .in { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; max-width: 640px; }
+  .m17 .eyebrow { display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: 5px; color: #b08d3e; font-weight: 600; margin-bottom: 18px; }
+  .m17 .eyebrow::after { content: ""; width: 70px; height: 1px; background: #b08d3e; }
+  .m17-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(56px, 9vw, 92px); color: #1e3a5f; margin: 0; font-weight: 800; line-height: 1.02; }
+  .m17-hero .role { margin-top: 16px; font-size: 12.5px; letter-spacing: 3.5px; color: #1e3a5f; text-transform: uppercase; line-height: 2; }
+  .m17-hero .qt { margin: 22px 0 30px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 21px; color: #1e3a5f; line-height: 1.6; }
+  .m17-hero .btn { display: inline-block; border: 1.5px solid #b08d3e; color: #8a6d2a; border-radius: 8px; padding: 15px 30px; font-size: 14px; font-weight: 600; width: max-content; }
+  .m17-about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; padding: 80px 8%; }
+  .m17-about img { width: 100%; height: 480px; object-fit: cover; border-radius: 14px; box-shadow: 0 24px 60px rgba(30,58,95,.14); }
+  .m17-about h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4.5vw, 46px); color: #1e3a5f; margin: 0 0 20px; font-weight: 700; line-height: 1.2; }
+  .m17-about p { line-height: 1.9; margin: 0 0 18px; }
+  .m17-about .bless { font-style: italic; }
+  .m17-about .sig { font-family: 'Great Vibes', cursive; font-size: 46px; color: #1e3a5f; margin-top: 6px; }
+  .m17-min { padding: 10px 8% 80px; }
+  .m17-min h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4.5vw, 46px); color: #1e3a5f; margin: 0 0 40px; font-weight: 700; }
+  .m17-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .m17-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 36px rgba(30,58,95,.08); transition: transform .3s, box-shadow .3s; }
+  .m17-card:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(30,58,95,.14); }
+  .m17-card img { width: 100%; height: 170px; object-fit: cover; }
+  .m17-card .cb { padding: 24px 22px 26px; }
+  .m17-card h4 { font-family: 'Playfair Display', serif; font-size: 20px; color: #1e3a5f; margin: 0 0 10px; line-height: 1.35; }
+  .m17-card p { font-size: 14px; color: #6b7d94; margin: 0 0 18px; line-height: 1.7; }
+  .m17-card a { font-size: 14px; color: #1e3a5f; font-weight: 500; text-decoration: none; }
+  .m17-card a b { color: #b08d3e; font-weight: 400; }
+  .m17-verse { position: relative; height: 380px; overflow: hidden; display: flex; align-items: center; }
+  .m17-verse img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .m17-verse .in { position: relative; padding: 0 8%; max-width: 620px; }
+  .m17-verse blockquote { margin: 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(26px, 4vw, 38px); color: #1e3a5f; line-height: 1.45; }
+  .m17-verse .ref { margin-top: 18px; font-size: 14px; color: #1e3a5f; display: flex; align-items: center; gap: 12px; }
+  .m17-verse .ref::after { content: ""; width: 44px; height: 2px; background: #b08d3e; }
+  .m17-f { padding: 36px 8% 22px; background: #fbf9f2; }
+  .m17-f .top { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid #e5ddc8; }
+  .m17-f .brand { display: flex; align-items: center; gap: 10px; }
+  .m17-f .brand .x { font-size: 26px; color: #1e3a5f; }
+  .m17-f .brand b { font-family: 'Playfair Display', serif; font-size: 18px; color: #1e3a5f; display: block; line-height: 1.1; }
+  .m17-f .brand small { font-size: 10px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
+  .m17-f .links { display: flex; gap: 18px; font-size: 13px; color: #6b7d94; }
+  .m17-f .soc { display: flex; gap: 10px; }
+  .m17-f .soc span { width: 34px; height: 34px; border-radius: 50%; background: #1e3a5f; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
+  .m17-f .bot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 18px; font-size: 12.5px; color: #8a97a8; }
+  @media (max-width: 900px) { .m17-cards { grid-template-columns: repeat(2, 1fr); } .m17-about { grid-template-columns: 1fr; } .m17-about img { height: 380px; } }
+  @media (max-width: 640px) { .m17-cards { grid-template-columns: 1fr; } .m17 .mn .links { display: none; } .m17-hero { height: 480px; } }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="intro">
     <h1>Chọn phong cách trang chủ</h1>
-    <p>Em dựng 16 mẫu với 16 cá tính khác nhau, dùng đúng nội dung và ảnh thật của web. Anh xem trên điện thoại, ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>16</strong> — em áp dụng lên web chính.</p>
+    <p>Em dựng 17 mẫu với 17 cá tính khác nhau, dùng đúng nội dung và ảnh thật của web. Anh xem trên điện thoại, ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>17</strong> — em áp dụng lên web chính.</p>
   </div>
   <!-- MẪU 1 -->
   <div class="concept">
@@ -1176,8 +1230,67 @@
 })();
 </script>
 
+  <!-- MẪU 17 -->
+  <div class="concept">
+    <div class="concept-head">
+      <span class="concept-num">17</span>
+      <div><h2>Chân Dung</h2><p>Phong cách portfolio linh mục theo mẫu anh gửi — hero chào đón, phần giới thiệu, 4 thẻ mục vụ, câu Kinh Thánh.</p></div>
+    </div>
+    <div class="mockup m17">
+      <div class="mn">
+        <div class="brand"><span class="x">✝</span><span><b>Fr. Thomas</b><small>Catholic Priest</small></span></div>
+        <div class="links"><span class="act">Trang chủ</span><span>Hành hương</span><span>Bài giảng</span><span>Học Kinh Thánh</span><span>Sách</span></div>
+      </div>
+      <div class="m17-hero">
+        <img src="https://frthomas.com/assets/images/cover-ha-long.jpg" alt="">
+        <div class="in">
+          <div class="eyebrow">XIN CHÀO!</div>
+          <h1>Fr. Thomas</h1>
+          <div class="role">Linh mục phụ tá · St. Francis Xavier Parish<br>Vancouver</div>
+          <p class="qt">Cùng nhau bước đi trong đức tin,<br>tôn vinh Chúa và phục vụ tha nhân.</p>
+          <span class="btn">Khám phá các mục vụ &nbsp;→</span>
+        </div>
+      </div>
+      <div class="m17-about">
+        <img src="https://frthomas.com/assets/images/hero-elijah.jpg" alt="">
+        <div>
+          <div class="eyebrow">VỀ TÔI</div>
+          <h2>Xin chào, tôi là<br>Linh mục Thomas</h2>
+          <p>Tôi là linh mục phụ tá tại Giáo xứ Thánh Phanxicô Xaviê, Vancouver. Trang web này là nơi tôi chia sẻ những suy tư, bài giảng, hành trình đức tin và các tài liệu hữu ích cho đời sống Kitô hữu.</p>
+          <p class="bless"><i>Cầu chúc anh chị em luôn được Chúa đồng hành trong mọi nẻo đường!</i></p>
+          <div class="sig">Fr. Thomas</div>
+        </div>
+      </div>
+      <div class="m17-min">
+        <div class="eyebrow">CÁC MỤC VỤ</div>
+        <h2>Nơi lưu giữ các mục vụ</h2>
+        <div class="m17-cards">
+          <div class="m17-card"><img src="https://frthomas.com/assets/images/phat-diem.jpg" alt=""><div class="cb"><h4>Hành hương<br>Việt Nam 2028</h4><p>Cùng nhau khám phá những dấu chân đức tin.</p><a>Tìm hiểu thêm &nbsp;<b>→</b></a></div></div>
+          <div class="m17-card"><img src="https://frthomas.com/assets/images/nha-tho-duc-ba.jpg" alt=""><div class="cb"><h4>Bài giảng</h4><p>Những chia sẻ Lời Chúa trong đời sống hằng ngày.</p><a>Xem thêm &nbsp;<b>→</b></a></div></div>
+          <div class="m17-card"><img src="https://frthomas.com/assets/images/trang-an.jpg" alt=""><div class="cb"><h4>Học hỏi<br>Kinh Thánh</h4><p>Cùng nhau tìm hiểu và sống Lời Chúa.</p><a>Xem thêm &nbsp;<b>→</b></a></div></div>
+          <div class="m17-card"><img src="https://frthomas.com/assets/images/hoi-an.jpg" alt=""><div class="cb"><h4>Sách</h4><p>Những cuốn sách hữu ích cho đời sống thiêng liêng.</p><a>Khám phá &nbsp;<b>→</b></a></div></div>
+        </div>
+      </div>
+      <div class="m17-verse">
+        <img src="https://frthomas.com/assets/images/chua-kito-vung-tau.jpg" alt="">
+        <div class="in">
+          <blockquote>“Thầy là đường, là sự thật<br>và là sự sống.”</blockquote>
+          <div class="ref">Ga 14,6</div>
+        </div>
+      </div>
+      <div class="m17-f">
+        <div class="top">
+          <div class="brand"><span class="x">✝</span><span><b>Fr. Thomas</b><small>Catholic Priest</small></span></div>
+          <div class="links"><span>Trang chủ</span><span>Hành hương</span><span>Bài giảng</span><span>Học Kinh Thánh</span><span>Sách</span></div>
+          <div class="soc"><span>f</span><span>▶</span><span>◎</span></div>
+        </div>
+        <div class="bot"><span>© 2025 Fr. Thomas. All rights reserved.</span><span>St. Francis Xavier Parish &nbsp;·&nbsp; Vancouver</span></div>
+      </div>
+    </div>
+  </div>
+
   <div class="intro" style="margin-top:20px">
-    <p>Anh ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>16</strong> nhé.</p>
+    <p>Anh ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>17</strong> nhé.</p>
   </div>
 </div>
 </body>
