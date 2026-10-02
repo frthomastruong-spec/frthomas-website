@@ -453,10 +453,7 @@
   .fm-ov.open .fm-links a:nth-child(4) { transition-delay: .17s, .17s, 0s, 0s; }
   .fm-ov.open .fm-links a:nth-child(5) { transition-delay: .21s, .21s, 0s, 0s; }
   .fm-ov.open .fm-links a:hover { transition-delay: 0s, 0s, 0s, 0s; transform: translateX(4px); background: rgba(176,141,62,.12); }
-  .fm-links a .arr { color: #b08d3e; font-weight: 400; transition: transform .2s ease; }
-  .fm-links a:hover .arr { transform: translateX(4px); }
   .fm-links a.on { color: #8f6f2c; background: rgba(176,141,62,.14); }
-  .fm-links a.on .arr { color: #8f6f2c; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -1158,7 +1155,7 @@
     var ov = document.createElement('div'); ov.className = 'fm-ov';
     var links = items.map(function (it) {
       var on = (it[2] === '' && (path === '' || path === '/')) || (it[2] && path.indexOf('/' + it[2]) === 0);
-      return '<a href="' + it[1] + '"' + (on ? ' class="on"' : '') + '><span>' + it[0] + '</span><span class="arr">→</span></a>';
+      return '<a href="' + it[1] + '"' + (on ? ' class="on"' : '') + '>' + it[0] + '</a>';
     }).join('');
     ov.innerHTML = '<div class="fm-panel" role="dialog" aria-label="Menu điều hướng">' +
       '<button class="fm-x" aria-label="Đóng menu">×</button>' +
