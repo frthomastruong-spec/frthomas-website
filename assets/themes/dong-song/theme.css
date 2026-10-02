@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,500;1,600&display=swap');
+
+.m14 { background: #07222c; color: #dff3f0; font-family: 'Be Vietnam Pro', sans-serif; }
+.m14-hero { position: relative; height: 460px; overflow: hidden; cursor: pointer; }
+.m14-hero .kb { position: absolute; inset: -6%; width: 112%; height: 112%; object-fit: cover; animation: m14kb 20s ease-in-out infinite alternate; }
+@keyframes m14kb { from { transform: scale(1); } to { transform: scale(1.14); } }
+.m14-hero .ov { position: absolute; inset: 0; background: linear-gradient(rgba(7,34,44,.25), rgba(7,34,44,.78)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; pointer-events: none; }
+.m14-hero .kick { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: #7fe3d4; margin-bottom: 14px; font-weight: 700; }
+.m14-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(46px, 9vw, 72px); margin: 0; color: #fff; font-weight: 800; text-shadow: 0 4px 30px rgba(0,40,50,.6); }
+.m14-hero .hint { margin-top: 16px; font-size: 13px; color: #a9d8d2; border: 1px solid rgba(127,227,212,.4); border-radius: 999px; padding: 8px 18px; }
+.m14-waves { position: absolute; bottom: -2px; left: 0; width: 100%; height: 70px; overflow: hidden; pointer-events: none; }
+.m14-waves svg { position: absolute; bottom: 0; left: 0; width: 200%; height: 70px; }
+.m14-waves .w1 { animation: m14wave 11s linear infinite; }
+.m14-waves .w2 { animation: m14wave 17s linear infinite reverse; opacity: .7; }
+@keyframes m14wave { to { transform: translateX(-50%); } }
+.m14-ripple { position: absolute; border: 2px solid rgba(170,245,235,.85); border-radius: 50%; transform: translate(-50%,-50%); pointer-events: none; animation: m14rip 1.3s ease-out forwards; }
+@keyframes m14rip { from { width: 12px; height: 12px; opacity: .95; } to { width: 260px; height: 260px; opacity: 0; } }
+.m14-marq { overflow: hidden; background: #0a2e3a; border-top: 1px solid rgba(127,227,212,.25); border-bottom: 1px solid rgba(127,227,212,.25); padding: 14px 0; }
+.m14-track { display: inline-flex; white-space: nowrap; animation: m14marq 26s linear infinite; font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; color: #7fe3d4; }
+.m14-track span { padding: 0 28px; }
+@keyframes m14marq { to { transform: translateX(-50%); } }
+.m14 .rv14 { opacity: 0; transform: translateY(28px); transition: opacity .8s, transform .8s cubic-bezier(.2,.7,.2,1); }
+.m14 .rv14.on { opacity: 1; transform: none; }
+.m14-feat { margin: 30px 24px 22px; border-radius: 20px; overflow: hidden; background: #0d3340; display: flex; align-items: stretch; border: 1px solid rgba(127,227,212,.2); }
+.m14-feat img { width: 42%; min-height: 190px; object-fit: cover; }
+.m14-feat .fb { padding: 26px; }
+.m14-feat .t { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7fe3d4; font-weight: 700; margin-bottom: 8px; }
+.m14-feat h3 { font-family: 'Playfair Display', serif; font-size: 23px; margin: 0 0 8px; color: #fff; }
+.m14-feat p { margin: 0; color: #9fc6c0; font-size: 14px; }
+.m14-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 24px; }
+.m14-card { background: #0d3340; border-radius: 18px; overflow: hidden; border: 1px solid rgba(127,227,212,.18); transition: transform .3s, box-shadow .3s; }
+.m14-card:hover { transform: translateY(-8px); box-shadow: 0 20px 44px rgba(0,60,70,.5); }
+.m14-card img { width: 100%; height: 130px; object-fit: cover; transition: transform .6s; }
+.m14-card:hover img { transform: scale(1.08); }
+.m14-card .cb { padding: 18px; }
+.m14-card h4 { font-family: 'Playfair Display', serif; margin: 0 0 6px; font-size: 18px; color: #fff; }
+.m14-card p { margin: 0; font-size: 13px; color: #9fc6c0; }
+.m14-verse { text-align: center; padding: 50px 30px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #bfe9e2; }
+.m14-f { text-align: center; padding: 28px; border-top: 1px solid rgba(127,227,212,.2); color: #5f8a84; font-size: 13px; }
+@media (max-width: 640px) { .m14-cards { grid-template-columns: 1fr; } .m14-feat { flex-direction: column; } .m14-feat img { width: 100%; height: 180px; } }
+
+/* theme link reset */
+a.m14-feat, a.m14-card { text-decoration: none; color: inherit; }
+@media (prefers-reduced-motion: reduce) { .m14 * { animation: none !important; transition: none !important; } }

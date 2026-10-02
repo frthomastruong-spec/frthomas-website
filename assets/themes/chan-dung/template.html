@@ -1,0 +1,55 @@
+<header class="hero">
+  <img class="bg" src="{{hero.img}}" alt="Nhà thờ lúc bình minh" fetchpriority="high">
+  <div class="in">
+    <div class="eyebrow">{{hero.eyebrow}}</div>
+    <h1>{{hero.title}}</h1>
+    <div class="role">{{hero.role}}</div>
+    <p class="qt">{{hero.quote}}</p>
+    <a class="btn" href="#muc-vu">{{hero.button}}</a>
+  </div>
+</header>
+
+<section class="about rv">
+  <img src="{{about.img}}" alt="Linh mục Thomas" loading="lazy">
+  <div>
+    <div class="eyebrow">{{about.eyebrow}}</div>
+    <h2>{{about.title}}</h2>
+    <p>{{about.p1}}</p>
+    <p class="bless"><i>{{about.p2}}</i></p>
+    <div class="sig">{{about.signature}}</div>
+  </div>
+</section>
+
+<section class="min" id="muc-vu">
+  <div class="eyebrow rv">{{ministries.eyebrow}}</div>
+  <h2 class="rv">{{ministries.title}}</h2>
+  <div class="cards">
+<!--CARDS-->
+    <a class="card rv" href="{{card.href}}">
+      <img src="{{card.img}}" alt="" loading="lazy">
+      <div class="cb"><h4>{{card.title}}</h4><p>{{card.desc}}</p><span class="more">{{card.link}}</span></div>
+    </a>
+<!--/CARDS-->
+  </div>
+</section>
+
+<section class="verse rv">
+  <img class="bg" src="{{verse.img}}" alt="" aria-hidden="true" loading="lazy">
+  <div class="in">
+    <blockquote>{{verse.text}}</blockquote>
+    <div class="ref">{{verse.ref}}</div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-in">
+    <div class="f-top">
+      <div class="f-brand"><span class="x">✝</span><span><b>Fr. Thomas</b><small>Catholic Priest</small></span></div>
+      <div class="f-links">
+        <a href="./">Trang chủ</a><a href="hanh-huong/">Hành hương</a><a href="bai-giang/">Bài giảng</a><a href="hoc-kinh-thanh/">Học Kinh Thánh</a><a href="sach/">Sách</a>
+      </div>
+      <div class="soc"><span>f</span><span>▶</span><span>◎</span></div>
+    </div>
+    <div class="f-bot"><span>{{footer.copyright}}</span><span>{{footer.parish}}</span></div>
+  </div>
+</footer>

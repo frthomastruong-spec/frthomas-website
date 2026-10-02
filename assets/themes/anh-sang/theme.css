@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,500;1,600&display=swap');
+
+.m13 { background: #0a0f1e; color: #ece4cf; font-family: 'Be Vietnam Pro', sans-serif; overflow: hidden; }
+.m13-hero { position: relative; min-height: 440px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: radial-gradient(ellipse 80% 60% at 50% 110%, #1b2a52 0%, #0a0f1e 65%); }
+#m13stars { position: absolute; inset: 0; width: 100%; height: 100%; }
+.m13-hero-in { position: relative; padding: 70px 24px 90px; }
+.m13-kick { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: #e8c877; margin-bottom: 18px; }
+#m13title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 9vw, 76px); margin: 0; color: #fff; font-weight: 800; }
+#m13title span { display: inline-block; opacity: 0; transform: translateY(34px); animation: m13up .8s cubic-bezier(.2,.7,.2,1) forwards; }
+@keyframes m13up { to { opacity: 1; transform: none; } }
+.m13-hero-in p { color: #9aa3c0; margin: 14px 0 0; }
+.m13-scroll { width: 22px; height: 38px; border: 2px solid rgba(232,200,119,.5); border-radius: 12px; margin: 34px auto 0; position: relative; }
+.m13-scroll span { position: absolute; left: 50%; top: 7px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: #e8c877; animation: m13drop 1.8s infinite; }
+@keyframes m13drop { 0% { opacity: 1; top: 7px; } 70% { opacity: 0; top: 20px; } 100% { opacity: 0; top: 7px; } }
+.m13-candles { text-align: center; padding: 56px 20px 50px; background: linear-gradient(#0a0f1e, #0d1328); }
+.m13-candles h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin: 0 0 8px; color: #f6efdb; }
+.m13-candles .sub { color: #9aa3c0; font-size: 14px; margin: 0 0 10px; }
+.m13-row { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-top: 16px; }
+.m13-candle { position: relative; width: 72px; height: 168px; background: none; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.m13-candle .wax { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 36px; height: 96px; background: linear-gradient(#f5e6c6, #d9b98a); border-radius: 9px 9px 7px 7px; box-shadow: inset -6px 0 10px rgba(120,80,30,.25); transition: height .5s; }
+.m13-candle.lit .wax { height: 88px; }
+.m13-candle .wick { position: absolute; bottom: 94px; left: 50%; width: 3px; height: 12px; background: #2c2114; transform: translateX(-50%); }
+.m13-candle .flame { position: absolute; bottom: 104px; left: 50%; width: 24px; height: 38px; margin-left: -12px; background: radial-gradient(circle at 50% 78%, #fffbe0 0%, #ffd35e 32%, #ff8c1e 62%, rgba(255,100,10,0) 76%); border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; opacity: 0; transform: scale(0); transform-origin: 50% 100%; transition: opacity .4s, transform .4s; }
+.m13-candle.lit .flame { opacity: 1; transform: scale(1); animation: m13flick .16s infinite alternate ease-in-out; }
+@keyframes m13flick { from { transform: scale(1) skewX(-2deg); } to { transform: scale(1.07,1.14) skewX(3deg); } }
+.m13-candle .glow { position: absolute; bottom: 40px; left: 50%; width: 130px; height: 130px; margin-left: -65px; background: radial-gradient(circle, rgba(255,190,90,.4), transparent 70%); opacity: 0; transition: opacity .8s; pointer-events: none; }
+.m13-candle.lit .glow { opacity: 1; animation: m13glow 2.6s infinite ease-in-out; }
+@keyframes m13glow { 0%,100% { opacity: .65; } 50% { opacity: 1; } }
+.m13-count { margin-top: 18px; color: #9aa3c0; font-size: 14px; }
+.m13-count b { color: #e8c877; font-size: 20px; }
+.m13 .rv { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.m13 .rv.on { opacity: 1; transform: none; }
+.m13-feat { margin: 0 24px 22px; border-radius: 20px; overflow: hidden; background: #111a36; border: 1px solid rgba(232,200,119,.25); display: flex; align-items: stretch; }
+.m13-feat img { width: 42%; min-height: 190px; object-fit: cover; }
+.m13-feat .fb { padding: 26px; }
+.m13-feat .t { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #e8c877; font-weight: 700; margin-bottom: 8px; }
+.m13-feat h3 { font-family: 'Playfair Display', serif; font-size: 23px; margin: 0 0 8px; color: #fff; }
+.m13-feat p { margin: 0 0 16px; color: #9aa3c0; font-size: 14px; }
+.m13-feat .go { display: inline-block; background: #e8c877; color: #0a0f1e; font-weight: 800; font-size: 13px; border-radius: 999px; padding: 11px 24px; }
+.m13-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 24px; perspective: 900px; }
+.m13-card { background: #111a36; border: 1px solid rgba(232,200,119,.22); border-radius: 18px; overflow: hidden; transition: transform .18s ease, box-shadow .3s; will-change: transform; }
+.m13-card img { width: 100%; height: 130px; object-fit: cover; }
+.m13-card .cb { padding: 18px; }
+.m13-card h4 { font-family: 'Playfair Display', serif; margin: 0 0 6px; font-size: 18px; color: #f6efdb; }
+.m13-card p { margin: 0; font-size: 13px; color: #9aa3c0; }
+.m13-verse { text-align: center; padding: 54px 30px; min-height: 170px; }
+#m13verse { font-family: 'Playfair Display', serif; font-style: italic; font-size: 21px; color: #e8c877; margin: 0; transition: opacity .6s; }
+#m13verse.fade { opacity: 0; }
+#m13verse small { display: block; margin-top: 12px; font-size: 13px; font-style: normal; color: #9aa3c0; font-family: 'Be Vietnam Pro', sans-serif; letter-spacing: 1px; }
+.m13-dots { margin-top: 16px; display: flex; gap: 8px; justify-content: center; }
+.m13-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(232,200,119,.3); }
+.m13-dots i.on { background: #e8c877; }
+.m13-f { text-align: center; padding: 28px; border-top: 1px solid rgba(232,200,119,.2); color: #6e7690; font-size: 13px; }
+@media (max-width: 640px) { .m13-cards { grid-template-columns: 1fr; } .m13-feat { flex-direction: column; } .m13-feat img { width: 100%; height: 180px; } }
+@media (prefers-reduced-motion: reduce) { .m13 * { animation: none !important; transition: none !important; } #m13title span { opacity: 1; transform: none; } .m13 .rv { opacity: 1; transform: none; } }
+
+/* theme link reset */
+a.m13-feat, a.m13-card { text-decoration: none; color: inherit; }
