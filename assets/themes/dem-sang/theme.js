@@ -18,10 +18,20 @@
   var hint = document.getElementById('nightHint');
   if (!lamp) return;
   function isDay() { return document.body.classList.contains('is-day'); }
+  var dismissTimer = null;
   function setDay(day) {
     document.body.classList.toggle('is-day', day);
     lamp.setAttribute('aria-label', day ? 'Cham de tat den' : 'Cham de mo den');
     if (hint) hint.style.opacity = day ? '0' : '';
+    clearTimeout(dismissTimer);
+    if (day) {
+      // 2s sau khi bat den: den tu truot sang phai va an, nut menu truot vao
+      dismissTimer = setTimeout(function () {
+        document.body.classList.add('lamp-dismissed');
+      }, 2000);
+    } else {
+      document.body.classList.remove('lamp-dismissed');
+    }
   }
   function pull() {
     setDay(!isDay());
