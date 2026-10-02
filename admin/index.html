@@ -192,7 +192,7 @@
   }
 
   /* ---------- cropper modal ---------- */
-  var im = { slot: null, cfg: null, img: new Image(), zoom: 1, x: 0, y: 0, fw: 0, fh: 0, base: 1 };
+  var im = { slot: null, cfg: null, img: $('imImg'), zoom: 1, x: 0, y: 0, fw: 0, fh: 0, base: 1 };
   var frame = $('imFrame'), imEl = $('imImg');
   function imLayout(){
     var r = frame.getBoundingClientRect();
