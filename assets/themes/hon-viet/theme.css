@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,600&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+
+.m3 { background: #f6efe1; color: #2b2118; font-family: 'Be Vietnam Pro', sans-serif; }
+  
+  
+  
+  .m3 .mh { position: relative; overflow: hidden; }
+  .m3 .mh-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .m3 .mh-inner { position: relative; text-align: center; padding: 64px 24px 60px; background: linear-gradient(rgba(110,18,18,.62), rgba(60,10,10,.72)); }
+  .m3 .seal { width: 56px; height: 56px; margin: 0 auto 18px; background: #9b1c1c; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: #f3d98b; border: 2px solid #c9a227; box-shadow: inset 0 0 0 3px #9b1c1c, inset 0 0 0 4.5px rgba(201,162,39,.65); }
+  .m3 .mh .kick { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: #f3d98b; margin-bottom: 12px; }
+  .m3 .mh h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 7vw, 60px); margin: 0; color: #fdf8ec; font-weight: 800; }
+  .m3 .mh .rule { width: 90px; height: 3px; margin: 20px auto 0; background: linear-gradient(90deg, #c9a227, #f3d98b, #c9a227); border-radius: 2px; }
+  .m3 .pattern { height: 12px; background: repeating-linear-gradient(-45deg, #9b1c1c 0 10px, #c9a227 10px 13px, #f6efe1 13px 23px); }
+  .m3 .feat { display: flex; gap: 24px; align-items: center; margin: 30px 24px 24px; background: #fffdf6; border-radius: 12px; padding: 22px; box-shadow: 0 10px 28px rgba(120,60,20,.12); border-top: 4px solid #9b1c1c; }
+  .m3 .feat img { width: 140px; height: 105px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+  .m3 .feat .t { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #9b1c1c; font-weight: 700; margin-bottom: 8px; }
+  .m3 .feat h3 { font-family: 'Playfair Display', serif; font-size: 21px; margin: 0 0 6px; }
+  .m3 .feat p { margin: 0; color: #6b5b45; font-size: 14px; }
+  .m3 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 24px 8px; }
+  .m3 .card { background: #fffdf6; border-radius: 12px; padding: 22px 18px; border-top: 4px solid #c9a227; box-shadow: 0 10px 28px rgba(120,60,20,.10); text-align: center; }
+  .m3 .card h4 { font-family: 'Playfair Display', serif; margin: 0 0 8px; font-size: 18px; color: #7f1a1a; }
+  .m3 .card p { margin: 0; font-size: 13px; color: #6b5b45; }
+  .m3 .verse { margin: 30px 0 0; background: #7f1a1a; color: #f6ead0; text-align: center; padding: 40px 28px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; }
+  .m3 .verse span { display: block; margin-top: 10px; font-size: 14px; font-style: normal; color: #e8c877; letter-spacing: 1px; }
+  .m3 .mf { text-align: center; padding: 26px; background: #2b2118; color: #cbbfa5; font-size: 13px; }
+  @media (max-width: 640px) { .m3 .cards { grid-template-columns: 1fr; } .m3 .feat { flex-direction: column; text-align: center; } }
+
+/* link wrappers keep demo styling */
+.m3 a.feat { color: inherit; text-decoration: none; }
+.m3 a.card { color: inherit; text-decoration: none; display: block; }

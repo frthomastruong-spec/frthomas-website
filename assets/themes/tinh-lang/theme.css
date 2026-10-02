@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,600&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+
+.m1 { background: #fbfaf6; color: #1c1a16; font-family: 'Be Vietnam Pro', sans-serif; }
+  
+  
+  
+  .m1 .mh { text-align: center; padding: 84px 24px 72px; }
+  .m1 .mh .kick { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: #a08c5a; margin-bottom: 22px; }
+  .m1 .mh h1 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: clamp(52px, 9vw, 92px); margin: 0; line-height: 1.05; letter-spacing: -1px; }
+  .m1 .mh .rule { width: 1px; height: 56px; background: #c9b98a; margin: 30px auto; }
+  .m1 .mh .verse { font-family: 'Playfair Display', serif; font-style: italic; color: #8a8172; font-size: 17px; }
+  .m1 .feat { display: flex; gap: 28px; align-items: center; max-width: 760px; margin: 0 auto 8px; padding: 26px 34px; border-top: 1px solid #e7e1d3; border-bottom: 1px solid #e7e1d3; }
+  .m1 .feat img { width: 150px; height: 110px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+  .m1 .feat .t { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #a08c5a; margin-bottom: 8px; }
+  .m1 .feat h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin: 0 0 6px; font-weight: 700; }
+  .m1 .feat p { margin: 0; color: #8a8172; font-size: 14px; }
+  .m1 .rows { max-width: 760px; margin: 0 auto; padding: 10px 34px 30px; }
+  .m1 .row { display: flex; align-items: baseline; gap: 20px; padding: 20px 0; border-bottom: 1px solid #e7e1d3; }
+  .m1 .row .n { font-family: 'Playfair Display', serif; color: #c9b98a; font-size: 15px; }
+  .m1 .row h4 { font-family: 'Playfair Display', serif; font-size: 19px; margin: 0; font-weight: 700; }
+  .m1 .row span { margin-left: auto; color: #c9b98a; font-size: 20px; }
+  .m1 .mf { text-align: center; padding: 34px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #a89e8a; border-top: 1px solid #e7e1d3; }
+
+/* link wrappers keep demo styling */
+.m1 a.feat, .m1 a.row { color: inherit; text-decoration: none; }
