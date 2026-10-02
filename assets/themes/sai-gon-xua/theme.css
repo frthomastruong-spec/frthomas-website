@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,600&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Great+Vibes&display=swap');
+  .m10 { background: #f7ead0; color: #33302a; font-family: 'Be Vietnam Pro', sans-serif; }
+  .m10 .mh { text-align: center; padding: 54px 24px 44px; background: repeating-linear-gradient(-45deg, transparent 0 18px, rgba(192,57,43,.05) 18px 36px); }
+  .m10 .star { display: inline-block; background: #e0a100; color: #33302a; font-weight: 800; font-size: 12px; letter-spacing: 2px; padding: 10px 18px; border-radius: 999px; border: 2px solid #33302a; transform: rotate(-4deg); margin-bottom: 20px; box-shadow: 3px 3px 0 #33302a; }
+  .m10 .mh h1 { font-size: clamp(46px, 9vw, 76px); margin: 0; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; line-height: 1; }
+  .m10 .mh h1 .r { color: #c0392b; }
+  .m10 .mh p { max-width: 460px; margin: 16px auto 0; font-weight: 500; }
+  .m10 .ticket { margin: 0 24px 22px; background: #fffdf4; border: 2px dashed #33302a; border-radius: 16px; padding: 24px; display: flex; gap: 20px; align-items: center; position: relative; }
+  .m10 .ticket::before, .m10 .ticket::after { content: ""; position: absolute; width: 26px; height: 26px; background: #f7ead0; border: 2px dashed #33302a; border-radius: 50%; top: 50%; margin-top: -13px; }
+  .m10 .ticket::before { left: -15px; } .m10 .ticket::after { right: -15px; }
+  .m10 .ticket img { width: 120px; height: 100px; object-fit: cover; border-radius: 10px; border: 2px solid #33302a; flex-shrink: 0; }
+  .m10 .ticket .t { display: inline-block; background: #1f6f6b; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 2px; padding: 6px 12px; border-radius: 6px; margin-bottom: 8px; }
+  .m10 .ticket h3 { margin: 0 0 6px; font-size: 21px; font-weight: 800; text-transform: uppercase; }
+  .m10 .ticket p { margin: 0; font-size: 14px; color: #6b655a; }
+  .m10 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 24px; }
+  .m10 .card { background: #fffdf4; border: 2px solid #33302a; border-radius: 14px; padding: 20px 16px; text-align: center; box-shadow: 4px 4px 0 #33302a; }
+  .m10 .card h4 { margin: 0 0 8px; font-size: 17px; font-weight: 800; text-transform: uppercase; }
+  .m10 .card h4.teal { color: #1f6f6b; } .m10 .card h4.red { color: #c0392b; } .m10 .card h4.mus { color: #b07d10; }
+  .m10 .card p { margin: 0; font-size: 13px; color: #6b655a; }
+  .m10 .verse { margin: 26px 24px 0; background: #e0a100; border: 2px solid #33302a; border-radius: 14px; box-shadow: 4px 4px 0 #33302a; text-align: center; padding: 30px 24px; font-weight: 700; font-size: 18px; }
+  .m10 .mf { margin-top: 26px; background: #33302a; color: #f7ead0; text-align: center; padding: 24px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
+  @media (max-width: 640px) { .m10 .cards { grid-template-columns: 1fr; } .m10 .ticket { flex-direction: column; text-align: center; } .m10 .ticket::before, .m10 .ticket::after { display: none; } }
+
+  
