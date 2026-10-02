@@ -1,4 +1,4 @@
-/* Dem Sang — den ban goc phai, cham day cong tac de bat/tat man dem */
+/* Dem Sang — den go dung phia phai, cham de bat/tat man dem */
 (function () {
   /* Dam bao trang duoc phep ve tran vung tai tho (phong khi Safari giu ban HTML cu trong cache) */
   try {
@@ -13,13 +13,10 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('#app .rv').forEach(function (el) { io.observe(el); });
 
-  /* Den ban man dem */
+  /* Den go dung man dem */
   var lamp = document.getElementById('nightLamp');
-  var cord = document.getElementById('nightCord');
   var hint = document.getElementById('nightHint');
-  /* Man dem phu kin man hinh nho viewport-fit=cover + inset:0 (khong can JS) */
   if (!lamp) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function isDay() { return document.body.classList.contains('is-day'); }
   function setDay(day) {
     document.body.classList.toggle('is-day', day);
@@ -27,12 +24,7 @@
     if (hint) hint.style.opacity = day ? '0' : '';
   }
   function pull() {
-    if (reduce) { setDay(!isDay()); return; }
-    if (cord) {
-      cord.classList.add('pulled');
-      setTimeout(function () { cord.classList.remove('pulled'); }, 300);
-    }
-    setTimeout(function () { setDay(!isDay()); }, 150);
+    setDay(!isDay());
   }
   lamp.addEventListener('click', pull);
   lamp.addEventListener('keydown', function (e) {
