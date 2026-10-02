@@ -30,15 +30,13 @@
   .fm-btn:focus-visible { outline: 3px solid #b08d3e; outline-offset: 3px; }
   .fm-ov { position: fixed; inset: 0; z-index: 300; background: transparent; opacity: 0; pointer-events: none; transition: opacity .22s ease; }
   .fm-ov.open { opacity: 1; pointer-events: auto; }
-  .fm-panel { position: absolute; right: 22px; bottom: 96px; width: 258px; max-height: 80vh; overflow-y: auto; background: rgba(251,248,238,.94); -webkit-backdrop-filter: blur(16px) saturate(1.15); backdrop-filter: blur(16px) saturate(1.15); border: 1px solid rgba(214,198,160,.85); border-radius: 20px; padding: 14px 14px 10px; box-shadow: 0 28px 64px rgba(30,58,95,.28), 0 4px 14px rgba(0,0,0,.08); transform: scale(.8) translateY(18px); transform-origin: bottom right; opacity: 0; transition: transform .42s cubic-bezier(.34,1.45,.5,1), opacity .3s ease; }
+  .fm-panel { position: absolute; right: 22px; bottom: 96px; width: 224px; max-height: 80vh; overflow-y: auto; background: rgba(251,248,238,.94); -webkit-backdrop-filter: blur(16px) saturate(1.15); backdrop-filter: blur(16px) saturate(1.15); border: 1px solid rgba(214,198,160,.85); border-radius: 20px; padding: 10px 10px 8px; box-shadow: 0 28px 64px rgba(30,58,95,.28), 0 4px 14px rgba(0,0,0,.08); transform: scale(.8) translateY(18px); transform-origin: bottom right; opacity: 0; transition: transform .42s cubic-bezier(.34,1.45,.5,1), opacity .3s ease; }
   .fm-ov.open .fm-panel { transform: none; opacity: 1; }
   .fm-x { position: absolute; top: 6px; right: 12px; background: none; border: 0; font-size: 24px; line-height: 1; color: #1e3a5f; cursor: pointer; padding: 8px; border-radius: 50%; transition: transform .3s ease, color .2s ease, background .2s ease; }
   .fm-x:hover { transform: rotate(90deg); color: #b08d3e; background: rgba(176,141,62,.12); }
-  .fm-brand { text-align: center; margin-bottom: 4px; padding-bottom: 10px; border-bottom: 1px solid #ece2c8; }
-  .fm-brand .x { font-size: 22px; color: #b08d3e; }
-  .fm-brand b { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #1e3a5f; }
-  .fm-brand small { font-size: 9px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
-  .fm-links a { display: flex; align-items: center; justify-content: space-between; padding: 11px 12px; margin: 2px 0; border-radius: 12px; color: #1e3a5f; font-size: 14.5px; font-weight: 600; text-decoration: none; opacity: 0; transform: translateX(16px); transition: opacity .3s ease, transform .38s cubic-bezier(.2,.7,.2,1), background .18s ease, color .18s ease; }
+  .fm-brand { text-align: center; margin-bottom: 2px; padding-bottom: 8px; border-bottom: 1px solid #ece2c8; }
+  .fm-brand b { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 16px; color: #1e3a5f; }
+  .fm-links a { display: flex; align-items: center; justify-content: space-between; padding: 9px 10px; margin: 2px 0; border-radius: 12px; color: #1e3a5f; font-size: 14px; font-weight: 600; text-decoration: none; opacity: 0; transform: translateX(16px); transition: opacity .3s ease, transform .38s cubic-bezier(.2,.7,.2,1), background .18s ease, color .18s ease; }
   .fm-ov.open .fm-links a { opacity: 1; transform: none; }
   .fm-ov.open .fm-links a:nth-child(1) { transition-delay: .05s, .05s, 0s, 0s; }
   .fm-ov.open .fm-links a:nth-child(2) { transition-delay: .09s, .09s, 0s, 0s; }
@@ -103,7 +101,7 @@
     }).join('');
     ov.innerHTML = '<div class="fm-panel" role="dialog" aria-label="Menu điều hướng">' +
       '<button class="fm-x" aria-label="Đóng menu">×</button>' +
-      '<div class="fm-brand"><div class="x">✝</div><b>Fr. Thomas</b><small>Catholic Priest</small></div>' +
+      '<div class="fm-brand"><b>Fr. Thomas</b></div>' +
       '<div class="fm-links">' + links + '</div></div>';
     document.body.appendChild(btn); document.body.appendChild(ov);
     function open(){ ov.classList.add('open'); btn.classList.add('open'); btn.innerHTML = '×'; btn.setAttribute('aria-label', 'Đóng menu'); btn.setAttribute('aria-expanded', 'true'); }
