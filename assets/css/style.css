@@ -104,10 +104,7 @@ a { color: var(--gold-deep); }
 .fm-ov.open .fm-links a:nth-child(4) { transition-delay: .17s, .17s, 0s, 0s; }
 .fm-ov.open .fm-links a:nth-child(5) { transition-delay: .21s, .21s, 0s, 0s; }
 .fm-ov.open .fm-links a:hover { transition-delay: 0s, 0s, 0s, 0s; transform: translateX(4px); background: rgba(176,141,62,.12); }
-.fm-links a .arr { color: #b08d3e; font-weight: 400; transition: transform .2s ease; }
-.fm-links a:hover .arr { transform: translateX(4px); }
 .fm-links a.on { color: #8f6f2c; background: rgba(176,141,62,.14); }
-.fm-links a.on .arr { color: #8f6f2c; }
 @media (prefers-reduced-motion: reduce) {
   .fm-ov, .fm-panel, .fm-btn, .fm-links a, .fm-x { transition: none !important; }
   .fm-links a { opacity: 1; transform: none; }
