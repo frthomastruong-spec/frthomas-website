@@ -83,5 +83,10 @@
   "slug": "chan-dung",
   "name": "Chân Dung",
   "desc": "Phong cách portfolio linh mục — ảnh chân dung, 4 thẻ mục vụ, dải Kinh Thánh."
+ },
+ {
+  "slug": "dem-sang",
+  "name": "Đêm Sáng",
+  "desc": "Màn đêm phủ trang lúc mở — chạm dây công tắc đèn bàn để bừng sáng."
  }
 ]
