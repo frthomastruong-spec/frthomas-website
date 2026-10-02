@@ -24,8 +24,20 @@ function buildFloatingMenu(base) {
     '<div class="fm-links">' + links + '</div></div>';
   document.body.appendChild(btn);
   document.body.appendChild(ov);
-  function open() { ov.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function close() { ov.classList.remove('open'); document.body.style.overflow = ''; }
+  function open() {
+    ov.classList.add('open');
+    btn.classList.add('open');
+    btn.innerHTML = '×';
+    btn.setAttribute('aria-label', 'Đóng menu');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+  function close() {
+    ov.classList.remove('open');
+    btn.classList.remove('open');
+    btn.innerHTML = '☰';
+    btn.setAttribute('aria-label', 'Mở menu');
+    btn.setAttribute('aria-expanded', 'false');
+  }
   btn.addEventListener('click', open);
   ov.querySelector('.fm-x').addEventListener('click', close);
   ov.addEventListener('click', function (e) { if (e.target === ov) close(); });
