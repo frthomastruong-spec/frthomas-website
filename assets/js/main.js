@@ -16,7 +16,7 @@ function buildFloatingMenu(base) {
   ov.className = 'fm-ov';
   var links = items.map(function (it) {
     var on = (it[2] === '' && (path === '' || path === '/')) || (it[2] && path.indexOf('/' + it[2]) === 0);
-    return '<a href="' + it[1] + '"' + (on ? ' class="on"' : '') + '><span>' + it[0] + '</span><span class="arr">→</span></a>';
+    return '<a href="' + it[1] + '"' + (on ? ' class="on"' : '') + '>' + it[0] + '</a>';
   }).join('');
   ov.innerHTML = '<div class="fm-panel" role="dialog" aria-label="Menu điều hướng">' +
     '<button class="fm-x" aria-label="Đóng menu">×</button>' +
