@@ -546,13 +546,66 @@
   .m17-f .bot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 18px; font-size: 12.5px; color: #8a97a8; }
   @media (max-width: 900px) { .m17-cards { grid-template-columns: repeat(2, 1fr); } .m17-about { grid-template-columns: 1fr; } .m17-about img { height: 380px; } }
   @media (max-width: 640px) { .m17-cards { grid-template-columns: 1fr; } .m17 .mn .links { display: none; } .m17-hero { height: 480px; } }
+
+  /* ============ MẪU 18: THÁNH THỂ — cinematic navy/gold ============ */
+  .m18 { background: #071426; color: #f5f0e5; font-family: 'Be Vietnam Pro', sans-serif; }
+  .m18 .hero { position: relative; min-height: 380px; display: flex; align-items: center; overflow: hidden; }
+  .m18 .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .m18 .hero .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,13,26,.94), rgba(4,13,26,.5) 60%, rgba(4,13,26,.1)); }
+  .m18 .hero .in { position: relative; z-index: 1; padding: 60px 36px; }
+  .m18 .kick { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: #c8a75b; font-weight: 600; }
+  .m18 .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(48px, 8vw, 84px); margin: 14px 0; color: #fff; letter-spacing: -2px; line-height: .98; }
+  .m18 .hero .role { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #d4dbe4; }
+  .m18 .hero .btn { display: inline-block; margin-top: 22px; border: 1px solid rgba(200,167,91,.8); padding: 11px 22px; color: #f3dfad; font-size: 12px; }
+  .m18 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 30px; background: #0b1c31; }
+  .m18 .card { display: flex; gap: 14px; background: #10243b; border: 1px solid rgba(255,255,255,.08); padding: 14px; align-items: center; }
+  .m18 .card img { width: 74px; height: 74px; object-fit: cover; flex-shrink: 0; }
+  .m18 .card h4 { font-family: 'Playfair Display', serif; font-size: 16px; margin: 0 0 4px; }
+  .m18 .card p { margin: 0; font-size: 11px; color: #aeb8c4; }
+  .m18 .foot { padding: 20px 30px; display: flex; justify-content: space-between; font-size: 11px; color: #8793a1; }
+  @media (max-width: 640px) { .m18 .cards { grid-template-columns: 1fr; } }
+
+  /* ============ MẪU 19: HÀNH TRÌNH — editorial ============ */
+  .m19 { background: #f2eee6; color: #17202a; font-family: 'Be Vietnam Pro', sans-serif; }
+  .m19 .top { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 46px 36px; align-items: center; }
+  .m19 .num { font-size: 11px; letter-spacing: 3px; color: #8a806f; }
+  .m19 h1 { font-family: 'Playfair Display', serif; font-size: clamp(52px, 8vw, 88px); margin: 12px 0; letter-spacing: -3px; line-height: .9; }
+  .m19 .lbl { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #857965; }
+  .m19 .top img { width: 100%; height: 280px; object-fit: cover; }
+  .m19 .list { background: #17202a; color: #f1eee6; padding: 10px 36px 30px; }
+  .m19 .row { display: flex; gap: 18px; align-items: center; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.18); }
+  .m19 .row .n { color: #aaa79f; font-size: 11px; min-width: 28px; }
+  .m19 .row img { width: 90px; height: 60px; object-fit: cover; flex-shrink: 0; }
+  .m19 .row h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin: 0; font-weight: 500; }
+  .m19 .row .go { margin-left: auto; color: #c9a866; font-size: 20px; }
+  .m19 .foot { padding: 18px 36px; display: flex; justify-content: space-between; font-size: 11px; color: #777168; }
+  @media (max-width: 640px) { .m19 .top { grid-template-columns: 1fr; } }
+
+  /* ============ MẪU 20: AN BÌNH — minimalist bright ============ */
+  .m20 { background: #fbfaf7; color: #26313a; font-family: 'Be Vietnam Pro', sans-serif; text-align: center; }
+  .m20 .hero { padding: 70px 30px 50px; }
+  .m20 .lbl { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #9b8250; }
+  .m20 h1 { font-family: 'Playfair Display', serif; font-size: clamp(56px, 9vw, 96px); margin: 16px 0; letter-spacing: -3px; line-height: .9; }
+  .m20 .qt { font-family: 'Playfair Display', serif; font-style: italic; color: #667078; font-size: 17px; max-width: 440px; margin: 0 auto; }
+  .m20 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 760px; margin: 0 auto; padding: 10px 30px 50px; text-align: left; }
+  .m20 .card { border-bottom: 1px solid #d6d1c8; padding-bottom: 20px; }
+  .m20 .card .ph { position: relative; aspect-ratio: 16/9; overflow: hidden; margin-bottom: 14px; }
+  .m20 .card .ph img { width: 100%; height: 100%; object-fit: cover; }
+  .m20 .card .ph span { position: absolute; left: 12px; top: 10px; background: #fbfaf7; padding: 3px 8px; font-size: 10px; color: #7d7365; }
+  .m20 .card h4 { font-family: 'Playfair Display', serif; font-size: 20px; margin: 0 0 6px; }
+  .m20 .card p { margin: 0; font-size: 12px; color: #717b80; }
+  .m20 .foot { border-top: 1px solid #e1ddd5; padding: 20px; font-size: 11px; color: #7b827f; }
+  @media (max-width: 640px) { .m20 .cards { grid-template-columns: 1fr; } }
+
+  .preview-link { display: inline-block; margin-top: 14px; background: #1d2a4a; color: #fff; font-size: 13px; padding: 10px 22px; border-radius: 999px; text-decoration: none; }
+  .preview-link:hover { background: #2c3f6b; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="intro">
     <h1>Chọn phong cách trang chủ</h1>
-    <p>Em dựng 17 mẫu với 17 cá tính khác nhau, dùng đúng nội dung và ảnh thật của web. Anh xem trên điện thoại, ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>17</strong> — em áp dụng lên web chính.</p>
+    <p>Em dựng 20 mẫu với 20 cá tính khác nhau, dùng đúng nội dung và ảnh thật của web. Anh xem trên điện thoại, ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>20</strong> — em áp dụng lên web chính.</p>
   </div>
   <!-- MẪU 1 -->
   <div class="concept">
@@ -1289,8 +1342,86 @@
     </div>
   </div>
 
+  <!-- MẪU 18 -->
+  <div class="concept">
+    <div class="concept-head">
+      <span class="concept-num">18</span>
+      <div><h2>Thánh Thể</h2><p>Cinematic Công giáo — xanh navy sâu, vàng thánh, ảnh lớn và chuyển động tiết chế.</p>
+      <a class="preview-link" href="https://frthomas.com/?theme=thanh-the">Xem thử trực tiếp →</a></div>
+    </div>
+    <div class="mockup m18">
+      <div class="hero">
+        <img src="https://frthomas.com/assets/images/hero-elijah.jpg" alt="">
+        <div class="shade"></div>
+        <div class="in">
+          <div class="kick">St. Francis Xavier Parish · Vancouver</div>
+          <h1>Fr. Thomas</h1>
+          <div class="role">Linh mục · St. Francis Xavier, Vancouver</div>
+          <span class="btn">Khám phá →</span>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card"><img src="https://frthomas.com/assets/images/phat-diem.jpg" alt=""><div><h4>Hành hương Việt Nam 2028</h4><p>Tạ Ơn Hồng Ân Linh Mục — 14 ngày.</p></div></div>
+        <div class="card"><img src="https://frthomas.com/assets/images/nha-tho-duc-ba.jpg" alt=""><div><h4>Bài giảng</h4><p>Suy niệm Lời Chúa mỗi tuần.</p></div></div>
+        <div class="card"><img src="https://frthomas.com/assets/images/trang-an.jpg" alt=""><div><h4>Học Kinh Thánh</h4><p>Câu hỏi mỗi Chúa nhật.</p></div></div>
+        <div class="card"><img src="https://frthomas.com/assets/images/hoi-an.jpg" alt=""><div><h4>Sách</h4><p>Các đầu sách của Fr. Thomas.</p></div></div>
+      </div>
+      <div class="foot"><span>Fr. Thomas · St. Francis Xavier, Vancouver</span><span>© 2026</span></div>
+    </div>
+  </div>
+
+  <!-- MẪU 19 -->
+  <div class="concept">
+    <div class="concept-head">
+      <span class="concept-num">19</span>
+      <div><h2>Hành Trình</h2><p>Editorial hành trình — bố cục tạp chí hiện đại, ảnh lớn, chữ rõ và chuyển động nhẹ.</p>
+      <a class="preview-link" href="https://frthomas.com/?theme=hanh-trinh">Xem thử trực tiếp →</a></div>
+    </div>
+    <div class="mockup m19">
+      <div class="top">
+        <div>
+          <div class="num">01</div>
+          <div class="lbl">Xin chào!</div>
+          <h1>Fr. Thomas</h1>
+          <div class="lbl">Linh mục · St. Francis Xavier, Vancouver</div>
+        </div>
+        <img src="https://frthomas.com/assets/images/cover-ha-long.jpg" alt="">
+      </div>
+      <div class="list">
+        <div class="row"><span class="n">01</span><img src="https://frthomas.com/assets/images/phat-diem.jpg" alt=""><h4>Hành hương Việt Nam 2028</h4><span class="go">↗</span></div>
+        <div class="row"><span class="n">02</span><img src="https://frthomas.com/assets/images/nha-tho-duc-ba.jpg" alt=""><h4>Bài giảng</h4><span class="go">↗</span></div>
+        <div class="row"><span class="n">03</span><img src="https://frthomas.com/assets/images/trang-an.jpg" alt=""><h4>Học Kinh Thánh</h4><span class="go">↗</span></div>
+        <div class="row"><span class="n">04</span><img src="https://frthomas.com/assets/images/hoi-an.jpg" alt=""><h4>Sách</h4><span class="go">↗</span></div>
+      </div>
+      <div class="foot"><span>Fr. Thomas</span><span>St. Francis Xavier, Vancouver</span><span>© 2026</span></div>
+    </div>
+  </div>
+
+  <!-- MẪU 20 -->
+  <div class="concept">
+    <div class="concept-head">
+      <span class="concept-num">20</span>
+      <div><h2>An Bình</h2><p>Tối giản và sáng — nhiều khoảng thở, typography thanh lịch, ảnh mềm và chuyển động rất nhẹ.</p>
+      <a class="preview-link" href="https://frthomas.com/?theme=an-binh">Xem thử trực tiếp →</a></div>
+    </div>
+    <div class="mockup m20">
+      <div class="hero">
+        <div class="lbl">Linh mục · Vancouver</div>
+        <h1>Fr. Thomas</h1>
+        <p class="qt">“Anh em hãy đi khắp tứ phương thiên hạ, loan báo Tin Mừng.” — Mc 16,15</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="ph"><img src="https://frthomas.com/assets/images/phat-diem.jpg" alt=""><span>01</span></div><h4>Hành hương Việt Nam 2028</h4><p>Tạ Ơn Hồng Ân Linh Mục — 14 ngày.</p></div>
+        <div class="card"><div class="ph"><img src="https://frthomas.com/assets/images/nha-tho-duc-ba.jpg" alt=""><span>02</span></div><h4>Bài giảng</h4><p>Suy niệm Lời Chúa mỗi tuần.</p></div>
+        <div class="card"><div class="ph"><img src="https://frthomas.com/assets/images/trang-an.jpg" alt=""><span>03</span></div><h4>Học Kinh Thánh</h4><p>Câu hỏi mỗi Chúa nhật.</p></div>
+        <div class="card"><div class="ph"><img src="https://frthomas.com/assets/images/hoi-an.jpg" alt=""><span>04</span></div><h4>Sách</h4><p>Các đầu sách của Fr. Thomas.</p></div>
+      </div>
+      <div class="foot">Fr. Thomas · St. Francis Xavier, Vancouver · © 2026</div>
+    </div>
+  </div>
+
   <div class="intro" style="margin-top:20px">
-    <p>Anh ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>17</strong> nhé.</p>
+    <p>Anh ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>20</strong> nhé.</p>
   </div>
 </div>
 </body>
