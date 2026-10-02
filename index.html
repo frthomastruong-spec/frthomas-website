@@ -153,7 +153,7 @@
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
   }
   function loadTheme(slug){
-    var THEME_V = '20261002l'; // bump khi sửa template/theme.css/theme.js để máy khách tải bản mới
+    var THEME_V = '20261002m'; // bump khi sửa template/theme.css/theme.js để máy khách tải bản mới
     document.body.className = document.body.className.replace(/(?:^|\s)theme-[^\s]*/g, '');
     document.body.classList.add('theme-' + slug);
     return fetch('assets/themes/' + slug + '/meta.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(meta){
