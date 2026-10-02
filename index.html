@@ -19,11 +19,9 @@
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; background: #f8f5ec; color: #3c4f66; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-  body::before { display: none; }
   img { display: block; max-width: 100%; }
   a { text-decoration: none; color: inherit; }
 
-  /* ---- Nav ---- */
   .nav { position: sticky; top: 0; z-index: 50; background: rgba(251,249,242,.96); backdrop-filter: blur(8px); border-bottom: 1px solid #ece4d0; }
   .nav-in { max-width: 1200px; margin: 0 auto; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; }
   .brand { display: flex; align-items: center; gap: 12px; }
@@ -36,7 +34,6 @@
   .links a:hover { color: #1e3a5f; }
   .burger { display: none; background: none; border: 0; font-size: 26px; color: #1e3a5f; cursor: pointer; padding: 8px; }
 
-  /* ---- Hero ---- */
   .hero { position: relative; min-height: 560px; display: flex; align-items: center; overflow: hidden; }
   .hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(248,245,236,.92) 0%, rgba(248,245,236,.60) 34%, rgba(248,245,236,0) 62%); pointer-events: none; }
@@ -49,7 +46,6 @@
   .btn { display: inline-block; border: 1.5px solid #b08d3e; color: #8a6d2a; border-radius: 8px; padding: 15px 32px; font-size: 14.5px; font-weight: 600; background: rgba(255,255,255,.35); transition: background .25s, color .25s; }
   .btn:hover { background: #b08d3e; color: #fff; }
 
-  /* ---- About ---- */
   .about { max-width: 1200px; margin: 0 auto; padding: 90px 28px; display: grid; grid-template-columns: 1fr 1.25fr; gap: 60px; align-items: center; }
   .about img { width: 100%; height: 520px; object-fit: cover; border-radius: 14px; box-shadow: 0 24px 60px rgba(30,58,95,.14); }
   .about h2 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4.5vw, 48px); color: #1e3a5f; margin: 0 0 22px; font-weight: 700; line-height: 1.25; }
@@ -57,7 +53,6 @@
   .about .bless { font-style: italic; }
   .about .sig { font-family: 'Great Vibes', cursive; font-size: 48px; color: #1e3a5f; margin-top: 8px; }
 
-  /* ---- Ministries ---- */
   .min { max-width: 1200px; margin: 0 auto; padding: 10px 28px 90px; }
   .min h2 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4.5vw, 48px); color: #1e3a5f; margin: 0 0 44px; font-weight: 700; }
   .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
@@ -70,7 +65,6 @@
   .card .more { font-size: 14px; color: #1e3a5f; font-weight: 500; }
   .card .more b { color: #b08d3e; font-weight: 400; }
 
-  /* ---- Verse ---- */
   .verse { position: relative; min-height: 400px; display: flex; align-items: center; overflow: hidden; }
   .verse img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .verse .in { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 70px 28px; }
@@ -78,7 +72,6 @@
   .verse .ref { margin-top: 20px; font-size: 14.5px; color: #1e3a5f; display: flex; align-items: center; gap: 12px; }
   .verse .ref::after { content: ""; width: 46px; height: 2px; background: #b08d3e; }
 
-  /* ---- Footer ---- */
   footer { background: #fbf9f2; }
   .f-in { max-width: 1200px; margin: 0 auto; padding: 38px 28px 22px; }
   .f-top { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; padding-bottom: 26px; border-bottom: 1px solid #e5ddc8; }
@@ -92,7 +85,6 @@
   .soc span { width: 34px; height: 34px; border-radius: 50%; background: #1e3a5f; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
   .f-bot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 20px; font-size: 12.5px; color: #8a97a8; }
 
-  /* ---- Reveal ---- */
   .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
   .rv.on { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
@@ -106,7 +98,6 @@
     .links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fbf9f2; flex-direction: column; align-items: flex-start; padding: 10px 28px 22px; gap: 14px; border-bottom: 1px solid #ece4d0; box-shadow: 0 18px 30px rgba(30,58,95,.10); }
     .links.open { display: flex; }
     .burger { display: block; }
-    .nav { position: sticky; }
     .hero { min-height: 500px; }
     .cards { grid-template-columns: 1fr; }
     .f-top { flex-direction: column; align-items: flex-start; }
@@ -131,55 +122,16 @@
 
 <header class="hero">
   <img class="bg" src="assets/images/home-hero.jpg" alt="Nhà thờ lúc bình minh" fetchpriority="high">
-  <div class="in">
-    <div class="eyebrow">XIN CHÀO!</div>
-    <h1>Fr. Thomas</h1>
-    <div class="role">Linh mục phụ tá · St. Francis Xavier Parish<br>Vancouver</div>
-    <p class="qt">Cùng nhau bước đi trong đức tin,<br>tôn vinh Chúa và phục vụ tha nhân.</p>
-    <a class="btn" href="#muc-vu">Khám phá các mục vụ &nbsp;→</a>
-  </div>
+  <div class="in" id="heroIn"></div>
 </header>
 
-<section class="about rv">
-  <img src="assets/images/home-portrait.jpg" alt="Linh mục Thomas" loading="lazy">
-  <div>
-    <div class="eyebrow">VỀ TÔI</div>
-    <h2>Xin chào, tôi là<br>Linh mục Thomas</h2>
-    <p>Tôi là linh mục phụ tá tại Giáo xứ Thánh Phanxicô Xaviê, Vancouver. Trang web này là nơi tôi chia sẻ những suy tư, bài giảng, hành trình đức tin và các tài liệu hữu ích cho đời sống Kitô hữu.</p>
-    <p class="bless"><i>Cầu chúc anh chị em luôn được Chúa đồng hành trong mọi nẻo đường!</i></p>
-    <div class="sig">Fr. Thomas</div>
-  </div>
-</section>
+<section class="about rv" id="aboutSec"><img src="assets/images/home-portrait.jpg" alt="Linh mục Thomas" loading="lazy"><div id="aboutIn"></div></section>
 
-<section class="min" id="muc-vu">
-  <div class="eyebrow rv">CÁC MỤC VỤ</div>
-  <h2 class="rv">Nơi lưu giữ các mục vụ</h2>
-  <div class="cards">
-    <a class="card rv" href="hanh-huong/">
-      <img src="assets/images/home-card-hanhhuong.jpg" alt="Hành hương Việt Nam 2028" loading="lazy">
-      <div class="cb"><h4>Hành hương<br>Việt Nam 2028</h4><p>Cùng nhau khám phá những dấu chân đức tin.</p><span class="more">Tìm hiểu thêm &nbsp;<b>→</b></span></div>
-    </a>
-    <a class="card rv" href="bai-giang/">
-      <img src="assets/images/home-card-baigiang.jpg" alt="Bài giảng" loading="lazy">
-      <div class="cb"><h4>Bài giảng</h4><p>Những chia sẻ Lời Chúa trong đời sống hằng ngày.</p><span class="more">Xem thêm &nbsp;<b>→</b></span></div>
-    </a>
-    <a class="card rv" href="hoc-kinh-thanh/">
-      <img src="assets/images/home-card-kinhthanh.jpg" alt="Học hỏi Kinh Thánh" loading="lazy">
-      <div class="cb"><h4>Học hỏi<br>Kinh Thánh</h4><p>Cùng nhau tìm hiểu và sống Lời Chúa.</p><span class="more">Xem thêm &nbsp;<b>→</b></span></div>
-    </a>
-    <a class="card rv" href="sach/">
-      <img src="assets/images/home-card-sach.jpg" alt="Sách" loading="lazy">
-      <div class="cb"><h4>Sách</h4><p>Những cuốn sách hữu ích cho đời sống thiêng liêng.</p><span class="more">Khám phá &nbsp;<b>→</b></span></div>
-    </a>
-  </div>
-</section>
+<section class="min" id="muc-vu"><div id="minIn"></div></section>
 
 <section class="verse rv">
   <img class="bg" src="assets/images/home-verse.jpg" alt="" aria-hidden="true" loading="lazy">
-  <div class="in">
-    <blockquote>“Thầy là đường, là sự thật<br>và là sự sống.”</blockquote>
-    <div class="ref">Ga 14,6</div>
-  </div>
+  <div class="in" id="verseIn"></div>
 </section>
 
 <footer>
@@ -191,21 +143,57 @@
       </div>
       <div class="soc"><span>f</span><span>▶</span><span>◎</span></div>
     </div>
-    <div class="f-bot">
-      <span>© 2025 Fr. Thomas. All rights reserved.</span>
-      <span>St. Francis Xavier Parish &nbsp;·&nbsp; Vancouver</span>
-    </div>
+    <div class="f-bot" id="footIn"></div>
   </div>
 </footer>
 
+<script id="content-data" type="application/json">{"about":{"eyebrow":"VỀ TÔI","p1":"Tôi là linh mục phụ tá tại Giáo xứ Thánh Phanxicô Xaviê, Vancouver. Trang web này là nơi tôi chia sẻ những suy tư, bài giảng, hành trình đức tin và các tài liệu hữu ích cho đời sống Kitô hữu.","p2":"Cầu chúc anh chị em luôn được Chúa đồng hành trong mọi nẻo đường!","signature":"Fr. Thomas","title":"Xin chào, tôi là\nLinh mục Thomas"},"footer":{"copyright":"© 2025 Fr. Thomas. All rights reserved.","parish":"St. Francis Xavier Parish · Vancouver"},"hero":{"button":"Khám phá các mục vụ →","eyebrow":"XIN CHÀO!","quote":"Cùng nhau bước đi trong đức tin,\ntôn vinh Chúa và phục vụ tha nhân.","role":"Linh mục phụ tá · St. Francis Xavier Parish\nVancouver","title":"Fr. Thomas"},"ministries":{"cards":[{"desc":"Cùng nhau khám phá những dấu chân đức tin.","href":"hanh-huong/","link":"Tìm hiểu thêm →","title":"Hành hương\nViệt Nam 2028"},{"desc":"Những chia sẻ Lời Chúa trong đời sống hằng ngày.","href":"bai-giang/","link":"Xem thêm →","title":"Bài giảng"},{"desc":"Cùng nhau tìm hiểu và sống Lời Chúa.","href":"hoc-kinh-thanh/","link":"Xem thêm →","title":"Học hỏi\nKinh Thánh"},{"desc":"Những cuốn sách hữu ích cho đời sống thiêng liêng.","href":"sach/","link":"Khám phá →","title":"Sách"}],"eyebrow":"CÁC MỤC VỤ","title":"Nơi lưu giữ các mục vụ"},"verse":{"ref":"Ga 14,6","text":"“Thầy là đường, là sự thật\nvà là sự sống.”"}}</script>
 <script>
 (function(){
-  var b = document.getElementById('burger'), l = document.getElementById('navLinks');
-  if (b && l) b.addEventListener('click', function(){ l.classList.toggle('open'); });
+  var nl = function(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'); };
+  var cardImgs = ['assets/images/home-card-hanhhuong.jpg','assets/images/home-card-baigiang.jpg','assets/images/home-card-kinhthanh.jpg','assets/images/home-card-sach.jpg'];
+  function render(c){
+    document.getElementById('heroIn').innerHTML =
+      '<div class="eyebrow">' + nl(c.hero.eyebrow) + '</div>' +
+      '<h1>' + nl(c.hero.title) + '</h1>' +
+      '<div class="role">' + nl(c.hero.role) + '</div>' +
+      '<p class="qt">' + nl(c.hero.quote) + '</p>' +
+      '<a class="btn" href="#muc-vu">' + nl(c.hero.button) + '</a>';
+    document.getElementById('aboutIn').innerHTML =
+      '<div class="eyebrow">' + nl(c.about.eyebrow) + '</div>' +
+      '<h2>' + nl(c.about.title) + '</h2>' +
+      '<p>' + nl(c.about.p1) + '</p>' +
+      '<p class="bless"><i>' + nl(c.about.p2) + '</i></p>' +
+      '<div class="sig">' + nl(c.about.signature) + '</div>';
+    var cards = c.ministries.cards.map(function(k, i){
+      return '<a class="card rv" href="' + nl(k.href) + '">' +
+        '<img src="' + cardImgs[i % cardImgs.length] + '" alt="" loading="lazy">' +
+        '<div class="cb"><h4>' + nl(k.title) + '</h4><p>' + nl(k.desc) + '</p>' +
+        '<span class="more">' + nl(k.link).replace('→', '&nbsp;<b>→</b>') + '</span></div></a>';
+    }).join('');
+    document.getElementById('minIn').innerHTML =
+      '<div class="eyebrow rv">' + nl(c.ministries.eyebrow) + '</div>' +
+      '<h2 class="rv">' + nl(c.ministries.title) + '</h2>' +
+      '<div class="cards">' + cards + '</div>';
+    document.getElementById('verseIn').innerHTML =
+      '<blockquote>' + nl(c.verse.text) + '</blockquote><div class="ref">' + nl(c.verse.ref) + '</div>';
+    document.getElementById('footIn').innerHTML =
+      '<span>' + nl(c.footer.copyright) + '</span><span>' + nl(c.footer.parish).replace('·', '&nbsp;·&nbsp;') + '</span>';
+    observeRv();
+  }
   var io = new IntersectionObserver(function(es){
     es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  function observeRv(){ document.querySelectorAll('.rv:not(.on)').forEach(function(el){ io.observe(el); }); }
+  var b = document.getElementById('burger'), l = document.getElementById('navLinks');
+  if (b && l) b.addEventListener('click', function(){ l.classList.toggle('open'); });
+  try {
+    var inline = JSON.parse(document.getElementById('content-data').textContent);
+    render(inline); observeRv();
+    fetch('assets/content.json', { cache: 'no-store' }).then(function(r){ return r.ok ? r.json() : null; }).then(function(remote){
+      if (remote && JSON.stringify(remote) !== JSON.stringify(inline)) { render(remote); }
+    }).catch(function(){});
+  } catch (e) { observeRv(); }
 })();
 </script>
 </body>

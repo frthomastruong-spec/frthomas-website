@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản trị website — Fr. Thomas</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f4efe2; color: #3c4f66; font-family: 'Be Vietnam Pro', sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 28px 20px 90px; }
+  h1 { font-family: 'Playfair Display', serif; color: #1e3a5f; font-size: 30px; margin: 0 0 6px; }
+  .sub { color: #8a97a8; margin: 0 0 26px; font-size: 14.5px; }
+  .card { background: #fff; border-radius: 16px; padding: 24px 20px; margin-bottom: 18px; box-shadow: 0 10px 28px rgba(30,58,95,.07); }
+  .card h2 { font-family: 'Playfair Display', serif; color: #1e3a5f; font-size: 20px; margin: 0 0 4px; }
+  .card .d { font-size: 13px; color: #8a97a8; margin: 0 0 18px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #1e3a5f; margin: 14px 0 6px; }
+  input[type=text], textarea { width: 100%; border: 1.5px solid #e2d9bd; border-radius: 10px; padding: 13px 14px; font-size: 15px; font-family: inherit; color: #3c4f66; background: #fffdf6; }
+  textarea { min-height: 76px; resize: vertical; line-height: 1.6; }
+  input:focus, textarea:focus { outline: none; border-color: #b08d3e; box-shadow: 0 0 0 3px rgba(176,141,62,.15); }
+  .btn { display: block; width: 100%; border: 0; border-radius: 12px; padding: 17px; font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer; }
+  .btn-gold { background: #b08d3e; color: #fff; margin-top: 8px; box-shadow: 0 10px 24px rgba(176,141,62,.35); }
+  .btn-gold:disabled { opacity: .55; }
+  .btn-ghost { background: none; color: #8a97a8; font-size: 14px; font-weight: 500; margin-top: 14px; }
+  .steps { font-size: 14.5px; line-height: 2; }
+  .steps b { color: #1e3a5f; }
+  .steps code { background: #f4efe2; padding: 2px 8px; border-radius: 6px; font-size: 13px; }
+  #status { position: fixed; left: 20px; right: 20px; bottom: 22px; max-width: 680px; margin: 0 auto; background: #1e3a5f; color: #fff; border-radius: 14px; padding: 16px 20px; font-size: 14.5px; display: none; box-shadow: 0 16px 40px rgba(0,0,0,.25); z-index: 99; }
+  #status.ok { background: #2e7d4f; }
+  #status.err { background: #a33327; }
+  .mini { border-top: 1px dashed #e2d9bd; margin-top: 20px; padding-top: 16px; }
+  .mini h3 { font-size: 15px; color: #1e3a5f; margin: 14px 0 2px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>✝ Quản trị website</h1>
+  <p class="sub">Sửa chữ trên trang chủ frthomas.com trực tiếp tại đây.</p>
+
+  <!-- BƯỚC 1: TOKEN -->
+  <div class="card" id="tokenCard">
+    <h2>Bước 1 — Kết nối GitHub</h2>
+    <p class="d">Chỉ cần làm một lần duy nhất trên máy này.</p>
+    <div class="steps">
+      <b>1.</b> Mở <b>github.com</b> → ảnh đại diện → <b>Settings</b><br>
+      <b>2.</b> Kéo xuống <b>Developer settings</b> → <b>Personal access tokens</b> → <b>Fine-grained tokens</b> → <b>Generate new token</b><br>
+      <b>3.</b> <b>Repository access</b> → chọn <code>Only select repositories</code> → chọn <code>frthomas-website</code><br>
+      <b>4.</b> Mục <b>Permissions</b> → <b>Contents</b> → chọn <code>Read and write</code> → <b>Generate token</b><br>
+      <b>5.</b> Copy mã token vừa tạo, dán vào ô dưới:
+    </div>
+    <label>Mã token GitHub</label>
+    <input type="text" id="tokenInput" placeholder="github_pat_..." autocomplete="off">
+    <button class="btn btn-gold" id="tokenSave">Lưu kết nối</button>
+    <p class="sub" style="margin:12px 0 0; font-size:12.5px;">Mã này chỉ lưu trong trình duyệt của anh, không gửi đi đâu khác.</p>
+  </div>
+
+  <!-- BƯỚC 2: SỬA NỘI DUNG -->
+  <div id="editor" class="hidden">
+    <div class="card">
+      <h2>Phần chào đầu trang</h2>
+      <p class="d">Dòng “XIN CHÀO!”, tên lớn, chức vụ, câu châm ngôn, nút bấm.</p>
+      <label>Dòng nhỏ phía trên (XIN CHÀO!)</label><input type="text" id="f-hero-eyebrow">
+      <label>Tên lớn</label><input type="text" id="f-hero-title">
+      <label>Chức vụ (xuống dòng: Enter)</label><textarea id="f-hero-role"></textarea>
+      <label>Câu châm ngôn</label><textarea id="f-hero-quote"></textarea>
+      <label>Chữ trên nút bấm</label><input type="text" id="f-hero-button">
+    </div>
+
+    <div class="card">
+      <h2>Phần giới thiệu</h2>
+      <p class="d">Ảnh chân dung và đoạn “Về tôi”.</p>
+      <label>Dòng nhỏ (VỀ TÔI)</label><input type="text" id="f-about-eyebrow">
+      <label>Tiêu đề</label><textarea id="f-about-title"></textarea>
+      <label>Đoạn giới thiệu</label><textarea id="f-about-p1" style="min-height:110px"></textarea>
+      <label>Lời chúc (chữ nghiêng)</label><textarea id="f-about-p2"></textarea>
+      <label>Chữ ký</label><input type="text" id="f-about-signature">
+    </div>
+
+    <div class="card">
+      <h2>Các mục vụ</h2>
+      <p class="d">Tiêu đề khu vực và 4 thẻ.</p>
+      <label>Dòng nhỏ (CÁC MỤC VỤ)</label><input type="text" id="f-min-eyebrow">
+      <label>Tiêu đề lớn</label><input type="text" id="f-min-title">
+      <div id="cards"></div>
+    </div>
+
+    <div class="card">
+      <h2>Câu Kinh Thánh</h2>
+      <label>Nội dung câu</label><textarea id="f-verse-text" style="min-height:90px"></textarea>
+      <label>Nguồn (ví dụ: Ga 14,6)</label><input type="text" id="f-verse-ref">
+    </div>
+
+    <div class="card">
+      <h2>Chân trang</h2>
+      <label>Dòng bản quyền</label><input type="text" id="f-foot-copyright">
+      <label>Giáo xứ</label><input type="text" id="f-foot-parish">
+    </div>
+
+    <button class="btn btn-gold" id="saveBtn">💾 Lưu thay đổi lên website</button>
+    <p class="sub" style="margin-top:12px; font-size:13px;">Sau khi lưu, web sẽ tự cập nhật trong khoảng 1 phút. Anh mở frthomas.com kiểm tra nhé.</p>
+    <button class="btn btn-ghost" id="logoutBtn">Đăng xuất (xóa kết nối GitHub khỏi máy này)</button>
+  </div>
+</div>
+<div id="status"></div>
+
+<script>
+(function(){
+  var OWNER = 'frthomastruong-spec', REPO = 'frthomas-website', BRANCH = 'main', PATH = 'assets/content.json';
+  var $ = function(id){ return document.getElementById(id); };
+  function status(msg, cls){ var s = $('status'); s.textContent = msg; s.className = cls || ''; s.style.display = 'block'; clearTimeout(s._t); s._t = setTimeout(function(){ s.style.display = 'none'; }, 4200); }
+  function b64(s){ return btoa(unescape(encodeURIComponent(s))); }
+  function api(path, opts){
+    opts = opts || {};
+    opts.headers = { 'Authorization': 'Bearer ' + localStorage.getItem('ft_admin_token'), 'Accept': 'application/vnd.github+json' };
+    return fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + path + '?ref=' + BRANCH, opts);
+  }
+  var F = ['hero-eyebrow','hero-title','hero-role','hero-quote','hero-button','about-eyebrow','about-title','about-p1','about-p2','about-signature','min-eyebrow','min-title','verse-text','verse-ref','foot-copyright','foot-parish'];
+  function get2(o, p){ var v = o; p.split('.').forEach(function(k){ v = (v||{})[k]; }); return v == null ? '' : v; }
+  function set2(o, p, v){ var ks = p.split('.'), t = o; for (var i = 0; i < ks.length-1; i++){ t = t[ks[i]] = t[ks[i]] || {}; } t[ks[ks.length-1]] = v; }
+  var MAP = {'hero-eyebrow':'hero.eyebrow','hero-title':'hero.title','hero-role':'hero.role','hero-quote':'hero.quote','hero-button':'hero.button','about-eyebrow':'about.eyebrow','about-title':'about.title','about-p1':'about.p1','about-p2':'about.p2','about-signature':'about.signature','min-eyebrow':'ministries.eyebrow','min-title':'ministries.title','verse-text':'verse.text','verse-ref':'verse.ref','foot-copyright':'footer.copyright','foot-parish':'footer.parish'};
+  var data = null, sha = null;
+
+  function fill(d){
+    F.forEach(function(f){ $( 'f-'+f ).value = get2(d, MAP[f]); });
+    var box = $('cards'); box.innerHTML = '';
+    d.ministries.cards.forEach(function(cd, i){
+      var w = document.createElement('div'); w.className = 'mini';
+      w.innerHTML = '<h3>Thẻ ' + (i+1) + '</h3>' +
+        '<label>Tiêu đề</label><textarea data-k="title">' + esc(cd.title) + '</textarea>' +
+        '<label>Mô tả</label><textarea data-k="desc">' + esc(cd.desc) + '</textarea>' +
+        '<label>Chữ trên nút</label><input type="text" data-k="link" value="' + esc(cd.link) + '">';
+      box.appendChild(w);
+    });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function gather(){
+    var d = JSON.parse(JSON.stringify(data));
+    F.forEach(function(f){ set2(d, MAP[f], $('f-'+f).value); });
+    var ws = $('cards').children;
+    for (var i = 0; i < ws.length; i++){
+      d.ministries.cards[i].title = ws[i].querySelector('[data-k=title]').value;
+      d.ministries.cards[i].desc = ws[i].querySelector('[data-k=desc]').value;
+      d.ministries.cards[i].link = ws[i].querySelector('[data-k=link]').value;
+    }
+    return d;
+  }
+
+  function showEditor(){ $('tokenCard').classList.add('hidden'); $('editor').classList.remove('hidden'); }
+  function load(){
+    status('Đang tải nội dung hiện tại…');
+    api(PATH).then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function(j){
+      sha = j.sha;
+      data = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))));
+      fill(data); showEditor(); status('Đã tải xong. Anh sửa rồi bấm Lưu nhé.', 'ok');
+    }).catch(function(){ status('Không tải được. Anh kiểm tra lại mã token nhé.', 'err'); });
+  }
+
+  $('tokenSave').addEventListener('click', function(){
+    var t = $('tokenInput').value.trim();
+    if (t.length < 10) { status('Mã token chưa đúng. Anh copy lại giúp em.', 'err'); return; }
+    localStorage.setItem('ft_admin_token', t);
+    load();
+  });
+  if (localStorage.getItem('ft_admin_token')) { load(); }
+
+  $('saveBtn').addEventListener('click', function(){
+    var btn = $('saveBtn'); btn.disabled = true; btn.textContent = 'Đang lưu…';
+    status('Đang lưu lên website…');
+    var d = gather();
+    api(PATH, { method: 'PUT', body: JSON.stringify({ message: 'update homepage content via web admin', content: b64(JSON.stringify(d, null, 2)), sha: sha, branch: BRANCH }) })
+    .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(j){ sha = j.content.sha; status('Đã lưu xong! Web sẽ cập nhật trong khoảng 1 phút.', 'ok'); })
+    .catch(function(){ status('Lưu chưa được — có thể token hết hạn. Anh tạo mã mới giúp em.', 'err'); })
+    .finally(function(){ btn.disabled = false; btn.textContent = '💾 Lưu thay đổi lên website'; });
+  });
+  $('logoutBtn').addEventListener('click', function(){
+    localStorage.removeItem('ft_admin_token');
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>
