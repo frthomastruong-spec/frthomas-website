@@ -46,12 +46,10 @@
   footer { background: #fbf9f2; }
   .f-in { max-width: 1200px; margin: 0 auto; padding: 38px 28px 22px; }
   .f-top { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; padding-bottom: 26px; border-bottom: 1px solid #e5ddc8; }
-  .f-brand { display: flex; align-items: center; gap: 10px; }
-  .f-brand .x { font-size: 26px; color: #1e3a5f; }
+  .f-brand { display: flex; align-items: center; gap: 12px; }
+  .f-logo { width: 48px; height: 48px; object-fit: contain; flex: none; }
   .f-brand b { font-family: 'Playfair Display', serif; font-size: 18px; color: #1e3a5f; display: block; line-height: 1.15; }
   .f-brand small { font-size: 10px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
-  .f-links { display: flex; gap: 20px; font-size: 13.5px; color: #6b7d94; flex-wrap: wrap; }
-  .f-links a:hover { color: #1e3a5f; }
   .soc { display: flex; gap: 10px; }
   .soc span { width: 34px; height: 34px; border-radius: 50%; background: #1e3a5f; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
   .f-bot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 20px; font-size: 12.5px; color: #8a97a8; }
