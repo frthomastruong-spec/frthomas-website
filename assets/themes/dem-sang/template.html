@@ -3,20 +3,16 @@
   <div class="night-wash" id="nightWash"></div>
 </div>
 <div class="night-lamp" id="nightLamp" role="button" tabindex="0" aria-label="Chạm để mở đèn">
-  <div class="lamp-halo"></div>
-  <svg class="lamp-svg" viewBox="0 0 140 180" aria-hidden="true">
-    <path d="M48 14 L92 14 L106 58 L34 58 Z" fill="#141a28" stroke="#2b3552" stroke-width="2"/>
-    <path d="M48 14 L92 14 L96 26 L44 26 Z" fill="#1d2438"/>
-    <ellipse class="bulb-glow" cx="70" cy="56" rx="30" ry="7" fill="#ffca7a"/>
-    <circle class="bulb" cx="70" cy="50" r="7" fill="#ffd9a0"/>
-    <rect x="66" y="58" width="8" height="54" rx="4" fill="#141a28" stroke="#2b3552" stroke-width="1.5"/>
-    <ellipse cx="70" cy="118" rx="30" ry="9" fill="#141a28" stroke="#2b3552" stroke-width="2"/>
-    <g class="cord" id="nightCord">
-      <line x1="102" y1="50" x2="102" y2="102" stroke="#8a7a5a" stroke-width="3" stroke-linecap="round"/>
-      <circle class="knob" cx="102" cy="110" r="8" fill="#c9a86a" stroke="#8a6f3e" stroke-width="1.5"/>
-      <rect x="78" y="40" width="48" height="92" fill="rgba(0,0,0,0)"/>
+  <svg class="pull-svg" viewBox="0 0 90 170" aria-hidden="true">
+    <g class="pull" id="nightCord">
+      <line x1="45" y1="0" x2="45" y2="112" class="pull-line"/>
+      <circle class="knob" cx="45" cy="128" r="14"/>
+      <circle class="knob-hole" cx="45" cy="128" r="4"/>
+      <rect class="pull-hit" x="8" y="80" width="74" height="90" fill="transparent"/>
     </g>
   </svg>
+  <img class="lamp-photo" src="assets/themes/dem-sang/lamp.png" alt="">
+  <div class="lamp-halo" id="lampHalo"></div>
   <div class="night-hint" id="nightHint">chạm để mở đèn</div>
 </div>
 <header class="hero">
