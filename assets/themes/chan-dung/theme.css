@@ -44,15 +44,15 @@
   .verse .ref::after { content: ""; width: 46px; height: 2px; background: #b08d3e; }
 
   footer { background: #fbf9f2; }
-  .f-in { max-width: 1200px; margin: 0 auto; padding: 38px 28px 22px; }
-  .f-top { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; padding-bottom: 26px; border-bottom: 1px solid #e5ddc8; }
+  .f-in { max-width: 1200px; margin: 0 auto; padding: 24px 28px 16px; }
+  .f-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-bottom: 16px; border-bottom: 1px solid #e5ddc8; }
   .f-brand { display: flex; align-items: center; gap: 12px; }
   .f-logo { width: 48px; height: 48px; object-fit: contain; flex: none; }
   .f-brand b { font-family: 'Playfair Display', serif; font-size: 18px; color: #1e3a5f; display: block; line-height: 1.15; }
   .f-brand small { font-size: 10px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
   .soc { display: flex; gap: 10px; }
   .soc span { width: 34px; height: 34px; border-radius: 50%; background: #1e3a5f; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
-  .f-bot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 20px; font-size: 12.5px; color: #8a97a8; }
+  .f-bot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 14px; font-size: 12.5px; color: #8a97a8; }
 
   .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
   .rv.on { opacity: 1; transform: none; }
