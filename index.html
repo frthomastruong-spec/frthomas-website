@@ -113,7 +113,7 @@
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
   }
   function loadTheme(slug){
-    var THEME_V = '20261002g'; // bump khi sửa template/theme.css để máy khách tải bản mới
+    var THEME_V = '20261002h'; // bump khi sửa template/theme.css/theme.js để máy khách tải bản mới
     return fetch('assets/themes/' + slug + '/meta.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(meta){
       return Promise.all([
         fetch('assets/themes/' + slug + '/template.html?v=' + THEME_V).then(function(r){ if(!r.ok) throw 0; return r.text(); }),
@@ -129,7 +129,7 @@
         buildFloatingMenu('./');
         if (meta.has_js) {
           var s = document.createElement('script');
-          s.src = 'assets/themes/' + slug + '/theme.js';
+          s.src = 'assets/themes/' + slug + '/theme.js?v=' + THEME_V;
           document.body.appendChild(s);
         }
         return meta;
