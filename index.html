@@ -26,7 +26,7 @@
   /* Màn đêm theme Đêm Sáng — nằm thẳng trong code chính (không tải rời để khỏi lệch phiên bản cache) */
   .night { display: none; }
   body.theme-dem-sang .night { display: block; position: fixed; inset: 0; z-index: 150; pointer-events: none;
-    background: radial-gradient(120% 90% at 88% 4%, #0a1024 0%, #05070f 55%, #020308 100%);
+    background: radial-gradient(120% 90% at 88% 4%, rgba(10,16,36,.86) 0%, rgba(5,7,15,.87) 55%, rgba(2,3,8,.87) 100%);
     opacity: 1; transition: opacity 1.5s ease; }
   body.theme-dem-sang.is-day .night { opacity: 0; }
   body.theme-dem-sang .night-stars { position: absolute; inset: 0; opacity: .8; transition: opacity 1.2s ease;
@@ -46,6 +46,18 @@
     animation: nightTwinkle 3.2s ease-in-out infinite alternate; }
   body.theme-dem-sang.is-day .night-stars { opacity: 0; }
   @keyframes nightTwinkle { from { opacity: .45; } to { opacity: .85; } }
+  body.theme-dem-sang .night-mist { position: absolute; inset: -12%; pointer-events: none; opacity: .55;
+    transition: opacity 1.2s ease;
+    background:
+      radial-gradient(42% 32% at 22% 28%, rgba(148,168,208,.13), transparent 70%),
+      radial-gradient(46% 34% at 74% 62%, rgba(148,168,208,.11), transparent 70%),
+      radial-gradient(36% 28% at 55% 88%, rgba(160,175,215,.09), transparent 70%);
+    animation: mistDrift 28s ease-in-out infinite alternate; }
+  @keyframes mistDrift { from { transform: translate3d(-2.5%, -1.5%, 0); } to { transform: translate3d(2.5%, 1.5%, 0); } }
+  body.theme-dem-sang.is-day .night-mist { opacity: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    body.theme-dem-sang .night-mist, body.theme-dem-sang .night-stars { animation: none; }
+  }
   body.theme-dem-sang .night-wash { position: absolute; inset: 0; opacity: 0;
     background: radial-gradient(90% 70% at 88% 4%, rgba(255,205,130,.6) 0%, rgba(255,180,100,.14) 42%, transparent 72%);
     transition: opacity .55s ease; }
@@ -78,7 +90,7 @@
 </head>
 <body>
 <div id="previewBar"></div>
-<div class="night" id="night" aria-hidden="true"><div class="night-stars"></div><div class="night-wash"></div></div>
+<div class="night" id="night" aria-hidden="true"><div class="night-stars"></div><div class="night-mist"></div><div class="night-wash"></div></div>
 <div id="app"><div class="loading"><div class="spin"></div><div>Đang tải…</div></div></div>
 <noscript><div style="padding:60px 20px;text-align:center">Trang web cần JavaScript để hiển thị. Vui lòng bật JavaScript.</div></noscript>
 <script>
@@ -141,7 +153,7 @@
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
   }
   function loadTheme(slug){
-    var THEME_V = '20261002k'; // bump khi sửa template/theme.css/theme.js để máy khách tải bản mới
+    var THEME_V = '20261002l'; // bump khi sửa template/theme.css/theme.js để máy khách tải bản mới
     document.body.className = document.body.className.replace(/(?:^|\s)theme-[^\s]*/g, '');
     document.body.classList.add('theme-' + slug);
     return fetch('assets/themes/' + slug + '/meta.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(meta){
