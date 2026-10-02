@@ -8,7 +8,7 @@
   .hero { position: relative; min-height: 560px; display: flex; align-items: center; overflow: hidden; }
   .hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(248,245,236,.92) 0%, rgba(248,245,236,.60) 34%, rgba(248,245,236,0) 62%); pointer-events: none; }
-  .hero .in { position: relative; z-index: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 54px 28px; }
+  .hero .in { position: relative; z-index: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: calc(54px + env(safe-area-inset-top, 0px)) 28px 54px; }
   .eyebrow { display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: 5px; color: #a5812f; font-weight: 600; margin-bottom: 20px; }
   .eyebrow::after { content: ""; width: 70px; height: 1px; background: #b08d3e; }
   .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(58px, 9vw, 96px); color: #1e3a5f; margin: 0; font-weight: 800; line-height: 1.02; }
@@ -70,7 +70,7 @@
   }
 
 /* ============ Đêm Sáng — màn đêm & đèn bàn ============ */
-.night { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh;
+.night { position: fixed; inset: 0;
   z-index: 150; pointer-events: none;
   background: radial-gradient(120% 90% at 88% 4%, #0a1024 0%, #05070f 55%, #020308 100%);
   opacity: 1; transition: opacity 1.5s ease; }
@@ -97,7 +97,7 @@ body.is-day .night-stars { opacity: 0; }
   transition: opacity .55s ease; }
 body.is-day .night-wash { opacity: 1; }
 
-.night-lamp { position: fixed; top: 0; right: 8px; z-index: 160; width: 172px;
+.night-lamp { position: fixed; top: env(safe-area-inset-top, 0px); right: 8px; z-index: 160; width: 172px;
   cursor: pointer; -webkit-tap-highlight-color: transparent; outline: none;
   transform-origin: 50% -12px; animation: lampSway 7s ease-in-out infinite; }
 .night-lamp:focus-visible { outline: 3px solid #e8c877; outline-offset: 4px; border-radius: 12px; }
