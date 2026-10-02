@@ -23,23 +23,34 @@
   #previewBar { position: fixed; top: 0; left: 0; right: 0; z-index: 500; background: #1e3a5f; color: #fff; font-size: 13.5px; padding: 10px 16px; display: none; align-items: center; justify-content: center; gap: 10px; }
   #previewBar a { color: #e8c877; font-weight: 600; }
   /* Nút menu nổi (floating menu) — dùng chung mọi theme */
-  .fm-btn { position: fixed; right: 22px; bottom: 22px; z-index: 200; width: 62px; height: 62px; border-radius: 50%; background: #1e3a5f; color: #fff; border: none; font-size: 25px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 34px rgba(30,58,95,.38); transition: transform .25s ease, background .25s ease; }
-  .fm-btn:hover { transform: scale(1.07); background: #274b78; }
-  .fm-btn:active { transform: scale(.96); }
-  .fm-ov { position: fixed; inset: 0; z-index: 300; background: transparent; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+  .fm-btn { position: fixed; right: 22px; bottom: 22px; z-index: 200; width: 62px; height: 62px; border-radius: 50%; background: linear-gradient(145deg, #2a507e, #1c3554); color: #fff; border: 1px solid rgba(255,255,255,.18); font-size: 25px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 34px rgba(30,58,95,.38), inset 0 1px 0 rgba(255,255,255,.15); transition: transform .38s cubic-bezier(.34,1.4,.64,1), background .25s ease, box-shadow .25s ease; }
+  .fm-btn:hover { transform: scale(1.08); box-shadow: 0 18px 42px rgba(30,58,95,.46), inset 0 1px 0 rgba(255,255,255,.15); }
+  .fm-btn:active { transform: scale(.94); }
+  .fm-btn.open { transform: rotate(135deg); background: linear-gradient(145deg, #b08d3e, #8f6f2c); }
+  .fm-btn:focus-visible { outline: 3px solid #b08d3e; outline-offset: 3px; }
+  .fm-ov { position: fixed; inset: 0; z-index: 300; background: transparent; opacity: 0; pointer-events: none; transition: opacity .22s ease; }
   .fm-ov.open { opacity: 1; pointer-events: auto; }
-  .fm-panel { position: absolute; right: 22px; bottom: 96px; width: 252px; max-height: 80vh; overflow-y: auto; background: #fbf8ee; border: 1px solid #ece2c8; border-radius: 16px; padding: 16px 18px 10px; box-shadow: 0 20px 50px rgba(0,0,0,.28); transform: scale(.92) translateY(10px); transform-origin: bottom right; opacity: 0; transition: transform .25s cubic-bezier(.2,.7,.2,1), opacity .25s ease; }
+  .fm-panel { position: absolute; right: 22px; bottom: 96px; width: 258px; max-height: 80vh; overflow-y: auto; background: rgba(251,248,238,.94); -webkit-backdrop-filter: blur(16px) saturate(1.15); backdrop-filter: blur(16px) saturate(1.15); border: 1px solid rgba(214,198,160,.85); border-radius: 20px; padding: 14px 14px 10px; box-shadow: 0 28px 64px rgba(30,58,95,.28), 0 4px 14px rgba(0,0,0,.08); transform: scale(.8) translateY(18px); transform-origin: bottom right; opacity: 0; transition: transform .42s cubic-bezier(.34,1.45,.5,1), opacity .3s ease; }
   .fm-ov.open .fm-panel { transform: none; opacity: 1; }
-  .fm-x { position: absolute; top: 4px; right: 10px; background: none; border: 0; font-size: 24px; line-height: 1; color: #1e3a5f; cursor: pointer; padding: 8px; }
-  .fm-brand { text-align: center; margin-bottom: 6px; }
-  .fm-brand .x { font-size: 24px; color: #1e3a5f; }
+  .fm-x { position: absolute; top: 6px; right: 12px; background: none; border: 0; font-size: 24px; line-height: 1; color: #1e3a5f; cursor: pointer; padding: 8px; border-radius: 50%; transition: transform .3s ease, color .2s ease, background .2s ease; }
+  .fm-x:hover { transform: rotate(90deg); color: #b08d3e; background: rgba(176,141,62,.12); }
+  .fm-brand { text-align: center; margin-bottom: 4px; padding-bottom: 10px; border-bottom: 1px solid #ece2c8; }
+  .fm-brand .x { font-size: 22px; color: #b08d3e; }
   .fm-brand b { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #1e3a5f; }
   .fm-brand small { font-size: 9px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
-  .fm-links a { display: flex; align-items: center; justify-content: space-between; padding: 10px 4px; border-bottom: 1px solid #ece2c8; color: #1e3a5f; font-size: 14.5px; font-weight: 600; text-decoration: none; }
-  .fm-links a:last-child { border-bottom: 0; }
-  .fm-links a .arr { color: #b08d3e; font-weight: 400; }
-  .fm-links a.on { color: #b08d3e; }
-  @media (prefers-reduced-motion: reduce) { .fm-ov, .fm-panel, .fm-btn, #app .loading .spin { transition: none !important; animation: none !important; } }
+  .fm-links a { display: flex; align-items: center; justify-content: space-between; padding: 11px 12px; margin: 2px 0; border-radius: 12px; color: #1e3a5f; font-size: 14.5px; font-weight: 600; text-decoration: none; opacity: 0; transform: translateX(16px); transition: opacity .3s ease, transform .38s cubic-bezier(.2,.7,.2,1), background .18s ease, color .18s ease; }
+  .fm-ov.open .fm-links a { opacity: 1; transform: none; }
+  .fm-ov.open .fm-links a:nth-child(1) { transition-delay: .05s, .05s, 0s, 0s; }
+  .fm-ov.open .fm-links a:nth-child(2) { transition-delay: .09s, .09s, 0s, 0s; }
+  .fm-ov.open .fm-links a:nth-child(3) { transition-delay: .13s, .13s, 0s, 0s; }
+  .fm-ov.open .fm-links a:nth-child(4) { transition-delay: .17s, .17s, 0s, 0s; }
+  .fm-ov.open .fm-links a:nth-child(5) { transition-delay: .21s, .21s, 0s, 0s; }
+  .fm-ov.open .fm-links a:hover { transition-delay: 0s, 0s, 0s, 0s; transform: translateX(4px); background: rgba(176,141,62,.12); }
+  .fm-links a .arr { color: #b08d3e; font-weight: 400; transition: transform .2s ease; }
+  .fm-links a:hover .arr { transform: translateX(4px); }
+  .fm-links a.on { color: #8f6f2c; background: rgba(176,141,62,.14); }
+  .fm-links a.on .arr { color: #8f6f2c; }
+  @media (prefers-reduced-motion: reduce) { .fm-ov, .fm-panel, .fm-btn, .fm-links a, .fm-x, #app .loading .spin { transition: none !important; animation: none !important; } .fm-links a { opacity: 1 !important; transform: none !important; } }
 </style>
 </head>
 <body>
@@ -98,8 +109,8 @@
       '<div class="fm-brand"><div class="x">✝</div><b>Fr. Thomas</b><small>Catholic Priest</small></div>' +
       '<div class="fm-links">' + links + '</div></div>';
     document.body.appendChild(btn); document.body.appendChild(ov);
-    function open(){ ov.classList.add('open'); }
-    function close(){ ov.classList.remove('open'); }
+    function open(){ ov.classList.add('open'); btn.classList.add('open'); btn.innerHTML = '×'; btn.setAttribute('aria-label', 'Đóng menu'); btn.setAttribute('aria-expanded', 'true'); }
+    function close(){ ov.classList.remove('open'); btn.classList.remove('open'); btn.innerHTML = '☰'; btn.setAttribute('aria-label', 'Mở menu'); btn.setAttribute('aria-expanded', 'false'); }
     btn.addEventListener('click', open);
     ov.querySelector('.fm-x').addEventListener('click', close);
     ov.addEventListener('click', function(e){ if (e.target === ov) close(); });
