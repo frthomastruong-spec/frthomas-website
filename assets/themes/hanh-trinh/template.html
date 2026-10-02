@@ -1,0 +1,81 @@
+<header class="ht-head">
+  <nav>
+    <a class="logo" href="./">Fr. Thomas</a>
+    <div>
+      <a href="#gioi-thieu">Về tôi</a>
+      <a href="#muc-vu">Mục vụ</a>
+    </div>
+  </nav>
+  <div class="ht-hero">
+    <div class="ht-number">01</div>
+    <div class="ht-title">
+      <div>{{hero.eyebrow}}</div>
+      <h1>{{hero.title}}</h1>
+      <p>{{hero.role}}</p>
+      <a href="#muc-vu">
+        {{hero.button}} ↘
+      </a>
+    </div>
+    <div class="ht-hero-img">
+      <img src="{{hero.img}}" alt="" fetchpriority="high">
+    </div>
+  </div>
+</header>
+<section class="ht-about rv" id="gioi-thieu">
+  <div class="ht-label">
+    02 / {{about.eyebrow}}
+  </div>
+  <img
+    src="{{about.img}}"
+    alt="Linh mục Thomas"
+    loading="lazy"
+  >
+  <div>
+    <h2>{{about.title}}</h2>
+    <p>{{about.p1}}</p>
+    <p class="quote">{{about.p2}}</p>
+    <span class="sign">{{about.signature}}</span>
+  </div>
+</section>
+<section class="ht-services" id="muc-vu">
+  <div class="ht-services-top rv">
+    <div class="ht-label">
+      03 / {{ministries.eyebrow}}
+    </div>
+    <h2>{{ministries.title}}</h2>
+  </div>
+  <div class="ht-list">
+<!--CARDS-->
+    <a class="ht-item rv" href="{{card.href}}">
+      <span class="idx"></span>
+      <img
+        src="{{card.img}}"
+        alt=""
+        loading="lazy"
+      >
+      <div>
+        <h3>{{card.title}}</h3>
+        <p>{{card.desc}}</p>
+      </div>
+      <b>↗</b>
+    </a>
+<!--/CARDS-->
+  </div>
+</section>
+<section class="ht-verse rv">
+  <img
+    src="{{verse.img}}"
+    alt=""
+    loading="lazy"
+  >
+  <div class="ht-v-overlay"></div>
+  <div>
+    <span>{{verse.ref}}</span>
+    <blockquote>{{verse.text}}</blockquote>
+  </div>
+</section>
+<footer>
+  <span>Fr. Thomas</span>
+  <span>{{footer.parish}}</span>
+  <span>{{footer.copyright}}</span>
+</footer>
