@@ -76,7 +76,7 @@ a { color: var(--gold-deep); }
 .hero {
   position: relative;
   background: var(--navy-deep);
-  color: #f3ecdb; text-align: center; padding: 96px 20px 88px; overflow: hidden;
+  color: #f3ecdb; text-align: center; padding: 48px 20px 44px; overflow: hidden;
 }
 .hero-bg {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
@@ -91,11 +91,11 @@ a { color: var(--gold-deep); }
 .hero-inner { position: relative; z-index: 1; }
 .kicker {
   display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--gold-line); border: 1px solid rgba(217, 199, 154, .45); border-radius: 999px; padding: 6px 16px; margin-bottom: 18px;
+  color: var(--gold-line); border: 1px solid rgba(217, 199, 154, .45); border-radius: 999px; padding: 6px 16px; margin-bottom: 14px;
 }
-.hero h1 { font-family: var(--serif); font-weight: 800; font-size: clamp(38px, 6vw, 60px); margin: 0 0 12px; color: #fff; }
+.hero h1 { font-family: var(--serif); font-weight: 800; font-size: clamp(32px, 5vw, 48px); margin: 0 0 4px; color: #fff; }
 .hero .lead { max-width: 640px; margin: 0 auto; color: #cfd3e6; font-size: 17px; }
-.gold-rule { width: 72px; height: 3px; background: linear-gradient(90deg, var(--gold-deep), var(--gold-line)); border-radius: 2px; margin: 26px auto 0; }
+.gold-rule { width: 72px; height: 3px; background: linear-gradient(90deg, var(--gold-deep), var(--gold-line)); border-radius: 2px; margin: 18px auto 0; }
 
 /* ---------- Thẻ mục ---------- */
 .sections { padding: 48px 0 8px; }
@@ -234,5 +234,5 @@ a { color: var(--gold-deep); }
   .card-grid { grid-template-columns: 1fr; }
   .card.featured { grid-template-columns: 1fr; }
   .card.featured .thumb { min-height: 200px; }
-  .hero { padding: 72px 20px 64px; }
+  .hero { padding: 36px 20px 32px; }
 }

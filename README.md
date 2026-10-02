@@ -1,4 +1,4 @@
-# chapaul.ca — Website lưu giữ các mục vụ của Cha Paul
+# chapaul.ca — Website lưu giữ các mục vụ của Fr. Thomas
 
 Website tĩnh (HTML/CSS/JS thuần, không framework), mobile-first, tiếng Việt.
 
