@@ -12,6 +12,17 @@
   var lamp = document.getElementById('nightLamp');
   var cord = document.getElementById('nightCord');
   var hint = document.getElementById('nightHint');
+  var night = document.getElementById('night');
+  /* Man dem luon che kin man hinh that (iOS Safari doi chieu cao khi thanh cong cu hien/an) */
+  function fitNight() {
+    if (!night) return;
+    var h = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+    night.style.height = Math.ceil(h) + 'px';
+  }
+  fitNight();
+  window.addEventListener('resize', fitNight);
+  window.addEventListener('orientationchange', function () { setTimeout(fitNight, 120); });
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', fitNight);
   if (!lamp) return;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function isDay() { return document.body.classList.contains('is-day'); }
