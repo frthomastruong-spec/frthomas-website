@@ -1,0 +1,61 @@
+<header class="tt-hero">
+  <img class="tt-bg" src="{{hero.img}}" alt="" fetchpriority="high">
+  <div class="tt-shade"></div>
+  <div class="tt-nav">
+    <div class="tt-brand">Fr. Thomas</div>
+    <a href="#muc-vu">Mục vụ</a>
+  </div>
+  <div class="tt-content">
+    <div class="tt-kicker">{{hero.eyebrow}}</div>
+    <h1>{{hero.title}}</h1>
+    <div class="tt-role">{{hero.role}}</div>
+    <p>{{hero.quote}}</p>
+    <a class="tt-button" href="#muc-vu">{{hero.button}}</a>
+  </div>
+  <div class="tt-scroll">SCROLL <span></span></div>
+</header>
+<section class="tt-intro rv">
+  <div class="tt-photo">
+    <img src="{{about.img}}" alt="Linh mục Thomas" loading="lazy">
+  </div>
+  <div class="tt-copy">
+    <div class="tt-kicker">{{about.eyebrow}}</div>
+    <h2>{{about.title}}</h2>
+    <p>{{about.p1}}</p>
+    <p class="tt-bless">{{about.p2}}</p>
+    <div class="tt-sign">{{about.signature}}</div>
+  </div>
+</section>
+<section class="tt-min" id="muc-vu">
+  <div class="tt-section-head rv">
+    <div class="tt-kicker">{{ministries.eyebrow}}</div>
+    <h2>{{ministries.title}}</h2>
+  </div>
+  <div class="tt-grid">
+<!--CARDS-->
+    <a class="tt-card rv" href="{{card.href}}">
+      <img src="{{card.img}}" alt="" loading="lazy">
+      <div>
+        <span>{{card.link}}</span>
+        <h3>{{card.title}}</h3>
+        <p>{{card.desc}}</p>
+      </div>
+    </a>
+<!--/CARDS-->
+  </div>
+</section>
+<section class="tt-verse rv">
+  <img src="{{verse.img}}" alt="" loading="lazy">
+  <div class="tt-verse-shade"></div>
+  <div class="tt-verse-copy">
+    <blockquote>{{verse.text}}</blockquote>
+    <div>{{verse.ref}}</div>
+  </div>
+</section>
+<footer class="tt-footer">
+  <div>
+    <strong>Fr. Thomas</strong>
+    <span>{{footer.parish}}</span>
+  </div>
+  <small>{{footer.copyright}}</small>
+</footer>
