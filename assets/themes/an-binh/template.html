@@ -1,0 +1,86 @@
+<header class="ab-nav">
+  <a class="ab-logo" href="./">Fr. Thomas</a>
+  <div>
+    <a href="#gioi-thieu">Về tôi</a>
+    <a href="#muc-vu">Mục vụ</a>
+  </div>
+</header>
+<section class="ab-hero">
+  <div class="ab-hero-copy rv">
+    <span>{{hero.eyebrow}}</span>
+    <h1>{{hero.title}}</h1>
+    <p>{{hero.role}}</p>
+    <blockquote>{{hero.quote}}</blockquote>
+    <a href="#muc-vu">
+      {{hero.button}} <i>↓</i>
+    </a>
+  </div>
+  <div class="ab-hero-image">
+    <img
+      src="{{hero.img}}"
+      alt=""
+      fetchpriority="high"
+    >
+  </div>
+</section>
+<section class="ab-about rv" id="gioi-thieu">
+  <div class="ab-label">
+    {{about.eyebrow}}
+  </div>
+  <div class="ab-about-grid">
+    <img
+      src="{{about.img}}"
+      alt="Linh mục Thomas"
+      loading="lazy"
+    >
+    <div>
+      <h2>{{about.title}}</h2>
+      <p>{{about.p1}}</p>
+      <p>{{about.p2}}</p>
+      <div class="ab-sign">
+        {{about.signature}}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ab-min" id="muc-vu">
+  <div class="ab-label rv">
+    {{ministries.eyebrow}}
+  </div>
+  <h2 class="rv">
+    {{ministries.title}}
+  </h2>
+  <div class="ab-cards">
+<!--CARDS-->
+    <a class="ab-card rv" href="{{card.href}}">
+      <div class="ab-card-img">
+        <img
+          src="{{card.img}}"
+          alt=""
+          loading="lazy"
+        >
+        <span>0{{card.n}}</span>
+      </div>
+      <h3>{{card.title}}</h3>
+      <p>{{card.desc}}</p>
+      <span class="arrow">
+        {{card.link}} →
+      </span>
+    </a>
+<!--/CARDS-->
+  </div>
+</section>
+<section class="ab-verse rv">
+  <div class="ab-verse-line"></div>
+  <blockquote>
+    {{verse.text}}
+  </blockquote>
+  <span>
+    {{verse.ref}}
+  </span>
+</section>
+<footer>
+  <strong>Fr. Thomas</strong>
+  <span>{{footer.parish}}</span>
+  <small>{{footer.copyright}}</small>
+</footer>
