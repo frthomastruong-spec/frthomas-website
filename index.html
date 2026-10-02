@@ -121,16 +121,16 @@
 </nav>
 
 <header class="hero">
-  <img class="bg" src="assets/images/home-hero.jpg" alt="Nhà thờ lúc bình minh" fetchpriority="high">
+  <img class="bg" id="heroImg" src="assets/images/home-hero.jpg" alt="Nhà thờ lúc bình minh" fetchpriority="high">
   <div class="in" id="heroIn"></div>
 </header>
 
-<section class="about rv" id="aboutSec"><img src="assets/images/home-portrait.jpg" alt="Linh mục Thomas" loading="lazy"><div id="aboutIn"></div></section>
+<section class="about rv" id="aboutSec"><img id="aboutImg" src="assets/images/home-portrait.jpg" alt="Linh mục Thomas" loading="lazy"><div id="aboutIn"></div></section>
 
 <section class="min" id="muc-vu"><div id="minIn"></div></section>
 
 <section class="verse rv">
-  <img class="bg" src="assets/images/home-verse.jpg" alt="" aria-hidden="true" loading="lazy">
+  <img class="bg" id="verseImg" src="assets/images/home-verse.jpg" alt="" aria-hidden="true" loading="lazy">
   <div class="in" id="verseIn"></div>
 </section>
 
@@ -147,12 +147,74 @@
   </div>
 </footer>
 
-<script id="content-data" type="application/json">{"about":{"eyebrow":"VỀ TÔI","p1":"Tôi là linh mục phụ tá tại Giáo xứ Thánh Phanxicô Xaviê, Vancouver. Trang web này là nơi tôi chia sẻ những suy tư, bài giảng, hành trình đức tin và các tài liệu hữu ích cho đời sống Kitô hữu.","p2":"Cầu chúc anh chị em luôn được Chúa đồng hành trong mọi nẻo đường!","signature":"Fr. Thomas","title":"Xin chào, tôi là\nLinh mục Thomas"},"footer":{"copyright":"© 2025 Fr. Thomas. All rights reserved.","parish":"St. Francis Xavier Parish · Vancouver"},"hero":{"button":"Khám phá các mục vụ →","eyebrow":"XIN CHÀO!","quote":"Cùng nhau bước đi trong đức tin,\ntôn vinh Chúa và phục vụ tha nhân.","role":"Linh mục phụ tá · St. Francis Xavier Parish\nVancouver","title":"Fr. Thomas"},"ministries":{"cards":[{"desc":"Cùng nhau khám phá những dấu chân đức tin.","href":"hanh-huong/","link":"Tìm hiểu thêm →","title":"Hành hương\nViệt Nam 2028"},{"desc":"Những chia sẻ Lời Chúa trong đời sống hằng ngày.","href":"bai-giang/","link":"Xem thêm →","title":"Bài giảng"},{"desc":"Cùng nhau tìm hiểu và sống Lời Chúa.","href":"hoc-kinh-thanh/","link":"Xem thêm →","title":"Học hỏi\nKinh Thánh"},{"desc":"Những cuốn sách hữu ích cho đời sống thiêng liêng.","href":"sach/","link":"Khám phá →","title":"Sách"}],"eyebrow":"CÁC MỤC VỤ","title":"Nơi lưu giữ các mục vụ"},"verse":{"ref":"Ga 14,6","text":"“Thầy là đường, là sự thật\nvà là sự sống.”"}}</script>
+<script id="content-data" type="application/json">{
+ "about": {
+  "eyebrow": "VỀ TÔI",
+  "p1": "Tôi là linh mục phụ tá tại Giáo xứ Thánh Phanxicô Xaviê, Vancouver. Trang web này là nơi tôi chia sẻ những suy tư, bài giảng, hành trình đức tin và các tài liệu hữu ích cho đời sống Kitô hữu.",
+  "p2": "Cầu chúc anh chị em luôn được Chúa đồng hành trong mọi nẻo đường!",
+  "signature": "Fr. Thomas",
+  "title": "Xin chào, tôi là\nLinh mục Thomas",
+  "img": "assets/images/home-portrait.jpg"
+ },
+ "footer": {
+  "copyright": "© 2025 Fr. Thomas. All rights reserved.",
+  "parish": "St. Francis Xavier Parish · Vancouver"
+ },
+ "hero": {
+  "button": "Khám phá các mục vụ →",
+  "eyebrow": "XIN CHÀO!",
+  "quote": "Cùng nhau bước đi trong đức tin,\ntôn vinh Chúa và phục vụ tha nhân.",
+  "role": "Linh mục phụ tá · St. Francis Xavier Parish\nVancouver",
+  "title": "Fr. Thomas",
+  "img": "assets/images/home-hero.jpg"
+ },
+ "ministries": {
+  "cards": [
+   {
+    "desc": "Cùng nhau khám phá những dấu chân đức tin.",
+    "href": "hanh-huong/",
+    "link": "Tìm hiểu thêm →",
+    "title": "Hành hương\nViệt Nam 2028",
+    "img": "assets/images/home-card-hanhhuong.jpg"
+   },
+   {
+    "desc": "Những chia sẻ Lời Chúa trong đời sống hằng ngày.",
+    "href": "bai-giang/",
+    "link": "Xem thêm →",
+    "title": "Bài giảng",
+    "img": "assets/images/home-card-baigiang.jpg"
+   },
+   {
+    "desc": "Cùng nhau tìm hiểu và sống Lời Chúa.",
+    "href": "hoc-kinh-thanh/",
+    "link": "Xem thêm →",
+    "title": "Học hỏi\nKinh Thánh",
+    "img": "assets/images/home-card-kinhthanh.jpg"
+   },
+   {
+    "desc": "Những cuốn sách hữu ích cho đời sống thiêng liêng.",
+    "href": "sach/",
+    "link": "Khám phá →",
+    "title": "Sách",
+    "img": "assets/images/home-card-sach.jpg"
+   }
+  ],
+  "eyebrow": "CÁC MỤC VỤ",
+  "title": "Nơi lưu giữ các mục vụ"
+ },
+ "verse": {
+  "ref": "Ga 14,6",
+  "text": "“Thầy là đường, là sự thật\nvà là sự sống.”",
+  "img": "assets/images/home-verse.jpg"
+ }
+}</script>
 <script>
 (function(){
   var nl = function(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'); };
-  var cardImgs = ['assets/images/home-card-hanhhuong.jpg','assets/images/home-card-baigiang.jpg','assets/images/home-card-kinhthanh.jpg','assets/images/home-card-sach.jpg'];
   function render(c){
+    document.getElementById('heroImg').src = c.hero.img;
+    document.getElementById('aboutImg').src = c.about.img;
+    document.getElementById('verseImg').src = c.verse.img;
     document.getElementById('heroIn').innerHTML =
       '<div class="eyebrow">' + nl(c.hero.eyebrow) + '</div>' +
       '<h1>' + nl(c.hero.title) + '</h1>' +
@@ -167,7 +229,7 @@
       '<div class="sig">' + nl(c.about.signature) + '</div>';
     var cards = c.ministries.cards.map(function(k, i){
       return '<a class="card rv" href="' + nl(k.href) + '">' +
-        '<img src="' + cardImgs[i % cardImgs.length] + '" alt="" loading="lazy">' +
+        '<img src="' + nl(k.img) + '" alt="" loading="lazy">' +
         '<div class="cb"><h4>' + nl(k.title) + '</h4><p>' + nl(k.desc) + '</p>' +
         '<span class="more">' + nl(k.link).replace('→', '&nbsp;<b>→</b>') + '</span></div></a>';
     }).join('');

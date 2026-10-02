@@ -25,6 +25,7 @@
   .btn-gold { background: #b08d3e; color: #fff; margin-top: 8px; box-shadow: 0 10px 24px rgba(176,141,62,.35); }
   .btn-gold:disabled { opacity: .55; }
   .btn-ghost { background: none; color: #8a97a8; font-size: 14px; font-weight: 500; margin-top: 14px; }
+  .btn-line { background: #fff; color: #1e3a5f; border: 1.5px solid #b08d3e; border-radius: 10px; padding: 12px 18px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; width: auto; display: inline-block; }
   .steps { font-size: 14.5px; line-height: 2; }
   .steps b { color: #1e3a5f; }
   .steps code { background: #f4efe2; padding: 2px 8px; border-radius: 6px; font-size: 13px; }
@@ -34,14 +35,33 @@
   .mini { border-top: 1px dashed #e2d9bd; margin-top: 20px; padding-top: 16px; }
   .mini h3 { font-size: 15px; color: #1e3a5f; margin: 14px 0 2px; }
   .hidden { display: none; }
+  .imrow { display: flex; align-items: center; gap: 14px; margin: 16px 0 4px; background: #fbf8ee; border: 1px solid #eee3c6; border-radius: 12px; padding: 12px; }
+  .imrow img.thumb { width: 84px; height: 64px; object-fit: cover; border-radius: 8px; flex-shrink: 0; background: #e8e0c8; }
+  .imrow .t { font-size: 13px; color: #8a97a8; flex: 1; }
+  /* modal crop */
+  #imModal { position: fixed; inset: 0; background: rgba(20,28,44,.72); z-index: 200; display: none; align-items: flex-start; justify-content: center; padding: 24px 16px; overflow-y: auto; }
+  #imModal.open { display: flex; }
+  .im-box { background: #fff; border-radius: 18px; padding: 22px 18px; width: 100%; max-width: 600px; margin: auto 0; }
+  .im-box h3 { font-family: 'Playfair Display', serif; color: #1e3a5f; margin: 0 0 4px; font-size: 20px; }
+  .im-box .d { font-size: 13px; color: #8a97a8; margin: 0 0 14px; }
+  #imFrame { position: relative; width: 100%; overflow: hidden; border-radius: 12px; background: #222; touch-action: none; cursor: grab; }
+  #imFrame:active { cursor: grabbing; }
+  #imImg { position: absolute; left: 0; top: 0; max-width: none; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+  .im-zoom { display: flex; align-items: center; gap: 12px; margin: 16px 0 6px; font-size: 13px; color: #8a97a8; }
+  .im-zoom input { flex: 1; accent-color: #b08d3e; }
+  .im-btns { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .im-btns .btn-line { flex: 1; text-align: center; min-width: 140px; }
+  #imSave { background: #b08d3e; color: #fff; border-color: #b08d3e; }
+  #imSave:disabled { opacity: .55; }
+  .filewrap { position: relative; overflow: hidden; }
+  .filewrap input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>✝ Quản trị website</h1>
-  <p class="sub">Sửa chữ trên trang chủ frthomas.com trực tiếp tại đây.</p>
+  <p class="sub">Sửa chữ và ảnh trên trang chủ frthomas.com trực tiếp tại đây.</p>
 
-  <!-- BƯỚC 1: TOKEN -->
   <div class="card" id="tokenCard">
     <h2>Bước 1 — Kết nối GitHub</h2>
     <p class="d">Chỉ cần làm một lần duy nhất trên máy này.</p>
@@ -58,11 +78,11 @@
     <p class="sub" style="margin:12px 0 0; font-size:12.5px;">Mã này chỉ lưu trong trình duyệt của anh, không gửi đi đâu khác.</p>
   </div>
 
-  <!-- BƯỚC 2: SỬA NỘI DUNG -->
   <div id="editor" class="hidden">
     <div class="card">
       <h2>Phần chào đầu trang</h2>
-      <p class="d">Dòng “XIN CHÀO!”, tên lớn, chức vụ, câu châm ngôn, nút bấm.</p>
+      <p class="d">Chữ và ảnh nền phần chào.</p>
+      <div class="imrow"><img class="thumb" id="th-hero.img" alt=""><span class="t">Ảnh nền phần chào</span><button class="btn-line" data-im="hero.img">Đổi / canh ảnh</button></div>
       <label>Dòng nhỏ phía trên (XIN CHÀO!)</label><input type="text" id="f-hero-eyebrow">
       <label>Tên lớn</label><input type="text" id="f-hero-title">
       <label>Chức vụ (xuống dòng: Enter)</label><textarea id="f-hero-role"></textarea>
@@ -73,6 +93,7 @@
     <div class="card">
       <h2>Phần giới thiệu</h2>
       <p class="d">Ảnh chân dung và đoạn “Về tôi”.</p>
+      <div class="imrow"><img class="thumb" id="th-about.img" alt="" style="height:84px"><span class="t">Ảnh chân dung</span><button class="btn-line" data-im="about.img">Đổi / canh ảnh</button></div>
       <label>Dòng nhỏ (VỀ TÔI)</label><input type="text" id="f-about-eyebrow">
       <label>Tiêu đề</label><textarea id="f-about-title"></textarea>
       <label>Đoạn giới thiệu</label><textarea id="f-about-p1" style="min-height:110px"></textarea>
@@ -82,7 +103,7 @@
 
     <div class="card">
       <h2>Các mục vụ</h2>
-      <p class="d">Tiêu đề khu vực và 4 thẻ.</p>
+      <p class="d">Tiêu đề khu vực và 4 thẻ (chữ + ảnh từng thẻ).</p>
       <label>Dòng nhỏ (CÁC MỤC VỤ)</label><input type="text" id="f-min-eyebrow">
       <label>Tiêu đề lớn</label><input type="text" id="f-min-title">
       <div id="cards"></div>
@@ -90,6 +111,7 @@
 
     <div class="card">
       <h2>Câu Kinh Thánh</h2>
+      <div class="imrow"><img class="thumb" id="th-verse.img" alt=""><span class="t">Ảnh nền dải Kinh Thánh</span><button class="btn-line" data-im="verse.img">Đổi / canh ảnh</button></div>
       <label>Nội dung câu</label><textarea id="f-verse-text" style="min-height:90px"></textarea>
       <label>Nguồn (ví dụ: Ga 14,6)</label><input type="text" id="f-verse-ref">
     </div>
@@ -105,13 +127,28 @@
     <button class="btn btn-ghost" id="logoutBtn">Đăng xuất (xóa kết nối GitHub khỏi máy này)</button>
   </div>
 </div>
+
+<div id="imModal">
+  <div class="im-box">
+    <h3 id="imTitle">Đổi ảnh</h3>
+    <p class="d">Kéo ảnh để canh vị trí • Kéo thanh trượt để phóng to / thu nhỏ • Hoặc chọn ảnh mới từ máy.</p>
+    <div id="imFrame"><img id="imImg" alt="" draggable="false"></div>
+    <div class="im-zoom"><span>🔍</span><input type="range" id="imZoom" min="1" max="3" step="0.01" value="1"></div>
+    <div class="im-btns">
+      <label class="btn-line filewrap">📷 Chọn ảnh mới<input type="file" id="imFile" accept="image/*"></label>
+      <button class="btn-line" id="imSave">💾 Lưu ảnh này</button>
+      <button class="btn-line" id="imClose">Đóng</button>
+    </div>
+  </div>
+</div>
+
 <div id="status"></div>
 
 <script>
 (function(){
   var OWNER = 'frthomastruong-spec', REPO = 'frthomas-website', BRANCH = 'main', PATH = 'assets/content.json';
   var $ = function(id){ return document.getElementById(id); };
-  function status(msg, cls){ var s = $('status'); s.textContent = msg; s.className = cls || ''; s.style.display = 'block'; clearTimeout(s._t); s._t = setTimeout(function(){ s.style.display = 'none'; }, 4200); }
+  function status(msg, cls){ var s = $('status'); s.textContent = msg; s.className = cls || ''; s.style.display = 'block'; clearTimeout(s._t); s._t = setTimeout(function(){ s.style.display = 'none'; }, 4600); }
   function b64(s){ return btoa(unescape(encodeURIComponent(s))); }
   function api(path, opts){
     opts = opts || {};
@@ -123,20 +160,165 @@
   function set2(o, p, v){ var ks = p.split('.'), t = o; for (var i = 0; i < ks.length-1; i++){ t = t[ks[i]] = t[ks[i]] || {}; } t[ks[ks.length-1]] = v; }
   var MAP = {'hero-eyebrow':'hero.eyebrow','hero-title':'hero.title','hero-role':'hero.role','hero-quote':'hero.quote','hero-button':'hero.button','about-eyebrow':'about.eyebrow','about-title':'about.title','about-p1':'about.p1','about-p2':'about.p2','about-signature':'about.signature','min-eyebrow':'ministries.eyebrow','min-title':'ministries.title','verse-text':'verse.text','verse-ref':'verse.ref','foot-copyright':'footer.copyright','foot-parish':'footer.parish'};
   var data = null, sha = null;
+  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+  /* ---------- image slots ---------- */
+  var SLOTS = {
+    'hero.img':  { label: 'Ảnh phần chào', ar: 16/9, W: 1920, H: 1080 },
+    'about.img': { label: 'Ảnh chân dung', ar: 4/5,  W: 1080, H: 1350 },
+    'verse.img': { label: 'Ảnh dải Kinh Thánh', ar: 21/9, W: 1920, H: 823 }
+  };
+  function slotCfg(slot){
+    if (slot.indexOf('card:') === 0) {
+      var i = parseInt(slot.slice(5), 10);
+      return { label: 'Ảnh thẻ ' + (i+1), ar: 4/3, W: 1200, H: 900, card: i };
+    }
+    return SLOTS[slot];
+  }
+  function slotPath(slot){
+    if (slot === 'hero.img') return 'hero.img';
+    if (slot === 'about.img') return 'about.img';
+    if (slot === 'verse.img') return 'verse.img';
+    return 'ministries.cards.' + slot.slice(5) + '.img';
+  }
+  function thumbId(slot){ return 'th-' + (slot.indexOf('card:') === 0 ? 'card' + slot.slice(5) : slot); }
+  function refreshThumbs(){
+    ['hero.img','about.img','verse.img'].forEach(function(s){
+      var t = $(thumbId(s)); if (t) t.src = get2(data, slotPath(s));
+    });
+    (data.ministries.cards || []).forEach(function(cd, i){
+      var t = $('th-card' + i); if (t) t.src = cd.img;
+    });
+  }
+
+  /* ---------- cropper modal ---------- */
+  var im = { slot: null, cfg: null, img: new Image(), zoom: 1, x: 0, y: 0, fw: 0, fh: 0, base: 1 };
+  var frame = $('imFrame'), imEl = $('imImg');
+  function imLayout(){
+    var r = frame.getBoundingClientRect();
+    im.fw = r.width; im.fh = r.width / im.cfg.ar;
+    frame.style.height = im.fh + 'px';
+    var iw = im.img.naturalWidth, ih = im.img.naturalHeight;
+    if (!iw) return;
+    im.base = Math.max(im.fw / iw, im.fh / ih);
+    if (im.zoom === 1) { im.x = (im.fw - iw * im.base) / 2; im.y = (im.fh - ih * im.base) / 2; }
+    imApply();
+  }
+  function imApply(){
+    var dw = im.img.naturalWidth * im.base * im.zoom,
+        dh = im.img.naturalHeight * im.base * im.zoom;
+    im.x = Math.min(0, Math.max(im.fw - dw, im.x));
+    im.y = Math.min(0, Math.max(im.fh - dh, im.y));
+    imEl.style.width = dw + 'px'; imEl.style.height = dh + 'px';
+    imEl.style.transform = 'translate(' + im.x + 'px,' + im.y + 'px)';
+  }
+  function openIm(slot){
+    im.slot = slot; im.cfg = slotCfg(slot); im.zoom = 1;
+    $('imTitle').textContent = 'Đổi ảnh — ' + im.cfg.label;
+    $('imZoom').value = 1;
+    $('imModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    im.img.onload = function(){ imLayout(); };
+    im.img.src = get2(data, slotPath(slot)) + '?t=' + Date.now();
+    setTimeout(imLayout, 60);
+  }
+  function closeIm(){ $('imModal').classList.remove('open'); document.body.style.overflow = ''; }
+  var drag = null;
+  frame.addEventListener('pointerdown', function(e){
+    drag = { sx: e.clientX, sy: e.clientY, ox: im.x, oy: im.y };
+    frame.setPointerCapture(e.pointerId);
+  });
+  frame.addEventListener('pointermove', function(e){
+    if (!drag) return;
+    im.x = drag.ox + (e.clientX - drag.sx);
+    im.y = drag.oy + (e.clientY - drag.sy);
+    imApply();
+  });
+  ['pointerup','pointercancel'].forEach(function(ev){ frame.addEventListener(ev, function(){ drag = null; }); });
+  $('imZoom').addEventListener('input', function(){ im.zoom = parseFloat(this.value); imApply(); });
+  $('imFile').addEventListener('change', function(){
+    var f = this.files[0]; if (!f) return;
+    var rd = new FileReader();
+    rd.onload = function(){ im.zoom = 1; $('imZoom').value = 1; im.img.onload = function(){ imLayout(); }; im.img.src = rd.result; };
+    rd.readAsDataURL(f);
+    this.value = '';
+  });
+  $('imClose').addEventListener('click', closeIm);
+  $('imModal').addEventListener('click', function(e){ if (e.target === this) closeIm(); });
+  document.querySelectorAll('[data-im]').forEach(function(btn){
+    btn.addEventListener('click', function(){ openIm(btn.getAttribute('data-im')); });
+  });
+  // card image buttons are created dynamically with fill(); use delegation
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-im]') : null;
+    if (b && !$('imModal').classList.contains('open')) openIm(b.getAttribute('data-im'));
+  });
+
+  function blobToB64(blob){
+    return new Promise(function(res, rej){
+      var rd = new FileReader();
+      rd.onload = function(){ res(rd.result.split(',')[1]); };
+      rd.onerror = rej;
+      rd.readAsDataURL(blob);
+    });
+  }
+  $('imSave').addEventListener('click', function(){
+    var btn = $('imSave'); btn.disabled = true; btn.textContent = 'Đang lưu…';
+    status('Đang xử lý và tải ảnh lên…');
+    try {
+      var cfg = im.cfg;
+      var cv = document.createElement('canvas'); cv.width = cfg.W; cv.height = cfg.H;
+      var s = cfg.W / im.fw;
+      cv.getContext('2d').drawImage(im.img, im.x * s, im.y * s,
+        im.img.naturalWidth * im.base * im.zoom * s, im.img.naturalHeight * im.base * im.zoom * s);
+      cv.toBlob(function(blob){
+        if (!blob) { status('Không xử lý được ảnh này.', 'err'); btn.disabled = false; btn.textContent = '💾 Lưu ảnh này'; return; }
+        blobToB64(blob).then(function(b64data){
+          var safe = im.slot.replace(/[^a-z0-9]/gi, '');
+          var fname = 'assets/images/admin-' + safe + '-' + Date.now() + '.jpg';
+          var oldPath = get2(data, slotPath(im.slot));
+          api(fname, { method: 'PUT', body: JSON.stringify({ message: 'upload image via web admin', content: b64data, branch: BRANCH }) })
+          .then(function(r){ if (!r.ok) throw new Error('upload ' + r.status); return r.json(); })
+          .then(function(){
+            return api(PATH).then(function(r){ return r.json(); }).then(function(j){
+              var d2 = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g, '')))));
+              set2(d2, slotPath(im.slot), fname);
+              return api(PATH, { method: 'PUT', body: JSON.stringify({ message: 'update image via web admin', content: b64(JSON.stringify(d2, null, 2)), sha: j.sha, branch: BRANCH }) })
+              .then(function(r){ if (!r.ok) throw new Error('content ' + r.status); return r.json(); })
+              .then(function(j2){
+                data = d2; sha = j2.content.sha;
+                refreshThumbs(); closeIm();
+                status('Đã đổi ảnh xong! Web cập nhật trong khoảng 1 phút.', 'ok');
+                if (oldPath && oldPath.indexOf('assets/images/admin-') === 0) {
+                  api(oldPath).then(function(r){ return r.ok ? r.json() : null; }).then(function(oj){
+                    if (oj) api(oldPath, { method: 'DELETE', body: JSON.stringify({ message: 'remove replaced image', sha: oj.sha, branch: BRANCH }) });
+                  }).catch(function(){});
+                }
+              });
+            });
+          })
+          .catch(function(){ status('Lưu ảnh chưa được. Anh thử lại giúp em.', 'err'); })
+          .finally(function(){ btn.disabled = false; btn.textContent = '💾 Lưu ảnh này'; });
+        });
+      }, 'image/jpeg', 0.85);
+    } catch (err) { status('Không xử lý được ảnh này.', 'err'); btn.disabled = false; btn.textContent = '💾 Lưu ảnh này'; }
+  });
+
+  /* ---------- text editor ---------- */
   function fill(d){
-    F.forEach(function(f){ $( 'f-'+f ).value = get2(d, MAP[f]); });
+    F.forEach(function(f){ $('f-'+f).value = get2(d, MAP[f]); });
     var box = $('cards'); box.innerHTML = '';
     d.ministries.cards.forEach(function(cd, i){
       var w = document.createElement('div'); w.className = 'mini';
       w.innerHTML = '<h3>Thẻ ' + (i+1) + '</h3>' +
+        '<div class="imrow"><img class="thumb" id="th-card' + i + '" alt=""><span class="t">Ảnh thẻ</span><button class="btn-line" data-im="card:' + i + '">Đổi / canh ảnh</button></div>' +
         '<label>Tiêu đề</label><textarea data-k="title">' + esc(cd.title) + '</textarea>' +
         '<label>Mô tả</label><textarea data-k="desc">' + esc(cd.desc) + '</textarea>' +
         '<label>Chữ trên nút</label><input type="text" data-k="link" value="' + esc(cd.link) + '">';
       box.appendChild(w);
     });
+    refreshThumbs();
   }
-  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
   function gather(){
     var d = JSON.parse(JSON.stringify(data));
     F.forEach(function(f){ set2(d, MAP[f], $('f-'+f).value); });
@@ -148,7 +330,6 @@
     }
     return d;
   }
-
   function showEditor(){ $('tokenCard').classList.add('hidden'); $('editor').classList.remove('hidden'); }
   function load(){
     status('Đang tải nội dung hiện tại…');
@@ -158,7 +339,6 @@
       fill(data); showEditor(); status('Đã tải xong. Anh sửa rồi bấm Lưu nhé.', 'ok');
     }).catch(function(){ status('Không tải được. Anh kiểm tra lại mã token nhé.', 'err'); });
   }
-
   $('tokenSave').addEventListener('click', function(){
     var t = $('tokenInput').value.trim();
     if (t.length < 10) { status('Mã token chưa đúng. Anh copy lại giúp em.', 'err'); return; }
@@ -166,14 +346,15 @@
     load();
   });
   if (localStorage.getItem('ft_admin_token')) { load(); }
-
   $('saveBtn').addEventListener('click', function(){
     var btn = $('saveBtn'); btn.disabled = true; btn.textContent = 'Đang lưu…';
     status('Đang lưu lên website…');
     var d = gather();
-    api(PATH, { method: 'PUT', body: JSON.stringify({ message: 'update homepage content via web admin', content: b64(JSON.stringify(d, null, 2)), sha: sha, branch: BRANCH }) })
+    api(PATH).then(function(r){ return r.json(); }).then(function(j){
+      return api(PATH, { method: 'PUT', body: JSON.stringify({ message: 'update homepage content via web admin', content: b64(JSON.stringify(d, null, 2)), sha: j.sha, branch: BRANCH }) });
+    })
     .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function(j){ sha = j.content.sha; status('Đã lưu xong! Web sẽ cập nhật trong khoảng 1 phút.', 'ok'); })
+    .then(function(j){ data = d; sha = j.content.sha; status('Đã lưu xong! Web cập nhật trong khoảng 1 phút.', 'ok'); })
     .catch(function(){ status('Lưu chưa được — có thể token hết hạn. Anh tạo mã mới giúp em.', 'err'); })
     .finally(function(){ btn.disabled = false; btn.textContent = '💾 Lưu thay đổi lên website'; });
   });
@@ -181,6 +362,7 @@
     localStorage.removeItem('ft_admin_token');
     location.reload();
   });
+  window.addEventListener('resize', function(){ if ($('imModal').classList.contains('open')) imLayout(); });
 })();
 </script>
 </body>
