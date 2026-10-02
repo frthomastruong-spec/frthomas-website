@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
   body { margin: 0; font-family: 'Be Vietnam Pro', sans-serif; background: #efe9db; color: #2b2620; }
@@ -288,13 +288,43 @@
   .m10 .verse { margin: 26px 24px 0; background: #e0a100; border: 2px solid #33302a; border-radius: 14px; box-shadow: 4px 4px 0 #33302a; text-align: center; padding: 30px 24px; font-weight: 700; font-size: 18px; }
   .m10 .mf { margin-top: 26px; background: #33302a; color: #f7ead0; text-align: center; padding: 24px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
   @media (max-width: 640px) { .m10 .cards { grid-template-columns: 1fr; } .m10 .ticket { flex-direction: column; text-align: center; } .m10 .ticket::before, .m10 .ticket::after { display: none; } }
+
+  /* ============ MẪU 11: GÔ-TÍCH — classic gothic ============ */
+  .m11 { background: #0e0c0a; color: #e6dcc3; font-family: 'Be Vietnam Pro', sans-serif; }
+  .m11 .mn { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-bottom: 1px solid rgba(201,162,39,.3); }
+  .m11 .mn .brand { font-family: 'UnifrakturMaguntia', serif; font-size: 28px; color: #d9b45b; }
+  .m11 .mn .links { display: flex; gap: 20px; font-size: 11.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #8f8672; }
+  .m11 .mh { text-align: center; padding: 56px 24px 60px; background: radial-gradient(ellipse 60% 45% at 50% 8%, rgba(217,180,91,.13), transparent 70%); }
+  .m11 .parch { width: min(380px, 78%); aspect-ratio: 4/4.9; margin: 0 auto 30px; background: linear-gradient(#d9b45b, #8a6d2a); padding: 3px; clip-path: polygon(0 100%, 0 32%, 50% 0, 100% 32%, 100% 100%); }
+  .m11 .parch img { width: 100%; height: 100%; object-fit: cover; display: block; clip-path: polygon(0 100%, 0 32%, 50% 0, 100% 32%, 100% 100%); filter: brightness(.92) contrast(1.06); }
+  .m11 .mh .kick { font-size: 11px; letter-spacing: 6px; text-transform: uppercase; color: #8f8672; margin-bottom: 16px; }
+  .m11 .mh h1 { font-family: 'UnifrakturMaguntia', serif; font-size: clamp(52px, 10vw, 88px); margin: 0; color: #e8c877; font-weight: 400; text-shadow: 0 0 34px rgba(232,200,119,.35); line-height: 1.1; }
+  .m11 .gdiv { color: #d9b45b; letter-spacing: 14px; margin-top: 20px; font-size: 16px; }
+  .m11 .feat { margin: 0 24px 24px; background: #161210; border: 1px solid rgba(201,162,39,.4); padding: 24px; display: flex; gap: 22px; align-items: center; }
+  .m11 .feat .pa { width: 110px; height: 140px; flex-shrink: 0; background: linear-gradient(#d9b45b, #8a6d2a); padding: 2px; clip-path: polygon(0 100%, 0 30%, 50% 0, 100% 30%, 100% 100%); }
+  .m11 .feat .pa img { width: 100%; height: 100%; object-fit: cover; display: block; clip-path: polygon(0 100%, 0 30%, 50% 0, 100% 30%, 100% 100%); }
+  .m11 .feat .t { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #d9b45b; margin-bottom: 8px; }
+  .m11 .feat h3 { font-family: 'Playfair Display', serif; font-size: 21px; margin: 0 0 6px; color: #f2e9d2; }
+  .m11 .feat p { margin: 0; color: #8f8672; font-size: 14px; }
+  .m11 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 24px; }
+  .m11 .card { background: #161210; border: 1px solid rgba(201,162,39,.32); text-align: center; padding-bottom: 20px; }
+  .m11 .card .pa { height: 130px; background: linear-gradient(#d9b45b, #8a6d2a); padding: 2px 2px 0; clip-path: polygon(0 100%, 0 32%, 50% 0, 100% 32%, 100% 100%); margin-bottom: 16px; }
+  .m11 .card .pa img { width: 100%; height: 100%; object-fit: cover; display: block; clip-path: polygon(0 100%, 0 32%, 50% 0, 100% 32%, 100% 100%); filter: brightness(.9); }
+  .m11 .card h4 { font-family: 'Playfair Display', serif; margin: 0 0 6px; font-size: 18px; color: #e8c877; }
+  .m11 .card p { margin: 0; font-size: 13px; color: #8f8672; padding: 0 14px; }
+  .m11 .verse { text-align: center; padding: 48px 30px; }
+  .m11 .verse .qq { font-family: 'Playfair Display', serif; font-size: 56px; color: #d9b45b; line-height: 1; }
+  .m11 .verse p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; margin: 8px 0 0; color: #e6dcc3; }
+  .m11 .mf { text-align: center; padding: 28px; border-top: 1px solid rgba(201,162,39,.3); color: #6e6656; font-size: 13px; }
+  .m11 .mf .x { font-family: 'UnifrakturMaguntia', serif; font-size: 30px; color: #d9b45b; display: block; margin-bottom: 8px; }
+  @media (max-width: 640px) { .m11 .cards { grid-template-columns: 1fr; } .m11 .feat { flex-direction: column; text-align: center; } }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="intro">
     <h1>Chọn phong cách trang chủ</h1>
-    <p>Em dựng 10 mẫu với 10 cá tính khác nhau, dùng đúng nội dung và ảnh thật của web. Anh xem trên điện thoại, ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>10</strong> — em áp dụng lên web chính.</p>
+    <p>Em dựng 11 mẫu với 11 cá tính khác nhau, dùng đúng nội dung và ảnh thật của web. Anh xem trên điện thoại, ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>11</strong> — em áp dụng lên web chính.</p>
   </div>
   <!-- MẪU 1 -->
   <div class="concept">
@@ -578,8 +608,36 @@
     </div>
   </div>
 
+  <!-- MẪU 11 -->
+  <div class="concept">
+    <div class="concept-head">
+      <span class="concept-num">11</span>
+      <div><h2>Gô-tích</h2><p>Gothic cổ điển — vòm nhọn, chữ blackletter, ánh nến trên đá. Huyền bí và trang nghiêm.</p></div>
+    </div>
+    <div class="mockup m11">
+      <div class="mn"><div class="brand">Fr. Thomas</div><div class="links"><span>Bài giảng</span><span>Kinh Thánh</span><span>Sách</span><span>Hành hương</span></div></div>
+      <div class="mh">
+        <div class="parch"><img src="https://frthomas.com/assets/images/hero-elijah.jpg" alt=""></div>
+        <div class="kick">Nơi lưu giữ các mục vụ</div>
+        <h1>Fr. Thomas</h1>
+        <div class="gdiv">✠ ✠ ✠</div>
+      </div>
+      <div class="feat">
+        <div class="pa"><img src="https://frthomas.com/assets/images/la-vang.jpg" alt=""></div>
+        <div><div class="t">Hành hương · 8–21/1/2028</div><h3>Hành Hương Việt Nam 2028</h3><p>Tạ Ơn Hồng Ân Linh Mục — 14 ngày, đoàn 35 người từ Vancouver.</p></div>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="pa"><img src="https://frthomas.com/assets/images/nha-tho-duc-ba.jpg" alt=""></div><h4>Bài giảng</h4><p>Suy niệm Lời Chúa mỗi tuần</p></div>
+        <div class="card"><div class="pa"><img src="https://frthomas.com/assets/images/trang-an.jpg" alt=""></div><h4>Học Kinh Thánh</h4><p>Câu hỏi mỗi Chúa nhật</p></div>
+        <div class="card"><div class="pa"><img src="https://frthomas.com/assets/images/hoi-an.jpg" alt=""></div><h4>Sách</h4><p>Các đầu sách của Fr. Thomas</p></div>
+      </div>
+      <div class="verse"><div class="qq">❝</div><p>Anh em hãy đi khắp tứ phương thiên hạ, loan báo Tin Mừng cho mọi loài thụ tạo.<br>— Mc 16,15</p></div>
+      <div class="mf"><span class="x">✠</span>Fr. Thomas · St. Francis Xavier, Vancouver</div>
+    </div>
+  </div>
+
   <div class="intro" style="margin-top:20px">
-    <p>Anh ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>10</strong> nhé.</p>
+    <p>Anh ưng mẫu nào thì nhắn em số từ <strong>1</strong> đến <strong>11</strong> nhé.</p>
   </div>
 </div>
 </body>
