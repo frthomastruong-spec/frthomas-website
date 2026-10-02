@@ -1,1 +1,54 @@
-{"about":{"eyebrow":"VỀ TÔI","p1":"Tôi là linh mục phụ tá tại Giáo xứ Thánh Phanxicô Xaviê, Vancouver. Trang web này là nơi tôi chia sẻ những suy tư, bài giảng, hành trình đức tin và các tài liệu hữu ích cho đời sống Kitô hữu.","p2":"Cầu chúc anh chị em luôn được Chúa đồng hành trong mọi nẻo đường!","signature":"Fr. Thomas","title":"Xin chào, tôi là\nLinh mục Thomas"},"footer":{"copyright":"© 2025 Fr. Thomas. All rights reserved.","parish":"St. Francis Xavier Parish · Vancouver"},"hero":{"button":"Khám phá các mục vụ →","eyebrow":"XIN CHÀO!","quote":"Cùng nhau bước đi trong đức tin,\ntôn vinh Chúa và phục vụ tha nhân.","role":"Linh mục phụ tá · St. Francis Xavier Parish\nVancouver","title":"Fr. Thomas"},"ministries":{"cards":[{"desc":"Cùng nhau khám phá những dấu chân đức tin.","href":"hanh-huong/","link":"Tìm hiểu thêm →","title":"Hành hương\nViệt Nam 2028"},{"desc":"Những chia sẻ Lời Chúa trong đời sống hằng ngày.","href":"bai-giang/","link":"Xem thêm →","title":"Bài giảng"},{"desc":"Cùng nhau tìm hiểu và sống Lời Chúa.","href":"hoc-kinh-thanh/","link":"Xem thêm →","title":"Học hỏi\nKinh Thánh"},{"desc":"Những cuốn sách hữu ích cho đời sống thiêng liêng.","href":"sach/","link":"Khám phá →","title":"Sách"}],"eyebrow":"CÁC MỤC VỤ","title":"Nơi lưu giữ các mục vụ"},"verse":{"ref":"Ga 14,6","text":"“Thầy là đường, là sự thật\nvà là sự sống.”"}}
+{
+  "about": {
+    "eyebrow": "VỀ TÔI",
+    "p1": " Trang web này là nơi tôi chia sẻ những suy tư, bài giảng, hành trình đức tin và các tài liệu hữu ích cho đời sống Kitô hữu.",
+    "p2": "Cầu chúc anh chị em luôn được Chúa đồng hành trong mọi nẻo đường!",
+    "signature": "Fr. Thomas",
+    "title": "Hello,"
+  },
+  "footer": {
+    "copyright": "© 2025 Fr. Thomas. All rights reserved.",
+    "parish": "St. Francis Xavier Parish · Vancouver"
+  },
+  "hero": {
+    "button": "Khám phá các mục vụ →",
+    "eyebrow": "XIN CHÀO!",
+    "quote": "Cùng nhau bước đi trong đức tin,\ntôn vinh Chúa và phục vụ tha nhân.",
+    "role": "St. Francis Xavier Parish\nVancouver",
+    "title": "Fr. Thomas"
+  },
+  "ministries": {
+    "cards": [
+      {
+        "desc": "Cùng nhau khám phá những dấu chân đức tin.",
+        "href": "hanh-huong/",
+        "link": "Tìm hiểu thêm →",
+        "title": "Hành hương\nViệt Nam 2028"
+      },
+      {
+        "desc": "Những chia sẻ Lời Chúa trong đời sống hằng ngày.",
+        "href": "bai-giang/",
+        "link": "Xem thêm →",
+        "title": "Bài giảng"
+      },
+      {
+        "desc": "Cùng nhau tìm hiểu và sống Lời Chúa.",
+        "href": "hoc-kinh-thanh/",
+        "link": "Xem thêm →",
+        "title": "Học hỏi\nKinh Thánh"
+      },
+      {
+        "desc": "Những cuốn sách hữu ích cho đời sống thiêng liêng.",
+        "href": "sach/",
+        "link": "Khám phá →",
+        "title": "Sách"
+      }
+    ],
+    "eyebrow": "CÁC MỤC VỤ",
+    "title": "Nơi lưu giữ các mục vụ"
+  },
+  "verse": {
+    "ref": "Ga 14,6",
+    "text": "“Thầy là đường, là sự thật\nvà là sự sống.”"
+  }
+}
