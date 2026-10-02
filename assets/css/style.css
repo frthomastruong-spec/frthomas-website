@@ -24,7 +24,10 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    linear-gradient(rgba(247,243,234,.84), rgba(247,243,234,.84)),
+    url('../images/hero-elijah.jpg') center top / cover no-repeat fixed,
+    var(--bg);
   color: var(--ink);
   font-family: var(--sans);
   line-height: 1.65;
@@ -64,30 +67,26 @@ a { color: var(--gold-deep); }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  background: #f3ecdb;
-  color: var(--ink); text-align: center; padding: 96px 20px 88px; overflow: hidden;
+  background: var(--navy-deep);
+  color: #f3ecdb; text-align: center; padding: 96px 20px 88px; overflow: hidden;
 }
 .hero-bg {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  object-position: center 42%;
   animation: heroBg 3.2s ease-out both;
 }
 @keyframes heroBg { from { transform: scale(1.14); } to { transform: scale(1); } }
 .hero::before {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(247,243,234,.74) 0%, rgba(247,243,234,.36) 42%, rgba(247,243,234,.58) 100%);
+  background: linear-gradient(180deg, rgba(16,21,44,.80) 0%, rgba(20,26,54,.60) 45%, rgba(16,21,44,.90) 100%);
 }
 .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-line), transparent); z-index: 1; }
 .hero-inner { position: relative; z-index: 1; }
-.hero .kicker { color: var(--gold-deep); border-color: rgba(125,90,28,.55); }
-.hero h1 { color: var(--navy); }
-.hero .lead { color: var(--ink-soft); }
 .kicker {
   display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
   color: var(--gold-line); border: 1px solid rgba(217, 199, 154, .45); border-radius: 999px; padding: 6px 16px; margin-bottom: 18px;
 }
-.hero h1 { font-family: var(--serif); font-weight: 800; font-size: clamp(38px, 6vw, 60px); margin: 0 0 12px; }
-.hero .lead { max-width: 640px; margin: 0 auto; font-size: 17px; }
+.hero h1 { font-family: var(--serif); font-weight: 800; font-size: clamp(38px, 6vw, 60px); margin: 0 0 12px; color: #fff; }
+.hero .lead { max-width: 640px; margin: 0 auto; color: #cfd3e6; font-size: 17px; }
 .gold-rule { width: 72px; height: 3px; background: linear-gradient(90deg, var(--gold-deep), var(--gold-line)); border-radius: 2px; margin: 26px auto 0; }
 
 /* ---------- Thẻ mục ---------- */
@@ -228,5 +227,6 @@ a { color: var(--gold-deep); }
   .card.featured { grid-template-columns: 1fr; }
   .card.featured .thumb { min-height: 200px; }
   .hero { padding: 72px 20px 64px; }
-  .hero-bg { object-position: center 55%; }
+  /* iOS không xử lý tốt background-attachment: fixed */
+  body { background-attachment: scroll, scroll, scroll; }
 }
