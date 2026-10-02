@@ -1,0 +1,73 @@
+<div class="night" id="night" aria-hidden="true">
+  <div class="night-stars"></div>
+  <div class="night-wash" id="nightWash"></div>
+</div>
+<div class="night-lamp" id="nightLamp" role="button" tabindex="0" aria-label="Chạm để mở đèn">
+  <div class="lamp-halo"></div>
+  <svg class="lamp-svg" viewBox="0 0 140 180" aria-hidden="true">
+    <path d="M48 14 L92 14 L106 58 L34 58 Z" fill="#141a28" stroke="#2b3552" stroke-width="2"/>
+    <path d="M48 14 L92 14 L96 26 L44 26 Z" fill="#1d2438"/>
+    <ellipse class="bulb-glow" cx="70" cy="56" rx="30" ry="7" fill="#ffca7a"/>
+    <circle class="bulb" cx="70" cy="50" r="7" fill="#ffd9a0"/>
+    <rect x="66" y="58" width="8" height="54" rx="4" fill="#141a28" stroke="#2b3552" stroke-width="1.5"/>
+    <ellipse cx="70" cy="118" rx="30" ry="9" fill="#141a28" stroke="#2b3552" stroke-width="2"/>
+    <g class="cord" id="nightCord">
+      <line x1="102" y1="50" x2="102" y2="102" stroke="#8a7a5a" stroke-width="3" stroke-linecap="round"/>
+      <circle class="knob" cx="102" cy="110" r="8" fill="#c9a86a" stroke="#8a6f3e" stroke-width="1.5"/>
+      <rect x="78" y="40" width="48" height="92" fill="rgba(0,0,0,0)"/>
+    </g>
+  </svg>
+  <div class="night-hint" id="nightHint">chạm để mở đèn</div>
+</div>
+<header class="hero">
+  <img class="bg" src="{{hero.img}}" alt="Nhà thờ lúc bình minh" fetchpriority="high">
+  <div class="in">
+    <div class="eyebrow">{{hero.eyebrow}}</div>
+    <h1>{{hero.title}}</h1>
+    <div class="role">{{hero.role}}</div>
+    <p class="qt">{{hero.quote}}</p>
+    <a class="btn" href="#muc-vu">{{hero.button}}</a>
+  </div>
+</header>
+
+<section class="about rv">
+  <img src="{{about.img}}" alt="Linh mục Thomas" loading="lazy">
+  <div>
+    <div class="eyebrow">{{about.eyebrow}}</div>
+    <h2>{{about.title}}</h2>
+    <p>{{about.p1}}</p>
+    <p class="bless"><i>{{about.p2}}</i></p>
+    <div class="sig">{{about.signature}}</div>
+  </div>
+</section>
+
+<section class="min" id="muc-vu">
+  <div class="eyebrow rv">{{ministries.eyebrow}}</div>
+  <h2 class="rv">{{ministries.title}}</h2>
+  <div class="cards">
+<!--CARDS-->
+    <a class="card rv" href="{{card.href}}">
+      <img src="{{card.img}}" alt="" loading="lazy">
+      <div class="cb"><h4>{{card.title}}</h4><p>{{card.desc}}</p><span class="more">{{card.link}}</span></div>
+    </a>
+<!--/CARDS-->
+  </div>
+</section>
+
+<section class="verse rv">
+  <img class="bg" src="{{verse.img}}" alt="" aria-hidden="true" loading="lazy">
+  <div class="in">
+    <blockquote>{{verse.text}}</blockquote>
+    <div class="ref">{{verse.ref}}</div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-in">
+    <div class="f-top">
+      <div class="f-brand"><img class="f-logo" src="assets/images/logo.png" alt="Logo Fr. Thomas"><span><b>Fr. Thomas</b></span></div>
+      <div class="soc"><span>f</span><span>▶</span><span>◎</span></div>
+    </div>
+    <div class="f-bot"><span>{{footer.copyright}}</span><span>{{footer.parish}}</span></div>
+  </div>
+</footer>
