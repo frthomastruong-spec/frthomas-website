@@ -47,7 +47,7 @@
   .f-in { max-width: 1200px; margin: 0 auto; padding: 38px 28px 22px; }
   .f-top { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; padding-bottom: 26px; border-bottom: 1px solid #e5ddc8; }
   .f-brand { display: flex; align-items: center; gap: 12px; }
-  .f-logo { width: 48px; height: 48px; object-fit: contain; flex: none; }
+  .f-logo { width: 32px; height: 32px; object-fit: contain; flex: none; }
   .f-brand b { font-family: 'Playfair Display', serif; font-size: 18px; color: #1e3a5f; display: block; line-height: 1.15; }
   .f-brand small { font-size: 10px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
   .soc { display: flex; gap: 10px; }
