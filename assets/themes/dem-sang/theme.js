@@ -1,5 +1,10 @@
 /* Dem Sang — den ban goc phai, cham day cong tac de bat/tat man dem */
 (function () {
+  /* Dam bao trang duoc phep ve tran vung tai tho (phong khi Safari giu ban HTML cu trong cache) */
+  try {
+    var vm = document.querySelector('meta[name="viewport"]');
+    if (vm && vm.content.indexOf('viewport-fit') === -1) vm.content += ', viewport-fit=cover';
+  } catch (e) {}
   /* Hieu ung hien dan khi cuon (ke thua theme Chan Dung) */
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) {
