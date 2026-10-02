@@ -71,7 +71,9 @@
 
 /* ============ Đêm Sáng — đèn treo (màn đêm nằm thẳng trong index.html) ============ */
 .night-lamp { position: fixed; right: 0; bottom: env(safe-area-inset-bottom, 0px); z-index: 160; height: 68vh; max-height: 660px;
-  cursor: pointer; -webkit-tap-highlight-color: transparent; outline: none; }
+  cursor: pointer; -webkit-tap-highlight-color: transparent; outline: none;
+  transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .8s ease; }
+body.lamp-dismissed .night-lamp { transform: translateX(115%); opacity: 0; pointer-events: none; }
 .night-lamp:focus-visible { outline: 3px solid #e8c877; outline-offset: 4px; border-radius: 12px; }
 .lamp-photo { position: relative; z-index: 2; display: block; height: 100%; width: auto;
   filter: brightness(.32) saturate(.85); transition: filter 1.1s ease; }
@@ -81,10 +83,15 @@ body.is-day .lamp-photo { filter: brightness(1.04) saturate(1) drop-shadow(0 0 3
   background: radial-gradient(circle, rgba(255,208,135,.75) 0%, rgba(255,182,105,.3) 38%, transparent 68%);
   transition: transform 1.1s cubic-bezier(.2,.7,.2,1), opacity 1.1s ease; }
 body.is-day .lamp-halo { transform: translate(-50%,-50%) scale(1); opacity: 1; }
-.night-hint { position: absolute; top: 27%; left: 50%; transform: translateX(-50%); white-space: nowrap;
-  font-size: 11px; letter-spacing: 1px; text-align: center;
+.night-hint { position: absolute; top: 26%; right: 100%; margin-right: 12px; transform: translateY(-50%); white-space: nowrap;
+  font-size: 11px; letter-spacing: 1px;
   color: #e8c877; opacity: .85; animation: hintPulse 2.2s ease-in-out infinite;
   transition: opacity .6s ease; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+/* Dem Sang: nut menu an cho den khi den duoc thu gon, roi truot vao tu phai */
+body.theme-dem-sang .fm-btn { transform: translateX(130%); opacity: 0; pointer-events: none;
+  transition: transform .6s cubic-bezier(.2,.7,.2,1), opacity .6s ease, background .25s ease, box-shadow .25s ease; }
+body.theme-dem-sang.lamp-dismissed .fm-btn { transform: translateX(0); opacity: 1; pointer-events: auto; }
+body.theme-dem-sang.lamp-dismissed .fm-btn.open { transform: rotate(135deg); }
 @keyframes hintPulse { 0%,100% { opacity: .45; } 50% { opacity: .95; } }
 @media (prefers-reduced-motion: reduce) {
   .lamp-halo, .lamp-photo, .night-hint, .night-lamp { transition: none !important; animation: none !important; }
