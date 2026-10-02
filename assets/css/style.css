@@ -68,12 +68,12 @@ a { color: var(--gold-deep); }
 .fm-ov.open { opacity: 1; pointer-events: auto; }
 .fm-panel {
   position: absolute; right: 22px; bottom: 96px;
-  width: 258px; max-height: 80vh; overflow-y: auto;
+  width: 224px; max-height: 80vh; overflow-y: auto;
   background: rgba(251,248,238,.94);
   -webkit-backdrop-filter: blur(16px) saturate(1.15);
   backdrop-filter: blur(16px) saturate(1.15);
   border: 1px solid rgba(214,198,160,.85); border-radius: 20px;
-  padding: 14px 14px 10px;
+  padding: 10px 10px 8px;
   box-shadow: 0 28px 64px rgba(30,58,95,.28), 0 4px 14px rgba(0,0,0,.08);
   transform: scale(.8) translateY(18px); transform-origin: bottom right; opacity: 0;
   transition: transform .42s cubic-bezier(.34,1.45,.5,1), opacity .3s ease;
@@ -86,14 +86,12 @@ a { color: var(--gold-deep); }
   transition: transform .3s ease, color .2s ease, background .2s ease;
 }
 .fm-x:hover { transform: rotate(90deg); color: #b08d3e; background: rgba(176,141,62,.12); }
-.fm-brand { text-align: center; margin-bottom: 4px; padding-bottom: 10px; border-bottom: 1px solid #ece2c8; }
-.fm-brand .x { font-size: 22px; color: #b08d3e; }
-.fm-brand b { display: block; font-family: var(--serif, 'Playfair Display', serif); font-size: 18px; color: #1e3a5f; }
-.fm-brand small { font-size: 9px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
+.fm-brand { text-align: center; margin-bottom: 2px; padding-bottom: 8px; border-bottom: 1px solid #ece2c8; }
+.fm-brand b { display: block; font-family: var(--serif, 'Playfair Display', serif); font-size: 16px; color: #1e3a5f; }
 .fm-links a {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 11px 12px; margin: 2px 0; border-radius: 12px;
-  color: #1e3a5f; font-size: 14.5px; font-weight: 600; text-decoration: none;
+  padding: 9px 10px; margin: 2px 0; border-radius: 12px;
+  color: #1e3a5f; font-size: 14px; font-weight: 600; text-decoration: none;
   opacity: 0; transform: translateX(16px);
   transition: opacity .3s ease, transform .38s cubic-bezier(.2,.7,.2,1), background .18s ease, color .18s ease;
 }
