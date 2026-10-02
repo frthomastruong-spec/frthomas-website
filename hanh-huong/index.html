@@ -64,21 +64,26 @@
     }
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; background: var(--bg); }
   body {
     margin: 0;
-    background:
-      linear-gradient(rgba(247,243,234,.84), rgba(247,243,234,.84)),
-      url('../assets/images/hero-elijah.jpg') center top / cover no-repeat fixed,
-      var(--bg);
+    background: transparent;
     color: var(--ink);
     font-family: var(--sans);
     font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
-  @media (max-width: 760px) {
-    body { background-attachment: scroll, scroll, scroll; }
+  /* Nền toàn trang đứng yên khi cuộn */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(247,243,234,.84), rgba(247,243,234,.84)),
+      url('../assets/images/hero-elijah.jpg') center top / cover no-repeat;
   }
   img { max-width: 100%; display: block; }
   h1, h2, h3 { line-height: 1.28; margin: 0; text-wrap: balance; }
