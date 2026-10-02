@@ -1,0 +1,87 @@
+[
+ {
+  "slug": "tinh-lang",
+  "name": "Tĩnh Lặng",
+  "desc": "Phong cách tối giản, sang như trang sách — chữ lớn, khoảng trắng rộng."
+ },
+ {
+  "slug": "vom-thanh",
+  "name": "Vòm Thánh",
+  "desc": "Hơi thở nhà thờ: vòm cong, xanh navy sâu, ánh nến vàng."
+ },
+ {
+  "slug": "hon-viet",
+  "name": "Hồn Việt",
+  "desc": "Bản sắc Việt: sơn mài đỏ, vàng đồng, giấy dó."
+ },
+ {
+  "slug": "binh-minh",
+  "name": "Bình Minh",
+  "desc": "Hiện đại, sáng sủa, thân thiện như buổi sáng đầy nắng."
+ },
+ {
+  "slug": "lua-thieng",
+  "name": "Lửa Thiêng",
+  "desc": "Mạnh mẽ, ấn tượng: nền đen, chữ lửa cam."
+ },
+ {
+  "slug": "vuon-dau",
+  "name": "Vườn Dầu",
+  "desc": "Gần gũi thiên nhiên: xanh ôliu, khung ảnh uốn lượn hữu cơ."
+ },
+ {
+  "slug": "thu-phap",
+  "name": "Thư Pháp",
+  "desc": "Phong cách thư pháp mực tàu — nét cọ mạnh mẽ, số Hán trang trí."
+ },
+ {
+  "slug": "co-dien",
+  "name": "Cổ Điển",
+  "desc": "Cẩm thạch và vàng — chữ in hoa trang trọng, viền khung đôi tinh xảo."
+ },
+ {
+  "slug": "dai-duong",
+  "name": "Đại Dương",
+  "desc": "Hơi thở biển cả — xanh teal mát rượi, sóng lượn, ảnh tràn màn hình."
+ },
+ {
+  "slug": "sai-gon-xua",
+  "name": "Sài Gòn Xưa",
+  "desc": "Poster retro Việt Nam — thẻ hành hương như vé xe đò, vui và đầy kỷ niệm."
+ },
+ {
+  "slug": "go-tich",
+  "name": "Gô-tích",
+  "desc": "Gothic cổ điển — vòm nhọn, chữ blackletter, ánh nến trên đá."
+ },
+ {
+  "slug": "am-cung",
+  "name": "Ấm Cúng",
+  "desc": "Ấm cúng như căn nhà nhỏ — màu caramel, bo tròn mềm mại."
+ },
+ {
+  "slug": "anh-sang",
+  "name": "Ánh Sáng",
+  "desc": "Nền đêm lung linh — hạt sáng bay, thắp nến cầu nguyện, thẻ nghiêng 3D, câu Kinh Thánh tự đổi."
+ },
+ {
+  "slug": "dong-song",
+  "name": "Dòng Sông",
+  "desc": "Mặt nước gợn sóng — chạm tạo ripple lan tỏa, sóng lượn, chữ chạy marquee."
+ },
+ {
+  "slug": "bau-troi-sao",
+  "name": "Bầu Trời Sao",
+  "desc": "Đêm đầy sao — chạm để sao băng vụt qua, đếm ngược hành hương, câu Kinh Thánh gõ từng chữ."
+ },
+ {
+  "slug": "hoa-no",
+  "name": "Hoa Nở",
+  "desc": "Vườn xuân — cánh hoa rơi, chạm vào vườn để ươm hoa nở."
+ },
+ {
+  "slug": "chan-dung",
+  "name": "Chân Dung",
+  "desc": "Phong cách portfolio linh mục — ảnh chân dung, 4 thẻ mục vụ, dải Kinh Thánh."
+ }
+]

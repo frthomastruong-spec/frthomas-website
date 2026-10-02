@@ -55,6 +55,18 @@
   #imSave:disabled { opacity: .55; }
   .filewrap { position: relative; overflow: hidden; }
   .filewrap input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .tgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .tgrid { grid-template-columns: 1fr; } }
+  .tcard { border: 1.5px solid #e2d9bd; border-radius: 12px; padding: 14px; background: #fffdf6; position: relative; }
+  .tcard.cur { border-color: #b08d3e; box-shadow: 0 0 0 3px rgba(176,141,62,.15); }
+  .tcard h4 { margin: 0 0 4px; font-size: 15px; color: #1e3a5f; font-family: 'Playfair Display', serif; }
+  .tcard p { margin: 0 0 12px; font-size: 12.5px; color: #8a97a8; line-height: 1.55; min-height: 38px; }
+  .tcard .row { display: flex; gap: 8px; }
+  .tcard .row button, .tcard .row a { flex: 1; text-align: center; font-size: 13px; font-weight: 600; border-radius: 9px; padding: 10px 6px; cursor: pointer; font-family: inherit; text-decoration: none; }
+  .tcard .tview { background: #fff; color: #1e3a5f; border: 1.5px solid #b08d3e; }
+  .tcard .tapply { background: #b08d3e; color: #fff; border: 1.5px solid #b08d3e; }
+  .tcard .tapply:disabled { opacity: .55; }
+  .tcard .badge { position: absolute; top: -9px; right: 10px; background: #b08d3e; color: #fff; font-size: 10.5px; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
 </style>
 </head>
 <body>
@@ -79,6 +91,11 @@
   </div>
 
   <div id="editor" class="hidden">
+    <div class="card">
+      <h2>🎨 Giao diện website</h2>
+      <p class="d">Chọn một mẫu rồi bấm <b>Áp dụng</b> — web đổi ngay, không cần làm gì thêm. Bấm <b>Xem thử</b> để coi trước.</p>
+      <div id="themeGrid" class="tgrid"><p class="sub">Đang tải danh sách giao diện…</p></div>
+    </div>
     <div class="card">
       <h2>Phần chào đầu trang</h2>
       <p class="d">Chữ và ảnh nền phần chào.</p>
@@ -336,7 +353,7 @@
     api(PATH).then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function(j){
       sha = j.sha;
       data = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))));
-      fill(data); showEditor(); status('Đã tải xong. Anh sửa rồi bấm Lưu nhé.', 'ok');
+      fill(data); showEditor(); loadThemes(); status('Đã tải xong. Anh sửa rồi bấm Lưu nhé.', 'ok');
     }).catch(function(){ status('Không tải được. Anh kiểm tra lại mã token nhé.', 'err'); });
   }
   $('tokenSave').addEventListener('click', function(){
@@ -358,6 +375,50 @@
     .catch(function(){ status('Lưu chưa được — có thể token hết hạn. Anh tạo mã mới giúp em.', 'err'); })
     .finally(function(){ btn.disabled = false; btn.textContent = '💾 Lưu thay đổi lên website'; });
   });
+  /* ---------- theme picker ---------- */
+  var siteSha = null, currentTheme = null;
+  function loadThemes(){
+    var grid = $('themeGrid');
+    Promise.all([
+      fetch('../assets/themes.json', { cache: 'no-store' }).then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; }),
+      api('assets/site.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+    ]).then(function(res){
+      var list = res[0], sj = res[1];
+      if (sj) {
+        siteSha = sj.sha;
+        try { currentTheme = JSON.parse(decodeURIComponent(escape(atob(sj.content.replace(/\n/g,''))))).theme; } catch(e){}
+      }
+      if (!list.length) { grid.innerHTML = '<p class="sub">Chưa tải được danh sách giao diện.</p>'; return; }
+      grid.innerHTML = '';
+      list.forEach(function(t){
+        var d = document.createElement('div');
+        d.className = 'tcard' + (t.slug === currentTheme ? ' cur' : '');
+        d.innerHTML = (t.slug === currentTheme ? '<span class="badge">ĐANG DÙNG</span>' : '') +
+          '<h4>' + esc(t.name) + '</h4><p>' + esc(t.desc || '') + '</p>' +
+          '<div class="row"><a class="tview" href="../?theme=' + esc(t.slug) + '" target="_blank" rel="noopener">Xem thử</a>' +
+          '<button class="tapply"' + (t.slug === currentTheme ? ' disabled' : '') + ' data-slug="' + esc(t.slug) + '">' +
+          (t.slug === currentTheme ? '✓ Đang dùng' : 'Áp dụng') + '</button></div>';
+        grid.appendChild(d);
+      });
+      grid.querySelectorAll('.tapply:not([disabled])').forEach(function(b){
+        b.addEventListener('click', function(){ applyTheme(b.getAttribute('data-slug'), b); });
+      });
+    });
+  }
+  function applyTheme(slug, btn){
+    btn.disabled = true; btn.textContent = 'Đang áp dụng…';
+    status('Đang áp dụng giao diện…');
+    api('assets/site.json').then(function(r){ return r.json(); }).then(function(j){
+      return api('assets/site.json', { method: 'PUT', body: JSON.stringify({
+        message: 'switch theme to ' + slug + ' via web admin',
+        content: b64(JSON.stringify({ theme: slug }, null, 2) + '\n'),
+        sha: j.sha, branch: BRANCH }) });
+    })
+    .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(){ currentTheme = slug; status('Đã áp dụng xong! Mở frthomas.com xem nhé.', 'ok'); loadThemes(); })
+    .catch(function(){ status('Áp dụng chưa được. Anh thử lại giúp em.', 'err'); btn.disabled = false; btn.textContent = 'Áp dụng'; });
+  }
+
   $('logoutBtn').addEventListener('click', function(){
     localStorage.removeItem('ft_admin_token');
     location.reload();

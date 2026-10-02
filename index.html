@@ -12,17 +12,17 @@
 <meta property="og:description" content="Cùng nhau bước đi trong đức tin, tôn vinh Chúa và phục vụ tha nhân.">
 <meta property="og:url" content="https://frthomas.com/">
 <meta property="og:image" content="https://frthomas.com/assets/images/home-hero.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,600&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: #f8f5ec; color: #3c4f66; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-  img { display: block; max-width: 100%; }
-  a { text-decoration: none; color: inherit; }
-
-  /* Nút menu nổi (floating menu) */
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Be Vietnam Pro', system-ui, sans-serif; background: #f8f5ec; color: #3c4f66; }
+  #app { min-height: 100vh; }
+  #app .loading { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px; color: #8a97a8; font-size: 14px; }
+  #app .loading .spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #e2d9bd; border-top-color: #b08d3e; animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #previewBar { position: fixed; top: 0; left: 0; right: 0; z-index: 500; background: #1e3a5f; color: #fff; font-size: 13.5px; padding: 10px 16px; display: none; align-items: center; justify-content: center; gap: 10px; }
+  #previewBar a { color: #e8c877; font-weight: 600; }
+  /* Nút menu nổi (floating menu) — dùng chung mọi theme */
   .fm-btn { position: fixed; right: 22px; bottom: 22px; z-index: 200; width: 62px; height: 62px; border-radius: 50%; background: #1e3a5f; color: #fff; border: none; font-size: 25px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 34px rgba(30,58,95,.38); transition: transform .25s ease, background .25s ease; }
   .fm-btn:hover { transform: scale(1.07); background: #274b78; }
   .fm-btn:active { transform: scale(.96); }
@@ -33,209 +33,50 @@
   .fm-x { position: absolute; top: 4px; right: 10px; background: none; border: 0; font-size: 24px; line-height: 1; color: #1e3a5f; cursor: pointer; padding: 8px; }
   .fm-brand { text-align: center; margin-bottom: 6px; }
   .fm-brand .x { font-size: 24px; color: #1e3a5f; }
-  .fm-brand b { display: block; font-family: 'Playfair Display', serif; font-size: 18px; color: #1e3a5f; }
+  .fm-brand b { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #1e3a5f; }
   .fm-brand small { font-size: 9px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
-  .fm-links a { display: flex; align-items: center; justify-content: space-between; padding: 10px 4px; border-bottom: 1px solid #ece2c8; color: #1e3a5f; font-size: 14.5px; font-weight: 600; }
+  .fm-links a { display: flex; align-items: center; justify-content: space-between; padding: 10px 4px; border-bottom: 1px solid #ece2c8; color: #1e3a5f; font-size: 14.5px; font-weight: 600; text-decoration: none; }
   .fm-links a:last-child { border-bottom: 0; }
   .fm-links a .arr { color: #b08d3e; font-weight: 400; }
   .fm-links a.on { color: #b08d3e; }
-
-  .hero { position: relative; min-height: 560px; display: flex; align-items: center; overflow: hidden; }
-  .hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(248,245,236,.92) 0%, rgba(248,245,236,.60) 34%, rgba(248,245,236,0) 62%); pointer-events: none; }
-  .hero .in { position: relative; z-index: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 80px 28px; }
-  .eyebrow { display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: 5px; color: #a5812f; font-weight: 600; margin-bottom: 20px; }
-  .eyebrow::after { content: ""; width: 70px; height: 1px; background: #b08d3e; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(58px, 9vw, 96px); color: #1e3a5f; margin: 0; font-weight: 800; line-height: 1.02; }
-  .hero .role { margin-top: 18px; font-size: 13px; letter-spacing: 3.5px; color: #1e3a5f; text-transform: uppercase; line-height: 2.1; }
-  .hero .qt { margin: 24px 0 32px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: #1e3a5f; line-height: 1.65; max-width: 480px; }
-  .btn { display: inline-block; border: 1.5px solid #b08d3e; color: #8a6d2a; border-radius: 8px; padding: 15px 32px; font-size: 14.5px; font-weight: 600; background: rgba(255,255,255,.35); transition: background .25s, color .25s; }
-  .btn:hover { background: #b08d3e; color: #fff; }
-
-  .about { max-width: 1200px; margin: 0 auto; padding: 90px 28px; display: grid; grid-template-columns: 1fr 1.25fr; gap: 60px; align-items: center; }
-  .about img { width: 100%; height: 520px; object-fit: cover; border-radius: 14px; box-shadow: 0 24px 60px rgba(30,58,95,.14); }
-  .about h2 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4.5vw, 48px); color: #1e3a5f; margin: 0 0 22px; font-weight: 700; line-height: 1.25; }
-  .about p { margin: 0 0 18px; }
-  .about .bless { font-style: italic; }
-  .about .sig { font-family: 'Great Vibes', cursive; font-size: 48px; color: #1e3a5f; margin-top: 8px; }
-
-  .min { max-width: 1200px; margin: 0 auto; padding: 10px 28px 90px; }
-  .min h2 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4.5vw, 48px); color: #1e3a5f; margin: 0 0 44px; font-weight: 700; }
-  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  .card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 36px rgba(30,58,95,.08); transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column; }
-  .card:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(30,58,95,.15); }
-  .card img { width: 100%; height: 180px; object-fit: cover; }
-  .card .cb { padding: 24px 22px 26px; display: flex; flex-direction: column; flex: 1; }
-  .card h4 { font-family: 'Playfair Display', serif; font-size: 21px; color: #1e3a5f; margin: 0 0 10px; line-height: 1.4; }
-  .card p { font-size: 14px; color: #6b7d94; margin: 0 0 20px; flex: 1; }
-  .card .more { font-size: 14px; color: #1e3a5f; font-weight: 500; }
-  .card .more b { color: #b08d3e; font-weight: 400; }
-
-  .verse { position: relative; min-height: 400px; display: flex; align-items: center; overflow: hidden; }
-  .verse img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .verse .in { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 70px 28px; }
-  .verse blockquote { margin: 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(28px, 4vw, 40px); color: #1e3a5f; line-height: 1.5; max-width: 560px; text-shadow: 0 1px 12px rgba(255,255,255,.6); }
-  .verse .ref { margin-top: 20px; font-size: 14.5px; color: #1e3a5f; display: flex; align-items: center; gap: 12px; }
-  .verse .ref::after { content: ""; width: 46px; height: 2px; background: #b08d3e; }
-
-  footer { background: #fbf9f2; }
-  .f-in { max-width: 1200px; margin: 0 auto; padding: 38px 28px 22px; }
-  .f-top { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; padding-bottom: 26px; border-bottom: 1px solid #e5ddc8; }
-  .f-brand { display: flex; align-items: center; gap: 10px; }
-  .f-brand .x { font-size: 26px; color: #1e3a5f; }
-  .f-brand b { font-family: 'Playfair Display', serif; font-size: 18px; color: #1e3a5f; display: block; line-height: 1.15; }
-  .f-brand small { font-size: 10px; letter-spacing: 2px; color: #8a97a8; text-transform: uppercase; }
-  .f-links { display: flex; gap: 20px; font-size: 13.5px; color: #6b7d94; flex-wrap: wrap; }
-  .f-links a:hover { color: #1e3a5f; }
-  .soc { display: flex; gap: 10px; }
-  .soc span { width: 34px; height: 34px; border-radius: 50%; background: #1e3a5f; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
-  .f-bot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 20px; font-size: 12.5px; color: #8a97a8; }
-
-  .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
-  .rv.on { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
-
-  @media (max-width: 980px) {
-    .cards { grid-template-columns: repeat(2, 1fr); }
-    .about { grid-template-columns: 1fr; gap: 40px; }
-    .about img { height: 420px; }
-  }
-  @media (max-width: 760px) {
-    .hero { min-height: 500px; }
-    .cards { grid-template-columns: 1fr; }
-    .f-top { flex-direction: column; align-items: flex-start; }
-  }
+  @media (prefers-reduced-motion: reduce) { .fm-ov, .fm-panel, .fm-btn, #app .loading .spin { transition: none !important; animation: none !important; } }
 </style>
 </head>
 <body>
-
-<header class="hero">
-  <img class="bg" id="heroImg" src="assets/images/home-hero.jpg" alt="Nhà thờ lúc bình minh" fetchpriority="high">
-  <div class="in" id="heroIn"></div>
-</header>
-
-<section class="about rv" id="aboutSec"><img id="aboutImg" src="assets/images/home-portrait.jpg" alt="Linh mục Thomas" loading="lazy"><div id="aboutIn"></div></section>
-
-<section class="min" id="muc-vu"><div id="minIn"></div></section>
-
-<section class="verse rv">
-  <img class="bg" id="verseImg" src="assets/images/home-verse.jpg" alt="" aria-hidden="true" loading="lazy">
-  <div class="in" id="verseIn"></div>
-</section>
-
-<footer>
-  <div class="f-in">
-    <div class="f-top">
-      <div class="f-brand"><span class="x">✝</span><span><b>Fr. Thomas</b><small>Catholic Priest</small></span></div>
-      <div class="f-links">
-        <a href="./">Trang chủ</a><a href="hanh-huong/">Hành hương</a><a href="bai-giang/">Bài giảng</a><a href="hoc-kinh-thanh/">Học Kinh Thánh</a><a href="sach/">Sách</a>
-      </div>
-      <div class="soc"><span>f</span><span>▶</span><span>◎</span></div>
-    </div>
-    <div class="f-bot" id="footIn"></div>
-  </div>
-</footer>
-
-<script id="content-data" type="application/json">{
- "about": {
-  "eyebrow": "VỀ TÔI",
-  "p1": "Tôi là linh mục phụ tá tại Giáo xứ Thánh Phanxicô Xaviê, Vancouver. Trang web này là nơi tôi chia sẻ những suy tư, bài giảng, hành trình đức tin và các tài liệu hữu ích cho đời sống Kitô hữu.",
-  "p2": "Cầu chúc anh chị em luôn được Chúa đồng hành trong mọi nẻo đường!",
-  "signature": "Fr. Thomas",
-  "title": "Xin chào, tôi là\nLinh mục Thomas",
-  "img": "assets/images/home-portrait.jpg"
- },
- "footer": {
-  "copyright": "© 2025 Fr. Thomas. All rights reserved.",
-  "parish": "St. Francis Xavier Parish · Vancouver"
- },
- "hero": {
-  "button": "Khám phá các mục vụ →",
-  "eyebrow": "XIN CHÀO!",
-  "quote": "Cùng nhau bước đi trong đức tin,\ntôn vinh Chúa và phục vụ tha nhân.",
-  "role": "Linh mục phụ tá · St. Francis Xavier Parish\nVancouver",
-  "title": "Fr. Thomas",
-  "img": "assets/images/home-hero.jpg"
- },
- "ministries": {
-  "cards": [
-   {
-    "desc": "Cùng nhau khám phá những dấu chân đức tin.",
-    "href": "hanh-huong/",
-    "link": "Tìm hiểu thêm →",
-    "title": "Hành hương\nViệt Nam 2028",
-    "img": "assets/images/home-card-hanhhuong.jpg"
-   },
-   {
-    "desc": "Những chia sẻ Lời Chúa trong đời sống hằng ngày.",
-    "href": "bai-giang/",
-    "link": "Xem thêm →",
-    "title": "Bài giảng",
-    "img": "assets/images/home-card-baigiang.jpg"
-   },
-   {
-    "desc": "Cùng nhau tìm hiểu và sống Lời Chúa.",
-    "href": "hoc-kinh-thanh/",
-    "link": "Xem thêm →",
-    "title": "Học hỏi\nKinh Thánh",
-    "img": "assets/images/home-card-kinhthanh.jpg"
-   },
-   {
-    "desc": "Những cuốn sách hữu ích cho đời sống thiêng liêng.",
-    "href": "sach/",
-    "link": "Khám phá →",
-    "title": "Sách",
-    "img": "assets/images/home-card-sach.jpg"
-   }
-  ],
-  "eyebrow": "CÁC MỤC VỤ",
-  "title": "Nơi lưu giữ các mục vụ"
- },
- "verse": {
-  "ref": "Ga 14,6",
-  "text": "“Thầy là đường, là sự thật\nvà là sự sống.”",
-  "img": "assets/images/home-verse.jpg"
- }
-}</script>
+<div id="previewBar"></div>
+<div id="app"><div class="loading"><div class="spin"></div><div>Đang tải…</div></div></div>
+<noscript><div style="padding:60px 20px;text-align:center">Trang web cần JavaScript để hiển thị. Vui lòng bật JavaScript.</div></noscript>
 <script>
 (function(){
-  var nl = function(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'); };
-  function render(c){
-    document.getElementById('heroImg').src = c.hero.img;
-    document.getElementById('aboutImg').src = c.about.img;
-    document.getElementById('verseImg').src = c.verse.img;
-    document.getElementById('heroIn').innerHTML =
-      '<div class="eyebrow">' + nl(c.hero.eyebrow) + '</div>' +
-      '<h1>' + nl(c.hero.title) + '</h1>' +
-      '<div class="role">' + nl(c.hero.role) + '</div>' +
-      '<p class="qt">' + nl(c.hero.quote) + '</p>' +
-      '<a class="btn" href="#muc-vu">' + nl(c.hero.button) + '</a>';
-    document.getElementById('aboutIn').innerHTML =
-      '<div class="eyebrow">' + nl(c.about.eyebrow) + '</div>' +
-      '<h2>' + nl(c.about.title) + '</h2>' +
-      '<p>' + nl(c.about.p1) + '</p>' +
-      '<p class="bless"><i>' + nl(c.about.p2) + '</i></p>' +
-      '<div class="sig">' + nl(c.about.signature) + '</div>';
-    var cards = c.ministries.cards.map(function(k, i){
-      return '<a class="card rv" href="' + nl(k.href) + '">' +
-        '<img src="' + nl(k.img) + '" alt="" loading="lazy">' +
-        '<div class="cb"><h4>' + nl(k.title) + '</h4><p>' + nl(k.desc) + '</p>' +
-        '<span class="more">' + nl(k.link).replace('→', '&nbsp;<b>→</b>') + '</span></div></a>';
-    }).join('');
-    document.getElementById('minIn').innerHTML =
-      '<div class="eyebrow rv">' + nl(c.ministries.eyebrow) + '</div>' +
-      '<h2 class="rv">' + nl(c.ministries.title) + '</h2>' +
-      '<div class="cards">' + cards + '</div>';
-    document.getElementById('verseIn').innerHTML =
-      '<blockquote>' + nl(c.verse.text) + '</blockquote><div class="ref">' + nl(c.verse.ref) + '</div>';
-    document.getElementById('footIn').innerHTML =
-      '<span>' + nl(c.footer.copyright) + '</span><span>' + nl(c.footer.parish).replace('·', '&nbsp;·&nbsp;') + '</span>';
-    observeRv();
+  var app = document.getElementById('app');
+  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function txt(s){ return esc(s).replace(/\n/g,'<br>'); }
+  function getPath(o, p){ return p.split('.').reduce(function(a,k){ return (a == null ? a : a[k]); }, o); }
+  function fill(tpl, content){
+    tpl = tpl.replace(/<!--CARDS-->([\s\S]*?)<!--\/CARDS-->/g, function(m, block){
+      return (content.ministries.cards || []).map(function(cd, i){
+        return block
+          .replace(/\{\{card\.n\}\}/g, String(i+1))
+          .replace(/\{\{card\.title\}\}/g, txt(cd.title))
+          .replace(/\{\{card\.desc\}\}/g, txt(cd.desc))
+          .replace(/\{\{card\.link\}\}/g, txt(cd.link))
+          .replace(/\{\{card\.href\}\}/g, esc(cd.href))
+          .replace(/\{\{card\.img\}\}/g, esc(cd.img));
+      }).join('');
+    });
+    tpl = tpl.replace(/\{\{card([0-3])\.(\w+)\}\}/g, function(m, n, k){
+      var cd = (content.ministries.cards || [])[+n] || {};
+      var v = cd[k] == null ? '' : cd[k];
+      return (k === 'href' || k === 'img') ? esc(v) : txt(v);
+    });
+    tpl = tpl.replace(/\{\{([a-z0-9_.]+)\}\}/gi, function(m, p){
+      var v = getPath(content, p);
+      if (v == null) return '';
+      var last = p.split('.').pop();
+      return (last === 'img' || last === 'href') ? esc(v) : txt(v);
+    });
+    return tpl;
   }
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  function observeRv(){ document.querySelectorAll('.rv:not(.on)').forEach(function(el){ io.observe(el); }); }
   function buildFloatingMenu(base){
     var items = [
       ['Trang chủ', base, ''],
@@ -257,21 +98,51 @@
       '<div class="fm-brand"><div class="x">✝</div><b>Fr. Thomas</b><small>Catholic Priest</small></div>' +
       '<div class="fm-links">' + links + '</div></div>';
     document.body.appendChild(btn); document.body.appendChild(ov);
-    function open(){ ov.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function close(){ ov.classList.remove('open'); document.body.style.overflow = ''; }
+    function open(){ ov.classList.add('open'); }
+    function close(){ ov.classList.remove('open'); }
     btn.addEventListener('click', open);
     ov.querySelector('.fm-x').addEventListener('click', close);
     ov.addEventListener('click', function(e){ if (e.target === ov) close(); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
   }
-  buildFloatingMenu('./');
-  try {
-    var inline = JSON.parse(document.getElementById('content-data').textContent);
-    render(inline); observeRv();
-    fetch('assets/content.json', { cache: 'no-store' }).then(function(r){ return r.ok ? r.json() : null; }).then(function(remote){
-      if (remote && JSON.stringify(remote) !== JSON.stringify(inline)) { render(remote); }
-    }).catch(function(){});
-  } catch (e) { observeRv(); }
+  function loadTheme(slug){
+    return fetch('assets/themes/' + slug + '/meta.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(meta){
+      return Promise.all([
+        fetch('assets/themes/' + slug + '/template.html').then(function(r){ if(!r.ok) throw 0; return r.text(); }),
+        fetch('assets/themes/' + slug + '/theme.css').then(function(r){ if(!r.ok) throw 0; return r.text(); }),
+        fetch('assets/content.json', { cache: 'no-store' }).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      ]).then(function(res){
+        var st = document.createElement('style');
+        st.setAttribute('data-theme', slug);
+        st.textContent = res[1];
+        document.head.appendChild(st);
+        app.innerHTML = fill(res[0], res[2]);
+        document.title = meta.name + ' — Fr. Thomas · Linh mục Công giáo';
+        buildFloatingMenu('./');
+        if (meta.has_js) {
+          var s = document.createElement('script');
+          s.src = 'assets/themes/' + slug + '/theme.js';
+          document.body.appendChild(s);
+        }
+        return meta;
+      });
+    });
+  }
+  function fail(){
+    app.innerHTML = '<div class="loading"><div>Không tải được giao diện. Anh thử tải lại trang nhé.</div></div>';
+  }
+  var preview = new URLSearchParams(location.search).get('theme');
+  if (preview) {
+    loadTheme(preview).then(function(meta){
+      var bar = document.getElementById('previewBar');
+      bar.style.display = 'flex';
+      bar.innerHTML = '<span>Đang xem thử giao diện <b>' + esc(meta.name) + '</b></span><a href="./">← Về bản chính</a>';
+    }).catch(function(){ loadTheme('chan-dung').catch(fail); });
+  } else {
+    fetch('assets/site.json', { cache: 'no-store' }).then(function(r){ return r.json(); })
+      .then(function(s){ return loadTheme((s && s.theme) || 'chan-dung'); })
+      .catch(function(){ loadTheme('chan-dung').catch(fail); });
+  }
 })();
 </script>
 </body>
