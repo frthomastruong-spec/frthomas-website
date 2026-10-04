@@ -298,28 +298,10 @@ img{
 /* MOBILE */
 @media(max-width:760px){
   .tt-hero{
-    display:block;
-    min-height:0;
-  }
-  /* Stacked hero on mobile: full photo visible, no crop, no text header */
-  .tt-bg{
-    position:relative;
-    inset:auto;
-    height:auto;
-    transform:none;
-  }
-  .tt-shade{
-    display:none;
-  }
-  .tt-scroll{
-    display:none;
+    min-height:680px;
   }
   .tt-nav{
     display:none;
-  }
-  .tt-content{
-    padding-top:44px;
-    padding-bottom:60px;
   }
   .tt-content h1{
     font-size:64px;
