@@ -318,7 +318,11 @@ img{
     display:none;
   }
   .tt-content{
-    display:none;
+    padding-top:44px;
+    padding-bottom:60px;
+  }
+  .tt-content h1{
+    font-size:64px;
   }
   .tt-intro{
     grid-template-columns:1fr;
