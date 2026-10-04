@@ -301,7 +301,7 @@ img{
     display:block;
     min-height:0;
   }
-  /* Stacked hero on mobile: full photo visible, no crop */
+  /* Stacked hero on mobile: full photo visible, no crop, no text header */
   .tt-bg{
     position:relative;
     inset:auto;
@@ -314,12 +314,11 @@ img{
   .tt-scroll{
     display:none;
   }
-  .tt-content{
-    padding-top:44px;
-    padding-bottom:60px;
+  .tt-nav{
+    display:none;
   }
-  .tt-content h1{
-    font-size:64px;
+  .tt-content{
+    display:none;
   }
   .tt-intro{
     grid-template-columns:1fr;
