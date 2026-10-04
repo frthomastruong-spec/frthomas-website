@@ -298,10 +298,35 @@ img{
 /* MOBILE */
 @media(max-width:760px){
   .tt-hero{
-    min-height:680px;
+    display:block;
+    min-height:0;
+    background:var(--navy);
+  }
+  /* Photo fits phone screen fully (natural 16:9), text overlaps its bottom edge */
+  .tt-bg{
+    position:relative;
+    inset:auto;
+    height:auto;
+    transform:none;
+  }
+  .tt-shade{
+    top:calc(56.25vw - 100px);
+    bottom:auto;
+    height:100px;
+    background:linear-gradient(to bottom, rgba(4,13,26,0) 0%, rgba(4,13,26,.92) 100%);
+  }
+  .tt-scroll{
+    display:none;
   }
   .tt-nav{
     display:none;
+  }
+  .tt-content{
+    position:relative;
+    z-index:2;
+    margin-top:-100px;
+    padding-top:0;
+    padding-bottom:56px;
   }
   .tt-content h1{
     font-size:64px;
