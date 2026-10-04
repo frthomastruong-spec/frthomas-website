@@ -298,22 +298,15 @@ img{
 /* MOBILE */
 @media(max-width:760px){
   .tt-hero{
-    display:block;
     min-height:0;
     background:var(--navy);
   }
-  /* Photo fits phone screen fully (natural 16:9), text overlaps its bottom edge */
+  /* Photo covers the whole hero, down under the "Khám phá" button */
   .tt-bg{
-    position:relative;
-    inset:auto;
-    height:auto;
     transform:none;
   }
   .tt-shade{
-    top:calc(56.25vw - 100px);
-    bottom:auto;
-    height:100px;
-    background:linear-gradient(to bottom, rgba(4,13,26,0) 0%, rgba(4,13,26,.92) 100%);
+    background:linear-gradient(to bottom, rgba(4,13,26,.2) 0%, rgba(4,13,26,.85) 100%);
   }
   .tt-scroll{
     display:none;
@@ -322,11 +315,9 @@ img{
     display:none;
   }
   .tt-content{
-    position:relative;
-    z-index:2;
-    margin-top:-100px;
-    padding-top:0;
-    padding-bottom:56px;
+    margin-top:0;
+    padding-top:64px;
+    padding-bottom:64px;
   }
   .tt-content h1{
     font-size:64px;
