@@ -431,7 +431,7 @@
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
   @media print {
-    .toc, #topBtn, .scroll-hint, .count-grid, .hero-cta, .print-btn, .draftbar, .signup-cta, .emenu, .emenuf { display: none !important; }
+    .toc, #topBtn, .scroll-hint, .count-grid, .hero-cta, .print-btn, .draftbar, .signup-cta, .emenu, 
     body::before { display: none !important; }
     html, body { background: #fff !important; }
     .hero { min-height: auto; }
@@ -464,7 +464,7 @@
 
 
 /* ===== Editorial fullscreen menu ("Ban thao") — shared ===== */
-.emenu{--mpaper:#f4f1e9;--mwine:#633e3c;--mink:#1d2522;--mgold:#c7aa70;--mmuted:#56605b;--mcream:#f8f1e6;position:fixed;inset:0;z-index:100;visibility:hidden;pointer-events:none}
+.menu-trigger{position:fixed;z-index:120;right:max(22px,3vw);bottom:max(22px,3vw);width:88px;height:88px;border-radius:50%;border:0;background:#1d2522;color:#f4f1e9;cursor:pointer;box-shadow:0 14px 40px rgba(0,0,0,.27);display:grid;place-items:center;transition:transform .3s ease,background .3s ease,color .3s ease}.menu-trigger:hover{transform:rotate(-5deg)}.menu-trigger .trigger-inner{display:flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-family:"DM Sans",system-ui,sans-serif}.menu-trigger .hamburger{display:grid;gap:4px}.menu-trigger .hamburger i{display:block;width:16px;height:1px;background:currentColor;transition:transform .4s ease}.menu-trigger[aria-expanded="true"]{background:#c7aa70;color:#23160f;transform:rotate(90deg)}.menu-trigger[aria-expanded="true"]:hover{transform:rotate(90deg)}.menu-trigger[aria-expanded="true"] .hamburger i:first-child{transform:translateY(2.5px) rotate(45deg)}.menu-trigger[aria-expanded="true"] .hamburger i:last-child{transform:translateY(-2.5px) rotate(-45deg)}@media(prefers-reduced-motion:reduce){.menu-trigger,.menu-trigger .hamburger i{transition:none!important}}.menu-trigger{left:20px;right:auto;bottom:24px}.emenu{--mpaper:#f4f1e9;--mwine:#633e3c;--mink:#1d2522;--mgold:#c7aa70;--mmuted:#56605b;--mcream:#f8f1e6;position:fixed;inset:0;z-index:100;visibility:hidden;pointer-events:none}
 .emenu.is-open{visibility:visible;pointer-events:auto}
 .emenu-panel{position:absolute;inset:0;background:var(--mpaper);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;transform:translateY(-105%);transition:transform .65s cubic-bezier(.76,0,.24,1);overflow:hidden auto}
 .emenu.is-open .emenu-panel{transform:none}
@@ -480,14 +480,14 @@
 .emenu-foot{grid-column:1/-1;position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:26px clamp(28px,6vw,72px);font-size:.72rem;letter-spacing:.1em;color:var(--mmuted)}
 .emenu-foot span:last-child{color:rgba(255,255,255,.65)}
 body.menu-open{overflow:hidden}
-.emenuf{position:fixed;left:20px;bottom:24px;z-index:120;display:inline-flex;align-items:center;gap:12px;background:rgba(23,32,29,.62);border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:999px;padding:7px 18px 7px 7px;cursor:pointer;font:600 11px/1 var(--sans,"DM Sans",system-ui,sans-serif);letter-spacing:.18em;text-transform:uppercase;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 14px 34px rgba(23,32,29,.35);transition:transform .3s ease}
-.emenuf .lines{width:42px;height:42px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;position:relative;flex:none}
-.emenuf .lines i{position:absolute;left:50%;top:50%;width:17px;height:1.6px;background:currentColor;transition:transform .35s ease}
-.emenuf .lines i:first-child{transform:translate(-50%,-50%) translateY(-4px)}
-.emenuf .lines i:last-child{transform:translate(-50%,-50%) translateY(4px)}
-.emenuf:hover{transform:scale(1.05)}
-body.menu-open .emenuf .lines i:first-child{transform:translate(-50%,-50%) rotate(45deg)}
-body.menu-open .emenuf .lines i:last-child{transform:translate(-50%,-50%) rotate(-45deg)}
+
+
+
+
+
+
+body.menu-open 
+body.menu-open 
 @media(max-width:800px){.emenu-panel{grid-template-columns:1fr}.emenu-panel::after{left:0;top:56%;width:100%;height:44%;transform:translateX(110%)}.emenu.is-open .emenu-panel::after{transform:none}.emenu-link{font-size:clamp(2.4rem,13vw,4.2rem);line-height:.95;margin-left:0}.emenu-link:nth-child(n+4){margin-left:0;color:var(--mcream)}.emenu-meta{padding:24px}.emenu-nav{padding:6px 24px}.emenu-foot{padding:20px 24px}}
 @media(prefers-reduced-motion:reduce){.emenu-panel,.emenu-panel::after{transition:none!important}}
 </style>
@@ -1170,7 +1170,7 @@ body.menu-open .emenuf .lines i:last-child{transform:translate(-50%,-50%) rotate
 
 
 
-<button class="emenuf" id="emenuf" aria-label="Open menu" aria-expanded="false" aria-controls="sitemenu"><span class="lines"><i></i><i></i></span><span class="blabel">Menu</span></button>
+<button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-controls="sitemenu" aria-label="Open menu"><span class="trigger-inner"><span class="hamburger" aria-hidden="true"><i></i><i></i></span><span>Menu</span></span></button>
 <aside class="emenu" id="sitemenu" aria-hidden="true" aria-label="Site menu">
 <div class="emenu-panel">
 <div class="emenu-meta"><a href="/">Fr. Thomas</a><span>Menu</span></div>
@@ -1187,13 +1187,13 @@ body.menu-open .emenuf .lines i:last-child{transform:translate(-50%,-50%) rotate
 </aside>
 <script>
 (function(){
-var fbtn=document.getElementById('emenuf'),emenu=document.getElementById('sitemenu'),lastFocus=null;
+var menuTrigger=document.getElementById('menuTrigger'),emenu=document.getElementById('sitemenu'),lastFocus=null;
 function menuOpen(){return emenu.classList.contains('is-open');}
-function openMenu(){lastFocus=document.activeElement;emenu.classList.add('is-open');document.body.classList.add('menu-open');fbtn.setAttribute('aria-expanded','true');fbtn.setAttribute('aria-label','Close menu');fbtn.querySelector('.blabel').textContent='Close';emenu.setAttribute('aria-hidden','false');setTimeout(function(){var f=emenu.querySelector('.emenu-link');if(f)f.focus();},380);}
-function closeMenu(){if(!menuOpen())return;emenu.classList.remove('is-open');document.body.classList.remove('menu-open');fbtn.setAttribute('aria-expanded','false');fbtn.setAttribute('aria-label','Open menu');fbtn.querySelector('.blabel').textContent='Menu';emenu.setAttribute('aria-hidden','true');if(lastFocus&&lastFocus!==document.body){try{lastFocus.focus();}catch(e){}}}
-fbtn.addEventListener('click',function(){menuOpen()?closeMenu():openMenu();});
+function openMenu(){lastFocus=document.activeElement;emenu.classList.add('is-open');document.body.classList.add('menu-open');menuTrigger.setAttribute('aria-expanded','true');menuTrigger.setAttribute('aria-label','Close menu');emenu.setAttribute('aria-hidden','false');setTimeout(function(){var f=emenu.querySelector('.emenu-link');if(f)f.focus();},380);}
+function closeMenu(){if(!menuOpen())return;emenu.classList.remove('is-open');document.body.classList.remove('menu-open');menuTrigger.setAttribute('aria-expanded','false');menuTrigger.setAttribute('aria-label','Open menu');emenu.setAttribute('aria-hidden','true');if(lastFocus&&lastFocus!==document.body){try{lastFocus.focus();}catch(e){}}}
+menuTrigger.addEventListener('click',function(){menuOpen()?closeMenu():openMenu();});
 emenu.querySelectorAll('.emenu-link').forEach(function(a){a.addEventListener('click',function(){closeMenu();});});
-addEventListener('keydown',function(e){if(!menuOpen())return;var links=Array.prototype.slice.call(emenu.querySelectorAll('.emenu-link'));var i=links.indexOf(document.activeElement);if(e.key==='Escape'){closeMenu();}else if(e.key==='ArrowDown'){e.preventDefault();links[(i+1+links.length)%links.length].focus();}else if(e.key==='ArrowUp'){e.preventDefault();links[(i-1+links.length)%links.length].focus();}else if(e.key==='Tab'){var fl=[fbtn].concat(links),fi=fl.indexOf(document.activeElement);if(e.shiftKey&&fi<=0){e.preventDefault();fl[fl.length-1].focus();}else if(!e.shiftKey&&fi===fl.length-1){e.preventDefault();fl[0].focus();}}});
+addEventListener('keydown',function(e){if(!menuOpen())return;var links=Array.prototype.slice.call(emenu.querySelectorAll('.emenu-link'));var i=links.indexOf(document.activeElement);if(e.key==='Escape'){closeMenu();}else if(e.key==='ArrowDown'){e.preventDefault();links[(i+1+links.length)%links.length].focus();}else if(e.key==='ArrowUp'){e.preventDefault();links[(i-1+links.length)%links.length].focus();}else if(e.key==='Tab'){var fl=[menuTrigger].concat(links),fi=fl.indexOf(document.activeElement);if(e.shiftKey&&fi<=0){e.preventDefault();fl[fl.length-1].focus();}else if(!e.shiftKey&&fi===fl.length-1){e.preventDefault();fl[0].focus();}}});
 })();
 </script>
 
