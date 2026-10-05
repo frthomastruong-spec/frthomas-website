@@ -1,18 +1,23 @@
-# chapaul.ca — Website lưu giữ các mục vụ của Fr. Thomas
+# frthomas.com — Fr. Thomas Truong's ministry website
 
-Website tĩnh (HTML/CSS/JS thuần, không framework), mobile-first, tiếng Việt.
+Static website (plain HTML/CSS/JS, no framework), mobile-first. **English first**; Vietnamese is kept for the pilgrimage page and will be added to the rest of the site later.
 
-## Cấu trúc
-- `index.html` — Trang chủ: giới thiệu + 4 mục
-- `hanh-huong/` — Chương trình Hành Hương Việt Nam 2028 (14 ngày, ảnh thật từng địa điểm)
-- `bai-giang/` — Sắp có
-- `hoc-kinh-thanh/` — Sắp có
-- `sach/` — Sắp có
-- `assets/images/` — Ảnh các địa điểm hành hương (đã kiểm chứng)
-- `assets/css/style.css`, `assets/js/main.js`
+## Structure
+- `index.html` — Homepage (English): about, ministry, pilgrimage, resources, contact
+- `hanh-huong/` — Vietnam Pilgrimage 2028 (English, 14 days, Jan 8–21, 2028)
+  - `hanh-huong/vi/` — Vietnamese version of the same page
+- `bai-giang/` — Homilies & Talks (in preparation)
+- `hoc-kinh-thanh/` — Bible Study (in preparation)
+- `sach/` — Books (in preparation)
+- `assets/images/` — Site and pilgrimage photos
+- `assets/css/style.css`, `assets/js/main.js` — Shared styles and scripts (used by the section pages)
+
+## Contacts
+- General: contact@frthomas.com
+- Pilgrimage registration: pilgrimage@frthomas.com
 
 ## Deploy
-GitHub Pages (repo `chapaul-website`), sau này gắn tên miền `chapaul.ca`.
+GitHub Pages with custom domain `frthomas.com` (see `CNAME`).
 
-## Cập nhật nội dung
-Sửa file HTML tương ứng rồi push lên repo — Pages tự deploy lại.
+## Updating content
+Edit the relevant HTML file and push to the repo — Pages redeploys automatically.
