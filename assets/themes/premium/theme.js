@@ -36,6 +36,22 @@
   onScrollHeader();
   window.addEventListener('scroll', onScrollHeader, { passive: true });
 
+  /* ---------- keep header clear of the theme-preview banner ---------- */
+  var bar = document.getElementById('previewBar');
+  function fixPreviewOffset() {
+    if (bar && window.getComputedStyle(bar).display !== 'none') {
+      header.style.top = bar.offsetHeight + 'px';
+    } else {
+      header.style.top = '';
+    }
+  }
+  if (bar) {
+    new MutationObserver(fixPreviewOffset).observe(bar, { attributes: true, attributeFilter: ['style'] });
+    window.addEventListener('resize', fixPreviewOffset);
+  }
+  window.addEventListener('load', fixPreviewOffset);
+  setTimeout(fixPreviewOffset, 800);
+
   /* ---------- mobile fullscreen menu ---------- */
   var burger = document.getElementById('prBurger');
   var menu = document.getElementById('prMenu');
