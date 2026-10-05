@@ -425,69 +425,13 @@
   #topBtn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
   /* Nút menu nổi — góc trái để khỏi chồng nút về đầu trang */
-  .fm-btn {
-    position: fixed; left: 20px; bottom: 24px; z-index: 200;
-    width: 62px; height: 62px; border-radius: 50%;
-    background: linear-gradient(145deg, #24352f, #17201d);
-    color: #fff; border: 1px solid rgba(255,255,255,.18); font-size: 25px; line-height: 1;
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 14px 34px rgba(23,32,29,.35), inset 0 1px 0 rgba(255,255,255,.15);
-    transition: transform .38s cubic-bezier(.34,1.4,.64,1), background .25s ease, box-shadow .25s ease;
-  }
-  .fm-btn:hover { transform: scale(1.08); box-shadow: 0 18px 42px rgba(23,32,29,.42), inset 0 1px 0 rgba(255,255,255,.15); }
-  .fm-btn:active { transform: scale(.94); }
-  .fm-btn.open { transform: rotate(135deg); background: linear-gradient(145deg, #9a7b3f, #9a7b3f); }
-  .fm-btn:focus-visible { outline: 3px solid #9a7b3f; outline-offset: 3px; }
-  .fm-ov {
-    position: fixed; inset: 0; z-index: 300;
-    background: transparent;
-    opacity: 0; pointer-events: none; transition: opacity .22s ease;
-  }
-  .fm-ov.open { opacity: 1; pointer-events: auto; }
-  .fm-panel {
-    position: absolute; left: 20px; bottom: 98px;
-    width: 200px; max-height: 80vh; overflow-y: auto;
-    background: rgba(250,247,238,.96);
-    -webkit-backdrop-filter: blur(16px) saturate(1.15);
-    backdrop-filter: blur(16px) saturate(1.15);
-    border: 1px solid rgba(199,170,112,.6); border-radius: 20px;
-    padding: 10px 10px 8px;
-    box-shadow: 0 28px 64px rgba(23,32,29,.28), 0 4px 14px rgba(0,0,0,.08);
-    transform: scale(.8) translateY(18px); transform-origin: bottom left; opacity: 0;
-    transition: transform .42s cubic-bezier(.34,1.45,.5,1), opacity .3s ease;
-  }
-  .fm-ov.open .fm-panel { transform: none; opacity: 1; }
-  .fm-x {
-    position: absolute; top: 6px; right: 12px;
-    background: none; border: 0; font-size: 24px; line-height: 1;
-    color: #1d2522; cursor: pointer; padding: 8px; border-radius: 50%;
-    transition: transform .3s ease, color .2s ease, background .2s ease;
-  }
-  .fm-x:hover { transform: rotate(90deg); color: #9a7b3f; background: rgba(199,170,112,.12); }
-  .fm-brand { text-align: center; margin-bottom: 2px; padding-bottom: 8px; border-bottom: 1px solid #e7ddc4; }
-  .fm-brand b { display: block; font-family: Georgia, 'Playfair Display', serif; font-size: 16px; color: #1d2522; }
-  .fm-links a {
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    padding: 9px 10px; margin: 2px 0; border-radius: 12px;
-    color: #1d2522; font-size: 14px; font-weight: 600; text-decoration: none;
-    opacity: 0; transform: translateX(-18px);
-    transition: opacity .45s ease, transform .55s cubic-bezier(.2,.7,.2,1), background .18s ease, color .18s ease;
-  }
-  .fm-ov.open .fm-links a { opacity: 1; transform: none; }
-  .fm-ov.open .fm-links a:nth-child(1) { transition-delay: .06s, .06s, 0s, 0s; }
-  .fm-ov.open .fm-links a:nth-child(2) { transition-delay: .14s, .14s, 0s, 0s; }
-  .fm-ov.open .fm-links a:nth-child(3) { transition-delay: .22s, .22s, 0s, 0s; }
-  .fm-ov.open .fm-links a:nth-child(4) { transition-delay: .30s, .30s, 0s, 0s; }
-  .fm-ov.open .fm-links a:nth-child(5) { transition-delay: .38s, .38s, 0s, 0s; }
-  .fm-ov.open .fm-links a:hover { transition-delay: 0s, 0s, 0s, 0s; transform: translateX(4px); background: rgba(199,170,112,.12); }
-  .fm-links a.on { color: #9a7b3f; background: rgba(199,170,112,.14); }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
   @media print {
-    .toc, #topBtn, .scroll-hint, .count-grid, .fm-btn, .fm-ov, .hero-cta, .print-btn, .draftbar, .signup-cta { display: none !important; }
+    .toc, #topBtn, .scroll-hint, .count-grid, .hero-cta, .print-btn, .draftbar, .signup-cta, .emenu, .emenuf { display: none !important; }
     body::before { display: none !important; }
     html, body { background: #fff !important; }
     .hero { min-height: auto; }
@@ -518,6 +462,34 @@
   .js .reveal, .js .reveal-scale { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 
+
+/* ===== Editorial fullscreen menu ("Ban thao") — shared ===== */
+.emenu{--mpaper:#f4f1e9;--mwine:#633e3c;--mink:#1d2522;--mgold:#c7aa70;--mmuted:#56605b;--mcream:#f8f1e6;position:fixed;inset:0;z-index:100;visibility:hidden;pointer-events:none}
+.emenu.is-open{visibility:visible;pointer-events:auto}
+.emenu-panel{position:absolute;inset:0;background:var(--mpaper);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;transform:translateY(-105%);transition:transform .65s cubic-bezier(.76,0,.24,1);overflow:hidden auto}
+.emenu.is-open .emenu-panel{transform:none}
+.emenu-panel::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:50%;background:var(--mwine);transform:translateY(200%);transition:transform .78s cubic-bezier(.76,0,.24,1)}
+.emenu.is-open .emenu-panel::after{transform:none}
+.emenu-meta{grid-column:1/-1;position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:30px clamp(28px,6vw,72px);font:600 .68rem/1 var(--sans,"DM Sans",system-ui,sans-serif);letter-spacing:.14em;text-transform:uppercase;color:var(--mmuted)}
+.emenu-meta a{color:var(--mwine);text-decoration:none}
+.emenu-nav{grid-column:1/-1;position:relative;z-index:2;margin:auto 0;padding:10px clamp(28px,6vw,72px);counter-reset:emenu;display:flex;flex-direction:column}
+.emenu-link{position:relative;font:400 clamp(2.6rem,5.6vw,6rem)/.9 var(--serif,"Playfair Display",Georgia,serif);letter-spacing:-.04em;color:var(--mink);text-decoration:none;padding:.07em 0;width:fit-content;max-width:100%}
+.emenu-link::before{counter-increment:emenu;content:"0" counter(emenu);position:absolute;left:calc(100% + 16px);top:.4em;font:600 .65rem/1 var(--sans,"DM Sans",system-ui,sans-serif);letter-spacing:.14em;color:var(--mgold);white-space:nowrap}
+.emenu-link:nth-child(n+4){color:var(--mcream);margin-left:51%}
+.emenu-link:hover,.emenu-link:focus-visible{font-style:italic;color:var(--mgold);outline:none}
+.emenu-foot{grid-column:1/-1;position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:26px clamp(28px,6vw,72px);font-size:.72rem;letter-spacing:.1em;color:var(--mmuted)}
+.emenu-foot span:last-child{color:rgba(255,255,255,.65)}
+body.menu-open{overflow:hidden}
+.emenuf{position:fixed;left:20px;bottom:24px;z-index:120;display:inline-flex;align-items:center;gap:12px;background:rgba(23,32,29,.62);border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:999px;padding:7px 18px 7px 7px;cursor:pointer;font:600 11px/1 var(--sans,"DM Sans",system-ui,sans-serif);letter-spacing:.18em;text-transform:uppercase;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 14px 34px rgba(23,32,29,.35);transition:transform .3s ease}
+.emenuf .lines{width:42px;height:42px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;position:relative;flex:none}
+.emenuf .lines i{position:absolute;left:50%;top:50%;width:17px;height:1.6px;background:currentColor;transition:transform .35s ease}
+.emenuf .lines i:first-child{transform:translate(-50%,-50%) translateY(-4px)}
+.emenuf .lines i:last-child{transform:translate(-50%,-50%) translateY(4px)}
+.emenuf:hover{transform:scale(1.05)}
+body.menu-open .emenuf .lines i:first-child{transform:translate(-50%,-50%) rotate(45deg)}
+body.menu-open .emenuf .lines i:last-child{transform:translate(-50%,-50%) rotate(-45deg)}
+@media(max-width:800px){.emenu-panel{grid-template-columns:1fr}.emenu-panel::after{left:0;top:56%;width:100%;height:44%;transform:translateX(110%)}.emenu.is-open .emenu-panel::after{transform:none}.emenu-link{font-size:clamp(2.4rem,13vw,4.2rem);line-height:.95;margin-left:0}.emenu-link:nth-child(n+4){margin-left:0;color:var(--mcream)}.emenu-meta{padding:24px}.emenu-nav{padding:6px 24px}.emenu-foot{padding:20px 24px}}
+@media(prefers-reduced-motion:reduce){.emenu-panel,.emenu-panel::after{transition:none!important}}
 </style>
 </head>
 <body>
@@ -1193,38 +1165,37 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Nút menu nổi
-  (function buildFloatingMenu(base) {
-    var items = [
-      ['Trang chủ', base, ''],
-      ['Hành hương', base + 'hanh-huong/', 'hanh-huong'],
-      ['Bài giảng', base + 'bai-giang/', 'bai-giang'],
-      ['Học Kinh Thánh', base + 'hoc-kinh-thanh/', 'hoc-kinh-thanh'],
-      ['Sách', base + 'sach/', 'sach']
-    ];
-    var path = window.location.pathname.replace(/\/$/, '');
-    var btn = document.createElement('button');
-    btn.className = 'fm-btn'; btn.setAttribute('aria-label', 'Mở menu'); btn.innerHTML = '☰';
-    var ov = document.createElement('div'); ov.className = 'fm-ov';
-    var links = items.map(function (it) {
-      var on = (it[2] === '' && (path === '' || path === '/')) || (it[2] && path.indexOf('/' + it[2]) === 0);
-      return '<a href="' + it[1] + '"' + (on ? ' class="on"' : '') + '>' + it[0] + '</a>';
-    }).join('');
-    ov.innerHTML = '<div class="fm-panel" role="dialog" aria-label="Menu điều hướng">' +
-      '<button class="fm-x" aria-label="Đóng menu">×</button>' +
-      '<div class="fm-brand"><b>Fr. Thomas</b></div>' +
-      '<div class="fm-links">' + links + '</div></div>';
-    document.body.appendChild(btn); document.body.appendChild(ov);
-    function open() { ov.classList.add('open'); btn.classList.add('open'); btn.innerHTML = '×'; btn.setAttribute('aria-label', 'Đóng menu'); btn.setAttribute('aria-expanded', 'true'); }
-    function close() { ov.classList.remove('open'); btn.classList.remove('open'); btn.innerHTML = '☰'; btn.setAttribute('aria-label', 'Mở menu'); btn.setAttribute('aria-expanded', 'false'); }
-    btn.addEventListener('click', open);
-    ov.querySelector('.fm-x').addEventListener('click', close);
-    ov.addEventListener('click', function (e) { if (e.target === ov) close(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-  })('../../');
 })();
 </script>
 
+
+
+<button class="emenuf" id="emenuf" aria-label="Open menu" aria-expanded="false" aria-controls="sitemenu"><span class="lines"><i></i><i></i></span><span class="blabel">Menu</span></button>
+<aside class="emenu" id="sitemenu" aria-hidden="true" aria-label="Site menu">
+<div class="emenu-panel">
+<div class="emenu-meta"><a href="/">Fr. Thomas</a><span>Menu</span></div>
+<nav class="emenu-nav" aria-label="Primary">
+<a class="emenu-link" href="/#about">About</a>
+<a class="emenu-link" href="/#ministry">Ministry</a>
+<a class="emenu-link" href="/#reflection">Reflections</a>
+<a class="emenu-link" href="/hanh-huong/vi/">Pilgrimage</a>
+<a class="emenu-link" href="/#resources">Resources</a>
+<a class="emenu-link" href="/#contact">Contact</a>
+</nav>
+<div class="emenu-foot"><span>Faith · Reflection · Service</span><span>Esc — close</span></div>
+</div>
+</aside>
+<script>
+(function(){
+var fbtn=document.getElementById('emenuf'),emenu=document.getElementById('sitemenu'),lastFocus=null;
+function menuOpen(){return emenu.classList.contains('is-open');}
+function openMenu(){lastFocus=document.activeElement;emenu.classList.add('is-open');document.body.classList.add('menu-open');fbtn.setAttribute('aria-expanded','true');fbtn.setAttribute('aria-label','Close menu');fbtn.querySelector('.blabel').textContent='Close';emenu.setAttribute('aria-hidden','false');setTimeout(function(){var f=emenu.querySelector('.emenu-link');if(f)f.focus();},380);}
+function closeMenu(){if(!menuOpen())return;emenu.classList.remove('is-open');document.body.classList.remove('menu-open');fbtn.setAttribute('aria-expanded','false');fbtn.setAttribute('aria-label','Open menu');fbtn.querySelector('.blabel').textContent='Menu';emenu.setAttribute('aria-hidden','true');if(lastFocus&&lastFocus!==document.body){try{lastFocus.focus();}catch(e){}}}
+fbtn.addEventListener('click',function(){menuOpen()?closeMenu():openMenu();});
+emenu.querySelectorAll('.emenu-link').forEach(function(a){a.addEventListener('click',function(){closeMenu();});});
+addEventListener('keydown',function(e){if(!menuOpen())return;var links=Array.prototype.slice.call(emenu.querySelectorAll('.emenu-link'));var i=links.indexOf(document.activeElement);if(e.key==='Escape'){closeMenu();}else if(e.key==='ArrowDown'){e.preventDefault();links[(i+1+links.length)%links.length].focus();}else if(e.key==='ArrowUp'){e.preventDefault();links[(i-1+links.length)%links.length].focus();}else if(e.key==='Tab'){var fl=[fbtn].concat(links),fi=fl.indexOf(document.activeElement);if(e.shiftKey&&fi<=0){e.preventDefault();fl[fl.length-1].focus();}else if(!e.shiftKey&&fi===fl.length-1){e.preventDefault();fl[0].focus();}}});
+})();
+</script>
 
 </body>
 </html>
