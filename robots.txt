@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://frthomas.com/sitemap.xml
