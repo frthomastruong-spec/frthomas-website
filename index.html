@@ -1,199 +1,141 @@
-<!DOCTYPE html>
-<html lang="vi">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Fr. Thomas · Linh mục Công giáo</title>
-<meta name="description" content="Fr. Thomas — linh mục phụ tá Giáo xứ St. Francis Xavier, Vancouver. Nơi lưu giữ các mục vụ: hành hương, bài giảng, học hỏi Kinh Thánh và sách.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17201d">
+<title>Fr. Thomas Truong — Catholic Priest · Speaker · Writer</title>
+<meta name="description" content="Fr. Thomas Truong — Catholic priest, speaker and writer in Vancouver. Homilies, Scripture, Catholic formation, and ministry.">
+<link rel="canonical" href="https://frthomas.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fr. Thomas Truong">
+<meta property="og:title" content="Fr. Thomas Truong — Catholic Priest · Speaker · Writer">
+<meta property="og:description" content="Helping people encounter Christ through faith, reflection, and everyday life.">
+<meta property="og:url" content="https://frthomas.com/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Fr. Thomas">
-<meta property="og:title" content="Fr. Thomas · Linh mục Công giáo">
-<meta property="og:description" content="Cùng nhau bước đi trong đức tin, tôn vinh Chúa và phục vụ tha nhân.">
-<meta property="og:url" content="https://frthomas.com/">
-<meta property="og:image" content="https://frthomas.com/assets/images/home-hero.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Fr. Thomas Truong","jobTitle":"Catholic Priest","description":"Catholic priest, speaker and writer serving at St. Francis Xavier Parish, Vancouver.","url":"https://frthomas.com/","address":{"@type":"PostalAddress","addressLocality":"Vancouver","addressCountry":"CA"}}
+</script>
 <style>
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body { font-family: 'Be Vietnam Pro', system-ui, sans-serif; background: #f8f5ec; color: #3c4f66; }
-  #app { min-height: 100vh; }
-  #app .loading { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px; color: #8a97a8; font-size: 14px; }
-  #app .loading .spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #e2d9bd; border-top-color: #b08d3e; animation: spin 1s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  #previewBar { position: fixed; top: 0; left: 0; right: 0; z-index: 500; background: #1e3a5f; color: #fff; font-size: 13.5px; padding: calc(10px + env(safe-area-inset-top, 0px)) 16px 10px; display: none; align-items: center; justify-content: center; gap: 10px; }
-  #previewBar a { color: #e8c877; font-weight: 600; }
-  /* Màn đêm theme Đêm Sáng — nằm thẳng trong code chính (không tải rời để khỏi lệch phiên bản cache) */
-  .night { display: none; }
-  body.theme-dem-sang .night { display: block; position: fixed; inset: 0; z-index: 150; pointer-events: none;
-    background: radial-gradient(120% 90% at 88% 4%, rgba(10,16,36,.86) 0%, rgba(5,7,15,.87) 55%, rgba(2,3,8,.87) 100%);
-    opacity: 1; transition: opacity 1.5s ease; }
-  body.theme-dem-sang.is-day .night { opacity: 0; }
-  body.theme-dem-sang .night-stars { position: absolute; inset: 0; opacity: .8; transition: opacity 1.2s ease;
-    background-image:
-      radial-gradient(1.5px 1.5px at 12% 22%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 32% 8%, #fff 50%, transparent 51%),
-      radial-gradient(2px 2px at 48% 30%, #ffe9c4 50%, transparent 51%),
-      radial-gradient(1px 1px at 64% 14%, #fff 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 78% 38%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 22% 52%, #fff 50%, transparent 51%),
-      radial-gradient(2px 2px at 40% 62%, #ffe9c4 50%, transparent 51%),
-      radial-gradient(1px 1px at 58% 48%, #fff 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 8% 70%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 70% 72%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 88% 60%, #fff 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 30% 84%, #fff 50%, transparent 51%);
-    animation: nightTwinkle 3.2s ease-in-out infinite alternate; }
-  body.theme-dem-sang.is-day .night-stars { opacity: 0; }
-  @keyframes nightTwinkle { from { opacity: .45; } to { opacity: .85; } }
-  body.theme-dem-sang .night-mist { position: absolute; inset: -12%; pointer-events: none; opacity: .55;
-    transition: opacity 1.2s ease;
-    background:
-      radial-gradient(42% 32% at 22% 28%, rgba(148,168,208,.13), transparent 70%),
-      radial-gradient(46% 34% at 74% 62%, rgba(148,168,208,.11), transparent 70%),
-      radial-gradient(36% 28% at 55% 88%, rgba(160,175,215,.09), transparent 70%);
-    animation: mistDrift 28s ease-in-out infinite alternate; }
-  @keyframes mistDrift { from { transform: translate3d(-2.5%, -1.5%, 0); } to { transform: translate3d(2.5%, 1.5%, 0); } }
-  body.theme-dem-sang.is-day .night-mist { opacity: 0; }
-  @media (prefers-reduced-motion: reduce) {
-    body.theme-dem-sang .night-mist, body.theme-dem-sang .night-stars { animation: none; }
-  }
-  body.theme-dem-sang .night-wash { position: absolute; inset: 0; opacity: 0;
-    background: radial-gradient(90% 70% at 88% 4%, rgba(255,205,130,.6) 0%, rgba(255,180,100,.14) 42%, transparent 72%);
-    transition: opacity .55s ease; }
-  body.theme-dem-sang.is-day .night-wash { opacity: 1; }
-  /* Nút menu nổi (floating menu) — dùng chung mọi theme */
-  .fm-btn { position: fixed; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); z-index: 200; width: 62px; height: 62px; border-radius: 50%; background: linear-gradient(145deg, #2a507e, #1c3554); color: #fff; border: 1px solid rgba(255,255,255,.18); font-size: 25px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 34px rgba(30,58,95,.38), inset 0 1px 0 rgba(255,255,255,.15); transition: transform .38s cubic-bezier(.34,1.4,.64,1), background .25s ease, box-shadow .25s ease; }
-  .fm-btn:hover { transform: scale(1.08); box-shadow: 0 18px 42px rgba(30,58,95,.46), inset 0 1px 0 rgba(255,255,255,.15); }
-  .fm-btn:active { transform: scale(.94); }
-  .fm-btn.open { transform: rotate(135deg); background: linear-gradient(145deg, #b08d3e, #8f6f2c); }
-  .fm-btn:focus-visible { outline: 3px solid #b08d3e; outline-offset: 3px; }
-  .fm-ov { position: fixed; inset: 0; z-index: 300; background: transparent; opacity: 0; pointer-events: none; transition: opacity .22s ease; }
-  .fm-ov.open { opacity: 1; pointer-events: auto; }
-  .fm-panel { position: absolute; right: 22px; bottom: 96px; width: 200px; max-height: 80vh; overflow-y: auto; background: rgba(251,248,238,.94); -webkit-backdrop-filter: blur(16px) saturate(1.15); backdrop-filter: blur(16px) saturate(1.15); border: 1px solid rgba(214,198,160,.85); border-radius: 20px; padding: 10px 10px 8px; box-shadow: 0 28px 64px rgba(30,58,95,.28), 0 4px 14px rgba(0,0,0,.08); transform: scale(.8) translateY(18px); transform-origin: bottom right; opacity: 0; transition: transform .42s cubic-bezier(.34,1.45,.5,1), opacity .3s ease; }
-  .fm-ov.open .fm-panel { transform: none; opacity: 1; }
-  .fm-x { position: absolute; top: 6px; right: 12px; background: none; border: 0; font-size: 24px; line-height: 1; color: #1e3a5f; cursor: pointer; padding: 8px; border-radius: 50%; transition: transform .3s ease, color .2s ease, background .2s ease; }
-  .fm-x:hover { transform: rotate(90deg); color: #b08d3e; background: rgba(176,141,62,.12); }
-  .fm-brand { text-align: center; margin-bottom: 2px; padding-bottom: 8px; border-bottom: 1px solid #ece2c8; }
-  .fm-brand b { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 16px; color: #1e3a5f; }
-  .fm-links a { display: flex; align-items: center; justify-content: center; text-align: center; padding: 9px 10px; margin: 2px 0; border-radius: 12px; color: #1e3a5f; font-size: 14px; font-weight: 600; text-decoration: none; opacity: 0; transform: translateX(-18px); transition: opacity .45s ease, transform .55s cubic-bezier(.2,.7,.2,1), background .18s ease, color .18s ease; }
-  .fm-ov.open .fm-links a { opacity: 1; transform: none; }
-  .fm-ov.open .fm-links a:nth-child(1) { transition-delay: .06s, .06s, 0s, 0s; }
-  .fm-ov.open .fm-links a:nth-child(2) { transition-delay: .14s, .14s, 0s, 0s; }
-  .fm-ov.open .fm-links a:nth-child(3) { transition-delay: .22s, .22s, 0s, 0s; }
-  .fm-ov.open .fm-links a:nth-child(4) { transition-delay: .30s, .30s, 0s, 0s; }
-  .fm-ov.open .fm-links a:nth-child(5) { transition-delay: .38s, .38s, 0s, 0s; }
-  .fm-ov.open .fm-links a:hover { transition-delay: 0s, 0s, 0s, 0s; transform: translateX(4px); background: rgba(176,141,62,.12); }
-  .fm-links a.on { color: #8f6f2c; background: rgba(176,141,62,.14); }
-  @media (prefers-reduced-motion: reduce) { .fm-ov, .fm-panel, .fm-btn, .fm-links a, .fm-x, #app .loading .spin { transition: none !important; animation: none !important; } .fm-links a { opacity: 1 !important; transform: none !important; } }
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+:root{--ink:#1d2522;--muted:#66706b;--paper:#f4f1e9;--cream:#e8e1d3;--gold:#c7aa70;--bronze:#9a7b3f;--wine:#633e3c;--dark:#17201d;--line:rgba(29,37,34,.15);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{width:100%;height:100%;object-fit:cover;display:block}
+.skip{position:absolute;left:-999px;top:0;z-index:99;background:var(--dark);color:var(--paper);padding:12px 18px;font:600 13px var(--sans);text-decoration:none}
+.skip:focus{left:12px;top:12px}
+section[id]{scroll-margin-top:84px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-offset:3px;border-radius:2px}
+.topbar{position:fixed;z-index:60;top:0;left:0;width:100%;height:78px;padding:0 clamp(20px,4vw,60px);display:flex;align-items:center;justify-content:space-between;color:#fff;transition:.45s;background:transparent}.topbar.scrolled{background:rgba(244,241,233,.9);color:var(--ink);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.topbar.menu-open{z-index:70}
+.brand{display:flex;gap:11px;align-items:center}.mark{width:38px;height:38px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font:500 12px var(--serif)}.brand strong{font:500 15px var(--serif);display:block}.brand small{font-size:8px;letter-spacing:.13em;text-transform:uppercase;opacity:.62}
+.nav{display:flex;gap:clamp(20px,3vw,42px);margin-left:auto;margin-right:36px}.nav a{font-size:12px;position:relative}.nav a:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:currentColor;transform:scaleX(0);transition:.3s}.nav a:hover:after{transform:scaleX(1)}
+.navcta{border:1px solid currentColor;padding:11px 16px;font-size:11px;font-weight:600}.menu{display:none;border:0;background:none;color:currentColor;width:44px;height:44px;cursor:pointer}.menu i{display:block;width:22px;height:2px;background:currentColor;margin:5px auto;transition:transform .35s ease}
+.menu[aria-expanded="true"] i:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu[aria-expanded="true"] i:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+body.menu-open{overflow:hidden}
+.pmenu{position:fixed;inset:0;z-index:65;background:var(--dark);color:var(--paper);display:flex;flex-direction:column;justify-content:center;padding:100px clamp(28px,8vw,60px) 48px;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s}
+.pmenu.open{opacity:1;visibility:visible;transition:opacity .4s ease}
+.pmenu nav{display:flex;flex-direction:column}
+.pmenu nav a{font:500 clamp(2rem,8.5vw,3rem)/1.35 var(--serif);padding:10px 0;border-bottom:1px solid rgba(244,241,233,.12);opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease,color .25s ease}
+.pmenu.open nav a{opacity:1;transform:none}
+.pmenu.open nav a:nth-child(2){transition-delay:.07s}.pmenu.open nav a:nth-child(3){transition-delay:.14s}.pmenu.open nav a:nth-child(4){transition-delay:.21s}.pmenu.open nav a:nth-child(5){transition-delay:.28s}
+.pmenu nav a:hover{color:var(--gold)}
+.pm-foot{margin:44px 0 0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8b8f82}
+.hero{height:100svh;min-height:700px;position:relative;color:#fff;display:flex;align-items:flex-end;overflow:hidden;background:#17201d}.hero-bg{position:absolute;inset:-4%;z-index:0;background:linear-gradient(90deg,rgba(10,16,13,.86),rgba(10,16,13,.35)),url("https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=2200&q=85") center/cover;transform:scale(1.04);transition:transform 1.4s}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,11,9,.8),transparent 58%);z-index:1}.hero-content{position:relative;z-index:2;padding:0 clamp(20px,6vw,95px) clamp(45px,7vh,82px);width:100%}.eyebrow{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.7}.hero h1{font:400 clamp(4rem,9.2vw,10rem)/.84 var(--serif);letter-spacing:-.065em;margin:18px 0 38px;max-width:1100px}.hero h1 em{font-style:italic;color:#ead8ad}.hero h1 small{font:400 clamp(1.5rem,3vw,3.2rem)/1 var(--serif);display:block;margin-top:15px;letter-spacing:-.03em}.hero-bottom{display:grid;grid-template-columns:1fr 1.3fr auto;gap:50px;align-items:end;max-width:1100px}.role{font-size:11px;line-height:1.7;opacity:.7}.role b{color:#ead8ad;font-weight:400}.intro{font:400 clamp(16px,1.45vw,21px)/1.45 var(--serif);max-width:450px}.circle{width:92px;height:92px;border:1px solid rgba(255,255,255,.45);border-radius:50%;display:grid;place-items:center;font-size:9px;letter-spacing:.12em;text-transform:uppercase;transition:.35s;text-align:center}.circle:hover{background:#fff;color:var(--ink);transform:translateY(-5px)}.scroll{position:absolute;right:32px;bottom:42px;z-index:3;writing-mode:vertical-rl;font-size:9px;letter-spacing:.15em;text-transform:uppercase;opacity:.55}
+.section{padding:clamp(90px,11vw,165px) clamp(20px,6vw,96px)}.index{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}.display{font:400 clamp(3rem,6.3vw,7.2rem)/.96 var(--serif);letter-spacing:-.05em}.display em{font-style:italic;color:var(--wine)}.body{font-size:clamp(15px,1.2vw,18px);line-height:1.75;color:var(--muted);max-width:520px}
+.manifesto{display:grid;grid-template-columns:1fr 2.5fr;max-width:1440px;margin:0 auto}.manifesto .body{margin:55px 0 0 34%}
+.about{background:var(--cream)}.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,9vw,140px);align-items:center;margin:65px auto 0;max-width:1440px}.portrait{height:min(68vw,700px);overflow:hidden}.portrait img{transition:1s}.portrait:hover img{transform:scale(1.035)}.caption{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:12px}.about h2{margin:22px 0 38px}.link{display:inline-flex;gap:12px;border-bottom:1px solid currentColor;padding-bottom:7px;margin-top:18px;font-size:11px;font-weight:600}.more{max-height:0;overflow:hidden;transition:max-height .6s}.more.open{max-height:300px}.more p{color:var(--muted);line-height:1.75}
+.ministry-wrap{max-width:1440px;margin:0 auto}
+.head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:70px}.head h2{margin:20px 0 0}
+.ministry{border-top:1px solid var(--line)}.ministry-row{min-height:175px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:50px 220px 1fr 35px;align-items:center;gap:28px;padding:18px 8px;transition:.35s}.ministry-row:hover{background:#ebe6db}.rowimg{height:125px;overflow:hidden}.rowimg img{transition:.8s;filter:saturate(.72)}.ministry-row:hover .rowimg img{transform:scale(1.06)}.num{font-size:10px;color:var(--gold)}.rowcopy h3{font:400 clamp(1.8rem,3vw,3.2rem)/1 var(--serif);margin:0 0 10px}.rowcopy p{margin:0;color:var(--muted);font-size:12px}.arrow{font-size:22px;transition:.3s}.ministry-row:hover .arrow{transform:translate(4px,-4px)}
+.feature{background:var(--dark);color:#fff;min-height:720px;display:grid;grid-template-columns:1fr 1fr}.feature-img{min-height:550px;background:url("https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=1500&q=85") center/cover;filter:saturate(.55)}.feature-copy{padding:clamp(55px,9vw,130px);display:flex;flex-direction:column;justify-content:center}.feature-copy .index{color:#aaa}.feature-copy .eyebrow{color:#d9be83;margin-top:auto}.quote{font:400 clamp(2.8rem,5vw,5.6rem)/.98 var(--serif);letter-spacing:-.045em;margin:28px 0 50px}.meta{display:flex;gap:24px;border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:20px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#9b9e99}.lightlink{color:#fff}
+.scripture{height:min(88svh,850px);min-height:620px;position:relative;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:#28312d}.scripture-bg{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=2200&q=85") center/cover;filter:saturate(.6);transform:scale(1.05);transition:1.2s}.scripture:hover .scripture-bg{transform:scale(1)}.scripture:after{content:"";position:absolute;inset:0;background:rgba(18,25,22,.62)}.scripture-content{position:relative;z-index:2;padding:30px}.scripture-content .eyebrow{color:#dfc78d}.verse{font:400 clamp(3rem,6.8vw,7.5rem)/.95 var(--serif);letter-spacing:-.055em;max-width:1150px;margin:28px auto 20px}.ref{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.65}.path{display:flex;justify-content:center;gap:15px;align-items:center;margin-top:50px;font-size:9px;letter-spacing:.15em;text-transform:uppercase}.path i{width:32px;height:1px;background:#ffffff55}
+.story{background:#e7e0d1}.story-head{display:grid;grid-template-columns:1.3fr 1fr;gap:8vw;align-items:end;margin:25px auto 75px;max-width:1440px}.gallery{display:grid;grid-template-columns:1.5fr .8fr;gap:5vw;align-items:end;max-width:1440px;margin:0 auto}.gallery figure{margin:0}.bigimg{height:min(65vw,720px)}.smallimg{height:min(45vw,500px);margin-bottom:8vw}.gallery img{transition:1s}.gallery figure:hover img{transform:scale(1.025)}figcaption{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:12px}
+.resources-head{max-width:1440px;margin:0 auto}
+.resources .grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin:65px auto 0;max-width:1440px}.resource{min-height:320px;border-right:1px solid var(--line);padding:25px;display:flex;flex-direction:column;transition:.35s}.resource:last-child{border:0}.resource:hover{background:#ebe6db}.resource span{font-size:9px;color:var(--gold)}.resource h3{font:400 clamp(2rem,3vw,3.4rem)/1 var(--serif);margin:auto 0 12px;letter-spacing:-.04em}.resource p{font-size:12px;line-height:1.65;color:var(--muted);max-width:280px}.resource b{align-self:flex-end;font-size:21px}
+.invite{background:var(--wine);color:#fff;min-height:75vh;display:grid;place-items:center;text-align:center;padding:100px 20px;position:relative;overflow:hidden}.invite-inner{max-width:900px}.invite .index{color:#c7b9b7;margin-bottom:45px}.invite .display{font-size:clamp(3.6rem,8vw,9rem)}.invite .body{color:#ddcfcd;margin:35px auto}.button{display:inline-flex;gap:18px;border-bottom:1px solid #fff;padding-bottom:8px;margin-top:30px;font-size:11px;font-weight:600}.footer{background:#151b19;color:#fff;padding:65px clamp(20px,6vw,96px) 25px}.footer-top{display:flex;justify-content:space-between;padding-bottom:70px;max-width:1440px;margin:0 auto}.footer-brand{font:400 clamp(2.7rem,5vw,5rem)/1 var(--serif)}.footer p{font-size:11px;color:#888f8a;line-height:1.7}.footer-links{display:grid;grid-template-columns:repeat(2,120px);gap:14px 40px}.footer-links a{font-size:11px;color:#bbb}.footer-bottom{border-top:1px solid #ffffff1c;padding-top:18px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#69716c;max-width:1440px;margin:0 auto}
+
+@media(max-width:800px){
+.topbar{height:70px}.nav,.navcta{display:none}.menu{display:block}.hero{min-height:720px}.hero-content{padding-bottom:42px}.hero h1{font-size:clamp(3.8rem,15vw,6.2rem)}.hero-bottom{grid-template-columns:1fr auto;gap:20px}.intro{grid-column:1/-1;font-size:17px;margin:0 0 15px}.circle{width:72px;height:72px}.scroll{display:none}.manifesto{display:block}.manifesto .body{margin:40px 0 0}.about-grid{grid-template-columns:1fr;gap:50px}.portrait{height:115vw;max-height:650px}.about h2{font-size:clamp(3rem,12vw,5.5rem)}.head,.story-head{display:block}.head .body,.story-head .body{margin-top:28px}.ministry{margin-top:45px}.ministry-row{grid-template-columns:30px 1fr 25px;gap:14px;min-height:150px}.rowimg{grid-column:2;height:95px}.rowcopy{grid-column:2}.rowcopy h3{font-size:1.55rem}.rowcopy p{display:none}.num{grid-row:1/3;align-self:start;padding-top:4px}.arrow{grid-column:3;grid-row:1/3}.feature{grid-template-columns:1fr}.feature-img{height:58vw;min-height:300px}.feature-copy{min-height:600px;padding:50px 24px}.quote{font-size:clamp(2.8rem,12vw,5rem);margin-top:60px}.meta{margin-top:auto}.verse{font-size:clamp(3rem,13vw,6rem)}.story-head{margin-bottom:50px}.gallery{grid-template-columns:1fr;gap:40px}.bigimg{height:105vw}.smallimg{height:82vw;margin:0 12% 0 0}.resources .grid{grid-template-columns:1fr;margin-top:45px}.resource{min-height:240px;border-right:0;border-bottom:1px solid var(--line)}.footer-top{display:block}.footer-links{margin-top:50px}.footer-bottom{display:block;line-height:2}.footer-bottom span{display:block}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.pmenu,.pmenu nav a{transition:none!important}}
 </style>
 </head>
 <body>
-<div id="previewBar"></div>
-<div class="night" id="night" aria-hidden="true"><div class="night-stars"></div><div class="night-mist"></div><div class="night-wash"></div></div>
-<div id="app"><div class="loading"><div class="spin"></div><div>Đang tải…</div></div></div>
-<noscript><div style="padding:60px 20px;text-align:center">Trang web cần JavaScript để hiển thị. Vui lòng bật JavaScript.</div></noscript>
+<a class="skip" href="#home">Skip to content</a>
+<header class="topbar" id="topbar">
+<a class="brand" href="#home"><span class="mark">FT</span><span><strong>Fr. Thomas</strong><small>Priest · Speaker · Writer</small></span></a>
+<nav class="nav" aria-label="Primary"><a href="#about">About</a><a href="#ministry">Ministry</a><a href="#reflection">Reflections</a><a href="#resources">Resources</a><a href="#contact">Contact</a></nav>
+<a class="navcta" href="#contact">Get in touch ↗</a>
+<button class="menu" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="pmenu"><i></i><i></i></button>
+</header>
+<div class="pmenu" id="pmenu" aria-hidden="true">
+<nav aria-label="Mobile">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#ministry">Ministry</a>
+<a href="#reflection">Reflections</a>
+<a href="#resources">Resources</a>
+<a href="#contact">Contact</a>
+</nav>
+<p class="pm-foot">St. Francis Xavier Parish · Vancouver</p>
+</div>
+
+<main id="main">
+<section class="hero" id="home"><div class="hero-bg"></div><div class="hero-content">
+<div class="eyebrow">Catholic Priest · Vancouver · 2026</div>
+<h1>Phaolô<br><em>Lê-Bảo-Tịnh</em><br><small>Fr. Thomas Truong</small></h1>
+<div class="hero-bottom"><div class="role"><b>Priest</b> · Speaker · Writer<br>Ministry &amp; Catholic Formation</div><p class="intro">Helping people encounter Christ through faith, reflection, and everyday life.</p><a class="circle" href="#about">Explore<br>↓</a></div>
+</div><div class="scroll">Scroll to discover</div></section>
+
+<section class="section manifesto"><div class="index">01 / Presence</div><div><p class="display">A place to <em>pause.</em><br>A place to listen.<br>A place to <em>encounter Christ.</em></p><p class="body">A digital home for homilies, Scripture, Catholic formation, ministry, and the quiet questions that shape a life of faith.</p></div></section>
+
+<section class="section about" id="about"><div class="index">02 / About</div><div class="about-grid"><div><div class="portrait"><img src="https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=1300&q=85" alt="Church interior"></div><div class="caption"><span>Priest · Vancouver</span><span>Faith in conversation</span></div></div><div><div class="eyebrow">A life of ministry</div><h2 class="display">A priest.<br>A listener.<br>A companion on<br><em>the journey of faith.</em></h2><p class="body">My ministry brings together preaching, Catholic formation, parish life, Scripture, and service to Chinese-speaking communities.</p><p class="body">From the altar to the classroom, from retreat rooms to everyday conversations, every ministry begins with listening and leads back to the Gospel.</p><a class="link" href="#" id="moreBtn">Read more ↗</a><div class="more" id="more"><p>The aim is simple: to make space for an honest encounter with Jesus Christ in the middle of ordinary life.</p></div></div></div></section>
+
+<section class="section ministry-wrap" id="ministry"><div class="head"><div><div class="index">03 / Ministry</div><h2 class="display">Where faith<br><em>takes shape.</em></h2></div><p class="body">Explore the places where Scripture becomes conversation, formation becomes practice, and faith becomes a way of life.</p></div><div class="ministry">
+<a class="ministry-row" href="#reflection"><span class="num">01</span><div class="rowimg"><img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=700&q=80" alt=""></div><div class="rowcopy"><h3>Homilies &amp; Reflections</h3><p>Scripture and reflections for ordinary Christian life.</p></div><span class="arrow">↗</span></a>
+<a class="ministry-row" href="#resources"><span class="num">02</span><div class="rowimg"><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=700&q=80" alt=""></div><div class="rowcopy"><h3>Catholic Formation</h3><p>Resources for learning and deepening the Catholic faith.</p></div><span class="arrow">↗</span></a>
+<a class="ministry-row" href="#contact"><span class="num">03</span><div class="rowimg"><img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=700&q=80" alt=""></div><div class="rowcopy"><h3>Speaking &amp; Retreats</h3><p>Parish events, schools, retreats, talks and conferences.</p></div><span class="arrow">↗</span></a>
+<a class="ministry-row" href="#contact"><span class="num">04</span><div class="rowimg"><img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=700&q=80" alt=""></div><div class="rowcopy"><h3>Chinese Ministry</h3><p>Resources and ministry for Cantonese- and Chinese-speaking communities.</p></div><span class="arrow">↗</span></a>
+</div></section>
+
+<section class="feature" id="reflection"><div class="feature-img"></div><div class="feature-copy"><div class="index">04 / Featured Reflection</div><div><div class="eyebrow">Today’s Reflection</div><blockquote class="quote">“The Christian life is not simply about knowing the way. It is about choosing to walk it.”</blockquote><div class="meta"><span>Faith · Reflection · Life</span><span>Scripture</span></div><a class="link lightlink" href="#resources">Explore reflections ↗</a></div></div></section>
+
+<section class="scripture"><div class="scripture-bg"></div><div class="scripture-content"><div class="eyebrow">Scripture</div><div class="verse">“Your word is a lamp for my feet, a light on my path.”</div><div class="ref">Psalm 119:105</div><div class="path"><span>Reflect</span><i></i><span>Pray</span><i></i><span>Live</span></div></div></section>
+
+<section class="section story"><div class="index">05 / The Journey</div><div class="story-head"><h2 class="display">From the altar<br>to the <em>classroom.</em></h2><p class="body">From Scripture to everyday life. Ministry is not a collection of events; it is a way of walking with people.</p></div><div class="gallery"><figure><div class="bigimg"><img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1500&q=85" alt="Church and ministry" loading="lazy"></div><figcaption>Presence before performance.</figcaption></figure><figure class="smallimg"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1100&q=85" alt="Books and formation" loading="lazy"><figcaption>Scripture becomes conversation.</figcaption></figure></div></section>
+
+<section class="section resources" id="resources"><div class="head resources-head"><div><div class="index">06 / Resources</div><h2 class="display">Words worth<br><em>returning to.</em></h2></div><a class="link" href="#">Explore all resources ↗</a></div><div class="grid"><a class="resource" href="#"><span>01</span><h3>Homilies &amp; Reflections</h3><p>Scripture, Sunday preaching, and reflections for ordinary life.</p><b>↗</b></a><a class="resource" href="#"><span>02</span><h3>Bible Study</h3><p>Read the Gospel more deeply and discover the living Word.</p><b>↗</b></a><a class="resource" href="#"><span>03</span><h3>Catholic Resources</h3><p>Books, retreat materials, formation, and practical resources.</p><b>↗</b></a></div></section>
+
+<section class="invite" id="contact"><div class="invite-inner"><div class="index">07 / Contact</div><div class="display">Let’s continue<br>the <em>conversation.</em></div><p class="body">Whether you are looking for a homily, retreat, Catholic resource, parish talk, or simply a word of encouragement, you are welcome here.</p><a class="button" href="mailto:frthomas@stfrancisxavier.ca">Get in touch ↗</a></div></section>
+</main>
+
+<footer class="footer"><div class="footer-top"><div><div class="footer-brand">Fr. Thomas</div><p>Catholic priest · Speaker · Writer<br>St. Francis Xavier Parish · Vancouver</p></div><div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#ministry">Ministry</a><a href="#reflection">Reflections</a><a href="#resources">Resources</a><a href="#contact">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Fr. Thomas Truong</span><span>Faith · Reflection · Service</span></div></footer>
+
 <script>
 (function(){
-  var app = document.getElementById('app');
-  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-  function txt(s){ return esc(s).replace(/\n/g,'<br>'); }
-  function getPath(o, p){ return p.split('.').reduce(function(a,k){ return (a == null ? a : a[k]); }, o); }
-  function fill(tpl, content){
-    tpl = tpl.replace(/<!--CARDS-->([\s\S]*?)<!--\/CARDS-->/g, function(m, block){
-      return (content.ministries.cards || []).map(function(cd, i){
-        return block
-          .replace(/\{\{card\.n\}\}/g, String(i+1))
-          .replace(/\{\{card\.title\}\}/g, txt(cd.title))
-          .replace(/\{\{card\.desc\}\}/g, txt(cd.desc))
-          .replace(/\{\{card\.link\}\}/g, txt(cd.link))
-          .replace(/\{\{card\.href\}\}/g, esc(cd.href))
-          .replace(/\{\{card\.img\}\}/g, esc(cd.img));
-      }).join('');
-    });
-    tpl = tpl.replace(/\{\{card([0-3])\.(\w+)\}\}/g, function(m, n, k){
-      var cd = (content.ministries.cards || [])[+n] || {};
-      var v = cd[k] == null ? '' : cd[k];
-      return (k === 'href' || k === 'img') ? esc(v) : txt(v);
-    });
-    tpl = tpl.replace(/\{\{([a-z0-9_.]+)\}\}/gi, function(m, p){
-      var v = getPath(content, p);
-      if (v == null) return '';
-      var last = p.split('.').pop();
-      return (last === 'img' || last === 'href') ? esc(v) : txt(v);
-    });
-    return tpl;
-  }
-  function buildFloatingMenu(base){
-    var items = [
-      ['Trang chủ', base, ''],
-      ['Hành hương', base + 'hanh-huong/', 'hanh-huong'],
-      ['Bài giảng', base + 'bai-giang/', 'bai-giang'],
-      ['Học Kinh Thánh', base + 'hoc-kinh-thanh/', 'hoc-kinh-thanh'],
-      ['Sách', base + 'sach/', 'sach']
-    ];
-    var path = window.location.pathname.replace(/\/$/, '');
-    var btn = document.createElement('button');
-    btn.className = 'fm-btn'; btn.setAttribute('aria-label', 'Mở menu'); btn.innerHTML = '☰';
-    var ov = document.createElement('div'); ov.className = 'fm-ov';
-    var links = items.map(function(it){
-      var on = (it[2] === '' && (path === '' || path === '/')) || (it[2] && path.indexOf('/' + it[2]) === 0);
-      return '<a href="' + it[1] + '"' + (on ? ' class="on"' : '') + '>' + it[0] + '</a>';
-    }).join('');
-    ov.innerHTML = '<div class="fm-panel" role="dialog" aria-label="Menu điều hướng">' +
-      '<button class="fm-x" aria-label="Đóng menu">×</button>' +
-      '<div class="fm-brand"><b>Fr. Thomas</b></div>' +
-      '<div class="fm-links">' + links + '</div></div>';
-    document.body.appendChild(btn); document.body.appendChild(ov);
-    function open(){ ov.classList.add('open'); btn.classList.add('open'); btn.innerHTML = '×'; btn.setAttribute('aria-label', 'Đóng menu'); btn.setAttribute('aria-expanded', 'true'); }
-    function close(){ ov.classList.remove('open'); btn.classList.remove('open'); btn.innerHTML = '☰'; btn.setAttribute('aria-label', 'Mở menu'); btn.setAttribute('aria-expanded', 'false'); }
-    btn.addEventListener('click', open);
-    ov.querySelector('.fm-x').addEventListener('click', close);
-    ov.addEventListener('click', function(e){ if (e.target === ov) close(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-  }
-  function loadTheme(slug){
-    var THEME_V = '20261002n'; // bump khi sửa template/theme.css/theme.js để máy khách tải bản mới
-    document.body.className = document.body.className.replace(/(?:^|\s)theme-[^\s]*/g, '');
-    document.body.classList.add('theme-' + slug);
-    return fetch('assets/themes/' + slug + '/meta.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(meta){
-      return Promise.all([
-        fetch('assets/themes/' + slug + '/template.html?v=' + THEME_V).then(function(r){ if(!r.ok) throw 0; return r.text(); }),
-        fetch('assets/themes/' + slug + '/theme.css?v=' + THEME_V).then(function(r){ if(!r.ok) throw 0; return r.text(); }),
-        fetch('assets/content.json', { cache: 'no-store' }).then(function(r){ if(!r.ok) throw 0; return r.json(); })
-      ]).then(function(res){
-        var st = document.createElement('style');
-        st.setAttribute('data-theme', slug);
-        st.textContent = res[1];
-        document.head.appendChild(st);
-        app.innerHTML = fill(res[0], res[2]);
-        document.title = meta.name + ' — Fr. Thomas · Linh mục Công giáo';
-        buildFloatingMenu('./');
-        if (meta.has_js) {
-          var s = document.createElement('script');
-          s.src = 'assets/themes/' + slug + '/theme.js?v=' + THEME_V;
-          document.body.appendChild(s);
-        }
-        return meta;
-      });
-    });
-  }
-  function fail(){
-    app.innerHTML = '<div class="loading"><div>Không tải được giao diện. Anh thử tải lại trang nhé.</div></div>';
-  }
-  var preview = new URLSearchParams(location.search).get('theme');
-  if (preview) {
-    loadTheme(preview).then(function(meta){
-      var bar = document.getElementById('previewBar');
-      bar.style.display = 'flex';
-      bar.innerHTML = '<span>Đang xem thử giao diện <b>' + esc(meta.name) + '</b></span><a href="./">← Về bản chính</a>';
-    }).catch(function(){ loadTheme('chan-dung').catch(fail); });
-  } else {
-    fetch('assets/site.json', { cache: 'no-store' }).then(function(r){ return r.json(); })
-      .then(function(s){ return loadTheme((s && s.theme) || 'chan-dung'); })
-      .catch(function(){ loadTheme('chan-dung').catch(fail); });
-  }
+"use strict";
+var bar=document.getElementById('topbar'), heroBg=document.querySelector('.hero-bg');
+var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+addEventListener('scroll',function(){bar.classList.toggle('scrolled',scrollY>50); if(!reduceMotion) heroBg.style.transform='translateY('+Math.min(scrollY*.045,25)+'px) scale(1.04)';},{passive:true});
+document.getElementById('moreBtn').onclick=function(e){e.preventDefault();document.getElementById('more').classList.toggle('open');};
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){if(a.getAttribute('href')==='#')event.preventDefault();});});
+/* mobile fullscreen menu */
+var menuBtn=document.getElementById('menuBtn'), pmenu=document.getElementById('pmenu'), topbar=bar;
+function setMenu(open){
+  pmenu.classList.toggle('open',open);
+  topbar.classList.toggle('menu-open',open);
+  document.body.classList.toggle('menu-open',open);
+  menuBtn.setAttribute('aria-expanded',String(open));
+  menuBtn.setAttribute('aria-label',open?'Close menu':'Menu');
+  pmenu.setAttribute('aria-hidden',String(!open));
+  if(open){var f=pmenu.querySelector('nav a'); if(f)f.focus();}
+}
+menuBtn.addEventListener('click',function(){setMenu(!pmenu.classList.contains('open'));});
+pmenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
+addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
 })();
 </script>
-</body>
-</html>
+</body></html>
