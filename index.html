@@ -35,20 +35,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 .topbar.menu-open{z-index:70}
 .brand{display:flex;gap:11px;align-items:center}.mark{width:38px;height:38px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font:500 12px var(--serif)}.brand strong{font:500 15px var(--serif);display:block}.brand small{font-size:11px;letter-spacing:.13em;text-transform:uppercase;opacity:.62}
 .nav a:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:currentColor;transform:scaleX(0);transition:.3s}.nav a:hover:after{transform:scaleX(1)}
-.navcta{border:1px solid currentColor;padding:11px 16px;font-size:13px;font-weight:600}.topright{display:flex;align-items:center;gap:20px}
-.menubtn{display:inline-flex;align-items:center;gap:12px;background:none;border:0;color:inherit;cursor:pointer;font:600 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:6px 0}
-.menubtn .lines{width:46px;height:46px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;position:relative;flex:none;transition:transform .4s cubic-bezier(.34,1.4,.64,1)}
-.menubtn .lines i{position:absolute;left:50%;top:50%;width:18px;height:1.6px;background:currentColor;transition:transform .35s ease}
-.menubtn .lines i:first-child{transform:translate(-50%,-50%) translateY(-4px)}
-.menubtn .lines i:last-child{transform:translate(-50%,-50%) translateY(4px)}
-.menubtn:hover .lines{transform:scale(1.08)}
-body.menu-open .menubtn{color:var(--ink)}
-body.menu-open .menubtn .lines i:first-child{transform:translate(-50%,-50%) rotate(45deg)}
-body.menu-open .menubtn .lines i:last-child{transform:translate(-50%,-50%) rotate(-45deg)}
-.topbar .brand,.topbar .navcta{transition:opacity .3s ease}
-body.menu-open .topbar{z-index:120;background:transparent;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
-body.menu-open .topbar .brand,body.menu-open .topbar .navcta{opacity:0;pointer-events:none}
-.emenu{position:fixed;inset:0;z-index:100;visibility:hidden;pointer-events:none}
+.navcta{border:1px solid currentColor;padding:11px 16px;font-size:13px;font-weight:600}
+
+
+
+
+
+
+
+
+
+
+
+
+.menu-trigger{position:fixed;z-index:120;right:max(22px,3vw);bottom:max(22px,3vw);width:88px;height:88px;border-radius:50%;border:0;background:#1d2522;color:#f4f1e9;cursor:pointer;box-shadow:0 14px 40px rgba(0,0,0,.27);display:grid;place-items:center;transition:transform .3s ease,background .3s ease,color .3s ease}.menu-trigger:hover{transform:rotate(-5deg)}.menu-trigger .trigger-inner{display:flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-family:"DM Sans",system-ui,sans-serif}.menu-trigger .hamburger{display:grid;gap:4px}.menu-trigger .hamburger i{display:block;width:16px;height:1px;background:currentColor;transition:transform .4s ease}.menu-trigger[aria-expanded="true"]{background:#c7aa70;color:#23160f;transform:rotate(90deg)}.menu-trigger[aria-expanded="true"]:hover{transform:rotate(90deg)}.menu-trigger[aria-expanded="true"] .hamburger i:first-child{transform:translateY(2.5px) rotate(45deg)}.menu-trigger[aria-expanded="true"] .hamburger i:last-child{transform:translateY(-2.5px) rotate(-45deg)}.emenu{position:fixed;inset:0;z-index:100;visibility:hidden;pointer-events:none}
 .emenu.is-open{visibility:visible;pointer-events:auto}
 .emenu-panel{position:absolute;inset:0;background:var(--paper);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;transform:translateY(-105%);transition:transform .65s cubic-bezier(.76,0,.24,1);overflow:hidden auto}
 .emenu.is-open .emenu-panel{transform:none}
@@ -101,8 +101,9 @@ body.menu-open{overflow:hidden}
 <a class="skip" href="#home">Skip to content</a>
 <header class="topbar" id="topbar">
 <a class="brand" href="#home"><span class="mark">FT</span><span><strong>Fr. Thomas</strong><small>Priest · Speaker · Writer</small></span></a>
-<div class="topright"><a class="navcta" href="#contact">Get in touch ↗</a><button class="menubtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sitemenu"><span class="blabel">Menu</span><span class="lines"><i></i><i></i></span></button></div>
+<a class="navcta" href="#contact">Get in touch ↗</a>
 </header>
+<button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-controls="sitemenu" aria-label="Open menu"><span class="trigger-inner"><span class="hamburger" aria-hidden="true"><i></i><i></i></span><span>Menu</span></span></button>
 <aside class="emenu" id="sitemenu" aria-hidden="true" aria-label="Site menu">
 <div class="emenu-panel">
 <div class="emenu-meta"><span>Fr. Thomas</span><span>Menu</span></div>
@@ -159,16 +160,15 @@ var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 addEventListener('scroll',function(){bar.classList.toggle('scrolled',scrollY>50); if(!reduceMotion) heroBg.style.transform='translateY('+Math.min(scrollY*.045,25)+'px) scale(1.04)';},{passive:true});
 document.getElementById('moreBtn').onclick=function(e){e.preventDefault();document.getElementById('more').classList.toggle('open');};
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){if(a.getAttribute('href')==='#')e.preventDefault();});});
-/* Editorial fullscreen menu */
-var menuBtn=document.getElementById('menuBtn'), emenu=document.getElementById('sitemenu'), topbar=bar, lastFocus=null;
-function menuOpen(){return emenu.classList.contains('is-open');}
+/* Editorial fullscreen menu — demo trigger */
+var menuTrigger=document.getElementById('menuTrigger'), emenu=document.getElementById('sitemenu'), lastFocus=null;
+function menuOpen(){return menuTrigger.getAttribute('aria-expanded')==='true';}
 function openMenu(){
   lastFocus=document.activeElement;
   emenu.classList.add('is-open');
   document.body.classList.add('menu-open');
-  menuBtn.setAttribute('aria-expanded','true');
-  menuBtn.setAttribute('aria-label','Close menu');
-  menuBtn.querySelector('.blabel').textContent='Close';
+  menuTrigger.setAttribute('aria-expanded','true');
+  menuTrigger.setAttribute('aria-label','Close menu');
   emenu.setAttribute('aria-hidden','false');
   setTimeout(function(){var f=emenu.querySelector('.emenu-link'); if(f)f.focus();},380);
 }
@@ -176,13 +176,12 @@ function closeMenu(){
   if(!menuOpen())return;
   emenu.classList.remove('is-open');
   document.body.classList.remove('menu-open');
-  menuBtn.setAttribute('aria-expanded','false');
-  menuBtn.setAttribute('aria-label','Open menu');
-  menuBtn.querySelector('.blabel').textContent='Menu';
+  menuTrigger.setAttribute('aria-expanded','false');
+  menuTrigger.setAttribute('aria-label','Open menu');
   emenu.setAttribute('aria-hidden','true');
   if(lastFocus&&lastFocus!==document.body){try{lastFocus.focus();}catch(e){}}
 }
-menuBtn.addEventListener('click',function(){menuOpen()?closeMenu():openMenu();});
+menuTrigger.addEventListener('click',function(){menuOpen()?closeMenu():openMenu();});
 emenu.querySelectorAll('.emenu-link').forEach(function(a){a.addEventListener('click',function(){closeMenu();});});
 addEventListener('keydown',function(e){
   if(!menuOpen())return;
@@ -192,11 +191,10 @@ addEventListener('keydown',function(e){
   else if(e.key==='ArrowDown'){e.preventDefault();links[(i+1+links.length)%links.length].focus();}
   else if(e.key==='ArrowUp'){e.preventDefault();links[(i-1+links.length)%links.length].focus();}
   else if(e.key==='Tab'){
-    var f=[menuBtn].concat(links), fi=f.indexOf(document.activeElement);
+    var f=[menuTrigger].concat(links), fi=f.indexOf(document.activeElement);
     if(e.shiftKey&&fi<=0){e.preventDefault();f[f.length-1].focus();}
     else if(!e.shiftKey&&fi===f.length-1){e.preventDefault();f[0].focus();}
   }
 });
-})();
 </script>
 </body></html>
