@@ -14,10 +14,10 @@
   <meta property="og:description" content="14 ngày tạ ơn hồng ân linh mục: Hà Nội, Phát Diệm, La Vang, Huế, Hội An, Sài Gòn. 8–21/1/2028.">
   <meta property="og:url" content="https://frthomas.com/hanh-huong/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:image" content="https://frthomas.com/assets/images/cover-ha-long.jpg">
-  <meta property="og:image:width" content="960">
-  <meta property="og:image:height" content="432">
-  <meta property="og:image:alt" content="Vịnh Hạ Long, Việt Nam">
+  <meta property="og:image" content="https://frthomas.com/assets/images/home-card-hanhhuong.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt" content="Thánh địa La Vang, Quảng Trị, Việt Nam">
   <meta name="theme-color" content="#1d2444">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -373,6 +373,27 @@
   .note .ico { width: 20px; height: 20px; color: var(--gold); margin-top: 3px; }
   .note p { color: var(--ink-soft); font-size: .93rem; }
 
+
+  /* ---------- Hero CTA, draft bar, sign-up ---------- */
+  .hero-bg { object-position: center 42%; }
+  .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 26px; }
+  .hero-cta .btn { margin-top: 0; }
+  .btn-ghost { background: transparent; color: #fffdf4; border: 1.5px solid rgba(230,192,117,.75); }
+  .btn-ghost:hover { background: rgba(230,192,117,.18); }
+  .toc a.toc-cta { background: var(--navy); color: #f7f2e2; border: 1px solid var(--gold); }
+  .toc a.toc-cta:hover { background: var(--navy-deep); color: #fff; }
+  .draftbar { margin: 0; background: var(--gold-wash); border-bottom: 1px solid var(--gold-line); text-align: center; padding: 10px 18px; font-size: .86rem; color: var(--ink-soft); }
+  .print-btn { margin: 18px auto 0; display: block; background: transparent; color: var(--gold-ink); border: 1.5px solid var(--gold-line); border-radius: 999px; padding: 9px 22px; font: 600 .88rem var(--sans); cursor: pointer; }
+  .print-btn:hover { border-color: var(--gold); background: var(--gold-soft); }
+  .print-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .notes-narrow { max-width: 720px; margin: 0 auto; }
+  .signup-card { max-width: 720px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--card-shadow); padding: 30px 28px 32px; }
+  .signup-card .mini-title { margin-top: 0; }
+  .signup-cta { text-align: center; margin: 30px 0 0; }
+  .signup-alt { text-align: center; margin: 14px 0 0; color: var(--muted); font-size: .92rem; }
+  .f-link { color: #e6c075; }
+  .cost-card .cost-note + .cost-note { border-top: 0; padding-top: 0; }
+
   /* Footer */
   .footer { background: var(--navy-deep); color: #cfd3e6; text-align: center; padding: 56px 0 60px; }
   .footer .hero-cross { border-color: rgba(214,178,103,.55); }
@@ -459,9 +480,21 @@
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
   @media print {
-    .toc, #topBtn, .scroll-hint, .count-grid { display: none !important; }
+    .toc, #topBtn, .scroll-hint, .count-grid, .fm-btn, .fm-ov, .hero-cta, .print-btn, .draftbar, .signup-cta { display: none !important; }
+    body::before { display: none !important; }
+    html, body { background: #fff !important; }
     .hero { min-height: auto; }
+    .hero-bg, .hero-shade { display: none; }
+    .hero-in { color: #20263f; padding-top: 24px; padding-bottom: 16px; }
+    .hero h1, .theme, .occasion, .hero-meta { color: #20263f !important; text-shadow: none !important; }
     .status { display: none; }
+    .js .reveal, .js .reveal-scale { opacity: 1 !important; transform: none !important; }
+    .section { padding-top: 24px; padding-bottom: 24px; }
+    .section-soft { background: #fff; }
+    .day, .prep, .util, .note, .r-node { break-inside: avoid; box-shadow: none; }
+    .day-media, .day-media-duo { height: 150px; min-height: 0; }
+    .day-travel { background: #fff; color: #20263f; }
+    .day-travel h3, .day-travel .bullets li, .day-travel .dateline { color: #20263f; }
   }
 
 /* ---------- Hieu ung chuyen canh khi cuon (scroll reveal) ---------- */
@@ -507,17 +540,21 @@
 
 <!-- ===== Hero ===== -->
 <header class="hero">
-  <img class="hero-bg" src="../assets/images/cover-ha-long.jpg?v=2" alt="Vịnh Hạ Long nhìn từ trên cao giữa biển mây" fetchpriority="high" />
+  <img class="hero-bg" src="../assets/images/home-card-hanhhuong.jpg" alt="Thánh địa La Vang: nhà thờ trắng và tượng Đức Mẹ trên đồi xanh" fetchpriority="high" width="1920" height="1280" />
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="wrap hero-in">
     <span class="hero-cross" aria-hidden="true"><svg><use href="#i-cross"/></svg></span>
     <p class="theme">Tạ Ơn Hồng Ân Linh Mục</p>
     <h1>Hành Hương<br />Việt Nam 2028</h1>
     <p class="occasion">Nhân kỷ niệm thụ phong linh mục của Fr. Thomas — ngày 11/1</p>
-    <p class="hero-meta">8/1 – 21/1/2028 &nbsp;·&nbsp; 14 ngày &nbsp;·&nbsp; 35 người từ Vancouver</p>
+    <p class="hero-meta">8/1 – 21/1/2028 &nbsp;·&nbsp; 14 ngày &nbsp;·&nbsp; đoàn dự kiến 35 người từ Vancouver</p>
     <div class="status" id="status">
       <p class="status-fb">Ngày khởi hành: Thứ Bảy, 8/1/2028</p>
       <span class="sr-only" id="statusSr"></span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="#dang-ky">Đăng ký quan tâm</a>
+      <a class="btn btn-ghost" href="#lich-trinh">Xem lịch trình</a>
     </div>
   </div>
   <a class="scroll-hint" href="#lo-trinh" aria-label="Cuộn xuống xem hành trình"><svg aria-hidden="true"><use href="#i-chev"/></svg></a>
@@ -532,14 +569,17 @@
     <a href="#chuan-bi">Chuẩn bị</a>
     <a href="#chi-phi">Chi phí</a>
     <a href="#luu-y">Lưu ý</a>
+    <a href="#dang-ky" class="toc-cta">Đăng ký</a>
   </div>
 </nav>
+
+<p class="draftbar" role="note">Đây là bản phác thảo — ngày giờ bay, khách sạn và giá cả sẽ được chốt khi có báo giá chính thức. Cập nhật lần cuối: 4/10/2026.</p>
 
 <main>
   <!-- ===== Facts ===== -->
   <div class="wrap facts" aria-label="Những con số chính">
     <div class="fact"><b>14</b><span>ngày hành trình</span></div>
-    <div class="fact"><b>35</b><span>thành viên đoàn</span></div>
+    <div class="fact"><b>35</b><span>chỗ dự kiến</span></div>
     <div class="fact"><b>3</b><span>miền đất nước</span></div>
     <div class="fact"><b>2</b><span>ngày trọng tâm</span></div>
   </div>
@@ -628,6 +668,7 @@
         <h2 class="sec-title" id="t-lich-trinh"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>Lịch trình chi tiết</h2>
         <div class="sec-rule" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
         <p class="sec-sub">14 ngày bên nhau trong tâm tình tạ ơn — nhấn vào từng ngày để nhảy đến chi tiết. Hai ngày được tô nổi bật là trái tim của chuyến đi.</p>
+        <button class="print-btn" type="button" onclick="window.print()">In lịch trình</button>
       </div>
 
       <div class="chips" aria-label="Nhảy đến từng ngày">
@@ -895,8 +936,7 @@
           </div>
           <ul class="dots">
             <li>Hộ chiếu Canada còn hạn ít nhất 6 tháng sau ngày về (đến tháng 7/2028).</li>
-            <li>Hộ chiếu Canada cần xin e-visa Việt Nam trước khi đi: lệ phí chính thức US$25 (nhập cảnh một lần) hoặc US$50 (nhiều lần), thời hạn đến 90 ngày, xử lý 3–5 ngày làm việc.</li>
-            <li>Chuyến này chỉ vào Việt Nam một lần — loại e-visa nhập cảnh một lần là đủ.</li>
+            <li>Hộ chiếu Canada cần xin e-visa Việt Nam trước khi đi. Chuyến này chỉ vào Việt Nam một lần nên loại nhập cảnh một lần là đủ: lệ phí chính thức US$25 (nhiều lần: US$50), thời hạn đến 90 ngày, xử lý 3–5 ngày làm việc. Quy định visa có thể thay đổi — hãy kiểm tra lại trên cổng chính thức khi gần ngày đi.</li>
             <li>Tự nộp trực tuyến qua cổng chính thức <a href="https://evisa.gov.vn">evisa.gov.vn</a> — làm tại nhà, không cần đến lãnh sự.</li>
             <li>Mang theo bản sao hộ chiếu và e-visa (cả bản in và bản lưu trong điện thoại).</li>
           </ul>
@@ -981,39 +1021,44 @@
           <li class="total"><span>Tổng cộng dự kiến / người</span><b>C$3,500–4,000</b></li>
         </ul>
         <p class="cost-note">Chưa gồm: tiền tip hướng dẫn/tài xế, phụ thu phòng đơn, visa, bảo hiểm du lịch, chi tiêu cá nhân.</p>
+        <p class="cost-note">Tháng 1 là mùa cao điểm trước Tết nên giá vé máy bay thực tế có thể cao hơn ước tính. Cập nhật lần cuối: 4/10/2026. Thắc mắc về chi phí: <a href="#dang-ky">liên hệ ban tổ chức</a>.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== Next steps & notes ===== -->
+  <!-- ===== Notes ===== -->
   <section class="section" id="luu-y" aria-labelledby="t-luu-y">
     <div class="wrap">
       <div class="sec-head reveal">
-        <h2 class="sec-title" id="t-luu-y"><svg class="ico" aria-hidden="true"><use href="#i-bell"/></svg>Tiến độ chuẩn bị &amp; lưu ý</h2>
+        <h2 class="sec-title" id="t-luu-y"><svg class="ico" aria-hidden="true"><use href="#i-bell"/></svg>Lưu ý cho đoàn</h2>
         <div class="sec-rule" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
-        <p class="sec-sub">Những việc ban tổ chức cần làm tiếp theo, và những lưu ý quan trọng cho cả đoàn.</p>
       </div>
-      <div class="two-col">
-        <div>
-          <h3 class="mini-title"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>Việc cần làm tiếp theo</h3>
-          <ol class="steps">
-            <li><p>Chốt danh sách đoàn (35 người — một xe 45 chỗ thoải mái, một hướng dẫn viên; vượt số này thì lập danh sách chờ).</p></li>
-            <li><p>Chọn công ty du lịch tại Việt Nam có kinh nghiệm với đoàn hành hương Công giáo.</p></li>
-            <li><p>Lấy báo giá vé máy bay đoàn từ Vancouver (có thể nhờ đại lý vé).</p></li>
-            <li><p>Công bố từ hè 2027, nhận đặt cọc giữ chỗ.</p></li>
-            <li><p>Lo e-visa cho hộ chiếu Canada và bảo hiểm du lịch (quan trọng với người lớn tuổi).</p></li>
-            <li><p>Liên hệ trước các đền thánh (La Vang, Phát Diệm, Bãi Dâu...) để xin dâng lễ.</p></li>
-          </ol>
-        </div>
-        <div>
-          <h3 class="mini-title"><svg class="ico" aria-hidden="true"><use href="#i-bell"/></svg>Lưu ý cho đoàn</h3>
-          <ul class="notes">
-            <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg><p>Tháng 1: miền Bắc se lạnh (khoảng 15–18°C, có thể mưa phùn) — nhắc đoàn mang áo ấm; miền Trung và miền Nam khô ráo, dễ chịu.</p></li>
-            <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><p>Nhịp đi đã chừa 2 ngày nhẹ (ngày 3 và ngày 5) để người lớn tuổi nghỉ ngơi.</p></li>
-            <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><p>Tết Nguyên Đán 2028 là ngày 26/1 — đoàn về trước Tết 5 ngày: vừa kịp cảm nhận không khí Tết đang về, vừa tránh giá cao điểm.</p></li>
-            <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg><p>Đây là bản phác thảo: ngày giờ bay, khách sạn và giá cả cần báo giá chính thức từ hãng và công ty du lịch.</p></li>
-          </ul>
-        </div>
+      <ul class="notes notes-narrow">
+        <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><p>Nhịp đi đã chừa 2 ngày nhẹ (ngày 3 và ngày 5) để người lớn tuổi nghỉ ngơi.</p></li>
+        <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><p>Tết Nguyên Đán 2028 là ngày 26/1 — đoàn về trước Tết 5 ngày: vừa kịp cảm nhận không khí Tết đang về, vừa tránh giá cao điểm.</p></li>
+        <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg><p>Đây là bản phác thảo: ngày giờ bay, khách sạn và giá cả cần báo giá chính thức từ hãng bay và công ty du lịch.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Sign-up ===== -->
+  <section class="section section-soft" id="dang-ky" aria-labelledby="t-dang-ky">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="t-dang-ky"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Đăng ký tham gia</h2>
+        <div class="sec-rule" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+        <p class="sec-sub">Đoàn dự kiến 35 người, đi chung một xe 45 chỗ với một hướng dẫn viên. Khi đủ số lượng, ban tổ chức sẽ lập danh sách chờ.</p>
+      </div>
+      <div class="signup-card">
+        <h3 class="mini-title"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>Các bước tiếp theo</h3>
+        <ol class="steps">
+          <li><p><b>Gửi thư bày tỏ quan tâm.</b> Cho biết họ tên, số người đi cùng và số điện thoại. Việc này chưa phải là đặt cọc.</p></li>
+          <li><p><b>Nhận thông tin chính thức.</b> Khi có báo giá vé máy bay đoàn và công ty du lịch tại Việt Nam, ban tổ chức sẽ gửi giá và lịch trình chốt cho những người đã đăng ký.</p></li>
+          <li><p><b>Đặt cọc giữ chỗ.</b> Dự kiến mở từ hè 2027; mức đặt cọc và hạn chót sẽ được thông báo sau.</p></li>
+          <li><p><b>Chuẩn bị giấy tờ.</b> Hộ chiếu, e-visa và bảo hiểm du lịch — xem mục Chuẩn bị ở trên.</p></li>
+        </ol>
+        <p class="signup-cta"><a class="btn" href="mailto:frthomas@stfrancisxavier.ca?subject=Quan%20t%C3%A2m%20H%C3%A0nh%20H%C6%B0%C6%A1ng%20Vi%E1%BB%87t%20Nam%202028&body=K%C3%ADnh%20g%E1%BB%ADi%20Fr.%20Thomas%2C%0A%0AT%C3%B4i/ch%C3%BAng%20t%C3%B4i%20mu%E1%BB%91n%20%C4%91%C4%83ng%20k%C3%BD%20quan%20t%C3%A2m%20H%C3%A0nh%20H%C6%B0%C6%A1ng%20Vi%E1%BB%87t%20Nam%202028%20%288%E2%80%9321/1/2028%29.%0A%0AH%E1%BB%8D%20v%C3%A0%20t%C3%AAn%3A%0AS%E1%BB%91%20ng%C6%B0%E1%BB%9Di%20%C4%91i%20c%C3%B9ng%3A%0AS%E1%BB%91%20%C4%91i%E1%BB%87n%20tho%E1%BA%A1i%3A%0AGhi%20ch%C3%BA%20%28s%E1%BB%A9c%20kh%E1%BB%8Fe%2C%20ph%C3%B2ng%20%C4%91%C6%A1n%2C%20v.v.%29%3A%0A%0AXin%20c%E1%BA%A3m%20%C6%A1n.">Gửi email đăng ký quan tâm</a></p>
+        <p class="signup-alt">Hoặc viết thư tới <a href="mailto:frthomas@stfrancisxavier.ca">frthomas@stfrancisxavier.ca</a></p>
       </div>
     </div>
   </section>
@@ -1026,8 +1071,9 @@
     <span class="hero-cross" aria-hidden="true"><svg><use href="#i-cross"/></svg></span>
     <p class="f-theme">Tạ Ơn Hồng Ân Linh Mục</p>
     <p class="f-main">Hành Hương Việt Nam 2028 · 8/1 – 21/1/2028</p>
-    <p class="f-main">Đoàn 35 người từ Vancouver, Canada</p>
+    <p class="f-main">Đoàn dự kiến 35 người từ Vancouver, Canada</p>
     <p class="f-note">Xin Đức Mẹ La Vang đồng hành và gìn giữ đoàn trong suốt chuyến đi.</p>
+    <p class="f-note"><a class="f-link" href="#dang-ky">Đăng ký quan tâm</a> · <a class="f-link" href="../">Trang chủ</a></p>
   </div>
 </footer>
 
