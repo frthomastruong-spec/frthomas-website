@@ -1,52 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Books — Fr. Thomas</title>
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Fr. Thomas">
-  <meta property="og:title" content="Books — Fr. Thomas">
-  <meta property="og:description" content="Books by Fr. Thomas — introductions and where to buy.">
-  <meta property="og:url" content="https://frthomas.com/sach/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:image" content="https://frthomas.com/assets/images/home-hero.jpg">
-  <meta property="og:image:width" content="2048">
-  <meta property="og:image:height" content="1152">
-  <meta property="og:image:alt" content="A church spire at sunrise above misty hills">
-  <meta name="theme-color" content="#1d2444">
-  <meta name="description" content="Books by Fr. Thomas, St. Francis Xavier Parish, Vancouver.">
-  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=6">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Books — Fr. Thomas</title>
+<meta name="description" content="Books by Fr. Thomas — introductions and where to buy. Fr. Thomas, St. Francis Xavier Parish, Vancouver.">
+<meta name="theme-color" content="#17201d">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fr. Thomas">
+<meta property="og:title" content="Books — Fr. Thomas">
+<meta property="og:description" content="Books by Fr. Thomas — introductions and where to buy.">
+<meta property="og:url" content="https://frthomas.com/sach/">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://frthomas.com/assets/images/home-card-sach.jpg">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d2522;--muted:#56605b;--paper:#f4f1e9;--cream:#e8e1d3;--gold:#c7aa70;--bronze:#9a7b3f;--wine:#633e3c;--dark:#17201d;--line:rgba(29,37,34,.15);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.6}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,60px);height:76px;border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:50}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand .mark{width:40px;height:40px;border-radius:50%;border:1px solid var(--bronze);display:grid;place-items:center;font-family:var(--serif);font-size:15px;color:var(--bronze)}
+.brand strong{font-family:var(--serif);font-weight:500;font-size:19px;display:block;line-height:1.1}
+.brand small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.back{font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--bronze);padding-bottom:3px}
+.hero{position:relative;min-height:62vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('../assets/images/home-card-sach.jpg') center/cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,32,29,.25),rgba(23,32,29,.78))}
+.hero-in{position:relative;z-index:1;padding:clamp(40px,6vw,90px) clamp(20px,6vw,96px);max-width:1440px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.display{font:400 clamp(3rem,7vw,6.5rem)/.98 var(--serif);letter-spacing:-.04em;margin:18px 0 16px}
+.display em{font-style:italic;color:var(--gold)}
+.lede{font-size:clamp(16px,1.6vw,20px);max-width:620px;opacity:.85}
+.soon{padding:clamp(60px,8vw,110px) clamp(20px,6vw,96px);max-width:1440px;margin:0 auto}
+.soon-card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:clamp(40px,5vw,70px);max-width:720px}
+.soon-card .idx{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+.soon-card h2{font:400 clamp(2.2rem,4vw,3.4rem)/1.05 var(--serif);letter-spacing:-.03em;margin:14px 0 18px}
+.soon-card p{color:var(--muted);font-size:17px;max-width:560px}
+.soon-card .link{display:inline-flex;margin-top:26px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--bronze);padding-bottom:5px}
+.footer{background:#151b19;color:#fff;padding:65px clamp(20px,6vw,96px) 25px}
+.footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:45px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-brand{font:400 clamp(2.4rem,4vw,3.6rem)/1 var(--serif)}
+.footer-top p{color:#b9beb9;font-size:14px;margin-top:12px;line-height:1.7}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{color:#dfe3dd;text-decoration:none;font-size:14px}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:12px;letter-spacing:.08em;color:#8f968f}
+@media(max-width:720px){.hero{min-height:56vh}.footer-top{flex-direction:column}}
+</style>
 </head>
 <body>
-
-<header class="page-hero">
-  <div class="kicker">Pages written from the heart of ministry</div>
-  <h1>Books</h1>
+<header class="topbar">
+<a class="brand" href="../"><span class="mark">FT</span><span><strong>Fr. Thomas</strong><small>Priest · Speaker · Writer</small></span></a>
+<a class="back" href="../">← Back to home</a>
 </header>
-
-<main class="soon-wrap">
-  <div class="soon-card reveal-scale">
-    <div class="cross-big">✝</div>
-    <h2>In preparation</h2>
-    <p>This section is in preparation — Fr. Thomas’s books will be introduced here, with where to buy them. Please check back soon.</p>
-    <a class="btn" href="../">← Back to home</a>
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="gold-line"></div>
-  <div class="wrap">
-    <div class="fbrand"><span>✝</span> Fr. Thomas</div>
-    <div>© <span id="year">2026</span> Fr. Thomas · St. Francis Xavier Parish, Vancouver</div>
-  </div>
+<section class="hero">
+<div class="hero-bg" role="img" aria-label="A stack of old leather-bound books"></div>
+<div class="hero-in">
+<div class="eyebrow">Faith, in print</div>
+<h1 class="display">Books</h1>
+<p class="lede">Books and resources for learning and deepening the Catholic faith.</p>
+</div>
+</section>
+<section class="soon">
+<div class="soon-card">
+<div class="idx">In preparation</div>
+<h2>Coming <em style="font-style:italic;color:var(--bronze)">soon.</em></h2>
+<p>Fr. Thomas's books and recommended resources will be listed here — introductions, where to find them, and materials for faith formation. Please check back soon — or <a href="mailto:contact@frthomas.com" style="color:var(--ink)">get in touch</a> if you'd like to be notified.</p>
+<a class="link" href="../">← Back to home</a>
+</div>
+</section>
+<footer class="footer">
+<div class="footer-top">
+<div><div class="footer-brand">Fr. Thomas</div><p>Catholic priest · Speaker · Writer<br>St. Francis Xavier Parish · Vancouver</p></div>
+<div class="footer-links"><a href="../#home">Home</a><a href="../#about">About</a><a href="../#ministry">Ministry</a><a href="../#reflection">Reflections</a><a href="../#pilgrimage">Pilgrimage</a><a href="../#resources">Resources</a><a href="../#contact">Contact</a></div>
+</div>
+<div class="footer-bottom"><span>© 2026 Fr. Thomas Truong</span><span>Faith · Reflection · Service</span></div>
 </footer>
-
-<script src="../assets/js/main.js?v=2"></script>
 </body>
 </html>
