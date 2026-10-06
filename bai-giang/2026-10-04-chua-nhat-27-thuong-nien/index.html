@@ -40,12 +40,17 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-fo
 .footer-top p{color:#b9beb9;font-size:14px;margin-top:12px;line-height:1.7}
 .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:12px;letter-spacing:.08em;color:#8f968f}
 @media(max-width:720px){.footer-top{flex-direction:column}}
+
+.langswitch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line,rgba(29,37,34,.15));border-radius:999px;padding:3px;font-size:11px;font-weight:700;letter-spacing:.06em;background:transparent}
+.langswitch a{color:var(--muted,#56605b);text-decoration:none;padding:5px 11px;border-radius:999px;line-height:1}
+.langswitch a.on{background:#1d2522;color:#f4f1e9}
+@media(max-width:720px){.langswitch{font-size:10px}.langswitch a{padding:4px 8px}}
 </style>
 </head>
 <body>
 <header class="topbar">
 <a class="brand" href="/"><span class="mark">FT</span><span><strong>Fr. Thomas</strong></span></a>
-<a class="back" href="/bai-giang/">← Bài giảng</a>
+<nav class="langswitch" aria-label="Language"><a href="/" lang="en">EN</a><a href="/zh/" lang="zh-Hant">繁</a><a href="/vi/" lang="vi">VI</a></nav><a class="back" href="/bai-giang/">← Bài giảng</a>
 </header>
 <main class="article">
 <div class="label">Gợi ý bài giảng Chúa nhật</div>
