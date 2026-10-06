@@ -86,12 +86,17 @@ body.menu-open
 .aboutpage-cap{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
 .aboutpage-text .body{font-size:1.05rem;line-height:1.75;margin:0 0 1.2em}
 @media(max-width:800px){.aboutpage-grid{grid-template-columns:1fr;gap:28px}.aboutpage-photo{max-width:420px}}
+
+.langswitch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line,rgba(29,37,34,.15));border-radius:999px;padding:3px;font-size:11px;font-weight:700;letter-spacing:.06em;background:transparent}
+.langswitch a{color:var(--muted,#56605b);text-decoration:none;padding:5px 11px;border-radius:999px;line-height:1}
+.langswitch a.on{background:#1d2522;color:#f4f1e9}
+@media(max-width:720px){.langswitch{font-size:10px}.langswitch a{padding:4px 8px}}
 </style>
 </head>
 <body>
 <header class="topbar">
 <a class="brand" href="../"><span class="mark">FT</span><span><strong>Fr. Thomas</strong></span></a>
-<a class="back" href="../">← Back to home</a>
+<nav class="langswitch" aria-label="Language"><a href="/about/" lang="en" class="on">EN</a><a href="/zh/about/" lang="zh-Hant">繁</a><a href="/vi/about/" lang="vi">VI</a></nav><a class="back" href="../">← Back to home</a>
 </header>
 <section class="hero">
 <div class="hero-bg about-hero-bg" role="img" aria-label="Sunrise over the mountains"></div>
