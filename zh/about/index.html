@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>關於 — Fr. Thomas</title>
+<meta name="description" content="Fr. Thomas 的講道與聖言反思。Fr. Thomas，溫哥華聖方濟各沙勿略堂區。">
+<meta name="theme-color" content="#17201d">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fr. Thomas">
+<meta property="og:title" content="講道與分享 — Fr. Thomas">
+<meta property="og:description" content="Fr. Thomas 的講道與聖言反思。">
+<meta property="og:url" content="https://frthomas.com/zh/about/">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://frthomas.com/assets/images/reflection-candles.jpg">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d2522;--muted:#56605b;--paper:#f4f1e9;--cream:#e8e1d3;--gold:#c7aa70;--bronze:#9a7b3f;--wine:#633e3c;--dark:#17201d;--line:rgba(29,37,34,.15);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.6}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,60px);height:76px;border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:50}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand .mark{width:40px;height:40px;border-radius:50%;border:1px solid var(--bronze);display:grid;place-items:center;font-family:var(--serif);font-size:15px;color:var(--bronze)}
+.brand strong{font-family:var(--serif);font-weight:500;font-size:19px;display:block;line-height:1.1}
+.brand small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.back{font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--bronze);padding-bottom:3px}
+.hero{position:relative;min-height:62vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('../assets/images/reflection-candles.jpg') center/cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,32,29,.25),rgba(23,32,29,.78))}
+.hero-in{position:relative;z-index:1;padding:clamp(40px,6vw,90px) clamp(20px,6vw,96px);max-width:1440px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.display{font:400 clamp(3rem,7vw,6.5rem)/.98 var(--serif);letter-spacing:-.04em;margin:18px 0 16px}
+.display em{font-style:italic;color:var(--gold)}
+.lede{font-size:clamp(16px,1.6vw,20px);max-width:620px;opacity:.85}
+.soon{padding:clamp(60px,8vw,110px) clamp(20px,6vw,96px);max-width:1440px;margin:0 auto}
+.soon-card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:clamp(40px,5vw,70px);max-width:720px}
+.soon-card .idx{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+.soon-card h2{font:400 clamp(2.2rem,4vw,3.4rem)/1.05 var(--serif);letter-spacing:-.03em;margin:14px 0 18px}
+.soon-card p{color:var(--muted);font-size:17px;max-width:560px}
+.soon-card .link{display:inline-flex;margin-top:26px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--bronze);padding-bottom:5px}
+.footer{background:#151b19;color:#fff;padding:65px clamp(20px,6vw,96px) 25px}
+.footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:45px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-brand{font:400 clamp(2.4rem,4vw,3.6rem)/1 var(--serif)}
+.footer-top p{color:#b9beb9;font-size:14px;margin-top:12px;line-height:1.7}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{color:#dfe3dd;text-decoration:none;font-size:14px}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:12px;letter-spacing:.08em;color:#8f968f}
+@media(max-width:720px){.hero{min-height:56vh}.footer-top{flex-direction:column}}
+
+/* ===== Editorial fullscreen menu ("Ban thao") — shared ===== */
+.menu-trigger{position:fixed;z-index:120;right:max(22px,3vw);bottom:max(22px,3vw);width:88px;height:88px;border-radius:50%;border:0;background:#1d2522;color:#f4f1e9;cursor:pointer;box-shadow:0 14px 40px rgba(0,0,0,.27);display:grid;place-items:center;transition:transform .3s ease,background .3s ease,color .3s ease}.menu-trigger:hover{transform:rotate(-5deg)}.menu-trigger .trigger-inner{display:flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-family:"DM Sans",system-ui,sans-serif}.menu-trigger .hamburger{display:grid;gap:4px}.menu-trigger .hamburger i{display:block;width:16px;height:1px;background:currentColor;transition:transform .4s ease}.menu-trigger[aria-expanded="true"]{background:#c7aa70;color:#23160f;transform:rotate(90deg)}.menu-trigger[aria-expanded="true"]:hover{transform:rotate(90deg)}.menu-trigger[aria-expanded="true"] .hamburger i:first-child{transform:translateY(2.5px) rotate(45deg)}.menu-trigger[aria-expanded="true"] .hamburger i:last-child{transform:translateY(-2.5px) rotate(-45deg)}@media(prefers-reduced-motion:reduce){.menu-trigger,.menu-trigger .hamburger i{transition:none!important}}.emenu{--mpaper:#f4f1e9;--mwine:#633e3c;--mink:#1d2522;--mgold:#c7aa70;--mmuted:#56605b;--mcream:#f8f1e6;position:fixed;inset:0;z-index:100;visibility:hidden;pointer-events:none}
+.emenu.is-open{visibility:visible;pointer-events:auto}
+.emenu-panel{position:absolute;inset:0;background:var(--mpaper);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;transform:translateY(-105%);transition:transform .65s cubic-bezier(.76,0,.24,1);overflow:hidden auto}
+.emenu.is-open .emenu-panel{transform:none}
+.emenu-panel::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:50%;background:var(--mwine);transform:translateY(200%);transition:transform .78s cubic-bezier(.76,0,.24,1)}
+.emenu.is-open .emenu-panel::after{transform:none}
+.emenu-meta{grid-column:1/-1;position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:30px clamp(28px,6vw,72px);font:600 .68rem/1 var(--sans,"DM Sans",system-ui,sans-serif);letter-spacing:.14em;text-transform:uppercase;color:var(--mmuted)}
+.emenu-meta a{color:var(--mwine);text-decoration:none}
+.emenu-nav{grid-column:1/-1;position:relative;z-index:2;margin:auto 0;padding:10px clamp(28px,6vw,72px);counter-reset:emenu;display:flex;flex-direction:column}
+.emenu-link{position:relative;font:400 clamp(2.6rem,5.6vw,6rem)/.9 var(--serif,"Playfair Display",Georgia,serif);letter-spacing:-.04em;color:var(--mink);text-decoration:none;padding:.07em 0;width:fit-content;max-width:100%}
+.emenu-link::before{counter-increment:emenu;content:"0" counter(emenu);position:absolute;left:calc(100% + 16px);top:.4em;font:600 .65rem/1 var(--sans,"DM Sans",system-ui,sans-serif);letter-spacing:.14em;color:var(--mgold);white-space:nowrap}
+.emenu-link:nth-child(n+4){color:var(--mcream);margin-left:51%}
+.emenu-link:hover,.emenu-link:focus-visible{font-style:italic;color:var(--mgold);outline:none}
+.emenu-foot{grid-column:1/-1;position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:26px clamp(28px,6vw,72px);font-size:.72rem;letter-spacing:.1em;color:var(--mmuted)}
+.emenu-foot span:last-child{color:rgba(255,255,255,.65)}
+body.menu-open{overflow:hidden}
+
+
+
+
+
+
+body.menu-open 
+body.menu-open 
+@media(max-width:800px){.emenu-panel{grid-template-columns:1fr}.emenu-panel::after{display:none}.emenu.is-open .emenu-panel::after{transform:none}.emenu-link{font-size:clamp(2.4rem,13vw,4.2rem);line-height:.95;margin-left:0;padding-bottom:.14em}.emenu-link:nth-child(n+4){margin:0 -24px;padding-left:24px;padding-right:64px;max-width:none;width:auto;color:var(--mcream);background:var(--mwine)}.emenu-link:nth-child(n+4)::before{left:auto;right:24px}.emenu-link:nth-child(4){padding-top:2.5vh}.emenu-link:nth-child(4)::before{top:calc(2.5vh + .4em)}.emenu-meta{padding:24px}.emenu-nav{margin:auto 0 0;padding:6px 24px 0}.emenu-nav::after{content:"";flex:none;height:9vh;margin:0 -24px;background:var(--mwine)}.emenu-foot{padding:20px 24px;background:var(--mwine);color:rgba(255,255,255,.65)}.emenu-foot span:first-child{color:rgba(255,255,255,.65)}}@media(max-width:800px) and (max-height:500px){.emenu-link{font-size:clamp(1.9rem,7.5vh,2.4rem)}}@media(max-width:800px){.emenu-foot span:last-child{display:none}.menu-trigger{width:76px;height:76px}}
+@media(prefers-reduced-motion:reduce){.emenu-panel,.emenu-panel::after{transition:none!important}}
+
+.about-hero-bg{background-image:url('../assets/images/home-hero-sunrise.jpg')}
+.aboutpage{padding:8vh 24px;max-width:1100px;margin:0 auto}
+.aboutpage-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.aboutpage-photo img{display:block;width:100%;height:auto;border-radius:4px}
+.aboutpage-cap{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
+.aboutpage-text .body{font-size:1.05rem;line-height:1.75;margin:0 0 1.2em}
+@media(max-width:800px){.aboutpage-grid{grid-template-columns:1fr;gap:28px}.aboutpage-photo{max-width:420px}}
+
+.langswitch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line,rgba(29,37,34,.15));border-radius:999px;padding:3px;font-size:11px;font-weight:700;letter-spacing:.06em;background:transparent}
+.langswitch a{color:var(--muted,#56605b);text-decoration:none;padding:5px 11px;border-radius:999px;line-height:1}
+.langswitch a.on{background:#1d2522;color:#f4f1e9}
+@media(max-width:720px){.langswitch{font-size:10px}.langswitch a{padding:4px 8px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="../"><span class="mark">FT</span><span><strong>Fr. Thomas</strong></span></a>
+<nav class="langswitch" aria-label="Language"><a href="/about/" lang="en">EN</a><a href="/zh/about/" lang="zh-Hant" class="on">繁</a><a href="/vi/about/" lang="vi">VI</a></nav><a class="back" href="../">← 返回主頁</a>
+</header>
+<section class="hero">
+<div class="hero-bg about-hero-bg" role="img" aria-label="Sunrise over the mountains"></div>
+<div class="hero-in">
+<div class="eyebrow">獻身牧職的一生</div>
+<h1 class="display">關於<em>Fr. Thomas</em></h1>
+<p class="lede">一位神父。一位聆聽者。一位在信仰旅途上的同行者。</p>
+</div>
+</section>
+<section class="aboutpage"><div class="aboutpage-grid">
+<div class="aboutpage-photo"><img src="../assets/images/home-portrait.jpg" alt="A priest in white vestments facing the altar" width="1408" height="1760" loading="lazy"><div class="aboutpage-cap"><span>溫哥華</span><span>在交談中的信仰</span></div></div>
+<div class="aboutpage-text">
+<p class="body">他的牧職結合了講道、天主教培育、堂區生活、聖經，以及服務華語社群。</p>
+<p class="body">從祭台到課室，從避靜室到日常交談，每一項牧職都始於聆聽，並引領人回到福音。</p>
+<p class="body">目標很簡單：在平凡的生活中，為與耶穌基督真誠相遇騰出空間。</p>
+<p class="body">Fr. Thomas 在溫哥華聖方濟各沙勿略堂區服務，以粵語、普通話及英語舉行彌撒，並在信仰中陪伴華語社群同行。</p>
+</div></div></section>
+<footer class="footer">
+<div class="footer-top">
+<div><div class="footer-brand">Fr. Thomas</div><p>聖方濟各沙勿略堂區 · 溫哥華</p></div>
+<div class="footer-links"><a href="../#home">主頁</a><a href="../about/">關於</a><a href="../#ministry">牧職</a><a href="../bai-giang/">分享</a><a href="../#pilgrimage">朝聖</a><a href="../#contact">聯絡</a></div>
+</div>
+<div class="footer-bottom"><span>© 2026 Fr. Thomas Truong</span><span>信仰 · 反思 · 服務</span></div>
+</footer>
+
+<button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-controls="sitemenu" aria-label="Open menu"><span class="trigger-inner"><span class="hamburger" aria-hidden="true"><i></i><i></i></span><span>選單</span></span></button>
+<aside class="emenu" id="sitemenu" aria-hidden="true" aria-label="Site menu">
+<div class="emenu-panel">
+<div class="emenu-meta"><a href="/zh/">Fr. Thomas</a><span>選單</span></div>
+<nav class="emenu-nav" aria-label="Primary">
+<a class="emenu-link" href="/zh/about/">關於</a>
+<a class="emenu-link" href="/zh/#ministry">牧職</a>
+<a class="emenu-link" href="/zh/bai-giang/">分享</a>
+<a class="emenu-link" href="/zh/pilgrimage/">朝聖</a>
+
+<a class="emenu-link" href="/zh/#contact">聯絡</a>
+</nav>
+<div class="emenu-foot"><span>信仰 · 反思 · 服務</span><span>Esc — 關閉</span></div>
+</div>
+</aside>
+<script>
+(function(){
+var menuTrigger=document.getElementById('menuTrigger'),emenu=document.getElementById('sitemenu'),lastFocus=null;
+function menuOpen(){return emenu.classList.contains('is-open');}
+function openMenu(){lastFocus=document.activeElement;emenu.classList.add('is-open');document.body.classList.add('menu-open');menuTrigger.setAttribute('aria-expanded','true');menuTrigger.setAttribute('aria-label','Close menu');emenu.setAttribute('aria-hidden','false');setTimeout(function(){var f=emenu.querySelector('.emenu-link');if(f)f.focus();},380);}
+function closeMenu(){if(!menuOpen())return;emenu.classList.remove('is-open');document.body.classList.remove('menu-open');menuTrigger.setAttribute('aria-expanded','false');menuTrigger.setAttribute('aria-label','Open menu');emenu.setAttribute('aria-hidden','true');if(lastFocus&&lastFocus!==document.body){try{lastFocus.focus();}catch(e){}}}
+menuTrigger.addEventListener('click',function(){menuOpen()?closeMenu():openMenu();});
+emenu.querySelectorAll('.emenu-link').forEach(function(a){a.addEventListener('click',function(){closeMenu();});});
+addEventListener('keydown',function(e){if(!menuOpen())return;var links=Array.prototype.slice.call(emenu.querySelectorAll('.emenu-link'));var i=links.indexOf(document.activeElement);if(e.key==='Escape'){closeMenu();}else if(e.key==='ArrowDown'){e.preventDefault();links[(i+1+links.length)%links.length].focus();}else if(e.key==='ArrowUp'){e.preventDefault();links[(i-1+links.length)%links.length].focus();}else if(e.key==='Tab'){var fl=[menuTrigger].concat(links),fi=fl.indexOf(document.activeElement);if(e.shiftKey&&fi<=0){e.preventDefault();fl[fl.length-1].focus();}else if(!e.shiftKey&&fi===fl.length-1){e.preventDefault();fl[0].focus();}}});
+})();
+</script>
+
+</body>
+</html>
