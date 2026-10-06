@@ -23,6 +23,7 @@
 <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Fr. Thomas Truong","jobTitle":"Catholic Priest","description":"Catholic priest, speaker and writer serving at St. Francis Xavier Parish, Vancouver.","url":"https://frthomas.com/","address":{"@type":"PostalAddress","addressLocality":"Vancouver","addressCountry":"CA"}}
+
 </script>
 <style>
 :root{--ink:#1d2522;--muted:#56605b;--paper:#f4f1e9;--cream:#e8e1d3;--gold:#c7aa70;--bronze:#9a7b3f;--wine:#633e3c;--dark:#17201d;--line:rgba(29,37,34,.15);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
@@ -80,7 +81,7 @@ body.menu-open{overflow:hidden}
 .section{padding:clamp(90px,11vw,165px) clamp(20px,6vw,96px)}.index{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}.display{font:400 clamp(3rem,6.3vw,7.2rem)/.96 var(--serif);letter-spacing:-.05em}.display em{font-style:italic;color:var(--wine)}.invite .display em{color:#ead8ad}.body{font-size:clamp(15px,1.2vw,18px);line-height:1.75;color:var(--muted);max-width:520px}
 .manifesto{display:grid;grid-template-columns:1fr 2.5fr;max-width:1440px;margin:0 auto}.manifesto .body{margin:55px 0 0 34%}
 .about{background:var(--cream)}.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,9vw,140px);align-items:center;margin:65px auto 0;max-width:1440px}.portrait{height:min(68vw,700px);overflow:hidden}.portrait img{transition:1s}.portrait:hover img{transform:scale(1.035)}.caption{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:12px}.about h2{margin:22px 0 38px}.link{display:inline-flex;gap:12px;border-bottom:1px solid currentColor;padding-bottom:7px;margin-top:18px;font-size:13px;font-weight:600}.more{max-height:0;overflow:hidden;transition:max-height .6s}.more.open{max-height:300px}.more p{color:var(--muted);line-height:1.75}
-.pilgrim{background:var(--paper);display:grid;grid-template-columns:1fr 1fr;min-height:640px}.pilgrim-img{min-height:440px;background:url("assets/images/home-card-hanhhuong.jpg") center/cover}.pilgrim-copy{padding:clamp(55px,8vw,120px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.pilgrim-copy .display{margin:22px 0 30px}.pilgrim-copy .meta{margin-top:34px;flex-wrap:wrap;width:100%;color:var(--muted);border-bottom-color:var(--line)}a.inline{color:var(--wine);border-bottom:1px solid currentColor}
+a.inline{color:var(--wine);border-bottom:1px solid currentColor}
 .ministry-wrap{max-width:1440px;margin:0 auto}
 .head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:70px}.head h2{margin:20px 0 0}
 .ministry{border-top:1px solid var(--line)}.ministry-row{min-height:175px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:50px 220px 1fr 35px;align-items:center;gap:28px;padding:18px 8px;transition:.35s}.ministry-row:hover{background:#ebe6db}.rowimg{height:125px;overflow:hidden}.rowimg img{transition:.8s;filter:saturate(.72)}.ministry-row:hover .rowimg img{transform:scale(1.06)}.num{font-size:12px;color:var(--gold)}.rowcopy h3{font:400 clamp(1.8rem,3vw,3.2rem)/1 var(--serif);margin:0 0 10px}.rowcopy p{margin:0;color:var(--muted);font-size:14px;max-width:46ch}.arrow{font-size:22px;transition:.3s}.ministry-row:hover .arrow{transform:translate(4px,-4px)}
@@ -92,9 +93,26 @@ body.menu-open{overflow:hidden}
 .invite{background:var(--wine);color:#fff;min-height:75vh;display:grid;place-items:center;text-align:center;padding:100px 20px;position:relative;overflow:hidden}.invite-inner{max-width:900px}.invite .index{color:#d8cccb;margin-bottom:45px}.invite .display{font-size:clamp(3.6rem,8vw,9rem)}.invite .body{color:#ddcfcd;margin:35px auto}.button{display:inline-flex;gap:18px;border-bottom:1px solid #fff;padding-bottom:8px;margin-top:30px;font-size:13px;font-weight:600}.footer{background:#151b19;color:#fff;padding:65px clamp(20px,6vw,96px) 25px}.footer-top{display:flex;justify-content:space-between;padding-bottom:70px;max-width:1440px;margin:0 auto}.footer-brand{font:400 clamp(2.7rem,5vw,5rem)/1 var(--serif)}.footer p{font-size:13px;color:#a3aaa5;line-height:1.7}.footer-links{display:grid;grid-template-columns:repeat(2,120px);gap:14px 40px}.footer-links a{font-size:13px;color:#cfd2cf}.footer-bottom{border-top:1px solid #ffffff1c;padding-top:18px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9aa39e;max-width:1440px;margin:0 auto}
 
 @media(max-width:800px){
-.topbar{height:70px}.navcta{display:none}.hero{min-height:720px}.hero-content{padding-bottom:42px}.hero h1{font-size:clamp(3.8rem,15vw,6.2rem)}.hero-bottom{grid-template-columns:1fr auto;gap:20px}.intro{grid-column:1/-1;font-size:17px;margin:0 0 15px}.circle{width:72px;height:72px}.scroll{display:none}.manifesto{display:block}.manifesto .body{margin:40px 0 0}.about-grid{grid-template-columns:1fr;gap:50px}.portrait{height:115vw;max-height:650px}.about h2{font-size:clamp(3rem,12vw,5.5rem)}.head,.story-head{display:block}.head .body,.story-head .body{margin-top:28px}.ministry{margin-top:45px}.ministry-row{grid-template-columns:30px 1fr 25px;gap:14px;min-height:150px}.rowimg{grid-column:2;height:95px}.rowcopy{grid-column:2}.rowcopy h3{font-size:1.55rem}.rowcopy p{font-size:13px;margin-top:2px}.num{grid-row:1/3;align-self:start;padding-top:4px}.arrow{grid-column:3;grid-row:1/3}.feature{grid-template-columns:1fr}.feature-img{height:58vw;min-height:300px}.feature-copy{min-height:600px;padding:50px 24px}.quote{font-size:clamp(2.8rem,12vw,5rem);margin-top:60px}.meta{margin-top:auto}.verse{font-size:clamp(3rem,13vw,6rem)}.story-head{margin-bottom:50px}.gallery{grid-template-columns:1fr;gap:40px}.bigimg{height:105vw}.smallimg{height:82vw;margin:0 12% 0 0}.resources .grid{grid-template-columns:1fr;margin-top:45px}.resource{min-height:240px;border-right:0;border-bottom:1px solid var(--line)}.footer-top{display:block}.footer-links{margin-top:50px}.footer-bottom{display:block;line-height:2}.footer-bottom span{display:block}.pilgrim{grid-template-columns:1fr}.pilgrim-img{height:62vw;min-height:280px}.pilgrim-copy{padding:50px 24px 60px}
-}
+.topbar{height:70px}.navcta{display:none}.hero{min-height:720px}.hero-content{padding-bottom:42px}.hero h1{font-size:clamp(3.8rem,15vw,6.2rem)}.hero-bottom{grid-template-columns:1fr auto;gap:20px}.intro{grid-column:1/-1;font-size:17px;margin:0 0 15px}.circle{width:72px;height:72px}.scroll{display:none}.manifesto{display:block}.manifesto .body{margin:40px 0 0}.about-grid{grid-template-columns:1fr;gap:50px}.portrait{height:115vw;max-height:650px}.about h2{font-size:clamp(3rem,12vw,5.5rem)}.head,.story-head{display:block}.head .body,.story-head .body{margin-top:28px}.ministry{margin-top:45px}.ministry-row{grid-template-columns:30px 1fr 25px;gap:14px;min-height:150px}.rowimg{grid-column:2;height:95px}.rowcopy{grid-column:2}.rowcopy h3{font-size:1.55rem}.rowcopy p{font-size:13px;margin-top:2px}.num{grid-row:1/3;align-self:start;padding-top:4px}.arrow{grid-column:3;grid-row:1/3}.feature{grid-template-columns:1fr}.feature-img{height:58vw;min-height:300px}.feature-copy{min-height:600px;padding:50px 24px}.quote{font-size:clamp(2.8rem,12vw,5rem);margin-top:60px}.meta{margin-top:auto}.verse{font-size:clamp(3rem,13vw,6rem)}.story-head{margin-bottom:50px}.gallery{grid-template-columns:1fr;gap:40px}.bigimg{height:105vw}.smallimg{height:82vw;margin:0 12% 0 0}.resources .grid{grid-template-columns:1fr;margin-top:45px}.resource{min-height:240px;border-right:0;border-bottom:1px solid var(--line)}.footer-top{display:block}.footer-links{margin-top:50px}.footer-bottom{display:block;line-height:2}.footer-bottom span{display:block}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.hl{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--navy,#1c2b4a)}
+.hl-bg{position:absolute;inset:0;background:url('assets/images/pilgrimage-la-vang.jpg') center 30%/cover no-repeat}
+.hl-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,52,.25) 0%,rgba(20,28,52,.55) 55%,rgba(20,28,52,.9) 100%)}
+.hl-in{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:12vh 24px 9vh;width:100%;color:#f7f2e9}
+.hl-eyebrow{font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:#c9a227;margin-bottom:14px}
+.hl-title{font:400 clamp(2.6rem,8vw,5.2rem)/1.02 Georgia,'Times New Roman',serif;letter-spacing:-.02em;margin:0 0 14px;color:#f7f2e9}
+.hl-title em{font-style:italic;color:#c9a227}
+.hl-lede{font-size:clamp(1rem,2.4vw,1.2rem);line-height:1.65;max-width:34em;opacity:.92;margin:0 0 26px}
+.hl-count{display:flex;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.cd{background:rgba(247,242,233,.1);border:1px solid rgba(247,242,233,.28);border-radius:8px;min-width:78px;padding:10px 6px;text-align:center}
+.cd b{display:block;font:400 1.7rem/1 Georgia,serif}
+.cd span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
+.hl-meta{display:flex;gap:10px 22px;flex-wrap:wrap;font-size:.9rem;letter-spacing:.06em;opacity:.85;margin-bottom:30px}
+.hl-cta{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.hl-btn{display:inline-block;background:#f7f2e9;color:#1c2b4a;font-weight:700;padding:15px 30px;border-radius:999px;text-decoration:none}
+.hl-link{color:#f7f2e9;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.hl-credit{position:absolute;right:14px;bottom:10px;z-index:2;font-size:.7rem;color:rgba(247,242,233,.55)}
+@media(max-width:640px){.hl{min-height:96vh}.hl-in{padding:10vh 20px 8vh}.cd{min-width:64px}.cd b{font-size:1.4rem}}
 </style>
 </head>
 <body>
@@ -143,7 +161,14 @@ body.menu-open{overflow:hidden}
 
 
 
-<section class="pilgrim" id="pilgrimage"><div class="pilgrim-img" role="img" aria-label="Our Lady of La Vang shrine in central Vietnam"></div><div class="pilgrim-copy"><div class="index">03 / Pilgrimage</div><h2 class="display">Vietnam<br><em>2028.</em></h2><p class="body">A fourteen-day pilgrimage of thanksgiving for the gift of the priesthood — from Hà Nội and Phát Diệm to La Vang, Huế, Hội An and Sài Gòn. The group departs from Vancouver on 8 January 2028.</p><div class="meta"><span>8–21 January 2028</span><span>14 days</span><span>From Vancouver</span></div><a class="link" href="hanh-huong/">View the full program ↗</a></div></section>
+<section class="hl" id="pilgrimage"><div class="hl-bg" role="img" aria-label="Bell tower of La Vang church, Vietnam"></div><div class="hl-veil"></div>
+<div class="hl-in"><div class="hl-eyebrow">03 / Pilgrimage</div>
+<h2 class="hl-title">Vietnam <em>2028.</em></h2>
+<p class="hl-lede">A fourteen-day pilgrimage of thanksgiving for the gift of the priesthood — from Hà Nội and Phát Diệm to La Vang, Huế, Hội An and Sài Gòn. Walk it with Fr. Thomas.</p>
+<div class="hl-count"><div class="cd"><b id="cd-d">–</b><span>days</span></div><div class="cd"><b id="cd-h">–</b><span>hours</span></div><div class="cd"><b id="cd-m">–</b><span>min</span></div><div class="cd"><b id="cd-s">–</b><span>sec</span></div></div>
+<div class="hl-meta"><span>8–21 January 2028</span><span>·</span><span>14 days</span><span>·</span><span>35 pilgrims</span><span>·</span><span>From Vancouver</span></div>
+<div class="hl-cta"><a class="hl-btn" href="hanh-huong/">View the full program ↗</a><a class="hl-link" href="mailto:pilgrimage@frthomas.com?subject=Vietnam%20Pilgrimage%202028%20—%20Reserve%20my%20place">Reserve your place →</a></div></div>
+<div class="hl-credit">Photo: Hoangvantoanajc, CC BY-SA 3.0</div></section>
 
 
 
@@ -197,5 +222,15 @@ addEventListener('keydown',function(e){
   }
 });
 })();
+/* pilgrimage countdown */
+(function(){var t=new Date('2028-01-08T00:00:00-08:00').getTime();
+function p(n){return String(n).padStart(2,'0')}
+function tick(){var d=Math.max(0,t-Date.now());
+var e=document.getElementById('cd-d');if(!e)return;
+e.textContent=Math.floor(d/864e5);
+document.getElementById('cd-h').textContent=p(Math.floor(d/36e5)%24);
+document.getElementById('cd-m').textContent=p(Math.floor(d/6e4)%60);
+document.getElementById('cd-s').textContent=p(Math.floor(d/1e3)%60);}
+tick();setInterval(tick,1000);})();
 </script>
 </body></html>
