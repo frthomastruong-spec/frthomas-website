@@ -95,24 +95,7 @@ a.inline{color:var(--wine);border-bottom:1px solid currentColor}
 @media(max-width:800px){
 .topbar{height:70px}.navcta{display:none}.hero{min-height:720px}.hero-content{padding-bottom:42px}.hero h1{font-size:clamp(3.8rem,15vw,6.2rem)}.hero-bottom{grid-template-columns:1fr auto;gap:20px}.intro{grid-column:1/-1;font-size:17px;margin:0 0 15px}.circle{width:72px;height:72px}.scroll{display:none}.manifesto{display:block}.manifesto .body{margin:40px 0 0}.about-grid{grid-template-columns:1fr;gap:50px}.portrait{height:115vw;max-height:650px}.about h2{font-size:clamp(3rem,12vw,5.5rem)}.head,.story-head{display:block}.head .body,.story-head .body{margin-top:28px}.ministry{margin-top:45px}.ministry-row{grid-template-columns:30px 1fr 25px;gap:14px;min-height:150px}.rowimg{grid-column:2;height:95px}.rowcopy{grid-column:2}.rowcopy h3{font-size:1.55rem}.rowcopy p{font-size:13px;margin-top:2px}.num{grid-row:1/3;align-self:start;padding-top:4px}.arrow{grid-column:3;grid-row:1/3}.feature{grid-template-columns:1fr}.feature-img{height:58vw;min-height:300px}.feature-copy{min-height:600px;padding:50px 24px}.quote{font-size:clamp(2.8rem,12vw,5rem);margin-top:60px}.meta{margin-top:auto}.verse{font-size:clamp(1.4rem,6.5vw,2rem)}.story-head{margin-bottom:50px}.gallery{grid-template-columns:1fr;gap:40px}.bigimg{height:105vw}.smallimg{height:82vw;margin:0 12% 0 0}.resources .grid{grid-template-columns:1fr;margin-top:45px}.resource{min-height:240px;border-right:0;border-bottom:1px solid var(--line)}.footer-top{display:block}.footer-links{margin-top:50px}.footer-bottom{display:block;line-height:2}.footer-bottom span{display:block}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-.hl{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--navy,#1c2b4a)}
-.hl-bg{position:absolute;inset:0;background:url('assets/images/pilgrimage-la-vang.jpg') center 30%/cover no-repeat}
-.hl-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,52,.25) 0%,rgba(20,28,52,.55) 55%,rgba(20,28,52,.9) 100%)}
-.hl-in{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:12vh 24px 9vh;width:100%;color:#f7f2e9}
-.hl-eyebrow{font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:#c9a227;margin-bottom:14px}
-.hl-title{font:400 clamp(2.6rem,8vw,5.2rem)/1.02 Georgia,'Times New Roman',serif;letter-spacing:-.02em;margin:0 0 14px;color:#f7f2e9}
-.hl-title em{font-style:italic;color:#c9a227}
-.hl-lede{font-size:clamp(1rem,2.4vw,1.2rem);line-height:1.65;max-width:34em;opacity:.92;margin:0 0 26px}
-.hl-count{display:flex;gap:14px;margin-bottom:26px;flex-wrap:wrap}
-.cd{background:rgba(247,242,233,.1);border:1px solid rgba(247,242,233,.28);border-radius:8px;min-width:78px;padding:10px 6px;text-align:center}
-.cd b{display:block;font:400 1.7rem/1 Georgia,serif}
-.cd span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
-.hl-meta{display:flex;gap:10px 22px;flex-wrap:wrap;font-size:.9rem;letter-spacing:.06em;opacity:.85;margin-bottom:30px}
-.hl-cta{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
-.hl-btn{display:inline-block;background:#f7f2e9;color:#1c2b4a;font-weight:700;padding:15px 30px;border-radius:999px;text-decoration:none}
-.hl-link{color:#f7f2e9;font-weight:600;text-decoration:underline;text-underline-offset:4px}
-.hl-credit{position:absolute;right:14px;bottom:10px;z-index:2;font-size:.7rem;color:rgba(247,242,233,.55)}
-@media(max-width:640px){.hl{min-height:96vh}.hl-in{padding:10vh 20px 8vh}.cd{min-width:64px}.cd b{font-size:1.4rem}}
+@media(max-width:640px){}
 
 .verse-wrap{transition:opacity .6s ease,transform .6s ease}
 .verse-wrap.fading{opacity:0;transform:translateY(12px)}
@@ -121,6 +104,20 @@ a.inline{color:var(--wine);border-bottom:1px solid currentColor}
 .vnav:hover{background:rgba(255,255,255,.28)}
 .vcount{font-size:.8rem;letter-spacing:.14em;opacity:.7;min-width:64px;text-align:center}
 .vsrc{position:relative;z-index:2;margin-top:14px;font-size:.72rem;letter-spacing:.1em;opacity:.5;text-transform:uppercase}
+
+.m3banner{background:#f7f2e9;color:#1d2522;text-align:center;padding:11vh 24px 9vh;position:relative}
+.m3-eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:#9a7b3f;margin-bottom:26px}
+.m3-title{font:400 clamp(3.4rem,11vw,8.5rem)/.95 Georgia,'Times New Roman',serif;letter-spacing:-.03em;color:#1d2522;margin:0 0 10px}
+.m3-title .yr{display:block;font-style:italic;color:transparent;-webkit-text-stroke:1.5px #9a7b3f}
+.m3-strip{max-width:760px;margin:40px auto;height:150px;overflow:hidden}
+.m3-strip img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.25)}
+.m3-count{font:400 clamp(1.1rem,2.6vw,1.5rem)/1.6 Georgia,serif;letter-spacing:.06em;margin-bottom:22px}
+.m3-count b{font-weight:400;color:#9a7b3f}
+.m3-lede{max-width:36em;margin:0 auto 34px;line-height:1.75;opacity:.78}
+.m3-cta{display:inline-block;border:1px solid #1d2522;color:#1d2522;text-decoration:none;padding:15px 44px;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;transition:.3s}
+.m3-cta:hover{background:#1d2522;color:#f7f2e9}
+.m3-credit{margin-top:28px;font-size:.7rem;opacity:.5;letter-spacing:.08em}
+@media(max-width:640px){.m3-strip{height:120px;margin:32px auto}.m3banner{padding-bottom:14vh}.m3-credit{padding:0 70px 0 0}}
 </style>
 </head>
 <body>
@@ -169,14 +166,15 @@ a.inline{color:var(--wine);border-bottom:1px solid currentColor}
 
 
 
-<section class="hl" id="pilgrimage"><div class="hl-bg" role="img" aria-label="Bell tower of La Vang church, Vietnam"></div><div class="hl-veil"></div>
-<div class="hl-in"><div class="hl-eyebrow">03 / Pilgrimage</div>
-<h2 class="hl-title">Vietnam <em>2028.</em></h2>
-<p class="hl-lede">A fourteen-day pilgrimage of thanksgiving for the gift of the priesthood — from Hà Nội and Phát Diệm to La Vang, Huế, Hội An and Sài Gòn. Walk it with Fr. Thomas.</p>
-<div class="hl-count"><div class="cd"><b id="cd-d">–</b><span>days</span></div><div class="cd"><b id="cd-h">–</b><span>hours</span></div><div class="cd"><b id="cd-m">–</b><span>min</span></div><div class="cd"><b id="cd-s">–</b><span>sec</span></div></div>
-<div class="hl-meta"><span>8–21 January 2028</span><span>·</span><span>14 days</span><span>·</span><span>35 pilgrims</span><span>·</span><span>From Vancouver</span></div>
-<div class="hl-cta"><a class="hl-btn" href="hanh-huong/">View the full program ↗</a><a class="hl-link" href="mailto:pilgrimage@frthomas.com?subject=Vietnam%20Pilgrimage%202028%20—%20Reserve%20my%20place">Reserve your place →</a></div></div>
-<div class="hl-credit">Photo: Hoangvantoanajc, CC BY-SA 3.0</div></section><section class="scripture" id="scripture"><div class="scripture-bg"></div><div class="scripture-content"><div class="eyebrow">Scripture</div>
+<section class="m3banner" id="pilgrimage">
+<div class="m3-eyebrow">03 &middot; Pilgrimage</div>
+<h2 class="m3-title">Vietnam<span class="yr">2028.</span></h2>
+<div class="m3-strip"><img src="assets/images/pilgrimage-la-vang.jpg" alt="Bell tower of La Vang church, Vietnam" loading="lazy"></div>
+<div class="m3-count"><b id="cd-d">&ndash;</b> days &middot; <b id="cd-h">&ndash;</b> hours &middot; <b id="cd-m">&ndash;</b> min until departure</div>
+<p class="m3-lede">Fourteen days of thanksgiving for the gift of the priesthood &mdash; 8&ndash;21 January 2028, from Vancouver with Fr. Thomas.</p>
+<a class="m3-cta" href="hanh-huong/">View the program</a>
+<div class="m3-credit">Photo: Hoangvantoanajc, CC BY-SA 3.0</div>
+</section><section class="scripture" id="scripture"><div class="scripture-bg"></div><div class="scripture-content"><div class="eyebrow">Scripture</div>
 <div class="verse-wrap" id="verse-wrap"><div class="verse" id="verse-text">&ldquo;Your word is a lamp for my feet, a light on my path.&rdquo;</div><div class="ref" id="verse-ref">Psalm 119:105</div></div>
 <div class="verse-ui"><button class="vnav" id="vprev" aria-label="Previous verse">&larr;</button><span class="vcount" id="verse-count"></span><button class="vnav" id="vnext" aria-label="Next verse">&rarr;</button></div>
 <div class="vsrc">New American Bible, revised edition &middot; &copy; Confraternity of Christian Doctrine</div>
@@ -242,7 +240,7 @@ var e=document.getElementById('cd-d');if(!e)return;
 e.textContent=Math.floor(d/864e5);
 document.getElementById('cd-h').textContent=p(Math.floor(d/36e5)%24);
 document.getElementById('cd-m').textContent=p(Math.floor(d/6e4)%60);
-document.getElementById('cd-s').textContent=p(Math.floor(d/1e3)%60);}
+}
 tick();setInterval(tick,1000);})();
 
 /* rotating scripture — NABRE (USCCB), local verse collection */
