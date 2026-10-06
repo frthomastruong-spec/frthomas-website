@@ -1,0 +1,1203 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="2028 越南朝聖 — 為鐸職恩賜感恩，紀念 Fr. Thomas 晉鐸週年（1月11日）。2028年1月8–21日，為期14天的行程。" />
+<link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png" />
+<title>2028 越南朝聖 — Fr. Thomas</title>
+<link rel="canonical" href="https://frthomas.com/hanh-huong/" />
+<link rel="alternate" hreflang="en" href="https://frthomas.com/hanh-huong/" />
+<link rel="alternate" hreflang="vi" href="https://frthomas.com/hanh-huong/vi/" />
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fr. Thomas">
+<meta property="og:title" content="2028 越南朝聖 — Fr. Thomas">
+<meta property="og:description" content="為鐸職感恩的十四天：河內、發豔、拉望、順化、會安及西貢。2028年1月8–21日。">
+<meta property="og:url" content="https://frthomas.com/zh/hanh-huong/">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://frthomas.com/assets/images/home-card-hanhhuong.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1280">
+<meta property="og:image:alt" content="越南廣治拉望聖母朝聖地">
+<meta name="theme-color" content="#17201d">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1e9;
+    --bg-soft: #e8e1d3;
+    --card: #fffdf8;
+    --card-shadow: 0 14px 34px rgba(29, 37, 34, .10);
+    --ink: #1d2522;
+    --ink-soft: #3a443e;
+    --muted: #56605b;
+    --gold: #c7aa70;
+    --gold-deep: #9a7b3f;
+    --gold-ink: #9a7b3f;
+    --gold-soft: rgba(199, 170, 112, .15);
+    --gold-line: #d6c8a4;
+    --gold-wash: #f2ecdb;
+    --line: rgba(29,37,34,.16);
+    --navy: #17201d;
+    --navy-deep: #111614;
+    --radius: 16px;
+    --serif: 'Playfair Display', 'Noto Serif', Georgia, 'Times New Roman', serif;
+    --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101512;
+      --bg-soft: #161c19;
+      --card: #1b221e;
+      --card-shadow: 0 14px 34px rgba(0, 0, 0, .4);
+      --ink: #f0ead9;
+      --ink-soft: #d7d1be;
+      --muted: #a9b0a8;
+      --gold: #c7aa70;
+      --gold-deep: #9a7b3f;
+      --gold-ink: #d8bc82;
+      --gold-soft: rgba(199, 170, 112, .14);
+      --gold-line: #57503a;
+      --gold-wash: #1e2421;
+      --line: #2b332e;
+      --navy: #161c19;
+      --navy-deep: #0e1311;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: var(--bg); }
+  body {
+    margin: 0;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Nền toàn trang đứng yên khi cuộn */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(244,241,233,.86), rgba(244,241,233,.86)),
+      url('../assets/images/hero-elijah.jpg') center top / cover no-repeat;
+  }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { line-height: 1.28; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  ::selection { background: var(--gold-soft); }
+  a { color: var(--gold-ink); }
+  .wrap { max-width: 1060px; margin: 0 auto; padding-left: 22px; padding-right: 22px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  .ico { width: 1em; height: 1em; flex: none; }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; min-height: 94svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--navy-deep); }
+  .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero-shade {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom,
+      rgba(17, 22, 20, .42) 0%,
+      rgba(17, 22, 20, .18) 32%,
+      rgba(17, 22, 20, .62) 68%,
+      rgba(17, 22, 20, .94) 100%);
+  }
+  .hero-in { position: relative; z-index: 1; padding-top: 72px; padding-bottom: 56px; text-align: center; color: #f7f2e3; width: 100%; }
+  .hero-cross {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 46px; height: 46px; border-radius: 50%;
+    border: 1.5px solid #c7aa70; color: #dcc08a; margin-bottom: 20px;
+    background: rgba(17, 22, 20, .35);
+  }
+  .hero-cross svg { width: 22px; height: 22px; }
+  .theme {
+    font-size: .80rem; font-weight: 700; letter-spacing: .32em; text-transform: uppercase;
+    color: #dcc08a; margin-bottom: 16px; text-indent: .32em;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(2.5rem, 7.5vw, 4.6rem); letter-spacing: .01em; color: #fffdf4;
+    text-shadow: 0 3px 22px rgba(0,0,0,.5);
+  }
+  .occasion { margin-top: 16px; font-size: clamp(1rem, 2.6vw, 1.15rem); color: #efe6cf; font-style: italic; font-family: var(--serif); }
+  .hero-meta { margin-top: 10px; font-size: .95rem; color: #ccd1cb; letter-spacing: .04em; }
+
+  .status { margin: 30px auto 0; max-width: 560px; }
+  .status-fb { color: #ccd1cb; font-size: .95rem; }
+  .count-label { font-size: .78rem; letter-spacing: .28em; text-transform: uppercase; color: #dcc08a; margin-bottom: 12px; font-weight: 600; }
+  .count-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .count-cell {
+    background: rgba(17, 22, 20, .55); border: 1px solid rgba(199, 170, 112, .35);
+    border-radius: 12px; padding: 12px 6px 10px; backdrop-filter: blur(6px);
+  }
+  .count-cell b { display: block; font-family: var(--serif); font-size: clamp(1.6rem, 6vw, 2.5rem); font-weight: 700; color: #fffdf4; font-variant-numeric: tabular-nums; }
+  .count-cell span { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: #a9b0a8; }
+  .count-sub { margin-top: 14px; font-size: .92rem; color: #ccd1cb; }
+  .state-live { text-align: center; }
+  .live-pill {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(17, 22, 20, .6); border: 1px solid rgba(199, 170, 112, .5);
+    border-radius: 999px; padding: 10px 22px; color: #fffdf4; font-weight: 600; font-size: 1rem;
+    backdrop-filter: blur(6px);
+  }
+  .live-dot { width: 9px; height: 9px; border-radius: 50%; background: #dcc08a; box-shadow: 0 0 0 0 rgba(220,192,138,.7); animation: pulse 2s infinite; }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(220,192,138,.65); }
+    70% { box-shadow: 0 0 0 9px rgba(220,192,138,0); }
+    100% { box-shadow: 0 0 0 0 rgba(220,192,138,0); }
+  }
+  .live-title { margin-top: 10px; font-family: var(--serif); font-size: 1.25rem; font-style: italic; color: #efe9d8; }
+  .btn {
+    display: inline-block; margin-top: 16px; padding: 12px 30px; border-radius: 999px;
+    background: #c7aa70; color: #17201d; font-weight: 700; font-size: .98rem; text-decoration: none;
+    border: 0; cursor: pointer; transition: transform .15s ease, background .15s ease;
+  }
+  .btn:hover { background: #d4b578; transform: translateY(-1px); }
+  .btn:focus-visible { outline: 3px solid #fffdf4; outline-offset: 2px; }
+  .state-done .live-pill { border-color: rgba(199,170,112,.35); }
+  .state-done .live-dot { animation: none; background: #8a9187; }
+
+  .scroll-hint {
+    position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%);
+    color: #dcc08a; opacity: .85; text-decoration: none; z-index: 1; line-height: 1;
+  }
+  .scroll-hint svg { width: 26px; height: 26px; animation: bob 2.4s ease-in-out infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
+
+  /* ---------- Sticky nav ---------- */
+  .toc {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+  }
+  .toc-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 2px; padding-top: 10px; padding-bottom: 10px; }
+  .toc a {
+    color: var(--ink-soft); text-decoration: none; font-size: .88rem; font-weight: 600;
+    padding: 7px 14px; border-radius: 999px; letter-spacing: .01em; white-space: nowrap;
+  }
+  .toc a:hover { color: var(--gold-ink); background: var(--gold-soft); }
+  .toc a:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+  @media (max-width: 640px) {
+    .toc-row { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .toc-row::-webkit-scrollbar { display: none; }
+  }
+
+  /* ---------- Sections ---------- */
+  .section { padding-top: 58px; padding-bottom: 58px; scroll-margin-top: 64px; }
+  .section-soft { background: var(--bg-soft); }
+  .sec-head { text-align: center; max-width: 720px; margin: 0 auto 34px; }
+  .sec-title {
+    font-family: var(--serif); font-weight: 700; font-size: clamp(1.6rem, 4.6vw, 2.25rem);
+    display: inline-flex; align-items: center; gap: 12px; color: var(--ink);
+  }
+  .sec-title .ico { width: .95em; height: .95em; color: var(--gold); }
+  .sec-rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px auto 16px; color: var(--gold); }
+  .sec-rule::before, .sec-rule::after { content: ""; height: 1px; width: 84px; background: var(--gold-line); }
+  .sec-rule svg { width: 15px; height: 15px; }
+  .sec-sub { color: var(--muted); font-size: 1rem; max-width: 640px; margin: 0 auto; }
+
+  /* Facts strip */
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding-top: 34px; padding-bottom: 8px; text-align: center; }
+  .fact b { display: block; font-family: var(--serif); font-size: clamp(1.7rem, 5vw, 2.4rem); color: var(--gold-ink); font-weight: 700; }
+  .fact span { font-size: .8rem; color: var(--muted); letter-spacing: .03em; }
+  .facts .fact + .fact { border-left: 1px solid var(--line); }
+
+  /* Route */
+  .route { list-style: none; margin: 8px auto 0; padding: 0; position: relative; max-width: 640px; }
+  .route::before {
+    content: ""; position: absolute; top: 14px; bottom: 14px; left: 24px; width: 2px;
+    background: linear-gradient(to bottom, var(--gold-line), var(--gold), var(--gold-line));
+    border-radius: 2px;
+  }
+  .r-node { position: relative; padding: 0 0 0 70px; margin: 0 0 26px; }
+  .r-node:last-child { margin-bottom: 0; }
+  .r-dot {
+    position: absolute; left: 9px; top: 0; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--navy); color: #dcc08a; display: flex; align-items: center; justify-content: center;
+    border: 2px solid var(--gold); z-index: 1;
+  }
+  .r-dot svg { width: 16px; height: 16px; }
+  .r-node.r-key .r-dot { background: var(--gold); color: #fffdf4; border-color: var(--gold-deep); }
+  .r-when { font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 3px; }
+  .r-card h3 { font-family: var(--serif); font-size: 1.22rem; font-weight: 700; }
+  .r-card p.r-desc { color: var(--muted); font-size: .94rem; margin-top: 4px; }
+
+  /* Day chips */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 10px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px; padding: 8px 15px;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+    color: var(--ink-soft); font-weight: 600; font-size: .83rem; text-decoration: none;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .chip:hover { border-color: var(--gold); }
+  .chip .n { font-family: var(--serif); font-weight: 700; color: var(--gold-ink); }
+  .chip.hl { border-color: var(--gold-line); background: var(--gold-soft); }
+  .chip.is-today { background: var(--navy); color: #f4f1e9; border-color: var(--gold); }
+  .chip.is-today .n { color: #dcc08a; }
+  .chip .tdot { width: 7px; height: 7px; border-radius: 50%; background: #dcc08a; animation: pulse 2s infinite; }
+
+  /* Day cards */
+  .days { display: grid; gap: 26px; margin-top: 26px; }
+  .day {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    overflow: hidden; box-shadow: var(--card-shadow); display: grid; scroll-margin-top: 130px;
+  }
+  .day-media { position: relative; height: 230px; overflow: hidden; background: var(--navy-deep); }
+  .day-media img { width: 100%; height: 100%; object-fit: cover; }
+  .day-media-duo { display: grid; grid-template-columns: 1.15fr 1fr; height: 230px; }
+  .day-media-duo img { width: 100%; height: 100%; object-fit: cover; }
+  .caption {
+    position: absolute; left: 14px; bottom: 12px; z-index: 2;
+    font-size: .74rem; font-weight: 600; letter-spacing: .04em; color: #fffdf4;
+    background: rgba(17, 22, 20, .62); padding: 5px 12px; border-radius: 999px;
+    border: 1px solid rgba(220, 192, 138, .4); backdrop-filter: blur(4px);
+  }
+  .day-ribbon {
+    position: absolute; top: 14px; right: 0; z-index: 2;
+    background: var(--gold); color: #fffdf6; font-size: .76rem; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase; padding: 7px 16px 7px 20px;
+    border-radius: 999px 0 0 999px; box-shadow: 0 4px 12px rgba(0,0,0,.3);
+  }
+  .day-body { padding: 24px 26px 26px; }
+  .day-date { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+  .daynum {
+    font-family: var(--serif); font-weight: 700; font-size: .78rem; letter-spacing: .1em;
+    color: #fffdf6; background: var(--navy); border-radius: 999px; padding: 5px 13px; text-transform: uppercase;
+  }
+  .dateline { font-size: .86rem; font-weight: 600; color: var(--muted); letter-spacing: .03em; }
+  .today-pill {
+    font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: #fffdf6; background: var(--gold); border-radius: 999px; padding: 5px 13px;
+  }
+  .day h3 { font-family: var(--serif); font-size: clamp(1.25rem, 3.4vw, 1.55rem); font-weight: 700; margin-bottom: 12px; }
+  .bullets { list-style: none; margin: 0; padding: 0; }
+  .bullets li { position: relative; padding-left: 30px; margin: 0 0 10px; color: var(--ink-soft); font-size: .985rem; }
+  .bullets li:last-child { margin-bottom: 0; }
+  .bullets li::before {
+    content: "✝"; position: absolute; left: 4px; top: 1px; color: var(--gold); font-size: .95em;
+  }
+  .quote {
+    margin: 0 0 16px; padding: 12px 16px 12px 18px; border-left: 2px solid var(--gold);
+    background: var(--gold-soft); border-radius: 0 10px 10px 0;
+    font-family: var(--serif); font-style: italic; font-size: 1.02rem; color: var(--ink);
+  }
+  .quote cite { display: block; font-style: normal; font-family: var(--sans); font-size: .78rem; font-weight: 700; letter-spacing: .1em; color: var(--gold-ink); margin-top: 6px; }
+
+  .day-hl { border: 2px solid var(--gold); box-shadow: 0 16px 40px rgba(199,170,112,.25); }
+  .day-hl .daynum { background: var(--gold); }
+  .day.is-today { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  .day-travel { background: linear-gradient(150deg, var(--navy) 0%, var(--navy-deep) 100%); border: 1px solid var(--gold-line); position: relative; }
+  .day-travel .t-watermark { position: absolute; right: -24px; bottom: -38px; width: 230px; height: 230px; color: rgba(199, 170, 112, .10); pointer-events: none; }
+  .day-travel .day-body { position: relative; z-index: 1; }
+  .day-travel .daynum { background: rgba(199,170,112,.16); color: #dcc08a; border: 1px solid rgba(199,170,112,.4); }
+  .day-travel .dateline { color: #a9b0a8; }
+  .day-travel h3 { color: #fffdf4; }
+  .day-travel .bullets li { color: #d4d8d2; }
+  .day-travel .bullets li::before { color: #c7aa70; }
+  .travel-flag {
+    display: inline-flex; align-items: center; gap: 8px; font-size: .78rem; font-weight: 600;
+    letter-spacing: .16em; text-transform: uppercase; color: #dcc08a; margin-bottom: 12px;
+  }
+  .travel-flag svg { width: 18px; height: 18px; }
+
+  @media (min-width: 880px) {
+    .day { grid-template-columns: minmax(0, 44%) minmax(0, 1fr); }
+    .day-media, .day-media-duo { height: auto; min-height: 300px; }
+    .day-media img { position: absolute; inset: 0; }
+    .day-media-duo { grid-template-columns: 1.15fr 1fr; position: relative; }
+    .day-media-duo img { position: static; }
+    .day-body { padding: 30px 34px; }
+    .day-travel { grid-template-columns: minmax(0, 1fr); }
+    .day-travel .day-body { padding: 30px 40px 32px; max-width: 760px; }
+  }
+
+  /* Prep */
+  .prep-grid { display: grid; gap: 18px; margin-top: 6px; }
+  @media (min-width: 720px) { .prep-grid { grid-template-columns: 1fr 1fr; } }
+  .prep { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--card-shadow); }
+  .prep-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .prep-ico {
+    width: 46px; height: 46px; border-radius: 14px; flex: none;
+    background: var(--gold-soft); border: 1px solid var(--gold-line);
+    display: flex; align-items: center; justify-content: center; color: var(--gold-ink);
+  }
+  .prep-ico svg { width: 23px; height: 23px; }
+  .prep h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; }
+  .dots { list-style: none; margin: 0; padding: 0; }
+  .dots li { position: relative; padding-left: 24px; margin-bottom: 10px; color: var(--ink-soft); font-size: .95rem; }
+  .dots li:last-child { margin-bottom: 0; }
+  .dots li::before { content: ""; position: absolute; left: 6px; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+  .mini-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; margin: 40px 0 18px; display: flex; align-items: center; gap: 10px; }
+  .mini-title .ico { color: var(--gold); width: 1em; height: 1em; }
+  .utils { display: grid; gap: 14px; }
+  @media (min-width: 720px) { .utils { grid-template-columns: 1fr 1fr; } }
+  .util { display: flex; gap: 14px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+  .util-ico { width: 40px; height: 40px; border-radius: 50%; flex: none; background: var(--navy); color: #dcc08a; display: flex; align-items: center; justify-content: center; }
+  .util-ico svg { width: 20px; height: 20px; }
+  .util h4 { margin: 0 0 4px; font-size: .98rem; font-weight: 700; }
+  .util p { color: var(--muted); font-size: .9rem; }
+
+  /* Cost */
+  .cost-card { max-width: 640px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--card-shadow); }
+  .cost-rows { list-style: none; margin: 0; padding: 0; }
+  .cost-rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 18px 26px; border-bottom: 1px solid var(--line); }
+  .cost-rows li:last-child { border-bottom: 0; }
+  .cost-rows span { color: var(--ink-soft); font-size: .95rem; }
+  .cost-rows b { font-family: var(--serif); font-size: 1.15rem; color: var(--gold-ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .cost-rows li.total { background: var(--gold-soft); }
+  .cost-rows li.total span { font-weight: 700; color: var(--ink); }
+  .cost-rows li.total b { font-size: 1.45rem; }
+  .cost-note { padding: 16px 26px 20px; color: var(--muted); font-size: .88rem; border-top: 1px dashed var(--line); }
+
+  /* Steps & notes */
+  .two-col { display: grid; gap: 30px; }
+  @media (min-width: 860px) { .two-col { grid-template-columns: 1fr 1fr; gap: 36px; } }
+  .two-col .mini-title { margin-top: 0; }
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: st; }
+  .steps li { position: relative; counter-increment: st; padding: 0 0 20px 58px; }
+  .steps li:last-child { padding-bottom: 0; }
+  .steps li::before {
+    content: counter(st, decimal-leading-zero); position: absolute; left: 0; top: 2px;
+    font-family: var(--serif); font-weight: 700; font-size: 1.05rem; color: var(--gold-ink);
+    width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--gold-line);
+    display: flex; align-items: center; justify-content: center; background: var(--gold-soft);
+  }
+  .steps li p { color: var(--ink-soft); font-size: .95rem; }
+  .notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .note { display: flex; gap: 13px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 17px 19px; }
+  .note .ico { width: 20px; height: 20px; color: var(--gold); margin-top: 3px; }
+  .note p { color: var(--ink-soft); font-size: .93rem; }
+
+
+  /* ---------- Hero CTA, draft bar, sign-up ---------- */
+  .hero-bg { object-position: center 42%; }
+  .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 26px; }
+  .hero-cta .btn { margin-top: 0; }
+  .btn-ghost { background: transparent; color: #fffdf4; border: 1.5px solid rgba(220,192,138,.75); }
+  .btn-ghost:hover { background: rgba(220,192,138,.18); }
+  .toc a.toc-cta { background: var(--navy); color: #f4f1e9; border: 1px solid var(--gold); }
+  .toc a.toc-cta:hover { background: var(--navy-deep); color: #fff; }
+  .draftbar { margin: 0; background: var(--gold-wash); border-bottom: 1px solid var(--gold-line); text-align: center; padding: 10px 18px; font-size: .86rem; color: var(--ink-soft); }
+  .print-btn { margin: 18px auto 0; display: block; background: transparent; color: var(--gold-ink); border: 1.5px solid var(--gold-line); border-radius: 999px; padding: 9px 22px; font: 600 .88rem var(--sans); cursor: pointer; }
+  .print-btn:hover { border-color: var(--gold); background: var(--gold-soft); }
+  .print-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .notes-narrow { max-width: 720px; margin: 0 auto; }
+  .signup-card { max-width: 720px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--card-shadow); padding: 30px 28px 32px; }
+  .signup-card .mini-title { margin-top: 0; }
+  .signup-cta { text-align: center; margin: 30px 0 0; }
+  .signup-alt { text-align: center; margin: 14px 0 0; color: var(--muted); font-size: .92rem; }
+  .f-link { color: #dcc08a; }
+  .cost-card .cost-note + .cost-note { border-top: 0; padding-top: 0; }
+
+  /* Footer */
+  .footer { background: var(--navy-deep); color: #ccd1cb; text-align: center; padding: 56px 0 60px; }
+  .footer .hero-cross { border-color: rgba(199,170,112,.55); }
+  .f-theme { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: #dcc08a; margin: 4px 0 12px; }
+  .f-main { font-size: .95rem; color: #e4e7e1; font-weight: 600; }
+  .f-note { font-size: .85rem; color: #939a92; margin-top: 12px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+  /* Ornament divider */
+  .orn { border: 0; height: 20px; margin: 0; position: relative; color: var(--gold); font-size: 15px; text-align: center; line-height: 20px; }
+  .orn::before, .orn::after { content: ""; position: absolute; top: 50%; width: calc(50% - 44px); height: 1px; background: var(--gold-line); }
+  .orn::before { left: 0; } .orn::after { right: 0; }
+
+  /* Back to top */
+  #topBtn {
+    position: fixed; right: 20px; bottom: 24px; z-index: 60;
+    width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--gold-line);
+    background: var(--navy); color: #dcc08a; cursor: pointer; display: none;
+    align-items: center; justify-content: center; box-shadow: 0 8px 22px rgba(0,0,0,.28);
+  }
+  #topBtn svg { width: 20px; height: 20px; }
+  #topBtn.show { display: inline-flex; }
+  #topBtn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+  /* Nút menu nổi — góc trái để khỏi chồng nút về đầu trang */
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  @media print {
+    .toc, #topBtn, .scroll-hint, .count-grid, .hero-cta, .print-btn, .draftbar, .signup-cta, .emenu, 
+    body::before { display: none !important; }
+    html, body { background: #fff !important; }
+    .hero { min-height: auto; }
+    .hero-bg, .hero-shade { display: none; }
+    .hero-in { color: #1d2522; padding-top: 24px; padding-bottom: 16px; }
+    .hero h1, .theme, .occasion, .hero-meta { color: #1d2522 !important; text-shadow: none !important; }
+    .status { display: none; }
+    .js .reveal, .js .reveal-scale { opacity: 1 !important; transform: none !important; }
+    .section { padding-top: 24px; padding-bottom: 24px; }
+    .section-soft { background: #fff; }
+    .day, .prep, .util, .note, .r-node { break-inside: avoid; box-shadow: none; }
+    .day-media, .day-media-duo { height: 150px; min-height: 0; }
+    .day-travel { background: #fff; color: #1d2522; }
+    .day-travel h3, .day-travel .bullets li, .day-travel .dateline { color: #1d2522; }
+  }
+
+/* ---------- Hieu ung chuyen canh khi cuon (scroll reveal) ---------- */
+@keyframes heroIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+.js .reveal, .js .reveal-scale {
+  transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
+}
+.js .reveal { opacity: 0; transform: translateY(30px); }
+.js .reveal-scale { opacity: 0; transform: scale(.94); }
+.js .reveal.visible, .js .reveal-scale.visible { opacity: 1; transform: none; }
+.js .day-media img { transform: scale(1.07); transition: transform 1.1s cubic-bezier(.22,.61,.36,1); }
+.js .day.visible .day-media img { transform: scale(1); }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .reveal-scale { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+
+/* ===== Editorial fullscreen menu ("Ban thao") — shared ===== */
+.menu-trigger{position:fixed;z-index:120;right:max(22px,3vw);bottom:max(22px,3vw);width:88px;height:88px;border-radius:50%;border:0;background:#1d2522;color:#f4f1e9;cursor:pointer;box-shadow:0 14px 40px rgba(0,0,0,.27);display:grid;place-items:center;transition:transform .3s ease,background .3s ease,color .3s ease}.menu-trigger:hover{transform:rotate(-5deg)}.menu-trigger .trigger-inner{display:flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-family:"DM Sans",system-ui,sans-serif}.menu-trigger .hamburger{display:grid;gap:4px}.menu-trigger .hamburger i{display:block;width:16px;height:1px;background:currentColor;transition:transform .4s ease}.menu-trigger[aria-expanded="true"]{background:#c7aa70;color:#23160f;transform:rotate(90deg)}.menu-trigger[aria-expanded="true"]:hover{transform:rotate(90deg)}.menu-trigger[aria-expanded="true"] .hamburger i:first-child{transform:translateY(2.5px) rotate(45deg)}.menu-trigger[aria-expanded="true"] .hamburger i:last-child{transform:translateY(-2.5px) rotate(-45deg)}@media(prefers-reduced-motion:reduce){.menu-trigger,.menu-trigger .hamburger i{transition:none!important}}.menu-trigger{left:20px;right:auto;bottom:24px}.emenu{--mpaper:#f4f1e9;--mwine:#633e3c;--mink:#1d2522;--mgold:#c7aa70;--mmuted:#56605b;--mcream:#f8f1e6;position:fixed;inset:0;z-index:100;visibility:hidden;pointer-events:none}
+.emenu.is-open{visibility:visible;pointer-events:auto}
+.emenu-panel{position:absolute;inset:0;background:var(--mpaper);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;transform:translateY(-105%);transition:transform .65s cubic-bezier(.76,0,.24,1);overflow:hidden auto}
+.emenu.is-open .emenu-panel{transform:none}
+.emenu-panel::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:50%;background:var(--mwine);transform:translateY(200%);transition:transform .78s cubic-bezier(.76,0,.24,1)}
+.emenu.is-open .emenu-panel::after{transform:none}
+.emenu-meta{grid-column:1/-1;position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:30px clamp(28px,6vw,72px);font:600 .68rem/1 var(--sans,"DM Sans",system-ui,sans-serif);letter-spacing:.14em;text-transform:uppercase;color:var(--mmuted)}
+.emenu-meta a{color:var(--mwine);text-decoration:none}
+.emenu-nav{grid-column:1/-1;position:relative;z-index:2;margin:auto 0;padding:10px clamp(28px,6vw,72px);counter-reset:emenu;display:flex;flex-direction:column}
+.emenu-link{position:relative;font:400 clamp(2.6rem,5.6vw,6rem)/.9 var(--serif,"Playfair Display",Georgia,serif);letter-spacing:-.04em;color:var(--mink);text-decoration:none;padding:.07em 0;width:fit-content;max-width:100%}
+.emenu-link::before{counter-increment:emenu;content:"0" counter(emenu);position:absolute;left:calc(100% + 16px);top:.4em;font:600 .65rem/1 var(--sans,"DM Sans",system-ui,sans-serif);letter-spacing:.14em;color:var(--mgold);white-space:nowrap}
+.emenu-link:nth-child(n+4){color:var(--mcream);margin-left:51%}
+.emenu-link:hover,.emenu-link:focus-visible{font-style:italic;color:var(--mgold);outline:none}
+.emenu-foot{grid-column:1/-1;position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:26px clamp(28px,6vw,72px);font-size:.72rem;letter-spacing:.1em;color:var(--mmuted)}
+.emenu-foot span:last-child{color:rgba(255,255,255,.65)}
+body.menu-open{overflow:hidden}
+
+
+
+
+
+
+body.menu-open 
+body.menu-open 
+@media(max-width:800px){.emenu-panel{grid-template-columns:1fr}.emenu-panel::after{display:none}.emenu.is-open .emenu-panel::after{transform:none}.emenu-link{font-size:clamp(2.4rem,13vw,4.2rem);line-height:.95;margin-left:0;padding-bottom:.14em}.emenu-link:nth-child(n+4){margin:0 -24px;padding-left:24px;padding-right:64px;max-width:none;width:auto;color:var(--mcream);background:var(--mwine)}.emenu-link:nth-child(n+4)::before{left:auto;right:24px}.emenu-link:nth-child(4){padding-top:2.5vh}.emenu-link:nth-child(4)::before{top:calc(2.5vh + .4em)}.emenu-meta{padding:24px}.emenu-nav{margin:auto 0 0;padding:6px 24px 0}.emenu-nav::after{content:"";flex:none;height:9vh;margin:0 -24px;background:var(--mwine)}.emenu-foot{padding:20px 24px;background:var(--mwine);color:rgba(255,255,255,.65)}.emenu-foot span:first-child{color:rgba(255,255,255,.65)}}@media(max-width:800px) and (max-height:500px){.emenu-link{font-size:clamp(1.9rem,7.5vh,2.4rem)}}@media(max-width:800px){.emenu-foot span:last-child{display:none}.menu-trigger{width:76px;height:76px}}
+@media(prefers-reduced-motion:reduce){.emenu-panel,.emenu-panel::after{transition:none!important}}
+
+.langswitch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line,rgba(29,37,34,.15));border-radius:999px;padding:3px;font-size:11px;font-weight:700;letter-spacing:.06em;background:transparent}
+.langswitch a{color:var(--muted,#56605b);text-decoration:none;padding:5px 11px;border-radius:999px;line-height:1}
+.langswitch a.on{background:#1d2522;color:#f4f1e9}
+@media(max-width:720px){.langswitch{font-size:10px}.langswitch a{padding:4px 8px}}
+</style>
+</head>
+<body>
+
+<!-- ===== SVG icon set ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 3.5V20M7 8.5h10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+    <symbol id="i-church" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M6 21v-9.5L12 6l6 5.5V21M10 21v-4.5h4V21M12 6V3.2M10.6 4.4h2.8"/></g></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.3-6.5-10.4a6.5 6.5 0 1 1 13 0C18.5 15.7 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></g></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7zM14 3v4h4M10 12h5M10 15.5h5"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 2.8v5.7c0 4.3-3.1 7.3-7.5 9.5-4.4-2.2-7.5-5.2-7.5-9.5V5.8z"/><path d="M9 11.8L11.2 14l4-4.2"/></g></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8.5V6.7A1.7 1.7 0 0 1 9.7 5h4.6A1.7 1.7 0 0 1 16 6.7v1.8M4.5 8.5h15V21h-15zM4.5 13h15"/></g></symbol>
+    <symbol id="i-candle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9.5V12"/><path d="M12 2.5c.9 1.5 2.7 2.3 2.7 4 0 1.5-1.2 2.6-2.7 2.6s-2.7-1.1-2.7-2.6c0-1.7 1.8-2.5 2.7-4z"/><path d="M8.5 12.5h7V21h-7zM6 21.5h12"/></g></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M9.3 9.8h5.4M9.3 14.2h5.4"/></g></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16.5v-5a6 6 0 1 1 12 0v5l1.8 2.8H4.2zM10 21.5a2.2 2.2 0 0 0 4 0"/></g></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"/></g></symbol>
+    <symbol id="i-money" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="10.5" rx="2"/><circle cx="12" cy="12.3" r="2.6"/><path d="M6.2 10v.01M17.8 14.5v.01" stroke-linecap="round"/></g></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 10.5a10 10 0 0 1 14 0M8.4 13.8a5.6 5.6 0 0 1 7.2 0"/><circle cx="12" cy="17.4" r="1.4" fill="currentColor" stroke="none"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="6" width="16" height="14.5" rx="2"/><path d="M4 10.5h16M8.5 3.5V7M15.5 3.5V7"/><path d="M8 14.5h2.5M8 17.3h5" /></g></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M6 14.5l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <img class="hero-bg" src="../assets/images/home-card-hanhhuong.jpg" alt="拉望朝聖地：綠色山丘上的白色聖堂與聖母像" fetchpriority="high" width="1920" height="1280" />
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <span class="hero-cross" aria-hidden="true"><svg><use href="#i-cross"/></svg></span>
+    <p class="theme">為鐸職恩賜感恩</p>
+    <h1>越南<br />朝聖 2028</h1>
+    <p class="occasion">紀念 Fr. Thomas 晉鐸週年 — 1月11日</p>
+    <p class="hero-meta">2028年1月8–21日 &nbsp;·&nbsp; 14天 &nbsp;·&nbsp; 預計35人朝聖團從溫哥華出發</p>
+    <div class="status" id="status">
+      <p class="status-fb">出發：2028年1月8日（星期六）</p>
+      <span class="sr-only" id="statusSr"></span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="#register">登記參加意向</a>
+      <a class="btn btn-ghost" href="#itinerary">查看行程</a>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#route" aria-label="Scroll down to the route"><svg aria-hidden="true"><use href="#i-chev"/></svg></a>
+</header>
+
+<!-- ===== Sticky nav ===== -->
+<nav class="toc" aria-label="Program contents">
+  <div class="wrap toc-row">
+    <a href="../" class="toc-home">← 首頁</a>
+    <a href="#route">路線</a>
+    <a href="#itinerary">行程</a>
+    <a href="#preparation">行前準備</a>
+    <a href="#cost">費用</a>
+    <a href="#notes">備註</a>
+    <a href="#register" class="toc-cta">報名</a>
+    <a href="vi/" class="toc-lang" hreflang="vi" lang="vi">Tiếng Việt</a>
+  </div>
+</nav>
+
+<p class="draftbar" role="note">這是初步計劃 — 航班時間、酒店及價格將在收到正式報價後確認。最後更新：2026年10月4日。</p>
+
+<main>
+  <!-- ===== Facts ===== -->
+  <div class="wrap facts" aria-label="Key figures">
+    <div class="fact"><b>14</b><span>天朝聖之旅</span></div>
+    <div class="fact"><b>35</b><span>個預計名額</span></div>
+    <div class="fact"><b>3</b><span>個越南地區</span></div>
+    <div class="fact"><b>2</b><span>個重點日子</span></div>
+  </div>
+
+  <!-- ===== Route ===== -->
+  <section class="section" id="route" aria-labelledby="t-route">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="t-route"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>縱貫北、中、南越之旅</h2>
+        <div class="sec-rule" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+        <p class="sec-sub">朝聖團從溫哥華出發，走遍越南北、中、南三個地區 — 每一站都是一座聖堂、一處朝聖地、一段回憶。</p>
+      </div>
+      <ol class="route">
+        <li class="r-node">
+          <span class="r-dot" aria-hidden="true"><svg><use href="#i-plane"/></svg></span>
+          <div class="r-card">
+            <p class="r-when">第1–2天 · 2028年1月8–9日</p>
+            <h3>溫哥華 → 台北 → 河內</h3>
+            <p class="r-desc">國際航班 — 朝聖團於1月8日傍晚出發，經台北轉機，於1月9日傍晚抵達河內。</p>
+          </div>
+        </li>
+        <li class="r-node">
+          <span class="r-dot" aria-hidden="true"><svg><use href="#i-church"/></svg></span>
+          <div class="r-card">
+            <p class="r-when">第3天 · 2028年1月10日</p>
+            <h3>河內</h3>
+            <p class="r-desc">聖若瑟主教座堂、還劍湖及古街 — 與故鄉相見歡的一天。</p>
+          </div>
+        </li>
+        <li class="r-node r-key">
+          <span class="r-dot" aria-hidden="true"><svg><use href="#i-cross"/></svg></span>
+          <div class="r-card">
+            <p class="r-when">第4–5天 · 2028年1月11–12日</p>
+            <h3>寧平 — 發豔 · 長安</h3>
+            <p class="r-desc">在發豔主教座堂舉行 Fr. Thomas 晉鐸週年感恩彌撒；在朱山修道院靜默一天。</p>
+          </div>
+        </li>
+        <li class="r-node r-key">
+          <span class="r-dot" aria-hidden="true"><svg><use href="#i-cross"/></svg></span>
+          <div class="r-card">
+            <p class="r-when">第6–7天 · 2028年1月13–14日</p>
+            <h3>順化 — 拉望朝聖地</h3>
+            <p class="r-desc">回到聖母懷抱：1月14日全天在國家聖母朝聖中心朝聖。</p>
+          </div>
+        </li>
+        <li class="r-node">
+          <span class="r-dot" aria-hidden="true"><svg><use href="#i-pin"/></svg></span>
+          <div class="r-card">
+            <p class="r-when">第8–9天 · 2028年1月15–16日</p>
+            <h3>峴港 — 會安</h3>
+            <p class="r-desc">順化皇城、海雲關、巴拿山及會安古城。</p>
+          </div>
+        </li>
+        <li class="r-node">
+          <span class="r-dot" aria-hidden="true"><svg><use href="#i-cross"/></svg></span>
+          <div class="r-card">
+            <p class="r-when">第10天 · 2028年1月17日</p>
+            <h3>頭頓</h3>
+            <p class="r-desc">君王基督像及在拜兜聖母朝聖地舉行彌撒。</p>
+          </div>
+        </li>
+        <li class="r-node">
+          <span class="r-dot" aria-hidden="true"><svg><use href="#i-church"/></svg></span>
+          <div class="r-card">
+            <p class="r-when">第11–12天 · 2028年1月18–19日</p>
+            <h3>西貢</h3>
+            <p class="r-desc">平兆法蒂瑪聖母朝聖地、聖母主教座堂及堤岸聖方濟各沙勿略堂。</p>
+          </div>
+        </li>
+        <li class="r-node">
+          <span class="r-dot" aria-hidden="true"><svg><use href="#i-plane"/></svg></span>
+          <div class="r-card">
+            <p class="r-when">第13–14天 · 2028年1月20–21日</p>
+            <h3>西貢 → 台北 → 溫哥華</h3>
+            <p class="r-desc">告別故鄉 — 朝聖團於1月21日傍晚返回溫哥華。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Itinerary ===== -->
+  <section class="section section-soft" id="itinerary" aria-labelledby="t-itinerary">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="t-itinerary"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>詳細行程</h2>
+        <div class="sec-rule" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+        <p class="sec-sub">在感恩的精神中同行十四天 — 點選日期可跳至當天詳情。兩個標示的日子是此行的核心。</p>
+        <button class="print-btn" type="button" onclick="window.print()">列印行程</button>
+      </div>
+
+      <div class="chips" aria-label="跳至某一天">
+        <a class="chip" id="chip-1" href="#day-1"><span class="n">1</span> 1月8</a>
+        <a class="chip" id="chip-2" href="#day-2"><span class="n">2</span> 1月9</a>
+        <a class="chip" id="chip-3" href="#day-3"><span class="n">3</span> 1月10</a>
+        <a class="chip hl" id="chip-4" href="#day-4"><span class="n">4</span> 1月11</a>
+        <a class="chip" id="chip-5" href="#day-5"><span class="n">5</span> 1月12</a>
+        <a class="chip" id="chip-6" href="#day-6"><span class="n">6</span> 1月13</a>
+        <a class="chip hl" id="chip-7" href="#day-7"><span class="n">7</span> 1月14</a>
+        <a class="chip" id="chip-8" href="#day-8"><span class="n">8</span> 1月15</a>
+        <a class="chip" id="chip-9" href="#day-9"><span class="n">9</span> 1月16</a>
+        <a class="chip" id="chip-10" href="#day-10"><span class="n">10</span> 1月17</a>
+        <a class="chip" id="chip-11" href="#day-11"><span class="n">11</span> 1月18</a>
+        <a class="chip" id="chip-12" href="#day-12"><span class="n">12</span> 1月19</a>
+        <a class="chip" id="chip-13" href="#day-13"><span class="n">13</span> 1月20</a>
+        <a class="chip" id="chip-14" href="#day-14"><span class="n">14</span> 1月21</a>
+      </div>
+
+      <div class="days">
+
+        <article class="reveal day day-travel" id="day-1" aria-label="Day 1: Departure from Vancouver">
+          <svg class="t-watermark" aria-hidden="true"><use href="#i-plane"/></svg>
+          <div class="day-body">
+            <p class="travel-flag"><svg aria-hidden="true"><use href="#i-plane"/></svg>旅途日</p>
+            <p class="day-date"><span class="daynum">第1天</span><span class="dateline">星期六 · 2028年1月8日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>從溫哥華出發</h3>
+            <ul class="bullets">
+              <li>朝聖團在溫哥華國際機場（YVR）集合，搭乘傍晚航班，經台北轉機。</li>
+              <li>在飛機上過夜 — 懷著朝聖者啟程的心情。</li>
+              <li>帶件保暖衣物：一月的越南北部天氣清涼。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day day-travel" id="day-2" aria-label="Day 2: Arrival in Hanoi">
+          <svg class="t-watermark" aria-hidden="true"><use href="#i-plane"/></svg>
+          <div class="day-body">
+            <p class="travel-flag"><svg aria-hidden="true"><use href="#i-plane"/></svg>旅途日</p>
+            <p class="day-date"><span class="daynum">第2天</span><span class="dateline">星期日 · 2028年1月9日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>抵達河內</h3>
+            <ul class="bullets">
+              <li>轉機前往河內，傍晚抵達。</li>
+              <li>遊覽車接朝聖團前往酒店辦理入住休息。</li>
+              <li>長途飛行後好好休息一晚 — 明天心靈之旅正式開始。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day" id="day-3" aria-label="Day 3: Hanoi — a Day to Greet the Homeland">
+          <div class="day-media">
+            <img src="../assets/images/nha-tho-lon-ha-noi.jpg?v=2" alt="從正面看河內聖若瑟主教座堂" decoding="async" />
+            <span class="caption">河內聖若瑟主教座堂</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第3天</span><span class="dateline">星期一 · 2028年1月10日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>河內 — 與故鄉相見歡的一天</h3>
+            <ul class="bullets">
+              <li>早上自由活動休息，在古街漫步。</li>
+              <li>下午參觀聖若瑟主教座堂 — 為旅途平安祈禱。</li>
+              <li>遊覽還劍湖，乘坐電瓶車穿梭三十六古街。</li>
+              <li>歡迎晚宴 — 在祖國土地上首次團聚。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day day-hl" id="day-4" aria-label="Day 4: Day of Grace: Fr. Thomas’s Ordination Anniversary Mass">
+          <div class="day-media">
+            <img src="../assets/images/phat-diem.jpg?v=2" alt="發豔主教座堂，其獨特的越南石雕建築" decoding="async" />
+            <span class="day-ribbon">恩寵之日</span>
+            <span class="caption">發豔主教座堂</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第4天</span><span class="dateline">星期二 · 2028年1月11日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>恩寵之日：Fr. Thomas 晉鐸週年感恩彌撒</h3>
+            <blockquote class="quote">「不是你們揀選了我，而是我揀選了你們。」<cite>— 若望福音 15:16</cite></blockquote>
+            <ul class="bullets">
+              <li>朝聖團前往寧平，在發豔主教座堂與 Fr. Thomas 一同舉行晉鐸週年感恩彌撒 — 這座石造聖堂建築風格獨具越南特色，正適合恩寵之日。</li>
+              <li>感謝天主賜予鐸職恩賜，並為教會的聖召祈禱。</li>
+              <li>下午遊覽長安（聯合國教科文組織世界遺產）或三谷，視團員體力而定。</li>
+              <li>在寧平住宿。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day" id="day-5" aria-label="Day 5: Ninh Bình — a Day of Silence">
+          <div class="day-media">
+            <img src="../assets/images/trang-an.jpg?v=2" alt="寧平長安風景區 — 石灰岩群山與碧綠河流" decoding="async" />
+            <span class="caption">寧平長安</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第5天</span><span class="dateline">星期三 · 2028年1月12日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>寧平 — 靜默的一天</h3>
+            <ul class="bullets">
+              <li>為年長團員安排的輕鬆一天：參觀朱山修道院（儒關），靜默祈禱。</li>
+              <li>沒有長途車程 — 讓身體休息、心靈沉靜。</li>
+              <li>晚上團體分享前幾天的心得。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day" id="day-6" aria-label="Day 6: Flight to Huế — Returning to Our Lady of La Vang">
+          <div class="day-media">
+            <img src="../assets/images/la-vang.jpg?v=2" alt="廣治拉望聖母紀念碑" decoding="async" />
+            <span class="caption">拉望聖母紀念碑</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第6天</span><span class="dateline">星期四 · 2028年1月13日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>飛往順化 — 回到拉望聖母懷抱</h3>
+            <ul class="bullets">
+              <li>從河內飛往順化。</li>
+              <li>下午抵達拉望（廣治）— 國家聖母朝聖中心，聖母曾在此顯現，安慰越南子民。</li>
+              <li>傍晚在拉望紀念碑前祈禱。</li>
+              <li>在順化住宿。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day day-hl" id="day-7" aria-label="Day 7: La Vang — the Heart of the Pilgrimage">
+          <div class="day-media">
+            <img src="../assets/images/la-vang.jpg?v=2" alt="廣治拉望朝聖地 — 聖母顯現之地" decoding="async" />
+            <span class="day-ribbon">重點日子</span>
+            <span class="caption">拉望朝聖地</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第7天</span><span class="dateline">星期五 · 2028年1月14日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>拉望 — 朝聖之旅的核心</h3>
+            <blockquote class="quote">「全能者在我身上行了大事，祂的名字是聖的。」<cite>— 路加福音 1:49</cite></blockquote>
+            <ul class="bullets">
+              <li>與聖母共度全天：在拉望舉行彌撒。</li>
+              <li>拜苦路、一小時明供聖體，並一起誦唸玫瑰經。</li>
+              <li>這是全程最神聖的時刻 — 每人向聖母奉獻一個為家庭的意向。</li>
+              <li>傍晚返回順化休息。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day" id="day-8" aria-label="Day 8: Huế — Da Nang">
+          <div class="day-media">
+            <img src="../assets/images/dai-noi-hue.jpg?v=2" alt="順化皇城與午門" decoding="async" />
+            <span class="caption">順化皇城</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第8天</span><span class="dateline">星期六 · 2028年1月15日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>順化 — 峴港</h3>
+            <ul class="bullets">
+              <li>早上參觀順化皇城及天姥寺 — 領略越南的文化與歷史。</li>
+              <li>下午翻越海雲關前往峴港，這是越南最美麗的海岸公路之一。</li>
+              <li>在美溪海灘游泳（自選）或在酒店休息。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day" id="day-9" aria-label="Day 9: Sunday in Da Nang — Hội An">
+          <div class="day-media day-media-duo">
+            <img src="../assets/images/hoi-an.jpg?v=2" alt="會安古城夜晚燈籠高掛" decoding="async" />
+            <img src="../assets/images/cau-vang.jpg?v=2" alt="峴港巴拿山黃金橋，由兩隻巨型石手托起" decoding="async" />
+            <span class="caption">會安 · 巴拿山黃金橋</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第9天</span><span class="dateline">星期日 · 2028年1月16日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>在峴港的主日 — 會安</h3>
+            <ul class="bullets">
+              <li>與當地教友一起在峴港舉行主日彌撒。</li>
+              <li>遊覽巴拿山：法國村及著名的黃金橋（視體力而定 — 疲倦者可在酒店休息）。</li>
+              <li>傍晚抵達會安古城：燈籠高掛，乘船遊懷江，並放祈願水燈。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day" id="day-10" aria-label="Day 10: Vũng Tàu — at the Feet of Christ the King">
+          <div class="day-media">
+            <img src="../assets/images/chua-kito-vung-tau.jpg?v=2" alt="頭頓小山上的君王基督像，張開雙臂面向大海" decoding="async" />
+            <span class="caption">頭頓君王基督像</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第10天</span><span class="dateline">星期一 · 2028年1月17日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>頭頓 — 在君王基督腳下</h3>
+            <ul class="bullets">
+              <li>從峴港飛往西貢，再乘遊覽車前往頭頓。</li>
+              <li>參觀小山上32米高的君王基督像 — 世界上最大的基督像之一，張開雙臂擁抱大海。</li>
+              <li>在拜兜聖母朝聖地舉行彌撒。</li>
+              <li>在頭頓住宿，伴著海浪聲入眠。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day" id="day-11" aria-label="Day 11: Vũng Tàu — Saigon">
+          <div class="day-media">
+            <img src="../assets/images/duc-me-bai-dau.jpg?v=2" alt="頭頓拜兜聖母朝聖地" decoding="async" />
+            <span class="caption">拜兜聖母朝聖地</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第11天</span><span class="dateline">星期二 · 2028年1月18日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>頭頓 — 西貢</h3>
+            <ul class="bullets">
+              <li>早上向拜兜聖母告別，然後返回西貢。</li>
+              <li>參觀平兆法蒂瑪聖母朝聖地 — 舉行彌撒，並選購宗教紀念品帶回家送給親人。</li>
+              <li>參觀聖母主教座堂及西貢中央郵局。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day" id="day-12" aria-label="Day 12: Saigon — Farewell Day">
+          <div class="day-media">
+            <img src="../assets/images/nha-tho-duc-ba.jpg?v=2" alt="西貢聖母主教座堂及其兩座紅磚鐘樓" decoding="async" />
+            <span class="caption">西貢聖母主教座堂</span>
+          </div>
+          <div class="day-body">
+            <p class="day-date"><span class="daynum">第12天</span><span class="dateline">星期三 · 2028年1月19日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>西貢 — 告別日</h3>
+            <ul class="bullets">
+              <li>在堤岸聖方濟各沙勿略堂舉行彌撒 — 這是華人團體的聖堂，與 Fr. Thomas 在溫哥華的堂區同名！</li>
+              <li>下午自由活動，為家人選購禮物。</li>
+              <li>晚上：在西貢河上乘船晚宴，在感恩的氣氛中話別。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day day-travel" id="day-13" aria-label="Day 13: Leaving Vietnam">
+          <svg class="t-watermark" aria-hidden="true"><use href="#i-plane"/></svg>
+          <div class="day-body">
+            <p class="travel-flag"><svg aria-hidden="true"><use href="#i-plane"/></svg>旅途日</p>
+            <p class="day-date"><span class="daynum">第13天</span><span class="dateline">星期四 · 2028年1月20日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>離開越南</h3>
+            <ul class="bullets">
+              <li>在西貢悠閒地度過早上，還有時間選購最後的禮物。</li>
+              <li>下午前往新山一機場，飛往台北（傍晚航班）。</li>
+              <li>在故鄉度過12天後，滿載回憶與祝福啟程。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="reveal day day-travel" id="day-14" aria-label="Day 14: Home to Vancouver">
+          <svg class="t-watermark" aria-hidden="true"><use href="#i-plane"/></svg>
+          <div class="day-body">
+            <p class="travel-flag"><svg aria-hidden="true"><use href="#i-plane"/></svg>旅途日</p>
+            <p class="day-date"><span class="daynum">第14天</span><span class="dateline">星期五 · 2028年1月21日</span><span class="today-pill" hidden>今天</span></p>
+            <h3>返回溫哥華</h3>
+            <ul class="bullets">
+              <li>從台北轉機返回溫哥華，當天傍晚抵達（感謝國際換日線）。</li>
+              <li>朝聖之旅結束 — 但我們回到日常生活，蒙召為福音作見證。</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Preparation ===== -->
+  <section class="section" id="preparation" aria-labelledby="t-preparation">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="t-preparation"><svg class="ico" aria-hidden="true"><use href="#i-bag"/></svg>朝聖行前準備</h2>
+        <div class="sec-rule" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+        <p class="sec-sub">每位團員在2028年1月8日前需辦妥的事項 — 讓我們安心出發，滿載祝福而歸。</p>
+      </div>
+
+      <div class="prep-grid">
+        <article class="prep">
+          <div class="prep-top">
+            <span class="prep-ico" aria-hidden="true"><svg><use href="#i-doc"/></svg></span>
+            <h3>證件與簽證</h3>
+          </div>
+          <ul class="dots">
+            <li>加拿大護照有效期須在回程日期後至少6個月（至2028年7月）。</li>
+            <li>加拿大護照持有人出發前需辦理越南電子簽證。本行程只入境越南一次，單次簽證即可：官方費用25美元（多次簽證：50美元），最長可停留90天，3–5個工作天辦妥。簽證規定可能變更 — 出發前請再到官網確認。</li>
+            <li>自行在官方網站 <a href="https://evisa.gov.vn">evisa.gov.vn</a> 線上申請 — 在家即可辦理，無需親赴領事館。</li>
+            <li>隨身攜帶護照及電子簽證影本（列印本及手機存檔）。</li>
+          </ul>
+        </article>
+        <article class="prep">
+          <div class="prep-top">
+            <span class="prep-ico" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
+            <h3>保險與健康</h3>
+          </div>
+          <ul class="dots">
+            <li>購買涵蓋醫療費用及緊急運送回國的旅遊保險 — 本團有多位年長團員，這點尤其重要。</li>
+            <li>帶足14天份的日常藥物，放在隨身行李中，並附上英文處方。</li>
+            <li>有慢性病者出發前應做健康檢查，並諮詢醫生。</li>
+            <li>飲用瓶裝水，並帶備常用藥物（感冒、腸胃不適）。</li>
+          </ul>
+        </article>
+        <article class="prep">
+          <div class="prep-top">
+            <span class="prep-ico" aria-hidden="true"><svg><use href="#i-bag"/></svg></span>
+            <h3>行李</h3>
+          </div>
+          <ul class="dots">
+            <li>一月的越南北部天氣清涼（約15–18°C，可能有毛毛雨）：帶件保暖衣物及輕便防水外套。</li>
+            <li>越南中部及南部乾燥宜人：準備14天份的輕便涼爽衣物。</li>
+            <li>舒適的步行鞋 — 在朝聖地及古城會走很多路。</li>
+            <li>帽子、太陽眼鏡及防曬用品；如想在美溪海灘游泳（第8天），請帶泳衣。</li>
+            <li>帶備萬用轉接插頭，以策萬全。</li>
+          </ul>
+        </article>
+        <article class="prep">
+          <div class="prep-top">
+            <span class="prep-ico" aria-hidden="true"><svg><use href="#i-candle"/></svg></span>
+            <h3>心靈準備</h3>
+          </div>
+          <ul class="dots">
+            <li>帶上玫瑰唸珠及個人祈禱書。</li>
+            <li>出發前辦告解；朝聖期間團體每天一起舉行彌撒。</li>
+            <li>在心中準備一個個人意向，奉獻給拉望聖母（1月14日）。</li>
+            <li>懷著朝聖者的心出發 — 放慢腳步，聆聽，感恩。</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="mini-title"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>實用資訊</h3>
+      <div class="utils">
+        <div class="util">
+          <span class="util-ico" aria-hidden="true"><svg><use href="#i-sun"/></svg></span>
+          <div><h4>三個地區的天氣</h4><p>北部清涼（15–18°C，可能有毛毛雨）；中部及南部乾燥晴朗。</p></div>
+        </div>
+        <div class="util">
+          <span class="util-ico" aria-hidden="true"><svg><use href="#i-money"/></svg></span>
+          <div><h4>貨幣</h4><p>越南盾是當地貨幣。帶少量美元現金作小費及小額消費；酒店及大型場所接受信用卡。</p></div>
+        </div>
+        <div class="util">
+          <span class="util-ico" aria-hidden="true"><svg><use href="#i-wifi"/></svg></span>
+          <div><h4>保持聯繫</h4><p>在機場購買 eSIM 或越南旅遊 SIM 卡，全程使用流動數據。</p></div>
+        </div>
+        <div class="util">
+          <span class="util-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span>
+          <div><h4>時差</h4><p>越南比溫哥華快15小時（冬季時間）— 計劃用第一天來適應時差。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Cost ===== -->
+  <section class="section section-soft" id="cost" aria-labelledby="t-cost">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="t-cost"><svg class="ico" aria-hidden="true"><use href="#i-coin"/></svg>預估費用</h2>
+        <div class="sec-rule" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+        <p class="sec-sub">每人預估（兩人一房）— 收到航空公司及旅行社報價後將公布正式價格。</p>
+      </div>
+      <div class="cost-card">
+        <ul class="cost-rows">
+          <li><span>溫哥華 ⇄ 越南航班（經台北轉機）</span><b>~C$1,800</b></li>
+          <li><span>國內航班（河內 → 順化，峴港 → 西貢）</span><b>~C$250</b></li>
+          <li><span>12天陸上行程（遊覽車、三星酒店、餐食、門票、越南語導遊）</span><b>~C$1,500–2,000</b></li>
+          <li class="total"><span>每人預估總計</span><b>C$3,500–4,000</b></li>
+        </ul>
+        <p class="cost-note">不包括：導遊及司機小費、單人房差價、簽證、旅遊保險、個人消費。</p>
+        <p class="cost-note">一月是春節前的旺季，實際機票價格可能高於此預估。最後更新：2026年10月4日。對費用有疑問？<a href="#register">聯絡主辦單位</a>。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Notes ===== -->
+  <section class="section" id="notes" aria-labelledby="t-notes">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="t-notes"><svg class="ico" aria-hidden="true"><use href="#i-bell"/></svg>團體備註</h2>
+        <div class="sec-rule" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+      </div>
+      <ul class="notes notes-narrow">
+        <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><p>行程安排了2個較輕鬆的日子（第3天和第5天），讓年長團員休息。</p></li>
+        <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><p>2028年農曆新年（春節）在1月26日 — 朝聖團在春節前5天回程：正好感受年節氣氛，又避開最高票價。</p></li>
+        <li class="note"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg><p>這是初步計劃：航班時間、酒店及價格需待航空公司及旅行社正式報價。</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Sign-up ===== -->
+  <section class="section section-soft" id="register" aria-labelledby="t-register">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title" id="t-register"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>登記參加意向</h2>
+        <div class="sec-rule" aria-hidden="true"><svg><use href="#i-cross"/></svg></div>
+        <p class="sec-sub">本團預計35人，共乘一輛45座遊覽車，由一位導遊帶領。額滿後，主辦單位將開始候補名單。</p>
+      </div>
+      <div class="signup-card">
+        <h3 class="mini-title"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>接下來的步驟</h3>
+        <ol class="steps">
+          <li><p><b>表達參加意向。</b>告訴我們您的姓名、同行人數及電話號碼。這不是訂金。</p></li>
+          <li><p><b>收取正式資訊。</b>收到團體機票報價並確定越南旅行社後，主辦單位會將最終價格及確認行程寄給所有已登記者。</p></li>
+          <li><p><b>繳付訂金。</b>預計2027年夏季開始收取；訂金金額及截止日期將另行公布。</p></li>
+          <li><p><b>準備證件。</b>護照、電子簽證及旅遊保險 — 詳見上文「行前準備」。</p></li>
+        </ol>
+        <p class="signup-cta"><a class="btn" href="/zh/cdn-cgi/l/email-protection#c0b0a9aca7b2a9ada1a7a580a6b2b4a8afada1b3eea3afadffb3b5a2aaa5a3b4fd89aeb4a5b2a5b3b4a5a4e5f2f0a9aee5f2f0b4a8a5e5f2f096a9a5b4aea1ade5f2f090a9aca7b2a9ada1a7a5e5f2f0f2f0f2f8e6a2afa4b9fd84a5a1b2e5f2f086b2eee5f2f094a8afada1b3e5f283e5f081e5f08189efb7a5e5f2f0b7afb5aca4e5f2f0aca9aba5e5f2f0b4afe5f2f0b2a5a7a9b3b4a5b2e5f2f0a9aeb4a5b2a5b3b4e5f2f0a9aee5f2f0b4a8a5e5f2f096a9a5b4aea1ade5f2f090a9aca7b2a9ada1a7a5e5f2f0f2f0f2f8e5f2f0e5f2f88aa1aeb5a1b2b9e5f2f0f8e585f2e5f8f0e5f9f3f2f1e5f283e5f2f0f2f0f2f8e5f2f9eee5f081e5f08186b5acace5f2f0aea1ada5e5f381e5f0818eb5ada2a5b2e5f2f0afa6e5f2f0b0a5afb0aca5e5f2f0b4b2a1b6a5acaca9aea7e5f2f0b4afa7a5b4a8a5b2e5f381e5f08190a8afaea5e5f2f0aeb5ada2a5b2e5f381e5f0818eafb4a5b3e5f2f0e5f2f8a8a5a1acb4a8e5f283e5f2f0b3a9aea7aca5e5f2f0b2afafade5f283e5f2f0a5b4a3eee5f2f9e5f381e5f081e5f08194a8a1aeabe5f2f0b9afb5ee">電郵登記參加意向</a></p>
+        <p class="signup-alt">或寫信至 <a href="/zh/cdn-cgi/l/email-protection#5a2a33363d2833373b3d3f1a3c282e3235373b2974393537"><span class="__cf_email__" data-cfemail="82f2ebeee5f0ebefe3e5e7c2e4f0f6eaedefe3f1ace1edef">[email&#160;protected]</span></a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<hr class="orn" aria-hidden="true" />
+
+<footer class="footer">
+  <div class="wrap">
+    <span class="hero-cross" aria-hidden="true"><svg><use href="#i-cross"/></svg></span>
+    <p class="f-theme">為鐸職恩賜感恩</p>
+    <p class="f-main">2028 越南朝聖 · 2028年1月8–21日</p>
+    <p class="f-main">預計35人朝聖團從加拿大溫哥華出發</p>
+    <p class="f-note">願拉望聖母一路陪伴、守護朝聖團。</p>
+    <p class="f-note"><a class="f-link" href="#register">登記參加意向</a> · <a class="f-link" href="../">首頁</a> · <a class="f-link" href="vi/" hreflang="vi" lang="vi">Tiếng Việt</a></p>
+  </div>
+</footer>
+
+<button id="topBtn" aria-label="Back to top"><svg aria-hidden="true"><use href="#i-up"/></svg></button>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function () {
+  'use strict';
+  var START = new Date(2028, 0, 8, 0, 0, 0);
+  var TRIP_DAYS = 14;
+  var TITLES = [
+    '',
+    '從溫哥華出發',
+    '抵達河內',
+    '河內 — 與故鄉相見歡的一天',
+    '恩寵之日：Fr. Thomas 晉鐸週年感恩彌撒',
+    '寧平 — 靜默的一天',
+    '飛往順化 — 回到拉望聖母懷抱',
+    '拉望 — 朝聖之旅的核心',
+    '順化 — 峴港',
+    '在峴港的主日 — 會安',
+    '頭頓 — 在君王基督腳下',
+    '頭頓 — 西貢',
+    '西貢 — 告別日',
+    '離開越南',
+    '返回溫哥華'
+  ];
+  var status = document.getElementById('status');
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  // Which day of the trip is "today"? 1..14 during the trip, 0 before, 15+ after.
+  function tripDayNumber(now) {
+    var day = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return Math.round((day - START) / 86400000) + 1;
+  }
+
+  function markToday(n) {
+    var card = document.getElementById('day-' + n);
+    if (card) {
+      card.classList.add('is-today');
+      var pill = card.querySelector('.today-pill');
+      if (pill) pill.removeAttribute('hidden');
+    }
+    var chip = document.getElementById('chip-' + n);
+    if (chip) {
+      chip.classList.add('is-today');
+      var dot = document.createElement('span');
+      dot.className = 'tdot';
+      dot.setAttribute('aria-hidden', 'true');
+      chip.appendChild(dot);
+    }
+  }
+
+  function renderCountdown() {
+    var now = new Date();
+    var state = tripDayNumber(now);
+    if (state >= 1 && state <= TRIP_DAYS) { markToday(state); renderLive(state); return; }
+    if (state > TRIP_DAYS) { renderDone(); return; }
+    var diff = START - now;
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor(diff / 3600000) % 24;
+    var m = Math.floor(diff / 60000) % 60;
+    var s = Math.floor(diff / 1000) % 60;
+    status.className = 'status state-count';
+    status.innerHTML =
+      '<p class="count-label">啟程倒計時</p>' +
+      '<div class="count-grid" role="timer" aria-label="' + d + ' days until departure">' +
+      '<div class="count-cell"><b>' + d + '</b><span>天</span></div>' +
+      '<div class="count-cell"><b>' + pad(h) + '</b><span>小時</span></div>' +
+      '<div class="count-cell"><b>' + pad(m) + '</b><span>分</span></div>' +
+      '<div class="count-cell"><b>' + pad(s) + '</b><span>秒</span></div>' +
+      '</div>' +
+      '<p class="count-sub">2028年1月8日（星期六）— 一起倒數</p>';
+    window.setTimeout(renderCountdown, 1000);
+  }
+
+  function renderLive(n) {
+    status.className = 'status state-live';
+    status.innerHTML =
+      '<span class="live-pill"><span class="live-dot" aria-hidden="true"></span>朝聖中 · 第 ' + n + ' / 14 天</span>' +
+      '<p class="live-title">' + TITLES[n] + '</p>' +
+      '<button class="btn" id="gotoToday" type="button">跳至今天</button>';
+    var btn = document.getElementById('gotoToday');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var card = document.getElementById('day-' + n);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }
+
+  function renderDone() {
+    status.className = 'status state-done';
+    status.innerHTML =
+      '<span class="live-pill"><span class="live-dot" aria-hidden="true"></span>朝聖之旅已圓滿結束</span>' +
+      '<p class="live-title">2028年1月8–21日 · 願我們永遠珍惜所領受的恩寵</p>';
+  }
+
+  renderCountdown();
+
+  var topBtn = document.getElementById('topBtn');
+  function onScroll() {
+    if (window.pageYOffset > 700) topBtn.classList.add('show');
+    else topBtn.classList.remove('show');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  topBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+})();
+</script>
+
+
+
+<button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-controls="sitemenu" aria-label="Open menu"><span class="trigger-inner"><span class="hamburger" aria-hidden="true"><i></i><i></i></span><span>選單</span></span></button><div class="langswitch-float"><nav class="langswitch" aria-label="Language"><a href="/hanh-huong/" lang="en">EN</a><a href="/zh/hanh-huong/" lang="zh-Hant" class="on">繁</a><a href="/vi/hanh-huong/" lang="vi">VI</a></nav></div><style>.langswitch-float{position:fixed;top:18px;right:18px;z-index:90}@media(max-width:720px){.langswitch-float{top:12px;right:12px}}</style>
+<aside class="emenu" id="sitemenu" aria-hidden="true" aria-label="Site menu">
+<div class="emenu-panel">
+<div class="emenu-meta"><a href="/zh/">Fr. Thomas</a><span>選單</span></div>
+<nav class="emenu-nav" aria-label="Primary">
+<a class="emenu-link" href="/zh/about/">關於</a>
+<a class="emenu-link" href="/zh/#ministry">牧民</a>
+<a class="emenu-link" href="/bai-giang/">默想</a>
+<a class="emenu-link" href="/zh/pilgrimage/">朝聖</a>
+
+<a class="emenu-link" href="/zh/#contact">聯絡</a>
+</nav>
+<div class="emenu-foot"><span>信仰 · 默想 · 服務</span><span>Esc — 關閉</span></div>
+</div>
+</aside>
+<script>
+(function(){
+var menuTrigger=document.getElementById('menuTrigger'),emenu=document.getElementById('sitemenu'),lastFocus=null;
+function menuOpen(){return emenu.classList.contains('is-open');}
+function openMenu(){lastFocus=document.activeElement;emenu.classList.add('is-open');document.body.classList.add('menu-open');menuTrigger.setAttribute('aria-expanded','true');menuTrigger.setAttribute('aria-label','Close menu');emenu.setAttribute('aria-hidden','false');setTimeout(function(){var f=emenu.querySelector('.emenu-link');if(f)f.focus();},380);}
+function closeMenu(){if(!menuOpen())return;emenu.classList.remove('is-open');document.body.classList.remove('menu-open');menuTrigger.setAttribute('aria-expanded','false');menuTrigger.setAttribute('aria-label','Open menu');emenu.setAttribute('aria-hidden','true');if(lastFocus&&lastFocus!==document.body){try{lastFocus.focus();}catch(e){}}}
+menuTrigger.addEventListener('click',function(){menuOpen()?closeMenu():openMenu();});
+emenu.querySelectorAll('.emenu-link').forEach(function(a){a.addEventListener('click',function(){closeMenu();});});
+addEventListener('keydown',function(e){if(!menuOpen())return;var links=Array.prototype.slice.call(emenu.querySelectorAll('.emenu-link'));var i=links.indexOf(document.activeElement);if(e.key==='Escape'){closeMenu();}else if(e.key==='ArrowDown'){e.preventDefault();links[(i+1+links.length)%links.length].focus();}else if(e.key==='ArrowUp'){e.preventDefault();links[(i-1+links.length)%links.length].focus();}else if(e.key==='Tab'){var fl=[menuTrigger].concat(links),fi=fl.indexOf(document.activeElement);if(e.shiftKey&&fi<=0){e.preventDefault();fl[fl.length-1].focus();}else if(!e.shiftKey&&fi===fl.length-1){e.preventDefault();fl[0].focus();}}});
+})();
+</script>
+
+</body>
+</html>
