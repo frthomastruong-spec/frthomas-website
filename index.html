@@ -113,6 +113,14 @@ a.inline{color:var(--wine);border-bottom:1px solid currentColor}
 .hl-link{color:#f7f2e9;font-weight:600;text-decoration:underline;text-underline-offset:4px}
 .hl-credit{position:absolute;right:14px;bottom:10px;z-index:2;font-size:.7rem;color:rgba(247,242,233,.55)}
 @media(max-width:640px){.hl{min-height:96vh}.hl-in{padding:10vh 20px 8vh}.cd{min-width:64px}.cd b{font-size:1.4rem}}
+
+.verse-wrap{transition:opacity .6s ease,transform .6s ease}
+.verse-wrap.fading{opacity:0;transform:translateY(12px)}
+.verse-ui{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:34px;position:relative;z-index:2}
+.vnav{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.1rem;cursor:pointer;transition:.3s}
+.vnav:hover{background:rgba(255,255,255,.28)}
+.vcount{font-size:.8rem;letter-spacing:.14em;opacity:.7;min-width:64px;text-align:center}
+.vsrc{position:relative;z-index:2;margin-top:14px;font-size:.72rem;letter-spacing:.1em;opacity:.5;text-transform:uppercase}
 </style>
 </head>
 <body>
@@ -157,7 +165,7 @@ a.inline{color:var(--wine);border-bottom:1px solid currentColor}
 
 
 
-<section class="scripture"><div class="scripture-bg"></div><div class="scripture-content"><div class="eyebrow">Scripture</div><div class="verse">“Your word is a lamp for my feet, a light on my path.”</div><div class="ref">Psalm 119:105</div><div class="path"><span>Reflect</span><i></i><span>Pray</span><i></i><span>Live</span></div></div></section>
+
 
 
 
@@ -168,7 +176,11 @@ a.inline{color:var(--wine);border-bottom:1px solid currentColor}
 <div class="hl-count"><div class="cd"><b id="cd-d">–</b><span>days</span></div><div class="cd"><b id="cd-h">–</b><span>hours</span></div><div class="cd"><b id="cd-m">–</b><span>min</span></div><div class="cd"><b id="cd-s">–</b><span>sec</span></div></div>
 <div class="hl-meta"><span>8–21 January 2028</span><span>·</span><span>14 days</span><span>·</span><span>35 pilgrims</span><span>·</span><span>From Vancouver</span></div>
 <div class="hl-cta"><a class="hl-btn" href="hanh-huong/">View the full program ↗</a><a class="hl-link" href="mailto:pilgrimage@frthomas.com?subject=Vietnam%20Pilgrimage%202028%20—%20Reserve%20my%20place">Reserve your place →</a></div></div>
-<div class="hl-credit">Photo: Hoangvantoanajc, CC BY-SA 3.0</div></section>
+<div class="hl-credit">Photo: Hoangvantoanajc, CC BY-SA 3.0</div></section><section class="scripture" id="scripture"><div class="scripture-bg"></div><div class="scripture-content"><div class="eyebrow">Scripture</div>
+<div class="verse-wrap" id="verse-wrap"><div class="verse" id="verse-text">&ldquo;Your word is a lamp for my feet, a light on my path.&rdquo;</div><div class="ref" id="verse-ref">Psalm 119:105</div></div>
+<div class="verse-ui"><button class="vnav" id="vprev" aria-label="Previous verse">&larr;</button><span class="vcount" id="verse-count"></span><button class="vnav" id="vnext" aria-label="Next verse">&rarr;</button></div>
+<div class="vsrc">Douay-Rheims &middot; fetched live from the Catholic Bible</div>
+</div></section>
 
 
 
@@ -232,5 +244,46 @@ document.getElementById('cd-h').textContent=p(Math.floor(d/36e5)%24);
 document.getElementById('cd-m').textContent=p(Math.floor(d/6e4)%60);
 document.getElementById('cd-s').textContent=p(Math.floor(d/1e3)%60);}
 tick();setInterval(tick,1000);})();
+
+/* rotating scripture — Douay-Rheims via bible-api.com */
+(function(){
+var REFS=["psalm 1:1", "psalm 8:4", "psalm 16:11", "psalm 19:1", "psalm 23:1", "psalm 23:4", "psalm 27:1", "psalm 27:14", "psalm 34:8", "psalm 34:18", "psalm 37:4", "psalm 40:1", "psalm 42:1", "psalm 46:1", "psalm 46:10", "psalm 51:10", "psalm 61:2", "psalm 62:1", "psalm 63:1", "psalm 71:5", "psalm 84:10", "psalm 86:15", "psalm 90:12", "psalm 91:1", "psalm 95:6", "psalm 100:4", "psalm 103:8", "psalm 121:1", "psalm 130:5", "psalm 133:1", "psalm 139:14", "psalm 145:9", "matthew 5:3", "matthew 5:8", "matthew 5:14", "matthew 5:16", "matthew 6:33", "matthew 7:7", "matthew 10:39", "matthew 11:28", "matthew 16:24", "matthew 18:20", "matthew 19:26", "matthew 22:37", "matthew 25:40", "matthew 28:20", "mark 10:27", "mark 12:30", "luke 1:37", "luke 1:45", "luke 6:36", "luke 10:27", "luke 12:32", "luke 15:20", "luke 17:21", "luke 18:14", "john 1:1", "john 1:5", "john 3:16", "john 3:30", "john 6:35", "john 8:12", "john 10:10", "john 10:11", "john 11:25", "john 13:34", "john 14:6", "john 14:27", "john 15:5", "john 15:13", "john 16:33", "john 20:29", "romans 5:8", "romans 8:28", "romans 8:38", "romans 10:9", "romans 12:2", "romans 12:12", "romans 15:13", "1 corinthians 13:4", "1 corinthians 13:7", "1 corinthians 13:13", "1 corinthians 16:14", "2 corinthians 5:17", "2 corinthians 12:9", "galatians 2:20", "galatians 5:22", "ephesians 2:8", "ephesians 2:10", "ephesians 4:32", "philippians 3:13", "philippians 4:6", "philippians 4:7", "philippians 4:13", "philippians 4:19", "colossians 3:23", "1 thessalonians 5:16", "1 thessalonians 5:18", "2 timothy 1:7", "hebrews 4:16", "hebrews 11:1", "hebrews 12:1", "james 1:2", "james 1:5", "james 4:8", "1 peter 2:9", "1 peter 5:7", "1 john 1:9", "1 john 4:8", "1 john 4:18", "revelation 3:20", "revelation 21:4", "genesis 1:27", "genesis 28:15", "exodus 14:14", "deuteronomy 31:6", "joshua 1:9", "proverbs 3:5", "proverbs 3:6", "proverbs 16:3", "ecclesiastes 3:1", "isaiah 26:3", "isaiah 40:31", "isaiah 41:10", "isaiah 43:1", "isaiah 43:2", "jeremiah 29:11", "jeremiah 33:3", "lamentations 3:22", "micah 6:8", "habakkuk 3:17", "zephaniah 3:17"];
+var FALLBACK=[{"ref": "Psalms 23:1", "text": "A psalm for David. The Lord ruleth me: and I shall want nothing."}, {"ref": "John 3:16", "text": "For God so loved the world, as to give his only begotten Son; that whosoever believeth in him, may not perish, but may have life everlasting."}, {"ref": "Psalms 91:1-2", "text": "The praise of a canticle for David. He that dwelleth in the aid of the most High, shall abide under the protection of the God of Jacob.He shall say to the Lord: Thou art my protector, and my refuge: my God, in him will I trust."}, {"ref": "Matthew 11:28", "text": "Come to me, all you that labour, and are burdened, and I will refresh you."}, {"ref": "Romans 8:28", "text": "And we know that to them that love God, all things work together unto good, to such as, according to his purpose, are called to be saints."}, {"ref": "Philippians 4:13", "text": "I can do all these things in him who strengtheneth me."}, {"ref": "Isaiah 41:10", "text": "Fear not, for I am with thee: turn not aside, for I am thy God: I have strengthened thee, and have helped thee, and the right hand of my just one hath upheld thee."}, {"ref": "Joshua 1:9", "text": "Behold I command thee, take courage, end be strong. Fear not and be not dismayed: because the Lord thy God is with thee in all things whatsoever thou shalt go to."}, {"ref": "Proverbs 3:5", "text": "Have confidence in the Lord with all thy heart, and lean not upon thy own prudence."}, {"ref": "1 Corinthians 13:4", "text": "Charity is patient, is kind: charity envieth not, dealeth not perversely; is not puffed up;"}];
+var cache={},order=[],idx=-1,shown=0,timer=null,live=true;
+var wrap=document.getElementById('verse-wrap'),vt=document.getElementById('verse-text'),
+    vr=document.getElementById('verse-ref'),vc=document.getElementById('verse-count');
+if(!wrap)return;
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function clean(t){return t.replace(/\s+/g,' ').trim();}
+function fetchVerse(ref){
+  if(cache[ref])return Promise.resolve(cache[ref]);
+  return fetch('https://bible-api.com/'+encodeURIComponent(ref)+'?translation=dra')
+    .then(function(r){if(!r.ok)throw 0;return r.json();})
+    .then(function(d){var v={ref:d.reference,text:clean(d.text)};cache[ref]=v;return v;});
+}
+function render(v){
+  wrap.classList.add('fading');
+  setTimeout(function(){
+    vt.innerHTML='&ldquo;'+v.text.replace(/</g,'&lt;')+'&rdquo;';
+    vr.textContent=v.ref;
+    shown++;vc.textContent=shown+' / '+REFS.length;
+    wrap.classList.remove('fading');
+  },620);
+}
+function prefetch(){var r=order[idx+1]||order[0];if(r&&live)fetchVerse(r).catch(function(){});}
+function advance(){
+  idx++;
+  if(idx>=order.length){order=shuffle(REFS.slice());idx=0;}
+  var ref=order[idx];
+  fetchVerse(ref).then(function(v){render(v);prefetch();})
+    .catch(function(){live=false;render(FALLBACK[shown%FALLBACK.length]);});
+}
+function go(n){clearInterval(timer);idx+=n-1;if(idx<-1)idx=order.length-2;advance();start();}
+function start(){timer=setInterval(advance,9000);}
+document.getElementById('vnext').addEventListener('click',function(){go(1);});
+document.getElementById('vprev').addEventListener('click',function(){go(-1);});
+order=shuffle(REFS.slice());
+advance();start();
+})();
 </script>
 </body></html>
