@@ -118,13 +118,18 @@ a.inline{color:var(--wine);border-bottom:1px solid currentColor}
 .m3-cta:hover{background:#1d2522;color:#f7f2e9}
 .m3-credit{margin-top:28px;font-size:.7rem;opacity:.5;letter-spacing:.08em}
 @media(max-width:640px){.m3-strip{height:120px;margin:32px auto}.m3banner{padding-bottom:7vh}.m3-credit{padding:0 70px 0 0}}
+
+.langswitch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line,rgba(29,37,34,.15));border-radius:999px;padding:3px;font-size:11px;font-weight:700;letter-spacing:.06em;background:transparent}
+.langswitch a{color:var(--muted,#56605b);text-decoration:none;padding:5px 11px;border-radius:999px;line-height:1}
+.langswitch a.on{background:#1d2522;color:#f4f1e9}
+@media(max-width:720px){.langswitch{font-size:10px}.langswitch a{padding:4px 8px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#home">Skip to content</a>
 <header class="topbar" id="topbar">
 <a class="brand" href="#home"><span class="mark">FT</span><span><strong>Fr. Thomas</strong></span></a>
-<a class="navcta" href="#contact">Get in touch ↗</a>
+<nav class="langswitch" aria-label="Language"><a href="/" lang="en" class="on">EN</a><a href="/zh/" lang="zh-Hant">繁</a><a href="/vi/" lang="vi">VI</a></nav><a class="navcta" href="#contact">Get in touch ↗</a>
 </header>
 <button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-controls="sitemenu" aria-label="Open menu"><span class="trigger-inner"><span class="hamburger" aria-hidden="true"><i></i><i></i></span><span>Menu</span></span></button>
 <aside class="emenu" id="sitemenu" aria-hidden="true" aria-label="Site menu">
