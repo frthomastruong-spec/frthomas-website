@@ -44,6 +44,9 @@ var STR = {
   }
 };
 var S = STR[LANG];
+STR.en.foundIn = "I found this"; STR.en.readMore = "Read more \u2192";
+STR.vi.foundIn = "Em t\u00ECm th\u1EA5y"; STR.vi.readMore = "Xem th\u00EAm \u2192";
+STR.zh.foundIn = "\u6211\u627E\u5230"; STR.zh.readMore = "\u95B1\u8B80\u66F4\u591A \u2192";
 
 /* FAQ: keywords (lowercase) -> answers in 3 languages. Order matters: specific first. */
 var FAQ = [
@@ -121,6 +124,65 @@ function findAnswer(q) {
   return null;
 }
 
+/* ---- Site content index: every public page, lazy-loaded on first open ---- */
+var AIDX = null, aidxPromise = null;
+function loadIndex() {
+  if (aidxPromise) return aidxPromise;
+  aidxPromise = fetch("/assets/angel-index.json")
+    .then(function (r) { return r.ok ? r.json() : []; })
+    .then(function (d) { AIDX = Array.isArray(d) ? d : []; return AIDX; })
+    .catch(function () { AIDX = []; return AIDX; });
+  return aidxPromise;
+}
+function norm(s) {
+  return (s || "").toLowerCase().normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\u0111/g, "d")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ");
+}
+function esc(s) {
+  return (s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function termsOf(q) {
+  var nq = norm(q);
+  var cjk = /[一-鿿]/.test(q);
+  var terms = nq.split(/\s+/).filter(function (t) { return t.length >= (cjk ? 2 : 3); });
+  if (cjk) {
+    var joined = nq.replace(/\s+/g, "");
+    if (joined.length >= 2 && terms.indexOf(joined) === -1) terms.push(joined);
+  }
+  return terms;
+}
+function searchIndex(q) {
+  if (!AIDX || !AIDX.length) return null;
+  var terms = termsOf(q);
+  if (!terms.length) return null;
+  var phrase = norm(q).replace(/\s+/g, " ").trim();
+  var best = null, bestScore = 0, i, j;
+  for (i = 0; i < AIDX.length; i++) {
+    var p = AIDX[i];
+    var xt = norm(p.x), tt = norm(p.t), score = 0;
+    for (j = 0; j < terms.length; j++) {
+      score += (xt.split(terms[j]).length - 1) + (tt.split(terms[j]).length - 1) * 4;
+    }
+    if (phrase.length > 4 && xt.indexOf(phrase) !== -1) score += 10;
+    if (p.l === LANG) score *= 1.6;
+    if (score > bestScore) { bestScore = score; best = p; }
+  }
+  if (!best || bestScore < 3) return null;
+  var sents = best.x.split(/(?<=[.!?…。！？])\s+/);
+  var bs = "", bsScore = -1, k, m;
+  for (k = 0; k < sents.length; k++) {
+    var sn = norm(sents[k]), sc = 0;
+    for (m = 0; m < terms.length; m++) sc += sn.split(terms[m]).length - 1;
+    if (sc > bsScore) { bsScore = sc; bs = sents[k]; }
+  }
+  var excerpt = (bs ? bs.trim() : best.x).slice(0, 280);
+  return esc(S.foundIn) + ' <a href="' + best.u + '">' + esc(best.t) + '</a>:<br>' +
+    '<span class="angel-quote">' + esc(excerpt) + '</span><br>' +
+    '<a href="' + best.u + '">' + esc(S.readMore) + '</a>';
+}
+
 /* ---- UI ---- */
 function el(tag, cls, html) {
   var d = document.createElement(tag);
@@ -194,10 +256,14 @@ function botReply(q) {
   var t = el("div", "angel-typing", "<i></i><i></i><i></i>");
   msgs.appendChild(t);
   scrollDown();
-  setTimeout(function () {
-    t.remove();
-    addMsg(findAnswer(q) || S.fallback, "bot");
-  }, 650);
+  var t0 = Date.now();
+  function done(html) {
+    var wait = Math.max(0, 650 - (Date.now() - t0));
+    setTimeout(function () { t.remove(); addMsg(html, "bot"); }, wait);
+  }
+  var faq = findAnswer(q);
+  if (faq) { done(faq); return; }
+  loadIndex().then(function () { done(searchIndex(q) || S.fallback); });
 }
 
 function send(text) {
@@ -222,7 +288,7 @@ function toggle(open) {
   panel.classList.toggle("open", willOpen);
   btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
   if (willOpen) {
-    if (!greeted) { greeted = true; addMsg(S.greet, "bot"); }
+    if (!greeted) { greeted = true; addMsg(S.greet, "bot"); loadIndex(); }
     setTimeout(function () { input.focus(); }, 60);
   }
 }
