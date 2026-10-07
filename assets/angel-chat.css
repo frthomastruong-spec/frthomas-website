@@ -18,8 +18,8 @@
 #angel-chat-panel{
   position:fixed;z-index:96;
   right:max(16px,2vw);bottom:calc(max(20px,2.5vw) + 174px);
-  width:min(384px,calc(100vw - 32px));
-  height:min(600px,calc(100dvh - 230px));min-height:380px;
+  width:min(330px,calc(100vw - 32px));
+  height:min(520px,calc(100dvh - 230px));min-height:340px;
   background:#f8f1e6;border:1px solid #e3dcc6;border-radius:18px;
   box-shadow:0 24px 70px rgba(0,0,0,.32);
   display:none;flex-direction:column;overflow:hidden;
@@ -84,6 +84,6 @@
   #angel-chat-panel{
     left:16px;right:16px;width:auto;
     bottom:calc(max(20px,2.5vw) + 174px);
-    height:min(68dvh,560px);
+    height:min(60dvh,500px);
   }
 }
