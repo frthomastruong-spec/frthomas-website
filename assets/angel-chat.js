@@ -16,7 +16,7 @@ var LANG = detectLang();
 
 /* Set after the Cloudflare Worker is deployed, e.g.
    "https://angel-chat-frthomas.<sub>.workers.dev/chat". Empty = local-only mode. */
-var AI_ENDPOINT = "";
+var AI_ENDPOINT = "https://angel.truonggia25.workers.dev";
 
 var STR = {
   en: {
