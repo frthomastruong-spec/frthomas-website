@@ -1,0 +1,88 @@
+/* Angel chatbox for frthomas.com — scoped under #angel-chat */
+#angel-chat-btn{
+  position:fixed;z-index:95;
+  right:max(20px,2.5vw);bottom:calc(max(20px,2.5vw) + 102px);
+  width:60px;height:60px;border-radius:50%;
+  background:#1d2522;border:1px solid #c7aa70;color:#ead8ad;
+  display:grid;place-items:center;cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,.28);
+  transition:transform .25s ease,background .25s ease;
+  font-family:"DM Sans",system-ui,sans-serif;
+}
+#angel-chat-btn:hover{transform:translateY(-3px);background:#24302b}
+#angel-chat-btn svg{width:26px;height:26px}
+#angel-chat-btn .angel-dot{
+  position:absolute;top:2px;right:2px;width:12px;height:12px;border-radius:50%;
+  background:#c7aa70;border:2px solid #1d2522;
+}
+#angel-chat-panel{
+  position:fixed;z-index:96;
+  right:max(16px,2vw);bottom:calc(max(20px,2.5vw) + 174px);
+  width:min(384px,calc(100vw - 32px));
+  height:min(600px,calc(100dvh - 230px));min-height:380px;
+  background:#f8f1e6;border:1px solid #e3dcc6;border-radius:18px;
+  box-shadow:0 24px 70px rgba(0,0,0,.32);
+  display:none;flex-direction:column;overflow:hidden;
+  font-family:"DM Sans",system-ui,sans-serif;color:#2a2620;
+}
+#angel-chat-panel.open{display:flex}
+#angel-chat-head{
+  background:#1d2522;color:#f4f1e9;padding:14px 16px;
+  display:flex;align-items:center;gap:12px;flex:none;
+}
+#angel-chat-head .angel-avatar{
+  width:38px;height:38px;border-radius:50%;flex:none;
+  background:#c7aa70;color:#1d2522;display:grid;place-items:center;
+  font-family:"Playfair Display",Georgia,serif;font-size:20px;
+}
+#angel-chat-head .angel-title{font-family:"Playfair Display",Georgia,serif;font-size:18px;letter-spacing:.02em}
+#angel-chat-head .angel-sub{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.65}
+#angel-chat-close{
+  margin-left:auto;background:none;border:0;color:#f4f1e9;font-size:22px;cursor:pointer;
+  width:34px;height:34px;border-radius:50%;line-height:1;opacity:.8;
+}
+#angel-chat-close:hover{opacity:1;background:rgba(255,255,255,.12)}
+#angel-chat-msgs{
+  flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:10px;
+  -webkit-overflow-scrolling:touch;
+}
+.angel-msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.55;word-wrap:break-word}
+.angel-msg.bot{background:#fff;border:1px solid #e3dcc6;border-bottom-left-radius:4px;align-self:flex-start}
+.angel-msg.user{background:#1d2522;color:#f4f1e9;border-bottom-right-radius:4px;align-self:flex-end}
+.angel-msg a{color:#8f6f2c;text-decoration:underline}
+.angel-msg.bot .angel-name{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9a7b3f;margin-bottom:4px}
+.angel-typing{align-self:flex-start;background:#fff;border:1px solid #e3dcc6;border-radius:16px;border-bottom-left-radius:4px;padding:12px 16px;display:flex;gap:5px}
+.angel-typing i{width:7px;height:7px;border-radius:50%;background:#9a7b3f;animation:angel-blink 1.2s infinite}
+.angel-typing i:nth-child(2){animation-delay:.2s}
+.angel-typing i:nth-child(3){animation-delay:.4s}
+@keyframes angel-blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#angel-chat-chips{
+  flex:none;display:flex;gap:8px;padding:10px 14px;overflow-x:auto;
+  border-top:1px solid #e3dcc6;background:#f4f1e9;
+}
+#angel-chat-chips:empty{display:none}
+.angel-chip{
+  flex:none;border:1px solid #9a7b3f;background:transparent;color:#6d5626;
+  border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer;white-space:nowrap;
+  font-family:"DM Sans",system-ui,sans-serif;
+}
+.angel-chip:hover{background:#9a7b3f;color:#fff}
+#angel-chat-form{flex:none;display:flex;gap:8px;padding:12px 14px;background:#f4f1e9;border-top:1px solid #e3dcc6}
+#angel-chat-input{
+  flex:1;border:1px solid #d8cfba;border-radius:999px;padding:10px 16px;font-size:14px;
+  background:#fff;color:#2a2620;font-family:"DM Sans",system-ui,sans-serif;outline:none;
+}
+#angel-chat-input:focus{border-color:#9a7b3f}
+#angel-chat-send{
+  flex:none;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  background:#1d2522;color:#ead8ad;display:grid;place-items:center;
+}
+#angel-chat-send:hover{background:#24302b}
+#angel-chat-send svg{width:18px;height:18px}
+@media (max-width:480px){
+  #angel-chat-panel{
+    left:16px;right:16px;width:auto;
+    bottom:calc(max(20px,2.5vw) + 174px);
+    height:min(68dvh,560px);
+  }
+}
