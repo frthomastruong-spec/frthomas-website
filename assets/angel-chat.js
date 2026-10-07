@@ -54,7 +54,7 @@ STR.zh.foundIn = "\u6211\u627E\u5230"; STR.zh.readMore = "\u95B1\u8B80\u66F4\u59
 
 /* FAQ: keywords (lowercase) -> answers in 3 languages. Order matters: specific first. */
 var FAQ = [
-  { k: ["who are you", "your name", "b\u1EA1n l\u00E0 ai", "em l\u00E0 ai", "angel l\u00E0 ai", "about yourself", "\u4F60\u662F\u8AB0", "\u4F60\u662F\u8C01"],
+  { k: ["who are you", "your name", "b\u1EA1n l\u00E0 ai", "em l\u00E0 ai", "angel l\u00E0 ai", "about yourself", "are you ai", "are you an ai", "t\u00ean em", "ten em", "em t\u00ean g\u00ec", "em ten gi", "\u4F60\u662F\u8AB0", "\u4F60\u662F\u8C01"],
     a: {
       en: "I\u2019m Angel, Fr. Thomas\u2019s assistant here on the website. I can help with Mass times, pilgrimage info, books, and more \u2014 just ask!",
       vi: "Em l\u00E0 Angel, tr\u1EE3 l\u00FD c\u1EE7a Cha Thomas tr\u00EAn website n\u00E0y. Em gi\u00FAp \u0111\u01B0\u1EE3c c\u00E1c vi\u1EC7c nh\u01B0 gi\u1EDD l\u1EC5, h\u00E0nh h\u01B0\u01A1ng, s\u00E1ch\u2026 \u2014 b\u1EA1n c\u1EE9 h\u1ECFi nh\u00E9!",
