@@ -14,6 +14,10 @@ function detectLang() {
 }
 var LANG = detectLang();
 
+/* Set after the Cloudflare Worker is deployed, e.g.
+   "https://angel-chat-frthomas.<sub>.workers.dev/chat". Empty = local-only mode. */
+var AI_ENDPOINT = "";
+
 var STR = {
   en: {
     title: "Angel", sub: "Assistant to Fr. Thomas", btn: "Chat with Angel",
@@ -50,7 +54,7 @@ STR.zh.foundIn = "\u6211\u627E\u5230"; STR.zh.readMore = "\u95B1\u8B80\u66F4\u59
 
 /* FAQ: keywords (lowercase) -> answers in 3 languages. Order matters: specific first. */
 var FAQ = [
-  { k: ["who are you", "your name", "b\u1EA1n l\u00E0 ai", "em l\u00E0 ai", "angel l\u00E0 ai", "\u4F60\u662F\u8AB0", "\u4F60\u662F\u8C01"],
+  { k: ["who are you", "your name", "b\u1EA1n l\u00E0 ai", "em l\u00E0 ai", "angel l\u00E0 ai", "about yourself", "\u4F60\u662F\u8AB0", "\u4F60\u662F\u8C01"],
     a: {
       en: "I\u2019m Angel, Fr. Thomas\u2019s assistant here on the website. I can help with Mass times, pilgrimage info, books, and more \u2014 just ask!",
       vi: "Em l\u00E0 Angel, tr\u1EE3 l\u00FD c\u1EE7a Cha Thomas tr\u00EAn website n\u00E0y. Em gi\u00FAp \u0111\u01B0\u1EE3c c\u00E1c vi\u1EC7c nh\u01B0 gi\u1EDD l\u1EC5, h\u00E0nh h\u01B0\u01A1ng, s\u00E1ch\u2026 \u2014 b\u1EA1n c\u1EE9 h\u1ECFi nh\u00E9!",
@@ -102,7 +106,7 @@ var FAQ = [
       en: "You can reach Fr. Thomas at <a href=\"mailto:contact@frthomas.com\">contact@frthomas.com</a>.",
       vi: "B\u1EA1n c\u00F3 th\u1EC3 li\u00EAn h\u1EC7 Cha Thomas qua email <a href=\"mailto:contact@frthomas.com\">contact@frthomas.com</a>.",
       zh: "\u4F60\u53EF\u4EE5\u900F\u904E\u96FB\u90F5 <a href=\"mailto:contact@frthomas.com\">contact@frthomas.com</a> \u806F\u7D61 Thomas \u795E\u7236\u3002" } },
-  { k: ["about", "fr thomas", "cha thomas", "father thomas", "l\u00E0 ai", "la ai", "who is", "\u95DC\u65BC", "\u5173\u4E8E", "phaol\u00F4", "phaolo", "ti\u1EC3u s\u1EED", "tieu su"],
+  { k: ["about thomas", "about fr", "about cha", "about father", "fr thomas", "cha thomas", "father thomas", "l\u00E0 ai", "la ai", "who is", "\u95DC\u65BC", "\u5173\u4E8E", "phaol\u00F4", "phaolo", "ti\u1EC3u s\u1EED", "tieu su"],
     a: {
       en: "Fr. Thomas Truong (Phaol\u00F4 L\u00EA-B\u1EA3o-T\u1ECBnh) is a Catholic priest serving at St. Francis Xavier Parish in Vancouver. <a href=\"/about/\">More about him</a>.",
       vi: "Cha Phaol\u00F4 L\u00EA-B\u1EA3o-T\u1ECBnh (Fr. Thomas Truong) l\u00E0 linh m\u1EE5c ph\u1EE5c v\u1EE5 t\u1EA1i gi\u00E1o x\u1EE9 St. Francis Xavier, Vancouver. <a href=\"/vi/about/\">T\u00ECm hi\u1EC3u th\u00EAm</a>.",
@@ -153,12 +157,12 @@ function termsOf(q) {
   }
   return terms;
 }
-function searchIndex(q) {
+function searchTop(q, n) {
   if (!AIDX || !AIDX.length) return null;
   var terms = termsOf(q);
   if (!terms.length) return null;
   var phrase = norm(q).replace(/\s+/g, " ").trim();
-  var best = null, bestScore = 0, i, j;
+  var scored = [], i, j;
   for (i = 0; i < AIDX.length; i++) {
     var p = AIDX[i];
     var xt = norm(p.x), tt = norm(p.t), score = 0;
@@ -167,20 +171,30 @@ function searchIndex(q) {
     }
     if (phrase.length > 4 && xt.indexOf(phrase) !== -1) score += 10;
     if (p.l === LANG) score *= 1.6;
-    if (score > bestScore) { bestScore = score; best = p; }
+    if (score >= 3) scored.push({ p: p, score: score });
   }
-  if (!best || bestScore < 3) return null;
-  var sents = best.x.split(/(?<=[.!?…。！？])\s+/);
-  var bs = "", bsScore = -1, k, m;
-  for (k = 0; k < sents.length; k++) {
-    var sn = norm(sents[k]), sc = 0;
-    for (m = 0; m < terms.length; m++) sc += sn.split(terms[m]).length - 1;
-    if (sc > bsScore) { bsScore = sc; bs = sents[k]; }
+  scored.sort(function (a, b) { return b.score - a.score; });
+  var out = [], lim = Math.min(n || 3, scored.length), t;
+  for (t = 0; t < lim; t++) {
+    var pg = scored[t].p;
+    var sents = pg.x.split(/(?<=[.!?…。！？])\s+/);
+    var bs = "", bsScore = -1, k, m;
+    for (k = 0; k < sents.length; k++) {
+      var sn = norm(sents[k]), sc = 0;
+      for (m = 0; m < terms.length; m++) sc += sn.split(terms[m]).length - 1;
+      if (sc > bsScore) { bsScore = sc; bs = sents[k]; }
+    }
+    out.push({ u: pg.u, t: pg.t, excerpt: (bs ? bs.trim() : pg.x).slice(0, 280) });
   }
-  var excerpt = (bs ? bs.trim() : best.x).slice(0, 280);
-  return esc(S.foundIn) + ' <a href="' + best.u + '">' + esc(best.t) + '</a>:<br>' +
-    '<span class="angel-quote">' + esc(excerpt) + '</span><br>' +
-    '<a href="' + best.u + '">' + esc(S.readMore) + '</a>';
+  return out;
+}
+function searchIndex(q) {
+  var top = searchTop(q, 1);
+  if (!top.length) return null;
+  var b = top[0];
+  return esc(S.foundIn) + ' <a href="' + b.u + '">' + esc(b.t) + '</a>:<br>' +
+    '<span class="angel-quote">' + esc(b.excerpt) + '</span><br>' +
+    '<a href="' + b.u + '">' + esc(S.readMore) + '</a>';
 }
 
 /* ---- UI ---- */
@@ -252,6 +266,36 @@ function addMsg(text, who) {
   return m;
 }
 
+var AI_HISTORY = [];
+function stripTags(h) { return String(h).replace(/<[^>]*>/g, ""); }
+function aiReply(q, done, onFail) {
+  function fail() { if (onFail) onFail(); }
+  var ctx = "";
+  try {
+    ctx = searchTop(q, 3).map(function (r) {
+      return "[" + r.t + "](" + r.u + ") " + r.excerpt;
+    }).join("\n\n").slice(0, 4000);
+  } catch (e) { ctx = ""; }
+  var ctrl = null, timedOut = false;
+  try { ctrl = new AbortController(); } catch (e) { fail(); return; }
+  var to = setTimeout(function () { timedOut = true; try { ctrl.abort(); } catch (e) {} }, 20000);
+  fetch(AI_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question: q, lang: LANG, context: ctx, history: AI_HISTORY.slice(-6) }),
+    signal: ctrl.signal
+  }).then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      clearTimeout(to);
+      if (d && d.reply) {
+        AI_HISTORY.push({ role: "user", content: q });
+        AI_HISTORY.push({ role: "assistant", content: String(d.reply).slice(0, 2000) });
+        if (AI_HISTORY.length > 12) AI_HISTORY = AI_HISTORY.slice(-12);
+        done(esc(d.reply).replace(/\n/g, "<br>"));
+      } else fail();
+    })
+    .catch(function () { clearTimeout(to); fail(); });
+}
 function botReply(q) {
   var t = el("div", "angel-typing", "<i></i><i></i><i></i>");
   msgs.appendChild(t);
@@ -261,9 +305,10 @@ function botReply(q) {
     var wait = Math.max(0, 650 - (Date.now() - t0));
     setTimeout(function () { t.remove(); addMsg(html, "bot"); }, wait);
   }
+  function local() { loadIndex().then(function () { done(searchIndex(q) || S.fallback); }); }
   var faq = findAnswer(q);
   if (faq) { done(faq); return; }
-  loadIndex().then(function () { done(searchIndex(q) || S.fallback); });
+  if (AI_ENDPOINT) { aiReply(q, done, local); } else { local(); }
 }
 
 function send(text) {
