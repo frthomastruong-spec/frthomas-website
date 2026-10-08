@@ -147,19 +147,101 @@ function norm(s) {
 function esc(s) {
   return (s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
+/* ---- Smarter retrieval: stop words, cross-language synonyms, bigram phrases,
+   CJK sliding windows, and 2-sentence excerpts ---- */
+var CJK_RE = /[一-鿿]/;
+var STOP = {
+  "la":1,"gi":1,"cua":1,"cho":1,"voi":1,"va":1,"thi":1,"nay":1,"do":1,"de":1,"duoc":1,"co":1,
+  "the":1,"and":1,"for":1,"are":1,"you":1,"your":1,"what":1,"when":1,"where":1,
+  "how":1,"does":1,"did":1,"can":1,"please":1,"is":1,"a":1,"an":1,"of":1,"to":1,"in":1,"on":1
+};
+/* synonym keys/values are pre-normalized (lowercase, no diacritics, d for \u0111) */
+var SYN = {
+  "thanh le": ["mass"], "mass": ["thanh le"],
+  "gio le": ["mass time", "thanh le"], "mass time": ["gio le", "thanh le"],
+  "giai toi": ["xung toi", "confession", "\u544a\u89e3"],
+  "xung toi": ["giai toi", "confession"],
+  "confession": ["giai toi", "xung toi", "\u544a\u89e3"],
+  "\u544a\u89e3": ["giai toi", "confession"],
+  "rua toi": ["baptism", "\u6d17\u79ae"],
+  "baptism": ["rua toi", "\u6d17\u79ae"],
+  "hon phoi": ["marriage", "ket hon", "\u5a5a\u914d"],
+  "ket hon": ["hon phoi", "marriage"],
+  "marriage": ["hon phoi", "ket hon", "\u5a5a\u914d"],
+  "hanh huong": ["pilgrimage", "\u671d\u8056"],
+  "pilgrimage": ["hanh huong", "\u671d\u8056"],
+  "\u671d\u8056": ["hanh huong", "pilgrimage"],
+  "lien he": ["contact", "dia chi"], "contact": ["lien he", "dia chi"],
+  "dia chi": ["address", "lien he", "\u5730\u5740"],
+  "address": ["dia chi", "lien he"],
+  "nha tho": ["church", "giao xu", "parish", "\u8056\u5802"],
+  "church": ["nha tho", "giao xu", "parish"],
+  "parish": ["giao xu", "nha tho", "church"],
+  "giao xu": ["parish", "nha tho", "church"],
+  "chua nhat": ["sunday", "\u4e3b\u65e5"],
+  "sunday": ["chua nhat", "\u4e3b\u65e5"],
+  "cau nguyen": ["prayer", "\u7948\u79b1"],
+  "prayer": ["cau nguyen", "\u7948\u79b1"],
+  "kinh thanh": ["bible", "phuc am", "\u8056\u7d93"],
+  "bible": ["kinh thanh", "phuc am"],
+  "phuc am": ["gospel", "kinh thanh", "\u798f\u97f3"],
+  "gospel": ["phuc am", "kinh thanh"],
+  "giang le": ["homily", "bai giang", "\u8b1b\u9053"],
+  "bai giang": ["giang le", "homily"],
+  "homily": ["giang le", "bai giang"],
+  "sach": ["book", "books"], "book": ["sach"], "books": ["sach"],
+  "linh muc": ["priest", "\u795e\u7236"],
+  "priest": ["linh muc", "\u795e\u7236"],
+  "cha thomas": ["fr thomas"], "fr thomas": ["cha thomas"]
+};
+function expandSynonyms(nq) {
+  var padded = " " + nq.replace(/\s+/g, " ").trim() + " ";
+  var extra = [], k, i, syns;
+  for (k in SYN) {
+    var hit = CJK_RE.test(k) ? nq.indexOf(k) !== -1 : padded.indexOf(" " + k + " ") !== -1;
+    if (!hit) continue;
+    syns = SYN[k];
+    for (i = 0; i < syns.length; i++) if (extra.indexOf(syns[i]) === -1) extra.push(syns[i]);
+  }
+  return extra;
+}
+function bigramsOf(nq) {
+  var words = nq.split(/\s+/).filter(function (w) { return w.length >= 2 && !STOP[w]; });
+  var out = [];
+  for (var i = 0; i + 1 < words.length; i++) out.push(words[i] + " " + words[i + 1]);
+  return out;
+}
 function termsOf(q) {
   var nq = norm(q);
-  var cjk = /[一-鿿]/.test(q);
-  var terms = nq.split(/\s+/).filter(function (t) { return t.length >= (cjk ? 2 : 3); });
+  var cjk = CJK_RE.test(q);
+  var terms = nq.split(/\s+/).filter(function (t) { return t.length >= (cjk ? 2 : 3) && !STOP[t]; });
+  var extra = expandSynonyms(nq), i;
+  for (i = 0; i < extra.length; i++) if (terms.indexOf(extra[i]) === -1) terms.push(extra[i]);
   if (cjk) {
     var joined = nq.replace(/\s+/g, "");
-    if (joined.length >= 2 && terms.indexOf(joined) === -1) terms.push(joined);
+    for (i = 0; i + 2 <= joined.length; i++) {
+      var bg = joined.slice(i, i + 2);
+      if (terms.indexOf(bg) === -1) terms.push(bg);
+    }
   }
-  return terms;
+  return { terms: terms, bigrams: bigramsOf(nq) };
+}
+function bestExcerpt(pg, terms) {
+  var sents = pg.x.split(/(?<=[.!?…。！？])\s+/);
+  var ranked = [], k, m;
+  for (k = 0; k < sents.length; k++) {
+    var sn = norm(sents[k]), sc = 0;
+    for (m = 0; m < terms.length; m++) sc += sn.split(terms[m]).length - 1;
+    if (sc > 0) ranked.push({ s: sents[k], sc: sc, k: k });
+  }
+  ranked.sort(function (a, b) { return b.sc - a.sc || a.k - b.k; });
+  var pick = ranked.slice(0, 2).sort(function (a, b) { return a.k - b.k; })
+    .map(function (r) { return r.s.trim(); });
+  return { u: pg.u, t: pg.t, excerpt: (pick.length ? pick.join(" ") : pg.x).slice(0, 600).trim() };
 }
 function searchTop(q, n) {
   if (!AIDX || !AIDX.length) return null;
-  var terms = termsOf(q);
+  var tq = termsOf(q), terms = tq.terms, bigrams = tq.bigrams;
   if (!terms.length) return null;
   var phrase = norm(q).replace(/\s+/g, " ").trim();
   var scored = [], i, j;
@@ -169,23 +251,17 @@ function searchTop(q, n) {
     for (j = 0; j < terms.length; j++) {
       score += (xt.split(terms[j]).length - 1) + (tt.split(terms[j]).length - 1) * 4;
     }
+    for (j = 0; j < bigrams.length; j++) {
+      if (xt.indexOf(bigrams[j]) !== -1) score += 6;
+      if (tt.indexOf(bigrams[j]) !== -1) score += 12;
+    }
     if (phrase.length > 4 && xt.indexOf(phrase) !== -1) score += 10;
     if (p.l === LANG) score *= 1.6;
     if (score >= 3) scored.push({ p: p, score: score });
   }
   scored.sort(function (a, b) { return b.score - a.score; });
   var out = [], lim = Math.min(n || 3, scored.length), t;
-  for (t = 0; t < lim; t++) {
-    var pg = scored[t].p;
-    var sents = pg.x.split(/(?<=[.!?…。！？])\s+/);
-    var bs = "", bsScore = -1, k, m;
-    for (k = 0; k < sents.length; k++) {
-      var sn = norm(sents[k]), sc = 0;
-      for (m = 0; m < terms.length; m++) sc += sn.split(terms[m]).length - 1;
-      if (sc > bsScore) { bsScore = sc; bs = sents[k]; }
-    }
-    out.push({ u: pg.u, t: pg.t, excerpt: (bs ? bs.trim() : pg.x).slice(0, 280) });
-  }
+  for (t = 0; t < lim; t++) out.push(bestExcerpt(scored[t].p, terms));
   return out;
 }
 function searchIndex(q) {
