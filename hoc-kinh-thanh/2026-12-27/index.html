@@ -101,5 +101,40 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-fo
 <div class="footer-bottom"><span>© 2026 Fr. Thomas</span><span>frthomas.com</span></div>
 </footer>
 <script src="/assets/angel-chat.js?v=3" defer></script>
+<!-- GATE:HOC-KINH-THANH -->
+<div id="hkt-gate" style="position:fixed;inset:0;z-index:99999;background:#17201d;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box">
+  <div style="max-width:340px;width:100%;text-align:center;font-family:inherit">
+    <div style="font-size:44px;margin-bottom:12px">🔒</div>
+    <h2 style="color:#f2ead8;font-size:20px;margin:0 0 8px">Học Kinh Thánh</h2>
+    <p style="color:#b9c2b6;font-size:14px;margin:0 0 18px">Mục này có mật khẩu.<br>Nhập mật khẩu để xem nội dung.</p>
+    <input id="hkt-pw" type="password" autocomplete="off" placeholder="Mật khẩu"
+      style="width:100%;padding:12px 14px;font-size:16px;border-radius:10px;border:1px solid #3a4a44;background:#0f1613;color:#f2ead8;box-sizing:border-box;margin-bottom:12px">
+    <button id="hkt-go" style="width:100%;padding:12px;font-size:16px;border-radius:10px;border:0;background:#c9a227;color:#17201d;font-weight:700;cursor:pointer">Mở</button>
+    <p id="hkt-err" style="color:#e08080;font-size:13px;min-height:20px;margin:10px 0 0"></p>
+  </div>
+</div>
+<script>
+(function(){
+  var HASH='8d90f0827e76e6b5acf35386e0e3b45c8e0ad217008f19455cbe7a284c5f0d3f';
+  var KEY='hkt_auth_v1';
+  var gate=document.getElementById('hkt-gate');
+  function open(){ try{localStorage.setItem(KEY,HASH);}catch(e){} gate.style.display='none'; }
+  try{ if(localStorage.getItem(KEY)===HASH){ gate.style.display='none'; return; } }catch(e){}
+  function hex(buf){ return Array.prototype.map.call(new Uint8Array(buf),function(b){return ('0'+b.toString(16)).slice(-2);}).join(''); }
+  function check(){
+    var v=document.getElementById('hkt-pw').value;
+    var err=document.getElementById('hkt-err');
+    if(!window.crypto||!crypto.subtle){ err.textContent='Trình duyệt không hỗ trợ, thử trình duyệt khác.'; return; }
+    crypto.subtle.digest('SHA-256',new TextEncoder().encode(v)).then(function(d){
+      if(hex(d)===HASH){ err.textContent=''; open(); }
+      else{ err.textContent='Sai mật khẩu, thử lại.'; }
+    });
+  }
+  document.getElementById('hkt-go').addEventListener('click',check);
+  document.getElementById('hkt-pw').addEventListener('keydown',function(e){ if(e.key==='Enter') check(); });
+  setTimeout(function(){ document.getElementById('hkt-pw').focus(); },300);
+})();
+</script>
+
 </body>
 </html>
